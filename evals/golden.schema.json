@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ctxd Golden Evaluation Case",
+  "type": "object",
+  "required": ["id", "question", "task_type", "expected_sources", "expected_facts", "expected_tool", "metadata"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "task_type": {"type": "string"},
+    "expected_sources": {"type": "array", "items": {"type": "string"}},
+    "expected_facts": {"type": "array", "items": {"type": "string"}},
+    "expected_tool": {"type": ["string", "null"]},
+    "metadata": {"type": "object"}
+  }
+}
