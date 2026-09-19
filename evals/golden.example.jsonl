@@ -1,0 +1,1 @@
+{"id":"phase1-health-001","question":"Does the service expose a health endpoint?","task_type":"api_contract","expected_sources":["ctxd/app/api/routes.py"],"expected_facts":["GET /health returns status ok"],"expected_tool":null,"metadata":{"phase":"foundation"}}
