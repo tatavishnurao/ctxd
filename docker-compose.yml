@@ -1,0 +1,43 @@
+services:
+  app:
+    build: .
+    environment:
+      CTXD_DATABASE_URL: postgresql://ctxd:ctxd@postgres:5432/ctxd
+      CTXD_REDIS_URL: redis://redis:6379/0
+      CTXD_OTEL_ENABLED: "false"
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: ctxd
+      POSTGRES_PASSWORD: ctxd
+      POSTGRES_DB: ctxd
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ctxd -d ctxd"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  postgres_data:
