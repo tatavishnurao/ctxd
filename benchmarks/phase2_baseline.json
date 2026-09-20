@@ -1,0 +1,35 @@
+{
+  "python_version": "3.13.15",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "commit": "806d670",
+  "warmup_queries": 10,
+  "measured_queries_per_size": 100,
+  "methodology": "Sequential in-process ingestion and retrieval using a fresh InMemoryDocumentStore per size. Retrieval latency uses perf_counter wall time and nearest-rank percentiles.",
+  "results": [
+    {
+      "document_count": 100,
+      "chunk_count": 1200,
+      "ingestion_seconds": 0.15028196800267324,
+      "ingestion_documents_per_second": 665.4158268556956,
+      "ingestion_chunks_per_second": 7984.989922268347,
+      "retrieval_query_count": 100,
+      "retrieval_p50_ms": 43.52211201330647,
+      "retrieval_p95_ms": 78.60328198876232,
+      "retrieval_p99_ms": 101.19399102404714,
+      "retrieval_queries_per_second": 20.17684940716551
+    },
+    {
+      "document_count": 1000,
+      "chunk_count": 12000,
+      "ingestion_seconds": 1.5501634670072235,
+      "ingestion_documents_per_second": 645.0932571199216,
+      "ingestion_chunks_per_second": 7741.11908543906,
+      "retrieval_query_count": 100,
+      "retrieval_p50_ms": 351.63909051334485,
+      "retrieval_p95_ms": 514.0553030068986,
+      "retrieval_p99_ms": 925.5387759767473,
+      "retrieval_queries_per_second": 2.608308564213835
+    }
+  ]
+}
