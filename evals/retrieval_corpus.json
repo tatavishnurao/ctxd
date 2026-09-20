@@ -1,0 +1,41 @@
+{
+  "documents": [
+    {"source_path":"docs/auth.md","source_type":"markdown","content":"# Authentication\n\nThe zephyr authentication service validates OAuth tokens and rotates signing keys every seven days.\n\nUse the Authorization bearer header for protected endpoints."},
+    {"source_path":"docs/cache.txt","source_type":"text","content":"The amber cache uses least recently used eviction. Cache entries expire after 300 seconds and cache invalidation is explicit."},
+    {"source_path":"docs/database.md","source_type":"markdown","content":"# Database\n\nThe cobalt database runs PostgreSQL. Migrations use Alembic and transaction retries handle serialization failures."},
+    {"source_path":"docs/queues.txt","source_type":"text","content":"The quartz queue provides asynchronous jobs. Workers acknowledge messages after successful processing and use a dead letter queue after five failures."},
+    {"source_path":"docs/observability.md","source_type":"markdown","content":"# Observability\n\nThe lantern telemetry stack exports Prometheus metrics and OpenTelemetry traces. Dashboards track p95 latency and error rate."},
+    {"source_path":"docs/deploy.txt","source_type":"text","content":"The summit deployment runs three replicas in each region. Rolling updates require readiness checks before traffic shifts."},
+    {"source_path":"docs/security.md","source_type":"markdown","content":"# Security\n\nThe citadel security policy requires encrypted secrets, least privilege access, and quarterly credential rotation. Incident response starts with containment."},
+    {"source_path":"docs/incidents.txt","source_type":"text","content":"Incident response uses triage, containment, eradication, and recovery. The on-call engineer creates a timeline and assigns a severity."},
+    {"source_path":"docs/api.md","source_type":"markdown","content":"# API\n\nThe harbor API uses cursor pagination. Clients send page_size and cursor parameters, and receive next_cursor in the response."},
+    {"source_path":"docs/rate-limits.txt","source_type":"text","content":"The comet rate limiter allows 120 requests per minute per client. Exceeding the quota returns HTTP 429 with a retry-after header."},
+    {"source_path":"docs/cache-copy.txt","source_type":"text","content":"The amber cache uses least recently used eviction. Cache records expire after 300 seconds; explicit invalidation removes stale records."},
+    {"source_path":"docs/backups.md","source_type":"markdown","content":"# Backups\n\nThe glacier backup process creates snapshots every six hours. Restore drills run monthly and verify checksums."},
+    {"source_path":"private/other-tenant.txt","tenant_id":"other","source_type":"text","content":"The zephyr authentication service validates OAuth tokens. This private tenant uses a unique forbidden override."}
+  ],
+  "cases": [
+    {"id":"q01","question":"zephyr OAuth signing key rotation","task_type":"retrieval","expected_sources":["docs/auth.md"]},
+    {"id":"q02","question":"Authorization bearer header","task_type":"retrieval","expected_sources":["docs/auth.md"]},
+    {"id":"q03","question":"amber least recently used eviction","task_type":"retrieval","expected_sources":["docs/cache.txt","docs/cache-copy.txt"]},
+    {"id":"q04","question":"cache entries expire 300 seconds","task_type":"retrieval","expected_sources":["docs/cache.txt","docs/cache-copy.txt"]},
+    {"id":"q05","question":"cobalt PostgreSQL Alembic migrations","task_type":"retrieval","expected_sources":["docs/database.md"]},
+    {"id":"q06","question":"serialization failure transaction retries","task_type":"retrieval","expected_sources":["docs/database.md"]},
+    {"id":"q07","question":"quartz dead letter queue failures","task_type":"retrieval","expected_sources":["docs/queues.txt"]},
+    {"id":"q08","question":"worker message acknowledgement","task_type":"retrieval","expected_sources":["docs/queues.txt"]},
+    {"id":"q09","question":"lantern Prometheus OpenTelemetry","task_type":"retrieval","expected_sources":["docs/observability.md"]},
+    {"id":"q10","question":"dashboard p95 latency error rate","task_type":"retrieval","expected_sources":["docs/observability.md"]},
+    {"id":"q11","question":"summit rolling updates readiness","task_type":"retrieval","expected_sources":["docs/deploy.txt"]},
+    {"id":"q12","question":"three replicas each region","task_type":"retrieval","expected_sources":["docs/deploy.txt"]},
+    {"id":"q13","question":"citadel quarterly credential rotation","task_type":"retrieval","expected_sources":["docs/security.md"]},
+    {"id":"q14","question":"incident response containment recovery","task_type":"retrieval","expected_sources":["docs/security.md","docs/incidents.txt"]},
+    {"id":"q15","question":"on-call timeline severity triage","task_type":"retrieval","expected_sources":["docs/incidents.txt"]},
+    {"id":"q16","question":"harbor cursor pagination next_cursor","task_type":"retrieval","expected_sources":["docs/api.md"]},
+    {"id":"q17","question":"page_size cursor parameters","task_type":"retrieval","expected_sources":["docs/api.md"]},
+    {"id":"q18","question":"comet 120 requests per minute","task_type":"retrieval","expected_sources":["docs/rate-limits.txt"]},
+    {"id":"q19","question":"HTTP 429 retry-after quota","task_type":"retrieval","expected_sources":["docs/rate-limits.txt"]},
+    {"id":"q20","question":"glacier snapshots every six hours","task_type":"retrieval","expected_sources":["docs/backups.md"]},
+    {"id":"q21","question":"monthly restore drills checksums","task_type":"retrieval","expected_sources":["docs/backups.md"]},
+    {"id":"q22","question":"unique forbidden override","task_type":"retrieval","tenant_id":"other","expected_sources":["private/other-tenant.txt"]}
+  ]
+}
