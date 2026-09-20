@@ -1,9 +1,38 @@
+# Python
 .venv/
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+
+# Tool/test caches
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
-.env
+.hypothesis/
+.tox/
 .coverage
+coverage.xml
 htmlcov/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Build/package outputs
+dist/
+build/
+
+# Local/editor/OS noise
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Runtime logs and local database files
+*.log
+*.sqlite
+*.sqlite3
