@@ -1,0 +1,25 @@
+{
+  "methodology": "Reproduction of the Phase 2 per-query list/copy, tokenization, average length, document-frequency rebuild, and full chunk scoring over the deterministic corpus.",
+  "results": [
+    {
+      "document_count": 100,
+      "chunk_count": 1200,
+      "samples": 100,
+      "rebuild_p50_ms": 20.825721498113126,
+      "rebuild_p95_ms": 22.114441031590104,
+      "scoring_p50_ms": 2.604592009447515,
+      "total_p50_ms": 23.522029543528333,
+      "rebuild_share_of_median": 0.8853709438454026
+    },
+    {
+      "document_count": 1000,
+      "chunk_count": 12000,
+      "samples": 100,
+      "rebuild_p50_ms": 214.89847550401464,
+      "rebuild_p95_ms": 251.95108604384586,
+      "scoring_p50_ms": 23.285845993086696,
+      "total_p50_ms": 238.53528953623027,
+      "rebuild_share_of_median": 0.9009085235221537
+    }
+  ]
+}
