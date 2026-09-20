@@ -7,6 +7,8 @@ WORKDIR /app
 
 COPY pyproject.toml README.md ./
 COPY ctxd ./ctxd
+COPY alembic.ini ./alembic.ini
+COPY migrations ./migrations
 
 RUN pip install --no-cache-dir .
 
