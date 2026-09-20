@@ -1,16 +1,67 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ctxd Golden Evaluation Case",
-  "type": "object",
-  "required": ["id", "question", "task_type", "expected_sources", "expected_facts", "expected_tool", "metadata"],
-  "additionalProperties": false,
   "properties": {
-    "id": {"type": "string", "minLength": 1},
-    "question": {"type": "string", "minLength": 1},
-    "task_type": {"type": "string"},
-    "expected_sources": {"type": "array", "items": {"type": "string"}},
-    "expected_facts": {"type": "array", "items": {"type": "string"}},
-    "expected_tool": {"type": ["string", "null"]},
-    "metadata": {"type": "object"}
-  }
+    "id": {
+      "minLength": 1,
+      "title": "Id",
+      "type": "string"
+    },
+    "question": {
+      "minLength": 1,
+      "title": "Question",
+      "type": "string"
+    },
+    "task_type": {
+      "title": "Task Type",
+      "type": "string"
+    },
+    "tenant_id": {
+      "default": "eval",
+      "title": "Tenant Id",
+      "type": "string"
+    },
+    "top_k": {
+      "default": 5,
+      "exclusiveMinimum": 0,
+      "title": "Top K",
+      "type": "integer"
+    },
+    "expected_sources": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Sources",
+      "type": "array"
+    },
+    "expected_facts": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Expected Facts",
+      "type": "array"
+    },
+    "expected_tool": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Expected Tool"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "title": "Metadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "question",
+    "task_type"
+  ],
+  "title": "GoldenEvalCase",
+  "type": "object"
 }
