@@ -29,7 +29,8 @@ def clean_database() -> None:
     assert DATABASE_URL is not None
     with psycopg.connect(DATABASE_URL, autocommit=True) as connection:
         connection.execute(
-            "TRUNCATE lexical_postings, lexical_terms, lexical_corpus_stats, chunks, documents"
+            "TRUNCATE chunk_embeddings, lexical_postings, lexical_terms, "
+            "lexical_corpus_stats, chunks, documents"
         )
 
 
