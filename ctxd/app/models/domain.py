@@ -13,13 +13,76 @@ class SourceType(StrEnum):
     TOOL = "tool"
 
 
+class DocumentSourceType(StrEnum):
+    TEXT = "text"
+    MARKDOWN = "markdown"
+
+
+class RetrievalMode(StrEnum):
+    LEXICAL = "lexical"
+    SEMANTIC = "semantic"
+    HYBRID = "hybrid"
+
+
 class QueryRequest(BaseModel):
     query: str = Field(min_length=1, max_length=20_000)
     tenant_id: str = Field(default="default", min_length=1, max_length=200)
+    retrieval_mode: RetrievalMode = RetrievalMode.LEXICAL
     task_type: str | None = None
     max_context_tokens: PositiveInt = 8_000
+    top_k: PositiveInt = Field(default=10, le=100)
     require_tools: bool = False
     metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class DocumentIngestRequest(BaseModel):
+    tenant_id: str = Field(min_length=1, max_length=200)
+    source_path: str = Field(min_length=1, max_length=4_000)
+    source_type: DocumentSourceType
+    content: str = Field(min_length=1)
+    metadata: dict[str, str | int | float | bool | None] = Field(default_factory=dict)
+
+
+class Document(BaseModel):
+    document_id: str
+    tenant_id: str
+    source_path: str
+    source_type: DocumentSourceType
+    content: str
+    content_hash: str
+    metadata: dict[str, str | int | float | bool | None] = Field(default_factory=dict)
+
+
+class Chunk(BaseModel):
+    chunk_id: str
+    document_id: str
+    tenant_id: str
+    content: str = Field(min_length=1)
+    content_hash: str
+    start_line: PositiveInt
+    end_line: PositiveInt
+    token_count: PositiveInt
+    ordinal: NonNegativeInt
+    metadata: dict[str, str | int | float | bool | None | list[str]] = Field(default_factory=dict)
+
+
+class SemanticIndexStatistics(BaseModel):
+    indexed_chunks: NonNegativeInt
+    embedding_version: str
+    embedding_dimension: PositiveInt
+
+
+class LexicalIndexStatistics(BaseModel):
+    indexed_documents: NonNegativeInt
+    indexed_chunks: NonNegativeInt
+    vocabulary_size: NonNegativeInt
+    average_chunk_length: NonNegativeFloat
+
+
+class DocumentIngestResponse(BaseModel):
+    document: Document
+    chunks: list[Chunk]
+    created: bool
 
 
 class TraceMetadata(BaseModel):
