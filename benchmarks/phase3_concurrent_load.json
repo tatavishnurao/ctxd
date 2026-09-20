@@ -1,0 +1,124 @@
+{
+  "python_version": "3.13.15",
+  "postgresql_version": "17.11 (Debian 17.11-1.pgdg13+2)",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "commit": "806d670",
+  "document_count": 1000,
+  "chunk_count": 12000,
+  "warmup_queries_per_level": 20,
+  "measured_queries_per_level": 320,
+  "pool_min_size": 1,
+  "pool_max_size": 32,
+  "methodology": "One shared bounded psycopg pool, synchronized worker start, fixed total queries per concurrency level, perf_counter wall latency, no think time.",
+  "results": [
+    {
+      "concurrency": 1,
+      "query_count": 320,
+      "errors": 0,
+      "queries_per_second": 118.95840873894942,
+      "p50_ms": 8.305822528200224,
+      "p95_ms": 9.730977995786816,
+      "p99_ms": 10.158382006920874,
+      "pool_statistics": {
+        "connections_num": 1,
+        "connections_ms": 6,
+        "requests_num": 341,
+        "usage_ms": 20693,
+        "pool_min": 1,
+        "pool_max": 32,
+        "pool_size": 1,
+        "pool_available": 1,
+        "requests_waiting": 0
+      }
+    },
+    {
+      "concurrency": 4,
+      "query_count": 320,
+      "errors": 0,
+      "queries_per_second": 329.3834910557632,
+      "p50_ms": 11.65933650918305,
+      "p95_ms": 13.604945968836546,
+      "p99_ms": 15.056000964250416,
+      "pool_statistics": {
+        "connections_num": 4,
+        "connections_ms": 28,
+        "requests_num": 681,
+        "usage_ms": 24384,
+        "requests_queued": 6,
+        "requests_wait_ms": 46,
+        "pool_min": 1,
+        "pool_max": 32,
+        "pool_size": 4,
+        "pool_available": 4,
+        "requests_waiting": 0
+      }
+    },
+    {
+      "concurrency": 8,
+      "query_count": 320,
+      "errors": 0,
+      "queries_per_second": 491.55571262878254,
+      "p50_ms": 15.343006496550515,
+      "p95_ms": 20.26240696432069,
+      "p99_ms": 24.635120993480086,
+      "pool_statistics": {
+        "connections_num": 8,
+        "connections_ms": 63,
+        "requests_num": 1021,
+        "usage_ms": 29310,
+        "requests_queued": 20,
+        "requests_wait_ms": 133,
+        "pool_min": 1,
+        "pool_max": 32,
+        "pool_size": 8,
+        "pool_available": 8,
+        "requests_waiting": 0
+      }
+    },
+    {
+      "concurrency": 16,
+      "query_count": 320,
+      "errors": 0,
+      "queries_per_second": 427.67800083508,
+      "p50_ms": 36.74642200348899,
+      "p95_ms": 50.609595025889575,
+      "p99_ms": 56.8833039724268,
+      "pool_statistics": {
+        "connections_num": 16,
+        "connections_ms": 234,
+        "requests_num": 1361,
+        "usage_ms": 39968,
+        "requests_queued": 102,
+        "requests_wait_ms": 1031,
+        "pool_min": 1,
+        "pool_max": 32,
+        "pool_size": 16,
+        "pool_available": 16,
+        "requests_waiting": 0
+      }
+    },
+    {
+      "concurrency": 32,
+      "query_count": 320,
+      "errors": 0,
+      "queries_per_second": 399.56938556214743,
+      "p50_ms": 78.10910599073395,
+      "p95_ms": 101.3370250002481,
+      "p99_ms": 114.06295298365876,
+      "pool_statistics": {
+        "connections_num": 32,
+        "connections_ms": 748,
+        "requests_num": 1701,
+        "usage_ms": 59865,
+        "requests_queued": 316,
+        "requests_wait_ms": 5525,
+        "pool_min": 1,
+        "pool_max": 32,
+        "pool_size": 32,
+        "pool_available": 32,
+        "requests_waiting": 0
+      }
+    }
+  ]
+}
