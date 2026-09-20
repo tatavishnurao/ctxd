@@ -7,6 +7,23 @@ on:
 jobs:
   lint-type-test:
     runs-on: ubuntu-latest
+    env:
+      CTXD_DATABASE_URL: postgresql://ctxd:ctxd@localhost:5432/ctxd_test
+      CTXD_TEST_DATABASE_URL: postgresql://ctxd:ctxd@localhost:5432/ctxd_test
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: ctxd
+          POSTGRES_PASSWORD: ctxd
+          POSTGRES_DB: ctxd_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ctxd -d ctxd_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v3
@@ -18,5 +35,7 @@ jobs:
         run: uv run ruff check .
       - name: Type check
         run: uv run mypy
+      - name: Migrate test database
+        run: uv run alembic upgrade head
       - name: Tests
         run: uv run pytest
