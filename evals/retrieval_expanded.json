@@ -1,0 +1,1056 @@
+{
+  "documents": [
+    {
+      "source_path": "expanded/service-0.md",
+      "source_type": "markdown",
+      "content": "# Service 0\n\nCodename_0 subsystem handles subject_0 workflow. Sharedgroup_0 common operational procedure. The component will archive records. filler0_0 filler0_1 filler0_2 filler0_3 filler0_4 filler0_5 filler0_6 filler0_7 filler0_8 filler0_9 filler0_10 filler0_11 filler0_12 filler0_13 filler0_14 filler0_15 filler0_16 filler0_17 filler0_18 filler0_19 filler0_20 filler0_21 filler0_22 filler0_23 filler0_24 filler0_25 filler0_26 filler0_27 filler0_28 filler0_29 filler0_30 filler0_31 filler0_32 filler0_33 filler0_34 filler0_35 filler0_36 filler0_37 filler0_38 filler0_39 filler0_40 filler0_41 filler0_42 filler0_43 filler0_44 filler0_45 filler0_46 filler0_47 filler0_48 filler0_49 filler0_50 filler0_51 filler0_52 filler0_53 filler0_54 filler0_55 filler0_56 filler0_57 filler0_58 filler0_59 filler0_60 filler0_61 filler0_62 filler0_63 filler0_64 filler0_65 filler0_66 filler0_67 filler0_68 filler0_69 filler0_70 filler0_71 filler0_72 filler0_73 filler0_74 filler0_75 filler0_76 filler0_77 filler0_78 filler0_79 filler0_80 filler0_81 filler0_82 filler0_83 filler0_84 filler0_85 filler0_86 filler0_87 filler0_88 filler0_89 filler0_90 filler0_91 filler0_92 filler0_93 filler0_94 filler0_95 filler0_96 filler0_97 filler0_98 filler0_99 filler0_100 filler0_101 filler0_102 filler0_103 filler0_104 filler0_105 filler0_106 filler0_107 filler0_108 filler0_109 filler0_110 filler0_111 filler0_112 filler0_113 filler0_114 filler0_115 filler0_116 filler0_117 filler0_118 filler0_119 filler0_120 filler0_121 filler0_122 filler0_123 filler0_124 filler0_125 filler0_126 filler0_127 filler0_128 filler0_129 filler0_130 filler0_131 filler0_132 filler0_133 filler0_134 filler0_135 filler0_136 filler0_137 filler0_138 filler0_139 filler0_140 filler0_141 filler0_142 filler0_143 filler0_144 filler0_145 filler0_146 filler0_147 filler0_148 filler0_149 filler0_150 filler0_151 filler0_152 filler0_153 filler0_154 filler0_155 filler0_156 filler0_157 filler0_158 filler0_159 filler0_160 filler0_161 filler0_162 filler0_163 filler0_164 filler0_165 filler0_166 filler0_167 filler0_168 filler0_169 filler0_170 filler0_171 filler0_172 filler0_173 filler0_174 filler0_175 filler0_176 filler0_177 filler0_178 filler0_179 tailmarker_0."
+    },
+    {
+      "source_path": "expanded/service-1.md",
+      "source_type": "markdown",
+      "content": "# Service 1\n\nCodename_1 subsystem handles subject_1 workflow. Sharedgroup_0 common operational procedure. The component will analyze records. filler1_0 filler1_1 filler1_2 filler1_3 filler1_4 filler1_5 filler1_6 filler1_7 filler1_8 filler1_9 filler1_10 filler1_11 filler1_12 filler1_13 filler1_14 filler1_15 filler1_16 filler1_17 filler1_18 filler1_19 filler1_20 filler1_21 filler1_22 filler1_23 filler1_24 filler1_25 filler1_26 filler1_27 filler1_28 filler1_29 filler1_30 filler1_31 filler1_32 filler1_33 filler1_34 filler1_35 filler1_36 filler1_37 filler1_38 filler1_39 filler1_40 filler1_41 filler1_42 filler1_43 filler1_44 filler1_45 filler1_46 filler1_47 filler1_48 filler1_49 filler1_50 filler1_51 filler1_52 filler1_53 filler1_54 filler1_55 filler1_56 filler1_57 filler1_58 filler1_59 filler1_60 filler1_61 filler1_62 filler1_63 filler1_64 filler1_65 filler1_66 filler1_67 filler1_68 filler1_69 filler1_70 filler1_71 filler1_72 filler1_73 filler1_74 filler1_75 filler1_76 filler1_77 filler1_78 filler1_79 filler1_80 filler1_81 filler1_82 filler1_83 filler1_84 filler1_85 filler1_86 filler1_87 filler1_88 filler1_89 filler1_90 filler1_91 filler1_92 filler1_93 filler1_94 filler1_95 filler1_96 filler1_97 filler1_98 filler1_99 filler1_100 filler1_101 filler1_102 filler1_103 filler1_104 filler1_105 filler1_106 filler1_107 filler1_108 filler1_109 filler1_110 filler1_111 filler1_112 filler1_113 filler1_114 filler1_115 filler1_116 filler1_117 filler1_118 filler1_119 filler1_120 filler1_121 filler1_122 filler1_123 filler1_124 filler1_125 filler1_126 filler1_127 filler1_128 filler1_129 filler1_130 filler1_131 filler1_132 filler1_133 filler1_134 filler1_135 filler1_136 filler1_137 filler1_138 filler1_139 filler1_140 filler1_141 filler1_142 filler1_143 filler1_144 filler1_145 filler1_146 filler1_147 filler1_148 filler1_149 filler1_150 filler1_151 filler1_152 filler1_153 filler1_154 filler1_155 filler1_156 filler1_157 filler1_158 filler1_159 filler1_160 filler1_161 filler1_162 filler1_163 filler1_164 filler1_165 filler1_166 filler1_167 filler1_168 filler1_169 filler1_170 filler1_171 filler1_172 filler1_173 filler1_174 filler1_175 filler1_176 filler1_177 filler1_178 filler1_179 tailmarker_1."
+    },
+    {
+      "source_path": "expanded/service-2.md",
+      "source_type": "markdown",
+      "content": "# Service 2\n\nCodename_2 subsystem handles subject_2 workflow. Sharedgroup_0 common operational procedure. The component will authenticate records. filler2_0 filler2_1 filler2_2 filler2_3 filler2_4 filler2_5 filler2_6 filler2_7 filler2_8 filler2_9 filler2_10 filler2_11 filler2_12 filler2_13 filler2_14 filler2_15 filler2_16 filler2_17 filler2_18 filler2_19 filler2_20 filler2_21 filler2_22 filler2_23 filler2_24 filler2_25 filler2_26 filler2_27 filler2_28 filler2_29 filler2_30 filler2_31 filler2_32 filler2_33 filler2_34 filler2_35 filler2_36 filler2_37 filler2_38 filler2_39 filler2_40 filler2_41 filler2_42 filler2_43 filler2_44 filler2_45 filler2_46 filler2_47 filler2_48 filler2_49 filler2_50 filler2_51 filler2_52 filler2_53 filler2_54 filler2_55 filler2_56 filler2_57 filler2_58 filler2_59 filler2_60 filler2_61 filler2_62 filler2_63 filler2_64 filler2_65 filler2_66 filler2_67 filler2_68 filler2_69 filler2_70 filler2_71 filler2_72 filler2_73 filler2_74 filler2_75 filler2_76 filler2_77 filler2_78 filler2_79 filler2_80 filler2_81 filler2_82 filler2_83 filler2_84 filler2_85 filler2_86 filler2_87 filler2_88 filler2_89 filler2_90 filler2_91 filler2_92 filler2_93 filler2_94 filler2_95 filler2_96 filler2_97 filler2_98 filler2_99 filler2_100 filler2_101 filler2_102 filler2_103 filler2_104 filler2_105 filler2_106 filler2_107 filler2_108 filler2_109 filler2_110 filler2_111 filler2_112 filler2_113 filler2_114 filler2_115 filler2_116 filler2_117 filler2_118 filler2_119 filler2_120 filler2_121 filler2_122 filler2_123 filler2_124 filler2_125 filler2_126 filler2_127 filler2_128 filler2_129 filler2_130 filler2_131 filler2_132 filler2_133 filler2_134 filler2_135 filler2_136 filler2_137 filler2_138 filler2_139 filler2_140 filler2_141 filler2_142 filler2_143 filler2_144 filler2_145 filler2_146 filler2_147 filler2_148 filler2_149 filler2_150 filler2_151 filler2_152 filler2_153 filler2_154 filler2_155 filler2_156 filler2_157 filler2_158 filler2_159 filler2_160 filler2_161 filler2_162 filler2_163 filler2_164 filler2_165 filler2_166 filler2_167 filler2_168 filler2_169 filler2_170 filler2_171 filler2_172 filler2_173 filler2_174 filler2_175 filler2_176 filler2_177 filler2_178 filler2_179 tailmarker_2."
+    },
+    {
+      "source_path": "expanded/service-3.md",
+      "source_type": "markdown",
+      "content": "# Service 3\n\nCodename_3 subsystem handles subject_3 workflow. Sharedgroup_0 common operational procedure. The component will authorize records. filler3_0 filler3_1 filler3_2 filler3_3 filler3_4 filler3_5 filler3_6 filler3_7 filler3_8 filler3_9 filler3_10 filler3_11 filler3_12 filler3_13 filler3_14 filler3_15 filler3_16 filler3_17 filler3_18 filler3_19 filler3_20 filler3_21 filler3_22 filler3_23 filler3_24 filler3_25 filler3_26 filler3_27 filler3_28 filler3_29 filler3_30 filler3_31 filler3_32 filler3_33 filler3_34 filler3_35 filler3_36 filler3_37 filler3_38 filler3_39 filler3_40 filler3_41 filler3_42 filler3_43 filler3_44 filler3_45 filler3_46 filler3_47 filler3_48 filler3_49 filler3_50 filler3_51 filler3_52 filler3_53 filler3_54 filler3_55 filler3_56 filler3_57 filler3_58 filler3_59 filler3_60 filler3_61 filler3_62 filler3_63 filler3_64 filler3_65 filler3_66 filler3_67 filler3_68 filler3_69 filler3_70 filler3_71 filler3_72 filler3_73 filler3_74 filler3_75 filler3_76 filler3_77 filler3_78 filler3_79 filler3_80 filler3_81 filler3_82 filler3_83 filler3_84 filler3_85 filler3_86 filler3_87 filler3_88 filler3_89 filler3_90 filler3_91 filler3_92 filler3_93 filler3_94 filler3_95 filler3_96 filler3_97 filler3_98 filler3_99 filler3_100 filler3_101 filler3_102 filler3_103 filler3_104 filler3_105 filler3_106 filler3_107 filler3_108 filler3_109 filler3_110 filler3_111 filler3_112 filler3_113 filler3_114 filler3_115 filler3_116 filler3_117 filler3_118 filler3_119 filler3_120 filler3_121 filler3_122 filler3_123 filler3_124 filler3_125 filler3_126 filler3_127 filler3_128 filler3_129 filler3_130 filler3_131 filler3_132 filler3_133 filler3_134 filler3_135 filler3_136 filler3_137 filler3_138 filler3_139 filler3_140 filler3_141 filler3_142 filler3_143 filler3_144 filler3_145 filler3_146 filler3_147 filler3_148 filler3_149 filler3_150 filler3_151 filler3_152 filler3_153 filler3_154 filler3_155 filler3_156 filler3_157 filler3_158 filler3_159 filler3_160 filler3_161 filler3_162 filler3_163 filler3_164 filler3_165 filler3_166 filler3_167 filler3_168 filler3_169 filler3_170 filler3_171 filler3_172 filler3_173 filler3_174 filler3_175 filler3_176 filler3_177 filler3_178 filler3_179 tailmarker_3."
+    },
+    {
+      "source_path": "expanded/service-4.md",
+      "source_type": "markdown",
+      "content": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 filler4_15 filler4_16 filler4_17 filler4_18 filler4_19 filler4_20 filler4_21 filler4_22 filler4_23 filler4_24 filler4_25 filler4_26 filler4_27 filler4_28 filler4_29 filler4_30 filler4_31 filler4_32 filler4_33 filler4_34 filler4_35 filler4_36 filler4_37 filler4_38 filler4_39 filler4_40 filler4_41 filler4_42 filler4_43 filler4_44 filler4_45 filler4_46 filler4_47 filler4_48 filler4_49 filler4_50 filler4_51 filler4_52 filler4_53 filler4_54 filler4_55 filler4_56 filler4_57 filler4_58 filler4_59 filler4_60 filler4_61 filler4_62 filler4_63 filler4_64 filler4_65 filler4_66 filler4_67 filler4_68 filler4_69 filler4_70 filler4_71 filler4_72 filler4_73 filler4_74 filler4_75 filler4_76 filler4_77 filler4_78 filler4_79 filler4_80 filler4_81 filler4_82 filler4_83 filler4_84 filler4_85 filler4_86 filler4_87 filler4_88 filler4_89 filler4_90 filler4_91 filler4_92 filler4_93 filler4_94 filler4_95 filler4_96 filler4_97 filler4_98 filler4_99 filler4_100 filler4_101 filler4_102 filler4_103 filler4_104 filler4_105 filler4_106 filler4_107 filler4_108 filler4_109 filler4_110 filler4_111 filler4_112 filler4_113 filler4_114 filler4_115 filler4_116 filler4_117 filler4_118 filler4_119 filler4_120 filler4_121 filler4_122 filler4_123 filler4_124 filler4_125 filler4_126 filler4_127 filler4_128 filler4_129 filler4_130 filler4_131 filler4_132 filler4_133 filler4_134 filler4_135 filler4_136 filler4_137 filler4_138 filler4_139 filler4_140 filler4_141 filler4_142 filler4_143 filler4_144 filler4_145 filler4_146 filler4_147 filler4_148 filler4_149 filler4_150 filler4_151 filler4_152 filler4_153 filler4_154 filler4_155 filler4_156 filler4_157 filler4_158 filler4_159 filler4_160 filler4_161 filler4_162 filler4_163 filler4_164 filler4_165 filler4_166 filler4_167 filler4_168 filler4_169 filler4_170 filler4_171 filler4_172 filler4_173 filler4_174 filler4_175 filler4_176 filler4_177 filler4_178 filler4_179 tailmarker_4."
+    },
+    {
+      "source_path": "expanded/service-5.md",
+      "source_type": "markdown",
+      "content": "# Service 5\n\nCodename_5 subsystem handles subject_5 workflow. Sharedgroup_1 common operational procedure. The component will compress records. filler5_0 filler5_1 filler5_2 filler5_3 filler5_4 filler5_5 filler5_6 filler5_7 filler5_8 filler5_9 filler5_10 filler5_11 filler5_12 filler5_13 filler5_14 filler5_15 filler5_16 filler5_17 filler5_18 filler5_19 filler5_20 filler5_21 filler5_22 filler5_23 filler5_24 filler5_25 filler5_26 filler5_27 filler5_28 filler5_29 filler5_30 filler5_31 filler5_32 filler5_33 filler5_34 filler5_35 filler5_36 filler5_37 filler5_38 filler5_39 filler5_40 filler5_41 filler5_42 filler5_43 filler5_44 filler5_45 filler5_46 filler5_47 filler5_48 filler5_49 filler5_50 filler5_51 filler5_52 filler5_53 filler5_54 filler5_55 filler5_56 filler5_57 filler5_58 filler5_59 filler5_60 filler5_61 filler5_62 filler5_63 filler5_64 filler5_65 filler5_66 filler5_67 filler5_68 filler5_69 filler5_70 filler5_71 filler5_72 filler5_73 filler5_74 filler5_75 filler5_76 filler5_77 filler5_78 filler5_79 filler5_80 filler5_81 filler5_82 filler5_83 filler5_84 filler5_85 filler5_86 filler5_87 filler5_88 filler5_89 filler5_90 filler5_91 filler5_92 filler5_93 filler5_94 filler5_95 filler5_96 filler5_97 filler5_98 filler5_99 filler5_100 filler5_101 filler5_102 filler5_103 filler5_104 filler5_105 filler5_106 filler5_107 filler5_108 filler5_109 filler5_110 filler5_111 filler5_112 filler5_113 filler5_114 filler5_115 filler5_116 filler5_117 filler5_118 filler5_119 filler5_120 filler5_121 filler5_122 filler5_123 filler5_124 filler5_125 filler5_126 filler5_127 filler5_128 filler5_129 filler5_130 filler5_131 filler5_132 filler5_133 filler5_134 filler5_135 filler5_136 filler5_137 filler5_138 filler5_139 filler5_140 filler5_141 filler5_142 filler5_143 filler5_144 filler5_145 filler5_146 filler5_147 filler5_148 filler5_149 filler5_150 filler5_151 filler5_152 filler5_153 filler5_154 filler5_155 filler5_156 filler5_157 filler5_158 filler5_159 filler5_160 filler5_161 filler5_162 filler5_163 filler5_164 filler5_165 filler5_166 filler5_167 filler5_168 filler5_169 filler5_170 filler5_171 filler5_172 filler5_173 filler5_174 filler5_175 filler5_176 filler5_177 filler5_178 filler5_179 tailmarker_5."
+    },
+    {
+      "source_path": "expanded/service-6.md",
+      "source_type": "markdown",
+      "content": "# Service 6\n\nCodename_6 subsystem handles subject_6 workflow. Sharedgroup_1 common operational procedure. The component will configure records. filler6_0 filler6_1 filler6_2 filler6_3 filler6_4 filler6_5 filler6_6 filler6_7 filler6_8 filler6_9 filler6_10 filler6_11 filler6_12 filler6_13 filler6_14 filler6_15 filler6_16 filler6_17 filler6_18 filler6_19 filler6_20 filler6_21 filler6_22 filler6_23 filler6_24 filler6_25 filler6_26 filler6_27 filler6_28 filler6_29 filler6_30 filler6_31 filler6_32 filler6_33 filler6_34 filler6_35 filler6_36 filler6_37 filler6_38 filler6_39 filler6_40 filler6_41 filler6_42 filler6_43 filler6_44 filler6_45 filler6_46 filler6_47 filler6_48 filler6_49 filler6_50 filler6_51 filler6_52 filler6_53 filler6_54 filler6_55 filler6_56 filler6_57 filler6_58 filler6_59 filler6_60 filler6_61 filler6_62 filler6_63 filler6_64 filler6_65 filler6_66 filler6_67 filler6_68 filler6_69 filler6_70 filler6_71 filler6_72 filler6_73 filler6_74 filler6_75 filler6_76 filler6_77 filler6_78 filler6_79 filler6_80 filler6_81 filler6_82 filler6_83 filler6_84 filler6_85 filler6_86 filler6_87 filler6_88 filler6_89 filler6_90 filler6_91 filler6_92 filler6_93 filler6_94 filler6_95 filler6_96 filler6_97 filler6_98 filler6_99 filler6_100 filler6_101 filler6_102 filler6_103 filler6_104 filler6_105 filler6_106 filler6_107 filler6_108 filler6_109 filler6_110 filler6_111 filler6_112 filler6_113 filler6_114 filler6_115 filler6_116 filler6_117 filler6_118 filler6_119 filler6_120 filler6_121 filler6_122 filler6_123 filler6_124 filler6_125 filler6_126 filler6_127 filler6_128 filler6_129 filler6_130 filler6_131 filler6_132 filler6_133 filler6_134 filler6_135 filler6_136 filler6_137 filler6_138 filler6_139 filler6_140 filler6_141 filler6_142 filler6_143 filler6_144 filler6_145 filler6_146 filler6_147 filler6_148 filler6_149 filler6_150 filler6_151 filler6_152 filler6_153 filler6_154 filler6_155 filler6_156 filler6_157 filler6_158 filler6_159 filler6_160 filler6_161 filler6_162 filler6_163 filler6_164 filler6_165 filler6_166 filler6_167 filler6_168 filler6_169 filler6_170 filler6_171 filler6_172 filler6_173 filler6_174 filler6_175 filler6_176 filler6_177 filler6_178 filler6_179 tailmarker_6."
+    },
+    {
+      "source_path": "expanded/service-7.md",
+      "source_type": "markdown",
+      "content": "# Service 7\n\nCodename_7 subsystem handles subject_7 workflow. Sharedgroup_1 common operational procedure. The component will connect records. filler7_0 filler7_1 filler7_2 filler7_3 filler7_4 filler7_5 filler7_6 filler7_7 filler7_8 filler7_9 filler7_10 filler7_11 filler7_12 filler7_13 filler7_14 filler7_15 filler7_16 filler7_17 filler7_18 filler7_19 filler7_20 filler7_21 filler7_22 filler7_23 filler7_24 filler7_25 filler7_26 filler7_27 filler7_28 filler7_29 filler7_30 filler7_31 filler7_32 filler7_33 filler7_34 filler7_35 filler7_36 filler7_37 filler7_38 filler7_39 filler7_40 filler7_41 filler7_42 filler7_43 filler7_44 filler7_45 filler7_46 filler7_47 filler7_48 filler7_49 filler7_50 filler7_51 filler7_52 filler7_53 filler7_54 filler7_55 filler7_56 filler7_57 filler7_58 filler7_59 filler7_60 filler7_61 filler7_62 filler7_63 filler7_64 filler7_65 filler7_66 filler7_67 filler7_68 filler7_69 filler7_70 filler7_71 filler7_72 filler7_73 filler7_74 filler7_75 filler7_76 filler7_77 filler7_78 filler7_79 filler7_80 filler7_81 filler7_82 filler7_83 filler7_84 filler7_85 filler7_86 filler7_87 filler7_88 filler7_89 filler7_90 filler7_91 filler7_92 filler7_93 filler7_94 filler7_95 filler7_96 filler7_97 filler7_98 filler7_99 filler7_100 filler7_101 filler7_102 filler7_103 filler7_104 filler7_105 filler7_106 filler7_107 filler7_108 filler7_109 filler7_110 filler7_111 filler7_112 filler7_113 filler7_114 filler7_115 filler7_116 filler7_117 filler7_118 filler7_119 filler7_120 filler7_121 filler7_122 filler7_123 filler7_124 filler7_125 filler7_126 filler7_127 filler7_128 filler7_129 filler7_130 filler7_131 filler7_132 filler7_133 filler7_134 filler7_135 filler7_136 filler7_137 filler7_138 filler7_139 filler7_140 filler7_141 filler7_142 filler7_143 filler7_144 filler7_145 filler7_146 filler7_147 filler7_148 filler7_149 filler7_150 filler7_151 filler7_152 filler7_153 filler7_154 filler7_155 filler7_156 filler7_157 filler7_158 filler7_159 filler7_160 filler7_161 filler7_162 filler7_163 filler7_164 filler7_165 filler7_166 filler7_167 filler7_168 filler7_169 filler7_170 filler7_171 filler7_172 filler7_173 filler7_174 filler7_175 filler7_176 filler7_177 filler7_178 filler7_179 tailmarker_7."
+    },
+    {
+      "source_path": "expanded/service-8.md",
+      "source_type": "markdown",
+      "content": "# Service 8\n\nCodename_8 subsystem handles subject_8 workflow. Sharedgroup_2 common operational procedure. The component will detect records. filler8_0 filler8_1 filler8_2 filler8_3 filler8_4 filler8_5 filler8_6 filler8_7 filler8_8 filler8_9 filler8_10 filler8_11 filler8_12 filler8_13 filler8_14 filler8_15 filler8_16 filler8_17 filler8_18 filler8_19 filler8_20 filler8_21 filler8_22 filler8_23 filler8_24 filler8_25 filler8_26 filler8_27 filler8_28 filler8_29 filler8_30 filler8_31 filler8_32 filler8_33 filler8_34 filler8_35 filler8_36 filler8_37 filler8_38 filler8_39 filler8_40 filler8_41 filler8_42 filler8_43 filler8_44 filler8_45 filler8_46 filler8_47 filler8_48 filler8_49 filler8_50 filler8_51 filler8_52 filler8_53 filler8_54 filler8_55 filler8_56 filler8_57 filler8_58 filler8_59 filler8_60 filler8_61 filler8_62 filler8_63 filler8_64 filler8_65 filler8_66 filler8_67 filler8_68 filler8_69 filler8_70 filler8_71 filler8_72 filler8_73 filler8_74 filler8_75 filler8_76 filler8_77 filler8_78 filler8_79 filler8_80 filler8_81 filler8_82 filler8_83 filler8_84 filler8_85 filler8_86 filler8_87 filler8_88 filler8_89 filler8_90 filler8_91 filler8_92 filler8_93 filler8_94 filler8_95 filler8_96 filler8_97 filler8_98 filler8_99 filler8_100 filler8_101 filler8_102 filler8_103 filler8_104 filler8_105 filler8_106 filler8_107 filler8_108 filler8_109 filler8_110 filler8_111 filler8_112 filler8_113 filler8_114 filler8_115 filler8_116 filler8_117 filler8_118 filler8_119 filler8_120 filler8_121 filler8_122 filler8_123 filler8_124 filler8_125 filler8_126 filler8_127 filler8_128 filler8_129 filler8_130 filler8_131 filler8_132 filler8_133 filler8_134 filler8_135 filler8_136 filler8_137 filler8_138 filler8_139 filler8_140 filler8_141 filler8_142 filler8_143 filler8_144 filler8_145 filler8_146 filler8_147 filler8_148 filler8_149 filler8_150 filler8_151 filler8_152 filler8_153 filler8_154 filler8_155 filler8_156 filler8_157 filler8_158 filler8_159 filler8_160 filler8_161 filler8_162 filler8_163 filler8_164 filler8_165 filler8_166 filler8_167 filler8_168 filler8_169 filler8_170 filler8_171 filler8_172 filler8_173 filler8_174 filler8_175 filler8_176 filler8_177 filler8_178 filler8_179 tailmarker_8."
+    },
+    {
+      "source_path": "expanded/service-9.md",
+      "source_type": "markdown",
+      "content": "# Service 9\n\nCodename_9 subsystem handles subject_9 workflow. Sharedgroup_2 common operational procedure. The component will encrypt records. filler9_0 filler9_1 filler9_2 filler9_3 filler9_4 filler9_5 filler9_6 filler9_7 filler9_8 filler9_9 filler9_10 filler9_11 filler9_12 filler9_13 filler9_14 filler9_15 filler9_16 filler9_17 filler9_18 filler9_19 filler9_20 filler9_21 filler9_22 filler9_23 filler9_24 filler9_25 filler9_26 filler9_27 filler9_28 filler9_29 filler9_30 filler9_31 filler9_32 filler9_33 filler9_34 filler9_35 filler9_36 filler9_37 filler9_38 filler9_39 filler9_40 filler9_41 filler9_42 filler9_43 filler9_44 filler9_45 filler9_46 filler9_47 filler9_48 filler9_49 filler9_50 filler9_51 filler9_52 filler9_53 filler9_54 filler9_55 filler9_56 filler9_57 filler9_58 filler9_59 filler9_60 filler9_61 filler9_62 filler9_63 filler9_64 filler9_65 filler9_66 filler9_67 filler9_68 filler9_69 filler9_70 filler9_71 filler9_72 filler9_73 filler9_74 filler9_75 filler9_76 filler9_77 filler9_78 filler9_79 filler9_80 filler9_81 filler9_82 filler9_83 filler9_84 filler9_85 filler9_86 filler9_87 filler9_88 filler9_89 filler9_90 filler9_91 filler9_92 filler9_93 filler9_94 filler9_95 filler9_96 filler9_97 filler9_98 filler9_99 filler9_100 filler9_101 filler9_102 filler9_103 filler9_104 filler9_105 filler9_106 filler9_107 filler9_108 filler9_109 filler9_110 filler9_111 filler9_112 filler9_113 filler9_114 filler9_115 filler9_116 filler9_117 filler9_118 filler9_119 filler9_120 filler9_121 filler9_122 filler9_123 filler9_124 filler9_125 filler9_126 filler9_127 filler9_128 filler9_129 filler9_130 filler9_131 filler9_132 filler9_133 filler9_134 filler9_135 filler9_136 filler9_137 filler9_138 filler9_139 filler9_140 filler9_141 filler9_142 filler9_143 filler9_144 filler9_145 filler9_146 filler9_147 filler9_148 filler9_149 filler9_150 filler9_151 filler9_152 filler9_153 filler9_154 filler9_155 filler9_156 filler9_157 filler9_158 filler9_159 filler9_160 filler9_161 filler9_162 filler9_163 filler9_164 filler9_165 filler9_166 filler9_167 filler9_168 filler9_169 filler9_170 filler9_171 filler9_172 filler9_173 filler9_174 filler9_175 filler9_176 filler9_177 filler9_178 filler9_179 tailmarker_9."
+    },
+    {
+      "source_path": "expanded/service-10.md",
+      "source_type": "markdown",
+      "content": "# Service 10\n\nCodename_10 subsystem handles subject_10 workflow. Sharedgroup_2 common operational procedure. The component will ingest records. concise operational guidance tailmarker_10."
+    },
+    {
+      "source_path": "expanded/service-11.md",
+      "source_type": "markdown",
+      "content": "# Service 11\n\nCodename_11 subsystem handles subject_11 workflow. Sharedgroup_2 common operational procedure. The component will migrate records. concise operational guidance tailmarker_11."
+    },
+    {
+      "source_path": "expanded/service-12.md",
+      "source_type": "markdown",
+      "content": "# Service 12\n\nCodename_12 subsystem handles subject_12 workflow. Sharedgroup_3 common operational procedure. The component will observe records. concise operational guidance tailmarker_12."
+    },
+    {
+      "source_path": "expanded/service-13.md",
+      "source_type": "markdown",
+      "content": "# Service 13\n\nCodename_13 subsystem handles subject_13 workflow. Sharedgroup_3 common operational procedure. The component will persist records. concise operational guidance tailmarker_13."
+    },
+    {
+      "source_path": "expanded/service-14.md",
+      "source_type": "markdown",
+      "content": "# Service 14\n\nCodename_14 subsystem handles subject_14 workflow. Sharedgroup_3 common operational procedure. The component will retrieve records. concise operational guidance tailmarker_14."
+    },
+    {
+      "source_path": "expanded/service-15.md",
+      "source_type": "markdown",
+      "content": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+    },
+    {
+      "source_path": "expanded/service-16.md",
+      "source_type": "markdown",
+      "content": "# Service 16\n\nCodename_16 subsystem handles subject_16 workflow. Sharedgroup_4 common operational procedure. The component will synchronize records. concise operational guidance tailmarker_16."
+    },
+    {
+      "source_path": "expanded/service-17.md",
+      "source_type": "markdown",
+      "content": "# Service 17\n\nCodename_17 subsystem handles subject_17 workflow. Sharedgroup_4 common operational procedure. The component will validate records. concise operational guidance tailmarker_17."
+    },
+    {
+      "source_path": "expanded/service-18.md",
+      "source_type": "markdown",
+      "content": "# Service 18\n\nCodename_18 subsystem handles subject_18 workflow. Sharedgroup_4 common operational procedure. The component will verify records. concise operational guidance tailmarker_18."
+    },
+    {
+      "source_path": "expanded/service-19.md",
+      "source_type": "markdown",
+      "content": "# Service 19\n\nCodename_19 subsystem handles subject_19 workflow. Sharedgroup_4 common operational procedure. The component will index records. concise operational guidance tailmarker_19."
+    },
+    {
+      "source_path": "private/tenant-b-0.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_0 subsystem handles subject_0 workflow. Othersecret_0 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-1.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_1 subsystem handles subject_1 workflow. Othersecret_1 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-2.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_2 subsystem handles subject_2 workflow. Othersecret_2 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-3.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_3 subsystem handles subject_3 workflow. Othersecret_3 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-4.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_4 subsystem handles subject_4 workflow. Othersecret_4 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-5.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_5 subsystem handles subject_5 workflow. Othersecret_5 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-6.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_6 subsystem handles subject_6 workflow. Othersecret_6 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-7.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_7 subsystem handles subject_7 workflow. Othersecret_7 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-8.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_8 subsystem handles subject_8 workflow. Othersecret_8 belongs only to the second tenant."
+    },
+    {
+      "source_path": "private/tenant-b-9.txt",
+      "tenant_id": "expanded-other",
+      "source_type": "text",
+      "content": "Codename_9 subsystem handles subject_9 workflow. Othersecret_9 belongs only to the second tenant."
+    }
+  ],
+  "cases": [
+    {
+      "id": "exact-rare-00",
+      "question": "codename_0",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ]
+    },
+    {
+      "id": "exact-subject-00",
+      "question": "subject_0 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ]
+    },
+    {
+      "id": "morphology-00",
+      "question": "archival",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ]
+    },
+    {
+      "id": "exact-rare-01",
+      "question": "codename_1",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ]
+    },
+    {
+      "id": "exact-subject-01",
+      "question": "subject_1 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ]
+    },
+    {
+      "id": "morphology-01",
+      "question": "analysis",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ]
+    },
+    {
+      "id": "exact-rare-02",
+      "question": "codename_2",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ]
+    },
+    {
+      "id": "exact-subject-02",
+      "question": "subject_2 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ]
+    },
+    {
+      "id": "morphology-02",
+      "question": "authentication",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ]
+    },
+    {
+      "id": "exact-rare-03",
+      "question": "codename_3",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ]
+    },
+    {
+      "id": "exact-subject-03",
+      "question": "subject_3 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ]
+    },
+    {
+      "id": "morphology-03",
+      "question": "authorization",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ]
+    },
+    {
+      "id": "exact-rare-04",
+      "question": "codename_4",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ]
+    },
+    {
+      "id": "exact-subject-04",
+      "question": "subject_4 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ]
+    },
+    {
+      "id": "morphology-04",
+      "question": "classification",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ]
+    },
+    {
+      "id": "exact-rare-05",
+      "question": "codename_5",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ]
+    },
+    {
+      "id": "exact-subject-05",
+      "question": "subject_5 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ]
+    },
+    {
+      "id": "morphology-05",
+      "question": "compression",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ]
+    },
+    {
+      "id": "exact-rare-06",
+      "question": "codename_6",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ]
+    },
+    {
+      "id": "exact-subject-06",
+      "question": "subject_6 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ]
+    },
+    {
+      "id": "morphology-06",
+      "question": "configuration",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ]
+    },
+    {
+      "id": "exact-rare-07",
+      "question": "codename_7",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ]
+    },
+    {
+      "id": "exact-subject-07",
+      "question": "subject_7 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ]
+    },
+    {
+      "id": "morphology-07",
+      "question": "connection",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ]
+    },
+    {
+      "id": "exact-rare-08",
+      "question": "codename_8",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ]
+    },
+    {
+      "id": "exact-subject-08",
+      "question": "subject_8 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ]
+    },
+    {
+      "id": "morphology-08",
+      "question": "detection",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ]
+    },
+    {
+      "id": "exact-rare-09",
+      "question": "codename_9",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ]
+    },
+    {
+      "id": "exact-subject-09",
+      "question": "subject_9 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ]
+    },
+    {
+      "id": "morphology-09",
+      "question": "encryption",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ]
+    },
+    {
+      "id": "exact-rare-10",
+      "question": "codename_10",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-10.md"
+      ]
+    },
+    {
+      "id": "exact-subject-10",
+      "question": "subject_10 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-10.md"
+      ]
+    },
+    {
+      "id": "morphology-10",
+      "question": "ingestion",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-10.md"
+      ]
+    },
+    {
+      "id": "exact-rare-11",
+      "question": "codename_11",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-11.md"
+      ]
+    },
+    {
+      "id": "exact-subject-11",
+      "question": "subject_11 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-11.md"
+      ]
+    },
+    {
+      "id": "morphology-11",
+      "question": "migration",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-11.md"
+      ]
+    },
+    {
+      "id": "exact-rare-12",
+      "question": "codename_12",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-12.md"
+      ]
+    },
+    {
+      "id": "exact-subject-12",
+      "question": "subject_12 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-12.md"
+      ]
+    },
+    {
+      "id": "morphology-12",
+      "question": "observation",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-12.md"
+      ]
+    },
+    {
+      "id": "exact-rare-13",
+      "question": "codename_13",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-13.md"
+      ]
+    },
+    {
+      "id": "exact-subject-13",
+      "question": "subject_13 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-13.md"
+      ]
+    },
+    {
+      "id": "morphology-13",
+      "question": "persistence",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-13.md"
+      ]
+    },
+    {
+      "id": "exact-rare-14",
+      "question": "codename_14",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-14.md"
+      ]
+    },
+    {
+      "id": "exact-subject-14",
+      "question": "subject_14 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-14.md"
+      ]
+    },
+    {
+      "id": "morphology-14",
+      "question": "retrieval",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-14.md"
+      ]
+    },
+    {
+      "id": "exact-rare-15",
+      "question": "codename_15",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-15.md"
+      ]
+    },
+    {
+      "id": "exact-subject-15",
+      "question": "subject_15 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-15.md"
+      ]
+    },
+    {
+      "id": "morphology-15",
+      "question": "rotation",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-15.md"
+      ]
+    },
+    {
+      "id": "exact-rare-16",
+      "question": "codename_16",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-16.md"
+      ]
+    },
+    {
+      "id": "exact-subject-16",
+      "question": "subject_16 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-16.md"
+      ]
+    },
+    {
+      "id": "morphology-16",
+      "question": "synchronization",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-16.md"
+      ]
+    },
+    {
+      "id": "exact-rare-17",
+      "question": "codename_17",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-17.md"
+      ]
+    },
+    {
+      "id": "exact-subject-17",
+      "question": "subject_17 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-17.md"
+      ]
+    },
+    {
+      "id": "morphology-17",
+      "question": "validation",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-17.md"
+      ]
+    },
+    {
+      "id": "exact-rare-18",
+      "question": "codename_18",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-18.md"
+      ]
+    },
+    {
+      "id": "exact-subject-18",
+      "question": "subject_18 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-18.md"
+      ]
+    },
+    {
+      "id": "morphology-18",
+      "question": "verification",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-18.md"
+      ]
+    },
+    {
+      "id": "exact-rare-19",
+      "question": "codename_19",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-19.md"
+      ]
+    },
+    {
+      "id": "exact-subject-19",
+      "question": "subject_19 workflow",
+      "task_type": "exact",
+      "expected_sources": [
+        "expanded/service-19.md"
+      ]
+    },
+    {
+      "id": "morphology-19",
+      "question": "indexing",
+      "task_type": "morphology",
+      "expected_sources": [
+        "expanded/service-19.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-00",
+      "question": "sharedgroup_0 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-0.md",
+        "expanded/service-1.md",
+        "expanded/service-2.md",
+        "expanded/service-3.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-01",
+      "question": "sharedgroup_0 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-0.md",
+        "expanded/service-1.md",
+        "expanded/service-2.md",
+        "expanded/service-3.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-02",
+      "question": "sharedgroup_0 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-0.md",
+        "expanded/service-1.md",
+        "expanded/service-2.md",
+        "expanded/service-3.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-03",
+      "question": "sharedgroup_0 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-0.md",
+        "expanded/service-1.md",
+        "expanded/service-2.md",
+        "expanded/service-3.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-04",
+      "question": "sharedgroup_1 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-05",
+      "question": "sharedgroup_1 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-06",
+      "question": "sharedgroup_1 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-07",
+      "question": "sharedgroup_1 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-08",
+      "question": "sharedgroup_2 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-8.md",
+        "expanded/service-9.md",
+        "expanded/service-10.md",
+        "expanded/service-11.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-09",
+      "question": "sharedgroup_2 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-8.md",
+        "expanded/service-9.md",
+        "expanded/service-10.md",
+        "expanded/service-11.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-10",
+      "question": "sharedgroup_2 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-8.md",
+        "expanded/service-9.md",
+        "expanded/service-10.md",
+        "expanded/service-11.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-11",
+      "question": "sharedgroup_2 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-8.md",
+        "expanded/service-9.md",
+        "expanded/service-10.md",
+        "expanded/service-11.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-12",
+      "question": "sharedgroup_3 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-13",
+      "question": "sharedgroup_3 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-14",
+      "question": "sharedgroup_3 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-15",
+      "question": "sharedgroup_3 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-16",
+      "question": "sharedgroup_4 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-17",
+      "question": "sharedgroup_4 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-18",
+      "question": "sharedgroup_4 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ]
+    },
+    {
+      "id": "ambiguous-group-19",
+      "question": "sharedgroup_4 common operational",
+      "task_type": "multiple_relevant",
+      "top_k": 5,
+      "expected_sources": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ]
+    },
+    {
+      "id": "long-tail-00",
+      "question": "tailmarker_0",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ]
+    },
+    {
+      "id": "long-tail-01",
+      "question": "tailmarker_1",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ]
+    },
+    {
+      "id": "long-tail-02",
+      "question": "tailmarker_2",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ]
+    },
+    {
+      "id": "long-tail-03",
+      "question": "tailmarker_3",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ]
+    },
+    {
+      "id": "long-tail-04",
+      "question": "tailmarker_4",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ]
+    },
+    {
+      "id": "long-tail-05",
+      "question": "tailmarker_5",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ]
+    },
+    {
+      "id": "long-tail-06",
+      "question": "tailmarker_6",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ]
+    },
+    {
+      "id": "long-tail-07",
+      "question": "tailmarker_7",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ]
+    },
+    {
+      "id": "long-tail-08",
+      "question": "tailmarker_8",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ]
+    },
+    {
+      "id": "long-tail-09",
+      "question": "tailmarker_9",
+      "task_type": "long_chunk",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ]
+    },
+    {
+      "id": "tenant-isolation-00",
+      "question": "othersecret_0 codename_0",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-0.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-01",
+      "question": "othersecret_1 codename_1",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-1.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-02",
+      "question": "othersecret_2 codename_2",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-2.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-03",
+      "question": "othersecret_3 codename_3",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-3.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-04",
+      "question": "othersecret_4 codename_4",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-4.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-05",
+      "question": "othersecret_5 codename_5",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-5.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-06",
+      "question": "othersecret_6 codename_6",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-6.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-07",
+      "question": "othersecret_7 codename_7",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-7.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-08",
+      "question": "othersecret_8 codename_8",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-8.txt"
+      ]
+    },
+    {
+      "id": "tenant-isolation-09",
+      "question": "othersecret_9 codename_9",
+      "task_type": "tenant_isolation",
+      "tenant_id": "expanded-other",
+      "expected_sources": [
+        "private/tenant-b-9.txt"
+      ]
+    }
+  ]
+}
