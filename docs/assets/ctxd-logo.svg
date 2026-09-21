@@ -1,0 +1,14 @@
+<svg width="620" height="160" viewBox="0 0 620 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="616" height="156" rx="28" fill="#F7F9FC" stroke="#E2E8F0" stroke-width="4"/>
+  <g transform="translate(26 22)">
+    <rect x="0" y="0" width="116" height="116" rx="28" fill="#09101A"/>
+    <path d="M37 27H27C20.373 27 15 32.373 15 39V77C15 83.627 20.373 89 27 89H37" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round"/>
+    <path d="M79 27H89C95.627 27 101 32.373 101 39V77C101 83.627 95.627 89 89 89H79" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round"/>
+    <rect x="39" y="33" width="38" height="8" rx="4" fill="#F8FAFC"/>
+    <rect x="39" y="53" width="30" height="8" rx="4" fill="#F8FAFC" fill-opacity=".82"/>
+    <rect x="39" y="73" width="22" height="8" rx="4" fill="#F8FAFC" fill-opacity=".64"/>
+    <circle cx="79" cy="77" r="7" fill="#52D69E"/>
+  </g>
+  <text x="174" y="78" fill="#0D1117" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-3">ctxd</text>
+  <text x="178" y="111" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="2.6">CONTEXT RUNTIME</text>
+</svg>
