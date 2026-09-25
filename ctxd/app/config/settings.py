@@ -22,8 +22,12 @@ class Settings(BaseSettings):
     database_pool_max_size: int = Field(default=10, ge=1)
     database_connection_timeout_seconds: float = Field(default=5.0, gt=0)
     database_query_timeout_ms: int = Field(default=5_000, gt=0)
-    embedding_version: str = "hash-v1"
+    embedding_provider: Literal["fake", "model2vec"] = "fake"
+    embedding_version: str = "fake-hash-v1"
     embedding_dimension: int = Field(default=128, gt=0)
+    embedding_batch_size: int = Field(default=256, gt=0)
+    embedding_cache_dir: str | None = None
+    embedding_offline: bool = False
     redis_url: str = "redis://localhost:6379/0"
 
     otel_enabled: bool = True
