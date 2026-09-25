@@ -36,3 +36,20 @@ class RetrievalEvalResult(BaseModel):
     mrr: float
     ndcg_at_k: float
     per_case: dict[str, dict[str, float]]
+
+
+class RetrievalMetrics(BaseModel):
+    recall_at_1: float
+    recall_at_5: float
+    recall_at_10: float
+    mrr: float
+    ndcg_at_5: float
+    ndcg_at_10: float
+
+
+class RetrievalModeEvalResult(BaseModel):
+    case_count: int
+    model_version: str
+    modes: dict[str, RetrievalMetrics]
+    categories: dict[str, dict[str, RetrievalMetrics]]
+    failures: list[dict[str, Any]]
