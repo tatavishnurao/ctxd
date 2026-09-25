@@ -7,7 +7,12 @@ from ctxd.app.ingestion.chunking import StructureAwareChunker
 from ctxd.app.ingestion.service import IngestionService
 from ctxd.app.retrieval.index import LexicalIndex, SemanticIndex
 from ctxd.app.retrieval.lexical import BM25Retriever
-from ctxd.app.retrieval.semantic import HashEmbeddingModel, SemanticRetriever
+from ctxd.app.retrieval.semantic import (
+    EmbeddingModel,
+    FakeHashEmbeddingProvider,
+    RealEmbeddingProvider,
+    SemanticRetriever,
+)
 from ctxd.app.storage.documents import DocumentStore, InMemoryDocumentStore
 from ctxd.app.storage.postgres import PostgresDocumentStore
 
@@ -58,10 +63,18 @@ def create_runtime(
         )
     else:
         resolved_store = InMemoryDocumentStore()
-    embedding_model = HashEmbeddingModel(
-        dimension=resolved_settings.embedding_dimension,
-        version=resolved_settings.embedding_version,
-    )
+    embedding_model: EmbeddingModel
+    if resolved_settings.embedding_provider == "model2vec":
+        embedding_model = RealEmbeddingProvider(
+            cache_dir=resolved_settings.embedding_cache_dir,
+            offline=resolved_settings.embedding_offline,
+            batch_size=resolved_settings.embedding_batch_size,
+        )
+    else:
+        embedding_model = FakeHashEmbeddingProvider(
+            dimension=resolved_settings.embedding_dimension,
+            version=resolved_settings.embedding_version,
+        )
     ingestion = IngestionService(resolved_store, StructureAwareChunker(), embedding_model)
     retriever = BM25Retriever(resolved_store)
     semantic_retriever = SemanticRetriever(resolved_store, embedding_model)
