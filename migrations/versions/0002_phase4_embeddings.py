@@ -1,9 +1,4 @@
-"""Versioned tenant-scoped semantic embeddings.
-
-The portable float8[] representation keeps migrations runnable on stock
-PostgreSQL; deployments with pgvector can migrate this column to vector(N)
-without changing the application contract.
-"""
+"""Versioned tenant-scoped pgvector embeddings (exact cosine search)."""
 
 from collections.abc import Sequence
 
@@ -16,13 +11,17 @@ depends_on: str | Sequence[str] | None = None
 
 
 def upgrade() -> None:
+    op.execute("CREATE EXTENSION IF NOT EXISTS vector")
+    # An unconstrained vector column permits the 128-dimensional deterministic
+    # fixture and 256-dimensional real baseline to coexist by version. Queries
+    # always filter version and dimension before applying cosine distance.
     op.execute(
         """
         CREATE TABLE chunk_embeddings (
             tenant_id text NOT NULL,
             chunk_id text NOT NULL,
             embedding_version text NOT NULL,
-            embedding double precision[] NOT NULL,
+            embedding vector NOT NULL,
             dimension integer NOT NULL CHECK (dimension > 0),
             created_at timestamptz NOT NULL DEFAULT now(),
             updated_at timestamptz NOT NULL DEFAULT now(),
