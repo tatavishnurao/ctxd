@@ -72,8 +72,11 @@ class IngestionService:
             version = None
             if self.embedding_model is not None:
                 version = self.embedding_model.version
+                vectors = self.embedding_model.embed_documents([chunk.content for chunk in chunks])
+                if len(vectors) != len(chunks):
+                    raise RuntimeError("embedding provider returned an unexpected vector count")
                 embeddings = {
-                    chunk.chunk_id: self.embedding_model.embed(chunk.content) for chunk in chunks
+                    chunk.chunk_id: vector for chunk, vector in zip(chunks, vectors, strict=True)
                 }
             created = self.store.replace_document(
                 document, chunks, embedding_version=version, embeddings=embeddings
