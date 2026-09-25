@@ -48,6 +48,8 @@ class PostgresDocumentStore:
         pool_max_size: int = 10,
         connection_timeout_seconds: float = 5.0,
         query_timeout_ms: int = 5_000,
+        use_hnsw: bool = False,
+        hnsw_ef_search: int = 40,
     ) -> None:
         if pool_min_size < 0 or pool_max_size < 1 or pool_min_size > pool_max_size:
             raise ValueError("invalid PostgreSQL pool bounds")
@@ -55,6 +57,12 @@ class PostgresDocumentStore:
             raise ValueError("database timeouts must be positive")
         self._connection_timeout_seconds = connection_timeout_seconds
         self._query_timeout_ms = query_timeout_ms
+        # Experimental only: the default exact path remains unchanged. HNSW requires
+        # a fixed-dimension expression index because the schema also supports fixtures.
+        if hnsw_ef_search <= 0:
+            raise ValueError("HNSW ef_search must be positive")
+        self._use_hnsw = use_hnsw
+        self._hnsw_ef_search = hnsw_ef_search
         self._pool = ConnectionPool[Connection[dict[str, Any]]](
             conninfo=database_url,
             min_size=pool_min_size,
@@ -382,7 +390,7 @@ class PostgresDocumentStore:
                     connection,
                     "INSERT INTO chunk_embeddings (tenant_id, chunk_id, "
                     "embedding_version, embedding, dimension) "
-                    "VALUES (%s, %s, %s, %s, %s)",
+                    "VALUES (%s, %s, %s, %s::vector, %s)",
                     [
                         (
                             tenant_id,
@@ -602,23 +610,36 @@ class PostgresDocumentStore:
     def search_semantic(
         self, query_vector: list[float], tenant_id: str, top_k: int, *, version: str
     ) -> list[SemanticHit]:
-        with self._connection("semantic_search") as connection:
-            rows = connection.execute(
-                """
-                SELECT e.embedding, c.chunk_id, c.document_id, c.tenant_id, c.ordinal, c.content,
+        if not query_vector:
+            return []
+        # Exact pgvector cosine search. No ANN index is used: at the currently
+        # measured scales an ANN quality/maintenance tradeoff is not justified.
+        with self._connection("semantic_search") as connection, connection.transaction():
+            connection.execute(
+                "SELECT set_config('statement_timeout', %s, true)",
+                (f"{self._query_timeout_ms}ms",),
+            )
+            if self._use_hnsw:
+                connection.execute(
+                    "SELECT set_config('hnsw.ef_search', %s, true)",
+                    (str(self._hnsw_ef_search),),
+                )
+            vector_expression = "e.embedding::vector(256)" if self._use_hnsw else "e.embedding"
+            statement = f"""
+                SELECT 1.0 - ({vector_expression} <=> %s::vector) AS score,
+                       c.chunk_id, c.document_id, c.tenant_id, c.ordinal, c.content,
                        c.content_hash, c.token_count, c.start_line, c.end_line, c.metadata
                 FROM chunk_embeddings e JOIN chunks c USING (tenant_id, chunk_id)
                 WHERE e.tenant_id = %s AND e.embedding_version = %s
-                """,
-                (tenant_id, version),
+                  AND e.dimension = %s
+                ORDER BY {vector_expression} <=> %s::vector, c.chunk_id
+                LIMIT %s
+            """
+            rows = connection.execute(
+                statement,
+                (query_vector, tenant_id, version, len(query_vector), query_vector, top_k),
             ).fetchall()
-            scored: list[tuple[float, Mapping[str, Any]]] = []
-            for row in rows:
-                vector = row["embedding"]
-                score = sum(float(a) * float(b) for a, b in zip(query_vector, vector, strict=False))
-                scored.append((score, row))
-            scored.sort(key=lambda item: (-item[0], str(item[1]["chunk_id"])))
-            return [SemanticHit(self._chunk_from_row(row), score) for score, row in scored[:top_k]]
+            return [SemanticHit(self._chunk_from_row(row), float(row["score"])) for row in rows]
 
     def semantic_statistics(self, tenant_id: str) -> SemanticIndexStatistics:
         with self._connection("semantic_statistics") as connection:
