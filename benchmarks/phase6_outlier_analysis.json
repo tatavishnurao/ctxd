@@ -1,0 +1,1521 @@
+{
+  "rule": "total > median + 3 * median absolute deviation within run/mode",
+  "results": {
+    "1200": {
+      "hybrid": {
+        "count": 11,
+        "largest_component_counts": {
+          "bm25_ms": 11
+        },
+        "records": [
+          {
+            "run": 1,
+            "query_index": 20,
+            "total_ms": 34.034604992484674,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 33,
+            "total_ms": 42.45303801144473,
+            "co_spiking_components": [
+              "bm25_ms",
+              "rrf_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 34,
+            "total_ms": 34.03919000993483,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 50,
+            "total_ms": 33.28912498545833,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 20,
+            "total_ms": 31.985923007596284,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 56,
+            "total_ms": 31.24930101330392,
+            "co_spiking_components": [
+              "bm25_ms",
+              "rrf_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 101,
+            "total_ms": 31.916406995151192,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 32,
+            "total_ms": 29.078969004331157,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 80,
+            "total_ms": 29.450430010911077,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 81,
+            "total_ms": 29.035182000370696,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 80,
+            "total_ms": 34.49216301669367,
+            "co_spiking_components": [
+              "bm25_ms",
+              "rrf_ms"
+            ],
+            "largest_component": "bm25_ms"
+          }
+        ]
+      },
+      "hybrid_reranked": {
+        "count": 33,
+        "largest_component_counts": {
+          "bm25_ms": 33
+        },
+        "records": [
+          {
+            "run": 1,
+            "query_index": 51,
+            "total_ms": 49.35626100632362,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 52,
+            "total_ms": 51.59048398490995,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 62,
+            "total_ms": 53.105842001968995,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 63,
+            "total_ms": 49.40099600935355,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 87,
+            "total_ms": 51.30743398331106,
+            "co_spiking_components": [
+              "reranker_preparation_ms",
+              "reranker_tokenization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 90,
+            "total_ms": 49.67276597744785,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 95,
+            "total_ms": 53.37944600614719,
+            "co_spiking_components": [
+              "rrf_ms",
+              "reranker_preparation_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 96,
+            "total_ms": 53.97192502277903,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 100,
+            "total_ms": 50.48755600000732,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 101,
+            "total_ms": 50.76118299621157,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 110,
+            "total_ms": 50.553469016449526,
+            "co_spiking_components": [
+              "reranker_tokenization_ms",
+              "reranker_inference_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 112,
+            "total_ms": 57.306756993057206,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 32,
+            "total_ms": 50.75293101253919,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 44,
+            "total_ms": 56.690990983042866,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 51,
+            "total_ms": 57.41911500808783,
+            "co_spiking_components": [
+              "bm25_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 82,
+            "total_ms": 54.422645014710724,
+            "co_spiking_components": [
+              "bm25_ms",
+              "reranker_preparation_ms",
+              "reranker_inference_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 83,
+            "total_ms": 53.589678020216525,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 119,
+            "total_ms": 51.5653410111554,
+            "co_spiking_components": [
+              "reranker_tokenization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 108,
+            "total_ms": 51.44706001738086,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "rrf_ms",
+              "reranker_preparation_ms",
+              "reranker_tokenization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 24,
+            "total_ms": 52.67378099961206,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 25,
+            "total_ms": 48.278047994244844,
+            "co_spiking_components": [
+              "rrf_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 40,
+            "total_ms": 47.41381900385022,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 56,
+            "total_ms": 52.37923498498276,
+            "co_spiking_components": [
+              "bm25_ms",
+              "reranker_preparation_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 57,
+            "total_ms": 51.10643000807613,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 68,
+            "total_ms": 45.611134002683684,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "rrf_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 74,
+            "total_ms": 49.18246000306681,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 83,
+            "total_ms": 45.42309697717428,
+            "co_spiking_components": [
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 109,
+            "total_ms": 45.55421299301088,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 114,
+            "total_ms": 50.99308100761846,
+            "co_spiking_components": [
+              "bm25_ms",
+              "reranker_tokenization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 81,
+            "total_ms": 51.910258014686406,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 102,
+            "total_ms": 55.80983200343326,
+            "co_spiking_components": [
+              "bm25_ms",
+              "rrf_ms",
+              "reranker_preparation_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 105,
+            "total_ms": 52.10537801031023,
+            "co_spiking_components": [
+              "bm25_ms",
+              "rrf_ms",
+              "reranker_tokenization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 112,
+            "total_ms": 52.23401900730096,
+            "co_spiking_components": [
+              "reranker_inference_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          }
+        ]
+      },
+      "same_run_query_outliers_in_both_modes": 0
+    },
+    "12000": {
+      "hybrid": {
+        "count": 17,
+        "largest_component_counts": {
+          "vector_search_materialization_ms": 17
+        },
+        "records": [
+          {
+            "run": 1,
+            "query_index": 45,
+            "total_ms": 27.039670007070526,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 46,
+            "total_ms": 27.12162397801876,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "vector_search_materialization_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 79,
+            "total_ms": 27.078982995590195,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 62,
+            "total_ms": 28.526846988825127,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 42,
+            "total_ms": 27.21115801250562,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 51,
+            "total_ms": 27.000183996278793,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 99,
+            "total_ms": 28.467722004279494,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 107,
+            "total_ms": 27.73734598304145,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 97,
+            "total_ms": 28.835365985287353,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "vector_search_materialization_ms",
+              "rrf_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 98,
+            "total_ms": 29.041996982414275,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 103,
+            "total_ms": 28.94989200285636,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 119,
+            "total_ms": 28.442196984542534,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 24,
+            "total_ms": 28.32923998357728,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "rrf_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 25,
+            "total_ms": 28.520783002022654,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "rrf_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 31,
+            "total_ms": 27.358224004274234,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 40,
+            "total_ms": 28.365872014546767,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 78,
+            "total_ms": 27.811253006802872,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          }
+        ]
+      },
+      "hybrid_reranked": {
+        "count": 31,
+        "largest_component_counts": {
+          "vector_search_materialization_ms": 31
+        },
+        "records": [
+          {
+            "run": 1,
+            "query_index": 80,
+            "total_ms": 45.03481101710349,
+            "co_spiking_components": [
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 83,
+            "total_ms": 46.01758599164896,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 103,
+            "total_ms": 45.80651398282498,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 110,
+            "total_ms": 45.128720987122506,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 50,
+            "total_ms": 55.901628016727045,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 81,
+            "total_ms": 49.90031599299982,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "rrf_ms",
+              "reranker_preparation_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 111,
+            "total_ms": 47.24533701664768,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 116,
+            "total_ms": 46.9125020026695,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 119,
+            "total_ms": 48.28135998104699,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 28,
+            "total_ms": 55.5782419978641,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 35,
+            "total_ms": 49.65890198945999,
+            "co_spiking_components": [
+              "rrf_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 56,
+            "total_ms": 51.532096025766805,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "reranker_preparation_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 88,
+            "total_ms": 54.37158700078726,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "vector_search_materialization_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 98,
+            "total_ms": 48.61995700048283,
+            "co_spiking_components": [],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 100,
+            "total_ms": 48.75541798537597,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 102,
+            "total_ms": 51.4389640011359,
+            "co_spiking_components": [
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 103,
+            "total_ms": 54.669650009600446,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 42,
+            "total_ms": 55.401115998392925,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 49,
+            "total_ms": 56.135463004466146,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 94,
+            "total_ms": 53.99494298035279,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 117,
+            "total_ms": 57.12749599479139,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 25,
+            "total_ms": 50.23619200801477,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 31,
+            "total_ms": 48.608356999466196,
+            "co_spiking_components": [],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 40,
+            "total_ms": 47.4745069805067,
+            "co_spiking_components": [
+              "reranker_inference_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 43,
+            "total_ms": 50.21969598601572,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 49,
+            "total_ms": 53.4489179844968,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "reranker_tokenization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 60,
+            "total_ms": 48.01192300510593,
+            "co_spiking_components": [
+              "rrf_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 68,
+            "total_ms": 50.35704199690372,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 79,
+            "total_ms": 49.33672500192188,
+            "co_spiking_components": [],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 84,
+            "total_ms": 49.50886400183663,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "reranker_preparation_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 111,
+            "total_ms": 51.170964987250045,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          }
+        ]
+      },
+      "same_run_query_outliers_in_both_modes": 3
+    },
+    "50004": {
+      "hybrid": {
+        "count": 40,
+        "largest_component_counts": {
+          "vector_search_materialization_ms": 10,
+          "bm25_ms": 30
+        },
+        "records": [
+          {
+            "run": 1,
+            "query_index": 60,
+            "total_ms": 83.65221400163136,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 80,
+            "total_ms": 64.88710499252193,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 89,
+            "total_ms": 68.71690799016505,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 99,
+            "total_ms": 64.72780299372971,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 109,
+            "total_ms": 66.21434199041687,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 116,
+            "total_ms": 66.33450600202195,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 117,
+            "total_ms": 65.24459199863486,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 22,
+            "total_ms": 71.69404998421669,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 24,
+            "total_ms": 67.07257102243602,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 33,
+            "total_ms": 67.02675999258645,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 36,
+            "total_ms": 68.59082001028582,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 37,
+            "total_ms": 68.28070300980471,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 39,
+            "total_ms": 71.30057900212705,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 52,
+            "total_ms": 72.406447987305,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "vector_search_materialization_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 64,
+            "total_ms": 68.80749500123784,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 65,
+            "total_ms": 70.31083200126886,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 69,
+            "total_ms": 66.44312699791044,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 109,
+            "total_ms": 70.92715700855479,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 119,
+            "total_ms": 66.47857901407406,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 22,
+            "total_ms": 73.1304389773868,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 34,
+            "total_ms": 64.734662999399,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 44,
+            "total_ms": 68.51584900869057,
+            "co_spiking_components": [
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 60,
+            "total_ms": 69.3076660099905,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 64,
+            "total_ms": 64.02571298531257,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 79,
+            "total_ms": 64.81981699471362,
+            "co_spiking_components": [],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 86,
+            "total_ms": 70.72947299457155,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 92,
+            "total_ms": 65.74737600749359,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 22,
+            "total_ms": 70.98546999623068,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 23,
+            "total_ms": 74.07860099920072,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 26,
+            "total_ms": 71.77218201104552,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 40,
+            "total_ms": 71.69727800646797,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 44,
+            "total_ms": 76.05521302320994,
+            "co_spiking_components": [
+              "bm25_ms",
+              "rrf_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 20,
+            "total_ms": 69.47959001990966,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 26,
+            "total_ms": 79.84253601171076,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 34,
+            "total_ms": 65.30779099557549,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 51,
+            "total_ms": 65.1289630040992,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 67,
+            "total_ms": 67.40458298008889,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 76,
+            "total_ms": 64.08053898485377,
+            "co_spiking_components": [
+              "rrf_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 86,
+            "total_ms": 64.69605499296449,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 90,
+            "total_ms": 64.90840000333264,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          }
+        ]
+      },
+      "hybrid_reranked": {
+        "count": 17,
+        "largest_component_counts": {
+          "bm25_ms": 8,
+          "vector_search_materialization_ms": 9
+        },
+        "records": [
+          {
+            "run": 1,
+            "query_index": 83,
+            "total_ms": 91.60374500788748,
+            "co_spiking_components": [
+              "bm25_ms",
+              "reranker_inference_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 1,
+            "query_index": 84,
+            "total_ms": 92.34383000875823,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 26,
+            "total_ms": 96.46916898782365,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 75,
+            "total_ms": 97.37378999125212,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "reranker_preparation_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 95,
+            "total_ms": 100.17093599890359,
+            "co_spiking_components": [
+              "bm25_ms",
+              "reranker_preparation_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 101,
+            "total_ms": 96.45766101311892,
+            "co_spiking_components": [
+              "bm25_ms",
+              "reranker_tokenization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 105,
+            "total_ms": 96.81476399418898,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 113,
+            "total_ms": 105.15205800766125,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 2,
+            "query_index": 116,
+            "total_ms": 100.34323501167819,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "reranker_inference_ms",
+              "context_selection_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 60,
+            "total_ms": 95.34048297791742,
+            "co_spiking_components": [
+              "bm25_ms",
+              "rrf_ms",
+              "reranker_preparation_ms",
+              "reranker_tokenization_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 3,
+            "query_index": 100,
+            "total_ms": 99.55718001583591,
+            "co_spiking_components": [
+              "bm25_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 67,
+            "total_ms": 103.40703898691572,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 84,
+            "total_ms": 102.69463999429718,
+            "co_spiking_components": [
+              "bm25_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 4,
+            "query_index": 109,
+            "total_ms": 107.97131797880866,
+            "co_spiking_components": [
+              "query_embedding_ms",
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 83,
+            "total_ms": 100.28904399950989,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms",
+              "reranker_preparation_ms"
+            ],
+            "largest_component": "bm25_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 87,
+            "total_ms": 101.15248497459106,
+            "co_spiking_components": [
+              "vector_search_materialization_ms",
+              "reranker_tokenization_ms",
+              "reranker_inference_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          },
+          {
+            "run": 5,
+            "query_index": 107,
+            "total_ms": 100.46829702332616,
+            "co_spiking_components": [
+              "bm25_ms",
+              "vector_search_materialization_ms"
+            ],
+            "largest_component": "vector_search_materialization_ms"
+          }
+        ]
+      },
+      "same_run_query_outliers_in_both_modes": 1
+    }
+  },
+  "causality_warning": "Component co-spikes are diagnostic correlations, not proof of host or database cause."
+}
