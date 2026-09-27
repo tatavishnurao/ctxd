@@ -1,0 +1,1197 @@
+{
+  "python_version": "3.13.15",
+  "postgresql_version": "17.11 (Debian 17.11-1.pgdg12+2)",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "commit": "eb4d3af",
+  "model_version": "model2vec:minishlab/potion-base-8M@bf8b056651a2c21b8d2565580b8569da283cab23:normalized",
+  "embedding_dimension": 256,
+  "normalized": true,
+  "similarity": "cosine",
+  "warmups": 20,
+  "samples": 100,
+  "concurrency_samples": 160,
+  "pool_max": 32,
+  "methodology": "Production PostgresDocumentStore, BM25Retriever, SemanticRetriever, HybridRetriever(candidate_depth=20), and ContextAssembler; exact cosine pgvector; destructive dedicated DB.",
+  "results": {
+    "1200": {
+      "corpus": {
+        "documents": 100,
+        "chunks": 1200,
+        "average_chunk_length": 23.0,
+        "vocabulary_size": 1437,
+        "embedding_dimension": 256
+      },
+      "ingestion": {
+        "documents": 100,
+        "chunks": 1200,
+        "embedding_computation": {
+          "p50_ms": 1.586585500263027,
+          "p95_ms": 2.0306900005380157,
+          "p99_ms": 2.302741999301361,
+          "qps": 591.3662304877971
+        },
+        "postgres_persistence_with_embeddings": {
+          "p50_ms": 29.71927299950039,
+          "p95_ms": 51.128468996466836,
+          "p99_ms": 56.732936998741934,
+          "qps": 30.25911487373892
+        },
+        "lexical_postgres_probe": {
+          "p50_ms": 35.133826999299345,
+          "p95_ms": 36.18284299955121,
+          "p99_ms": 36.18284299955121,
+          "qps": 28.314235965966777
+        },
+        "production_ingest_total": {
+          "p50_ms": 32.58345949871,
+          "p95_ms": 53.11921300017275,
+          "p99_ms": 58.79321300017182,
+          "qps": 28.332623211559326
+        },
+        "chunks_per_second": 339.99147853871193,
+        "documents_per_second": 28.332623211559326
+      },
+      "reingestion": {
+        "documents_replayed": 100,
+        "embedded_chunks_before": 1200,
+        "embedded_chunks_after": 1200,
+        "skipped_embeddings": 1200,
+        "recomputed_embeddings": 0,
+        "reingestion": {
+          "p50_ms": 1.5130764986679424,
+          "p95_ms": 1.9703049983945675,
+          "p99_ms": 2.3662490020797122,
+          "qps": 647.5588539913625
+        }
+      },
+      "sequential": {
+        "lexical": {
+          "p50_ms": 2.091201002258458,
+          "p95_ms": 22.148436997667886,
+          "p99_ms": 26.79569600149989,
+          "qps": 170.76026289001473
+        },
+        "semantic": {
+          "p50_ms": 3.8341940016834997,
+          "p95_ms": 167.16712999914307,
+          "p99_ms": 185.98199899861356,
+          "qps": 31.219275043196735
+        },
+        "hybrid_parallel": {
+          "p50_ms": 4.797537501872284,
+          "p95_ms": 177.55028600004152,
+          "p99_ms": 186.82567900032154,
+          "qps": 28.954324236355355
+        },
+        "hybrid_sequential": {
+          "p50_ms": 6.2527044992748415,
+          "p95_ms": 195.27951599957305,
+          "p99_ms": 209.37508499991964,
+          "qps": 25.690866877854827
+        },
+        "context_assembler": {
+          "p50_ms": 4.802405999726034,
+          "p95_ms": 185.52749199807295,
+          "p99_ms": 201.77219700053683,
+          "qps": 29.365547393601737
+        }
+      },
+      "components": {
+        "query_embedding": {
+          "p50_ms": 0.21876050050195772,
+          "p95_ms": 0.3511020004225429,
+          "p99_ms": 0.5678369998349808,
+          "qps": 4156.313811532425
+        },
+        "bm25": {
+          "p50_ms": 2.2412754988181405,
+          "p95_ms": 3.3076190011342987,
+          "p99_ms": 3.676068998174742,
+          "qps": 423.4681222938622
+        },
+        "vector_search_and_materialization": {
+          "p50_ms": 3.5351464994164417,
+          "p95_ms": 4.985210001905216,
+          "p99_ms": 5.959199002973037,
+          "qps": 271.30161676123646
+        },
+        "rrf": {
+          "p50_ms": 0.07046099926810712,
+          "p95_ms": 0.09798199971555732,
+          "p99_ms": 0.12349900134722702,
+          "qps": 13641.97667829454
+        },
+        "context_assembler_selection": {
+          "p50_ms": 0.00202999945031479,
+          "p95_ms": 0.002855002094293013,
+          "p99_ms": 0.0033939977583941072,
+          "qps": 468939.7822415956
+        },
+        "note": "vector timings include SQL row materialization and Chunk Pydantic conversion"
+      },
+      "concurrency": {
+        "semantic": {
+          "1": {
+            "p50_ms": 5.051545000242186,
+            "p95_ms": 9.608186999685131,
+            "p99_ms": 10.215146998234559,
+            "qps": 160.80929190356315,
+            "concurrency": 1,
+            "errors": 0,
+            "wall_qps": 159.8498172606623,
+            "pool_statistics": {
+              "connections_num": 2,
+              "connections_ms": 13,
+              "requests_num": 1204,
+              "usage_ms": 20197,
+              "requests_queued": 1,
+              "requests_wait_ms": 7,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 2,
+              "pool_available": 2,
+              "requests_waiting": 0
+            }
+          },
+          "4": {
+            "p50_ms": 8.433813500232645,
+            "p95_ms": 13.710811999771977,
+            "p99_ms": 15.621978000126546,
+            "qps": 107.97802807137357,
+            "concurrency": 4,
+            "errors": 0,
+            "wall_qps": 294.9557464603657,
+            "pool_statistics": {
+              "connections_num": 4,
+              "connections_ms": 30,
+              "requests_num": 1364,
+              "usage_ms": 21452,
+              "requests_queued": 4,
+              "requests_wait_ms": 24,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 4,
+              "pool_available": 4,
+              "requests_waiting": 0
+            }
+          },
+          "8": {
+            "p50_ms": 21.139182497790898,
+            "p95_ms": 24.033617999521084,
+            "p99_ms": 24.979985999380006,
+            "qps": 48.6589271240873,
+            "concurrency": 8,
+            "errors": 0,
+            "wall_qps": 332.70569997304733,
+            "pool_statistics": {
+              "connections_num": 8,
+              "connections_ms": 83,
+              "requests_num": 1524,
+              "usage_ms": 24295,
+              "requests_queued": 14,
+              "requests_wait_ms": 129,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 8,
+              "pool_available": 8,
+              "requests_waiting": 0
+            }
+          },
+          "16": {
+            "p50_ms": 40.74592300094082,
+            "p95_ms": 47.54868900272413,
+            "p99_ms": 48.86365699712769,
+            "qps": 24.956363303464563,
+            "concurrency": 16,
+            "errors": 0,
+            "wall_qps": 329.6759407293601,
+            "pool_statistics": {
+              "connections_num": 16,
+              "connections_ms": 236,
+              "requests_num": 1684,
+              "usage_ms": 29675,
+              "requests_queued": 34,
+              "requests_wait_ms": 613,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 16,
+              "pool_available": 16,
+              "requests_waiting": 0
+            }
+          },
+          "32": {
+            "p50_ms": 74.37972700063256,
+            "p95_ms": 97.21452600206248,
+            "p99_ms": 101.36788499949034,
+            "qps": 13.573089265527212,
+            "concurrency": 32,
+            "errors": 0,
+            "wall_qps": 322.51674588081823,
+            "pool_statistics": {
+              "connections_num": 26,
+              "connections_ms": 591,
+              "requests_num": 1844,
+              "usage_ms": 37674,
+              "requests_queued": 95,
+              "requests_wait_ms": 3413,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 26,
+              "pool_available": 26,
+              "requests_waiting": 0
+            }
+          }
+        },
+        "hybrid": {
+          "1": {
+            "p50_ms": 5.802595000204747,
+            "p95_ms": 10.129679001693148,
+            "p99_ms": 10.604807997879107,
+            "qps": 159.02915958226154,
+            "concurrency": 1,
+            "errors": 0,
+            "wall_qps": 158.13088471965196,
+            "pool_statistics": {
+              "connections_num": 26,
+              "connections_ms": 591,
+              "requests_num": 2164,
+              "usage_ms": 38959,
+              "requests_queued": 95,
+              "requests_wait_ms": 3413,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 26,
+              "pool_available": 26,
+              "requests_waiting": 0
+            }
+          },
+          "4": {
+            "p50_ms": 20.96417600114364,
+            "p95_ms": 23.084381999069592,
+            "p99_ms": 23.60563099864521,
+            "qps": 48.43075054438195,
+            "concurrency": 4,
+            "errors": 0,
+            "wall_qps": 179.2618232722642,
+            "pool_statistics": {
+              "connections_num": 26,
+              "connections_ms": 591,
+              "requests_num": 2484,
+              "usage_ms": 43451,
+              "requests_queued": 95,
+              "requests_wait_ms": 3413,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 26,
+              "pool_available": 26,
+              "requests_waiting": 0
+            }
+          },
+          "8": {
+            "p50_ms": 43.83581900037825,
+            "p95_ms": 47.818492999795126,
+            "p99_ms": 49.86810599802993,
+            "qps": 23.891810622024142,
+            "concurrency": 8,
+            "errors": 0,
+            "wall_qps": 170.62351284039505,
+            "pool_statistics": {
+              "connections_num": 26,
+              "connections_ms": 591,
+              "requests_num": 2804,
+              "usage_ms": 50979,
+              "requests_queued": 95,
+              "requests_wait_ms": 3413,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 26,
+              "pool_available": 26,
+              "requests_waiting": 0
+            }
+          },
+          "16": {
+            "p50_ms": 83.72900849826692,
+            "p95_ms": 89.83776700188173,
+            "p99_ms": 90.74601999964216,
+            "qps": 12.709042166049098,
+            "concurrency": 16,
+            "errors": 0,
+            "wall_qps": 176.86279070684483,
+            "pool_statistics": {
+              "connections_num": 26,
+              "connections_ms": 591,
+              "requests_num": 3124,
+              "usage_ms": 61294,
+              "requests_queued": 95,
+              "requests_wait_ms": 3413,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 26,
+              "pool_available": 26,
+              "requests_waiting": 0
+            }
+          },
+          "32": {
+            "p50_ms": 160.9642250023171,
+            "p95_ms": 182.34837300042273,
+            "p99_ms": 186.05363399910857,
+            "qps": 6.43905791180026,
+            "concurrency": 32,
+            "errors": 0,
+            "wall_qps": 178.52603513909884,
+            "pool_statistics": {
+              "connections_num": 30,
+              "connections_ms": 768,
+              "requests_num": 3444,
+              "usage_ms": 75690,
+              "requests_queued": 107,
+              "requests_wait_ms": 3584,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 30,
+              "pool_available": 30,
+              "requests_waiting": 0
+            }
+          }
+        }
+      },
+      "storage": {
+        "relations": {
+          "alembic_version": {
+            "table_bytes": 8192,
+            "index_bytes": 16384,
+            "total_bytes": 24576
+          },
+          "chunk_embeddings": {
+            "table_bytes": 1679360,
+            "index_bytes": 163840,
+            "total_bytes": 1843200
+          },
+          "chunks": {
+            "table_bytes": 827392,
+            "index_bytes": 458752,
+            "total_bytes": 1286144
+          },
+          "documents": {
+            "table_bytes": 98304,
+            "index_bytes": 32768,
+            "total_bytes": 131072
+          },
+          "lexical_corpus_stats": {
+            "table_bytes": 16384,
+            "index_bytes": 16384,
+            "total_bytes": 32768
+          },
+          "lexical_postings": {
+            "table_bytes": 2449408,
+            "index_bytes": 3055616,
+            "total_bytes": 5505024
+          },
+          "lexical_terms": {
+            "table_bytes": 147456,
+            "index_bytes": 131072,
+            "total_bytes": 278528
+          }
+        },
+        "database_bytes": 17241779,
+        "counts": {
+          "chunks": 1200,
+          "embeddings": 1200
+        },
+        "bytes_per_chunk": 14368.149166666666,
+        "bytes_per_embedding": 1536.0,
+        "embedding_percent_database": 10.69031217718311,
+        "lexical_index_bytes": 3661824,
+        "lexical_index_percent_database": 21.238086858670442
+      },
+      "query_plan": "Limit  (cost=369.37..369.42 rows=20 width=45) (actual time=1.734..1.739 rows=20 loops=1)\n  Buffers: shared hit=223\n  ->  Sort  (cost=369.37..372.37 rows=1200 width=45) (actual time=1.733..1.735 rows=20 loops=1)\n        Sort Key: ((e.embedding <=> '[0.065380685,0.015111542,-0.15327089,-0.2882797,0.17309132,0.050484017,0.08494171,-0.20196386,-0.04881336,-0.043801162,0.007866172,0.046993535,0.011329815,-0.02692756,-0.089394115,-0.0005768632,-0.03300506,-0.016659986,-0.03543874,0.02031725,0.12499164,-0.010481772,-0.04286246,0.09166914,-0.06037305,0.013211001,0.0503252,-0.0934273,-0.12212906,0.13794507,-0.07770659,0.14171112,0.03419284,-0.05083123,0.027653005,-0.10438425,-0.046416037,-0.017438978,0.06110442,0.07084716,-0.058853194,-0.066493444,0.120149195,-0.008109696,-0.013054288,-0.15498485,-0.11990066,-0.030168893,-0.06788934,0.073768586,0.010491967,0.060907688,-0.11163441,-0.067172796,-0.03995981,-0.07471097,0.026531095,0.1191847,0.050816827,-0.104062304,-0.08317943,-0.04921768,0.07332979,0.02347774,-0.044178735,0.046258084,-0.13199206,-0.0106202345,0.040335923,-0.017946446,-0.08445923,-0.034102555,0.07459479,0.05280326,0.00016107335,0.16828334,0.014944725,0.007856321,0.014483853,0.04269921,-0.022841495,-0.03554341,-0.068284295,-0.04690053,0.17589569,0.102637246,0.026040439,0.065288894,0.0239099,0.054615095,0.1477115,0.0011902135,-0.029699154,-0.042849705,-0.11011465,0.10757157,-0.002882358,0.027280036,-0.05498385,-0.14076139,0.013681429,-0.09003933,0.076951146,-0.048775528,-0.09004148,0.06640935,-0.0050436636,-0.06398118,-0.0072656674,0.120388746,-0.0031192782,0.00041793293,-0.08005506,-0.037711866,-0.051467553,0.09289388,-0.029581156,0.05859139,-0.024864636,0.08481916,-0.108375944,0.09082787,-0.07811244,0.039675962,-0.06720698,-0.020074498,0.10880914,-0.024320005,-0.0026919118,-0.016489271,-0.0376328,-0.04627733,0.02039068,0.044271257,0.03324131,-0.009874286,-0.13729432,-0.019860934,-0.02086444,-0.020611737,0.016757589,0.01936238,0.015221155,0.086892754,0.02398539,-0.045437675,-0.0035490391,0.012664994,0.02350025,-0.0011603708,-0.07461456,-0.050496608,-0.04974728,-0.021253338,0.03415631,0.050432518,-0.027017383,0.08181516,0.0015166391,0.07573559,0.0023620322,0.11406341,-0.036974575,-0.025848836,-0.008844016,0.058856092,-0.02910652,-0.033404645,-0.014913668,-0.003884328,0.022413727,-0.014323624,0.018991064,0.046338074,-0.028158534,0.0051271855,0.009443612,-0.023056261,-0.0019401974,-0.05316448,0.0187079,0.028510852,-0.0074475855,0.061302196,0.021427598,0.084126435,0.036535826,-0.04041037,-0.0055666934,0.04930407,-0.0141845355,-0.018480929,-0.028134072,0.0097634215,0.025122447,-0.047740698,-0.04108126,-0.004570728,-0.016832318,0.0011516586,0.03126901,0.07296017,0.0021592798,-0.050232865,0.030889623,-0.08068679,-0.03480086,0.084013045,0.016613415,0.030968783,-0.019000998,0.051527966,0.0020442144,-0.038875345,0.01372618,-0.021294257,-0.049348682,0.0038927407,-0.02359195,-0.018069474,-0.0029286589,0.0065510427,0.0012158303,0.045271665,0.00883921,-0.0028866797,0.012677712,-0.03246245,-0.0035316173,0.011865439,-0.03686972,-0.035736114,-0.022728087,-0.04175751,-0.0042232894,0.034910753,0.02264279,-0.03249335,-0.018848427,0.050478816,-0.0032511526,0.07181831,-0.0023167126,-0.0063632904,0.017965974,-0.022420073,0.009922602,0.08823686,-0.028824568,-0.040675256,-0.05132971,0.06476256,-0.010754348,-0.018992547,-0.035964746,-0.010089294]'::vector)), c.chunk_id\n        Sort Method: top-N heapsort  Memory: 26kB\n        Buffers: shared hit=223\n        ->  Hash Join  (cost=104.28..337.44 rows=1200 width=45) (actual time=0.455..1.502 rows=1200 loops=1)\n              Hash Cond: (e.chunk_id = c.chunk_id)\n              Buffers: shared hit=217\n              ->  Seq Scan on chunk_embeddings e  (cost=0.00..221.00 rows=1200 width=1077) (actual time=0.006..0.572 rows=1200 loops=1)\n                    Filter: ((tenant_id = 'phase4b-closure'::text) AND (embedding_version = 'model2vec:minishlab/potion-base-8M@bf8b056651a2c21b8d2565580b8569da283cab23:normalized'::text) AND (dimension = 256))\n                    Buffers: shared hit=200\n              ->  Hash  (cost=89.28..89.28 rows=1200 width=45) (actual time=0.435..0.435 rows=1200 loops=1)\n                    Buckets: 2048  Batches: 1  Memory Usage: 107kB\n                    Buffers: shared hit=17\n                    ->  Index Only Scan using chunks_pkey on chunks c  (cost=0.28..89.28 rows=1200 width=45) (actual time=0.025..0.202 rows=1200 loops=1)\n                          Index Cond: (tenant_id = 'phase4b-closure'::text)\n                          Heap Fetches: 13\n                          Buffers: shared hit=17\nPlanning:\n  Buffers: shared hit=226\nPlanning Time: 0.681 ms\nExecution Time: 1.796 ms"
+    },
+    "12000": {
+      "corpus": {
+        "documents": 1000,
+        "chunks": 12000,
+        "average_chunk_length": 23.0,
+        "vocabulary_size": 14037,
+        "embedding_dimension": 256
+      },
+      "ingestion": {
+        "documents": 1000,
+        "chunks": 12000,
+        "embedding_computation": {
+          "p50_ms": 1.630243001272902,
+          "p95_ms": 2.1958430006634444,
+          "p99_ms": 2.772960000584135,
+          "qps": 592.4390604540257
+        },
+        "postgres_persistence_with_embeddings": {
+          "p50_ms": 23.7204049990396,
+          "p95_ms": 32.422700998722576,
+          "p99_ms": 38.60668799825362,
+          "qps": 40.70505927273149
+        },
+        "lexical_postgres_probe": {
+          "p50_ms": 33.638329499808606,
+          "p95_ms": 36.912603998644045,
+          "p99_ms": 36.912603998644045,
+          "qps": 29.92972070643755
+        },
+        "production_ingest_total": {
+          "p50_ms": 25.959143000363838,
+          "p95_ms": 35.39952800201718,
+          "p99_ms": 42.44382700198912,
+          "qps": 37.28788503024191
+        },
+        "chunks_per_second": 447.4546203629029,
+        "documents_per_second": 37.28788503024191
+      },
+      "reingestion": {
+        "documents_replayed": 1000,
+        "embedded_chunks_before": 12000,
+        "embedded_chunks_after": 12000,
+        "skipped_embeddings": 12000,
+        "recomputed_embeddings": 0,
+        "reingestion": {
+          "p50_ms": 2.347286999793141,
+          "p95_ms": 4.140024000662379,
+          "p99_ms": 5.20421900000656,
+          "qps": 392.7680256530568
+        }
+      },
+      "sequential": {
+        "lexical": {
+          "p50_ms": 9.258142999897245,
+          "p95_ms": 12.077510000381153,
+          "p99_ms": 15.294403998268535,
+          "qps": 103.90060330441796
+        },
+        "semantic": {
+          "p50_ms": 21.868038498723763,
+          "p95_ms": 25.93878399784444,
+          "p99_ms": 29.986602003191365,
+          "qps": 45.21553799140152
+        },
+        "hybrid_parallel": {
+          "p50_ms": 22.80247549970227,
+          "p95_ms": 28.53764300016337,
+          "p99_ms": 34.84292000212008,
+          "qps": 42.4693715699724
+        },
+        "hybrid_sequential": {
+          "p50_ms": 31.747553999593947,
+          "p95_ms": 36.88427599990973,
+          "p99_ms": 41.81464900102583,
+          "qps": 31.413347571742
+        },
+        "context_assembler": {
+          "p50_ms": 23.26305200040224,
+          "p95_ms": 30.010279999260092,
+          "p99_ms": 35.80652399978135,
+          "qps": 41.76408264237262
+        }
+      },
+      "components": {
+        "query_embedding": {
+          "p50_ms": 0.29900550180173013,
+          "p95_ms": 0.35512499744072556,
+          "p99_ms": 0.36152100074104965,
+          "qps": 3311.55105303054
+        },
+        "bm25": {
+          "p50_ms": 8.920161999412812,
+          "p95_ms": 10.310056997695938,
+          "p99_ms": 10.621808996802429,
+          "qps": 112.00572887156933
+        },
+        "vector_search_and_materialization": {
+          "p50_ms": 20.07400899856293,
+          "p95_ms": 23.69472500140546,
+          "p99_ms": 26.99372699862579,
+          "qps": 48.86375237727606
+        },
+        "rrf": {
+          "p50_ms": 0.08944699948187917,
+          "p95_ms": 0.11036599971703254,
+          "p99_ms": 0.13962099910713732,
+          "qps": 11002.654319463993
+        },
+        "context_assembler_selection": {
+          "p50_ms": 0.0025139997887890786,
+          "p95_ms": 0.0032150019251275808,
+          "p99_ms": 0.003335000656079501,
+          "qps": 393182.217277655
+        },
+        "note": "vector timings include SQL row materialization and Chunk Pydantic conversion"
+      },
+      "concurrency": {
+        "semantic": {
+          "1": {
+            "p50_ms": 20.005845501145814,
+            "p95_ms": 25.366948000737466,
+            "p99_ms": 29.871685997932218,
+            "qps": 48.31649199677513,
+            "concurrency": 1,
+            "errors": 0,
+            "wall_qps": 48.206036761291365,
+            "pool_statistics": {
+              "connections_num": 2,
+              "connections_ms": 17,
+              "requests_num": 1204,
+              "usage_ms": 18757,
+              "requests_queued": 1,
+              "requests_wait_ms": 8,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 2,
+              "pool_available": 2,
+              "requests_waiting": 0
+            }
+          },
+          "4": {
+            "p50_ms": 28.287563500271062,
+            "p95_ms": 34.49457800161326,
+            "p99_ms": 36.86976999961189,
+            "qps": 34.62358255836363,
+            "concurrency": 4,
+            "errors": 0,
+            "wall_qps": 127.91514170900744,
+            "pool_statistics": {
+              "connections_num": 4,
+              "connections_ms": 34,
+              "requests_num": 1364,
+              "usage_ms": 23099,
+              "requests_queued": 3,
+              "requests_wait_ms": 38,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 4,
+              "pool_available": 4,
+              "requests_waiting": 0
+            }
+          },
+          "8": {
+            "p50_ms": 41.694671501318226,
+            "p95_ms": 55.65405900051701,
+            "p99_ms": 61.61131399858277,
+            "qps": 23.17408353836512,
+            "concurrency": 8,
+            "errors": 0,
+            "wall_qps": 157.69548672756582,
+            "pool_statistics": {
+              "connections_num": 8,
+              "connections_ms": 84,
+              "requests_num": 1524,
+              "usage_ms": 29489,
+              "requests_queued": 8,
+              "requests_wait_ms": 155,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 8,
+              "pool_available": 8,
+              "requests_waiting": 0
+            }
+          },
+          "16": {
+            "p50_ms": 69.25259950003237,
+            "p95_ms": 101.05893399668275,
+            "p99_ms": 106.835996000882,
+            "qps": 13.783334327088218,
+            "concurrency": 16,
+            "errors": 0,
+            "wall_qps": 163.7700586455213,
+            "pool_statistics": {
+              "connections_num": 16,
+              "connections_ms": 317,
+              "requests_num": 1684,
+              "usage_ms": 39517,
+              "requests_queued": 25,
+              "requests_wait_ms": 953,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 16,
+              "pool_available": 16,
+              "requests_waiting": 0
+            }
+          },
+          "32": {
+            "p50_ms": 133.9732020005613,
+            "p95_ms": 171.63511800026754,
+            "p99_ms": 179.01676500332542,
+            "qps": 7.909165692958772,
+            "concurrency": 32,
+            "errors": 0,
+            "wall_qps": 173.31781640624217,
+            "pool_statistics": {
+              "connections_num": 28,
+              "connections_ms": 949,
+              "requests_num": 1844,
+              "usage_ms": 54487,
+              "requests_queued": 78,
+              "requests_wait_ms": 5051,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 28,
+              "pool_available": 28,
+              "requests_waiting": 0
+            }
+          }
+        },
+        "hybrid": {
+          "1": {
+            "p50_ms": 23.28123100232915,
+            "p95_ms": 26.49512800053344,
+            "p99_ms": 31.724223001219798,
+            "qps": 42.6518416599259,
+            "concurrency": 1,
+            "errors": 0,
+            "wall_qps": 42.5734943925663,
+            "pool_statistics": {
+              "connections_num": 28,
+              "connections_ms": 949,
+              "requests_num": 2164,
+              "usage_ms": 59649,
+              "requests_queued": 78,
+              "requests_wait_ms": 5051,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 28,
+              "pool_available": 28,
+              "requests_waiting": 0
+            }
+          },
+          "4": {
+            "p50_ms": 38.68352700010291,
+            "p95_ms": 44.01195399987046,
+            "p99_ms": 47.06020199955674,
+            "qps": 26.106976672443167,
+            "concurrency": 4,
+            "errors": 0,
+            "wall_qps": 95.36578809824192,
+            "pool_statistics": {
+              "connections_num": 28,
+              "connections_ms": 949,
+              "requests_num": 2484,
+              "usage_ms": 67654,
+              "requests_queued": 78,
+              "requests_wait_ms": 5051,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 28,
+              "pool_available": 28,
+              "requests_waiting": 0
+            }
+          },
+          "8": {
+            "p50_ms": 60.989966501438175,
+            "p95_ms": 75.93769499726477,
+            "p99_ms": 79.11639099984313,
+            "qps": 16.317532713373833,
+            "concurrency": 8,
+            "errors": 0,
+            "wall_qps": 106.94648086894269,
+            "pool_statistics": {
+              "connections_num": 28,
+              "connections_ms": 949,
+              "requests_num": 2804,
+              "usage_ms": 79965,
+              "requests_queued": 78,
+              "requests_wait_ms": 5051,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 28,
+              "pool_available": 28,
+              "requests_waiting": 0
+            }
+          },
+          "16": {
+            "p50_ms": 118.44426300194755,
+            "p95_ms": 133.58374000017648,
+            "p99_ms": 141.04788600161555,
+            "qps": 8.549353863574815,
+            "concurrency": 16,
+            "errors": 0,
+            "wall_qps": 117.18802617288883,
+            "pool_statistics": {
+              "connections_num": 28,
+              "connections_ms": 949,
+              "requests_num": 3124,
+              "usage_ms": 96211,
+              "requests_queued": 78,
+              "requests_wait_ms": 5051,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 28,
+              "pool_available": 28,
+              "requests_waiting": 0
+            }
+          },
+          "32": {
+            "p50_ms": 235.0823759988998,
+            "p95_ms": 258.71174200074165,
+            "p99_ms": 267.85687300071004,
+            "qps": 4.375362304781356,
+            "concurrency": 32,
+            "errors": 0,
+            "wall_qps": 118.28287939637498,
+            "pool_statistics": {
+              "connections_num": 32,
+              "connections_ms": 1191,
+              "requests_num": 3444,
+              "usage_ms": 119996,
+              "requests_queued": 85,
+              "requests_wait_ms": 5154,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 32,
+              "pool_available": 32,
+              "requests_waiting": 0
+            }
+          }
+        }
+      },
+      "storage": {
+        "relations": {
+          "alembic_version": {
+            "table_bytes": 8192,
+            "index_bytes": 16384,
+            "total_bytes": 24576
+          },
+          "chunk_embeddings": {
+            "table_bytes": 16424960,
+            "index_bytes": 1220608,
+            "total_bytes": 17645568
+          },
+          "chunks": {
+            "table_bytes": 7618560,
+            "index_bytes": 3735552,
+            "total_bytes": 11354112
+          },
+          "documents": {
+            "table_bytes": 630784,
+            "index_bytes": 204800,
+            "total_bytes": 835584
+          },
+          "lexical_corpus_stats": {
+            "table_bytes": 49152,
+            "index_bytes": 16384,
+            "total_bytes": 65536
+          },
+          "lexical_postings": {
+            "table_bytes": 24313856,
+            "index_bytes": 31580160,
+            "total_bytes": 55894016
+          },
+          "lexical_terms": {
+            "table_bytes": 999424,
+            "index_bytes": 1171456,
+            "total_bytes": 2170880
+          }
+        },
+        "database_bytes": 96188083,
+        "counts": {
+          "chunks": 12000,
+          "embeddings": 12000
+        },
+        "bytes_per_chunk": 8015.673583333333,
+        "bytes_per_embedding": 1470.464,
+        "embedding_percent_database": 18.344858790875374,
+        "lexical_index_bytes": 36503552,
+        "lexical_index_percent_database": 37.9501814169641
+      },
+      "query_plan": "Limit  (cost=3584.55..3584.60 rows=20 width=45) (actual time=15.360..15.364 rows=20 loops=1)\n  Buffers: shared hit=2262\n  ->  Sort  (cost=3584.55..3614.55 rows=12000 width=45) (actual time=15.358..15.360 rows=20 loops=1)\n        Sort Key: ((e.embedding <=> '[0.065380685,0.015111542,-0.15327089,-0.2882797,0.17309132,0.050484017,0.08494171,-0.20196386,-0.04881336,-0.043801162,0.007866172,0.046993535,0.011329815,-0.02692756,-0.089394115,-0.0005768632,-0.03300506,-0.016659986,-0.03543874,0.02031725,0.12499164,-0.010481772,-0.04286246,0.09166914,-0.06037305,0.013211001,0.0503252,-0.0934273,-0.12212906,0.13794507,-0.07770659,0.14171112,0.03419284,-0.05083123,0.027653005,-0.10438425,-0.046416037,-0.017438978,0.06110442,0.07084716,-0.058853194,-0.066493444,0.120149195,-0.008109696,-0.013054288,-0.15498485,-0.11990066,-0.030168893,-0.06788934,0.073768586,0.010491967,0.060907688,-0.11163441,-0.067172796,-0.03995981,-0.07471097,0.026531095,0.1191847,0.050816827,-0.104062304,-0.08317943,-0.04921768,0.07332979,0.02347774,-0.044178735,0.046258084,-0.13199206,-0.0106202345,0.040335923,-0.017946446,-0.08445923,-0.034102555,0.07459479,0.05280326,0.00016107335,0.16828334,0.014944725,0.007856321,0.014483853,0.04269921,-0.022841495,-0.03554341,-0.068284295,-0.04690053,0.17589569,0.102637246,0.026040439,0.065288894,0.0239099,0.054615095,0.1477115,0.0011902135,-0.029699154,-0.042849705,-0.11011465,0.10757157,-0.002882358,0.027280036,-0.05498385,-0.14076139,0.013681429,-0.09003933,0.076951146,-0.048775528,-0.09004148,0.06640935,-0.0050436636,-0.06398118,-0.0072656674,0.120388746,-0.0031192782,0.00041793293,-0.08005506,-0.037711866,-0.051467553,0.09289388,-0.029581156,0.05859139,-0.024864636,0.08481916,-0.108375944,0.09082787,-0.07811244,0.039675962,-0.06720698,-0.020074498,0.10880914,-0.024320005,-0.0026919118,-0.016489271,-0.0376328,-0.04627733,0.02039068,0.044271257,0.03324131,-0.009874286,-0.13729432,-0.019860934,-0.02086444,-0.020611737,0.016757589,0.01936238,0.015221155,0.086892754,0.02398539,-0.045437675,-0.0035490391,0.012664994,0.02350025,-0.0011603708,-0.07461456,-0.050496608,-0.04974728,-0.021253338,0.03415631,0.050432518,-0.027017383,0.08181516,0.0015166391,0.07573559,0.0023620322,0.11406341,-0.036974575,-0.025848836,-0.008844016,0.058856092,-0.02910652,-0.033404645,-0.014913668,-0.003884328,0.022413727,-0.014323624,0.018991064,0.046338074,-0.028158534,0.0051271855,0.009443612,-0.023056261,-0.0019401974,-0.05316448,0.0187079,0.028510852,-0.0074475855,0.061302196,0.021427598,0.084126435,0.036535826,-0.04041037,-0.0055666934,0.04930407,-0.0141845355,-0.018480929,-0.028134072,0.0097634215,0.025122447,-0.047740698,-0.04108126,-0.004570728,-0.016832318,0.0011516586,0.03126901,0.07296017,0.0021592798,-0.050232865,0.030889623,-0.08068679,-0.03480086,0.084013045,0.016613415,0.030968783,-0.019000998,0.051527966,0.0020442144,-0.038875345,0.01372618,-0.021294257,-0.049348682,0.0038927407,-0.02359195,-0.018069474,-0.0029286589,0.0065510427,0.0012158303,0.045271665,0.00883921,-0.0028866797,0.012677712,-0.03246245,-0.0035316173,0.011865439,-0.03686972,-0.035736114,-0.022728087,-0.04175751,-0.0042232894,0.034910753,0.02264279,-0.03249335,-0.018848427,0.050478816,-0.0032511526,0.07181831,-0.0023167126,-0.0063632904,0.017965974,-0.022420073,0.009922602,0.08823686,-0.028824568,-0.040675256,-0.05132971,0.06476256,-0.010754348,-0.018992547,-0.035964746,-0.010089294]'::vector)), c.chunk_id\n        Sort Method: top-N heapsort  Memory: 26kB\n        Buffers: shared hit=2262\n        ->  Hash Join  (cost=933.72..3265.23 rows=12000 width=45) (actual time=4.325..13.739 rows=12000 loops=1)\n              Hash Cond: (e.chunk_id = c.chunk_id)\n              Buffers: shared hit=2256\n              ->  Seq Scan on chunk_embeddings e  (cost=0.00..2210.00 rows=12000 width=1077) (actual time=0.006..4.947 rows=12000 loops=1)\n                    Filter: ((tenant_id = 'phase4b-closure'::text) AND (embedding_version = 'model2vec:minishlab/potion-base-8M@bf8b056651a2c21b8d2565580b8569da283cab23:normalized'::text) AND (dimension = 256))\n                    Buffers: shared hit=2000\n              ->  Hash  (cost=783.72..783.72 rows=12000 width=45) (actual time=4.247..4.247 rows=12000 loops=1)\n                    Buckets: 16384  Batches: 1  Memory Usage: 1031kB\n                    Buffers: shared hit=256\n                    ->  Index Only Scan using chunks_pkey on chunks c  (cost=0.29..783.72 rows=12000 width=45) (actual time=0.031..1.917 rows=12000 loops=1)\n                          Index Cond: (tenant_id = 'phase4b-closure'::text)\n                          Heap Fetches: 131\n                          Buffers: shared hit=256\nPlanning:\n  Buffers: shared hit=227\nPlanning Time: 0.651 ms\nExecution Time: 15.451 ms"
+    },
+    "50004": {
+      "corpus": {
+        "documents": 4167,
+        "chunks": 50004,
+        "average_chunk_length": 23.0,
+        "vocabulary_size": 58375,
+        "embedding_dimension": 256
+      },
+      "ingestion": {
+        "documents": 4167,
+        "chunks": 50004,
+        "embedding_computation": {
+          "p50_ms": 1.8411950004519895,
+          "p95_ms": 2.7372160002414603,
+          "p99_ms": 3.3050009988073725,
+          "qps": 518.3415045028878
+        },
+        "postgres_persistence_with_embeddings": {
+          "p50_ms": 28.262718999030767,
+          "p95_ms": 41.21194999970612,
+          "p99_ms": 49.635916999250185,
+          "qps": 34.09604730379418
+        },
+        "lexical_postgres_probe": {
+          "p50_ms": 18.93001250027737,
+          "p95_ms": 21.69964099812205,
+          "p99_ms": 21.69964099812205,
+          "qps": 51.501727806200364
+        },
+        "production_ingest_total": {
+          "p50_ms": 30.79329599859193,
+          "p95_ms": 44.77203999704216,
+          "p99_ms": 53.59312400105409,
+          "qps": 31.33936681254342
+        },
+        "chunks_per_second": 376.07240175052107,
+        "documents_per_second": 31.33936681254342
+      },
+      "reingestion": {
+        "documents_replayed": 4167,
+        "embedded_chunks_before": 50004,
+        "embedded_chunks_after": 50004,
+        "skipped_embeddings": 50004,
+        "recomputed_embeddings": 0,
+        "reingestion": {
+          "p50_ms": 1.5284580003935844,
+          "p95_ms": 2.1342969994293526,
+          "p99_ms": 2.785386997857131,
+          "qps": 628.1339326043473
+        }
+      },
+      "sequential": {
+        "lexical": {
+          "p50_ms": 44.01817099824257,
+          "p95_ms": 54.86258300152258,
+          "p99_ms": 56.75255299865967,
+          "qps": 22.41993912660114
+        },
+        "semantic": {
+          "p50_ms": 43.86066349979956,
+          "p95_ms": 53.05527000018628,
+          "p99_ms": 56.90588899960858,
+          "qps": 22.281070480490037
+        },
+        "hybrid_parallel": {
+          "p50_ms": 48.53482249927765,
+          "p95_ms": 59.93278200185159,
+          "p99_ms": 65.3414900007192,
+          "qps": 20.032185560279434
+        },
+        "hybrid_sequential": {
+          "p50_ms": 84.59902650065487,
+          "p95_ms": 104.2268499986676,
+          "p99_ms": 111.63616400153842,
+          "qps": 11.600302454591546
+        },
+        "context_assembler": {
+          "p50_ms": 48.19562949887768,
+          "p95_ms": 57.01652199786622,
+          "p99_ms": 63.65689000085695,
+          "qps": 20.29329195969026
+        }
+      },
+      "components": {
+        "query_embedding": {
+          "p50_ms": 0.33112899836851284,
+          "p95_ms": 0.3958849993068725,
+          "p99_ms": 0.43013600225094706,
+          "qps": 2946.4432373394907
+        },
+        "bm25": {
+          "p50_ms": 39.894420999189606,
+          "p95_ms": 43.51060800036066,
+          "p99_ms": 45.06225599834579,
+          "qps": 25.27790090752015
+        },
+        "vector_search_and_materialization": {
+          "p50_ms": 41.46400799982075,
+          "p95_ms": 48.3677459997125,
+          "p99_ms": 50.024764001136646,
+          "qps": 23.739971272489115
+        },
+        "rrf": {
+          "p50_ms": 0.0965745002758922,
+          "p95_ms": 0.12498499927460216,
+          "p99_ms": 0.17078300152206793,
+          "qps": 10069.05964262707
+        },
+        "context_assembler_selection": {
+          "p50_ms": 0.0025845019990811124,
+          "p95_ms": 0.0031340023269876838,
+          "p99_ms": 0.0034959994081873447,
+          "qps": 332783.1340039434
+        },
+        "note": "vector timings include SQL row materialization and Chunk Pydantic conversion"
+      },
+      "concurrency": {
+        "semantic": {
+          "1": {
+            "p50_ms": 42.14469499856932,
+            "p95_ms": 46.183718000975205,
+            "p99_ms": 48.78137099876767,
+            "qps": 23.618595909309548,
+            "concurrency": 1,
+            "errors": 0,
+            "wall_qps": 23.58939236697775,
+            "pool_statistics": {
+              "connections_num": 2,
+              "connections_ms": 13,
+              "requests_num": 1204,
+              "usage_ms": 51898,
+              "requests_queued": 1,
+              "requests_wait_ms": 7,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 2,
+              "pool_available": 2,
+              "requests_waiting": 0
+            }
+          },
+          "4": {
+            "p50_ms": 70.75437750063429,
+            "p95_ms": 89.22143599920673,
+            "p99_ms": 96.23081000245293,
+            "qps": 13.648634682148716,
+            "concurrency": 4,
+            "errors": 0,
+            "wall_qps": 46.18502462481151,
+            "pool_statistics": {
+              "connections_num": 4,
+              "connections_ms": 33,
+              "requests_num": 1364,
+              "usage_ms": 63353,
+              "requests_queued": 3,
+              "requests_wait_ms": 38,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 4,
+              "pool_available": 4,
+              "requests_waiting": 0
+            }
+          },
+          "8": {
+            "p50_ms": 132.24210649968882,
+            "p95_ms": 166.82478000075207,
+            "p99_ms": 175.8343630026502,
+            "qps": 7.900664575337704,
+            "concurrency": 8,
+            "errors": 0,
+            "wall_qps": 49.54657777599766,
+            "pool_statistics": {
+              "connections_num": 8,
+              "connections_ms": 96,
+              "requests_num": 1524,
+              "usage_ms": 83075,
+              "requests_queued": 7,
+              "requests_wait_ms": 203,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 8,
+              "pool_available": 8,
+              "requests_waiting": 0
+            }
+          },
+          "16": {
+            "p50_ms": 237.91961049937527,
+            "p95_ms": 271.6788150028151,
+            "p99_ms": 310.6188950005162,
+            "qps": 4.52022870825254,
+            "concurrency": 16,
+            "errors": 0,
+            "wall_qps": 59.31711264521578,
+            "pool_statistics": {
+              "connections_num": 16,
+              "connections_ms": 302,
+              "requests_num": 1684,
+              "usage_ms": 116949,
+              "requests_queued": 17,
+              "requests_wait_ms": 989,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 16,
+              "pool_available": 16,
+              "requests_waiting": 0
+            }
+          },
+          "32": {
+            "p50_ms": 438.1860665016575,
+            "p95_ms": 583.0806539997866,
+            "p99_ms": 599.1468550018908,
+            "qps": 2.398404148491474,
+            "concurrency": 32,
+            "errors": 0,
+            "wall_qps": 59.0639911014263,
+            "pool_statistics": {
+              "connections_num": 32,
+              "connections_ms": 1072,
+              "requests_num": 1844,
+              "usage_ms": 177602,
+              "requests_queued": 41,
+              "requests_wait_ms": 5885,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 32,
+              "pool_available": 32,
+              "requests_waiting": 0
+            }
+          }
+        },
+        "hybrid": {
+          "1": {
+            "p50_ms": 50.24934250104707,
+            "p95_ms": 62.35146499966504,
+            "p99_ms": 69.06462499682675,
+            "qps": 19.353816410657323,
+            "concurrency": 1,
+            "errors": 0,
+            "wall_qps": 19.334768811899842,
+            "pool_statistics": {
+              "connections_num": 32,
+              "connections_ms": 1072,
+              "requests_num": 2164,
+              "usage_ms": 193240,
+              "requests_queued": 41,
+              "requests_wait_ms": 5885,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 32,
+              "pool_available": 32,
+              "requests_waiting": 0
+            }
+          },
+          "4": {
+            "p50_ms": 101.85150100005558,
+            "p95_ms": 120.6501999986358,
+            "p99_ms": 130.1801900008286,
+            "qps": 9.657432139935887,
+            "concurrency": 4,
+            "errors": 0,
+            "wall_qps": 33.94767129926274,
+            "pool_statistics": {
+              "connections_num": 32,
+              "connections_ms": 1072,
+              "requests_num": 2484,
+              "usage_ms": 222717,
+              "requests_queued": 41,
+              "requests_wait_ms": 5885,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 32,
+              "pool_available": 32,
+              "requests_waiting": 0
+            }
+          },
+          "8": {
+            "p50_ms": 189.4889744999091,
+            "p95_ms": 221.73772500173072,
+            "p99_ms": 261.48995800031116,
+            "qps": 5.7713518788861435,
+            "concurrency": 8,
+            "errors": 0,
+            "wall_qps": 37.873937710397286,
+            "pool_statistics": {
+              "connections_num": 32,
+              "connections_ms": 1072,
+              "requests_num": 2804,
+              "usage_ms": 266006,
+              "requests_queued": 41,
+              "requests_wait_ms": 5885,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 32,
+              "pool_available": 32,
+              "requests_waiting": 0
+            }
+          },
+          "16": {
+            "p50_ms": 364.9427010004729,
+            "p95_ms": 402.5033229991095,
+            "p99_ms": 424.656392999168,
+            "qps": 2.9563859945136786,
+            "concurrency": 16,
+            "errors": 0,
+            "wall_qps": 39.51228221879452,
+            "pool_statistics": {
+              "connections_num": 32,
+              "connections_ms": 1072,
+              "requests_num": 3124,
+              "usage_ms": 336087,
+              "requests_queued": 41,
+              "requests_wait_ms": 5885,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 32,
+              "pool_available": 32,
+              "requests_waiting": 0
+            }
+          },
+          "32": {
+            "p50_ms": 610.6479645004583,
+            "p95_ms": 717.9226509979344,
+            "p99_ms": 788.6521750006068,
+            "qps": 1.7071323164597756,
+            "concurrency": 32,
+            "errors": 0,
+            "wall_qps": 43.23241894385567,
+            "pool_statistics": {
+              "connections_num": 32,
+              "connections_ms": 1072,
+              "requests_num": 3444,
+              "usage_ms": 419711,
+              "requests_queued": 121,
+              "requests_wait_ms": 9701,
+              "pool_min": 1,
+              "pool_max": 32,
+              "pool_size": 32,
+              "pool_available": 32,
+              "requests_waiting": 0
+            }
+          }
+        }
+      },
+      "storage": {
+        "relations": {
+          "alembic_version": {
+            "table_bytes": 8192,
+            "index_bytes": 16384,
+            "total_bytes": 24576
+          },
+          "chunk_embeddings": {
+            "table_bytes": 68329472,
+            "index_bytes": 4898816,
+            "total_bytes": 73228288
+          },
+          "chunks": {
+            "table_bytes": 31563776,
+            "index_bytes": 15065088,
+            "total_bytes": 46628864
+          },
+          "documents": {
+            "table_bytes": 2482176,
+            "index_bytes": 770048,
+            "total_bytes": 3252224
+          },
+          "lexical_corpus_stats": {
+            "table_bytes": 49152,
+            "index_bytes": 16384,
+            "total_bytes": 65536
+          },
+          "lexical_postings": {
+            "table_bytes": 100442112,
+            "index_bytes": 132825088,
+            "total_bytes": 233267200
+          },
+          "lexical_terms": {
+            "table_bytes": 4046848,
+            "index_bytes": 4849664,
+            "total_bytes": 8896512
+          }
+        },
+        "database_bytes": 373495475,
+        "counts": {
+          "embeddings": 50004,
+          "chunks": 50004
+        },
+        "bytes_per_chunk": 7469.311955043597,
+        "bytes_per_embedding": 1464.448604111671,
+        "embedding_percent_database": 19.60620486767611,
+        "lexical_index_bytes": 152756224,
+        "lexical_index_percent_database": 40.899082913922854
+      },
+      "query_plan": "Limit  (cost=13526.55..13528.88 rows=20 width=45) (actual time=33.663..36.511 rows=20 loops=1)\n  Buffers: shared hit=3335 read=5656\n  ->  Gather Merge  (cost=13526.55..18388.39 rows=41670 width=45) (actual time=33.662..36.507 rows=20 loops=1)\n        Workers Planned: 2\n        Workers Launched: 2\n        Buffers: shared hit=3335 read=5656\n        ->  Sort  (cost=12526.52..12578.61 rows=20835 width=45) (actual time=30.507..30.511 rows=15 loops=3)\n              Sort Key: ((e.embedding <=> '[0.065380685,0.015111542,-0.15327089,-0.2882797,0.17309132,0.050484017,0.08494171,-0.20196386,-0.04881336,-0.043801162,0.007866172,0.046993535,0.011329815,-0.02692756,-0.089394115,-0.0005768632,-0.03300506,-0.016659986,-0.03543874,0.02031725,0.12499164,-0.010481772,-0.04286246,0.09166914,-0.06037305,0.013211001,0.0503252,-0.0934273,-0.12212906,0.13794507,-0.07770659,0.14171112,0.03419284,-0.05083123,0.027653005,-0.10438425,-0.046416037,-0.017438978,0.06110442,0.07084716,-0.058853194,-0.066493444,0.120149195,-0.008109696,-0.013054288,-0.15498485,-0.11990066,-0.030168893,-0.06788934,0.073768586,0.010491967,0.060907688,-0.11163441,-0.067172796,-0.03995981,-0.07471097,0.026531095,0.1191847,0.050816827,-0.104062304,-0.08317943,-0.04921768,0.07332979,0.02347774,-0.044178735,0.046258084,-0.13199206,-0.0106202345,0.040335923,-0.017946446,-0.08445923,-0.034102555,0.07459479,0.05280326,0.00016107335,0.16828334,0.014944725,0.007856321,0.014483853,0.04269921,-0.022841495,-0.03554341,-0.068284295,-0.04690053,0.17589569,0.102637246,0.026040439,0.065288894,0.0239099,0.054615095,0.1477115,0.0011902135,-0.029699154,-0.042849705,-0.11011465,0.10757157,-0.002882358,0.027280036,-0.05498385,-0.14076139,0.013681429,-0.09003933,0.076951146,-0.048775528,-0.09004148,0.06640935,-0.0050436636,-0.06398118,-0.0072656674,0.120388746,-0.0031192782,0.00041793293,-0.08005506,-0.037711866,-0.051467553,0.09289388,-0.029581156,0.05859139,-0.024864636,0.08481916,-0.108375944,0.09082787,-0.07811244,0.039675962,-0.06720698,-0.020074498,0.10880914,-0.024320005,-0.0026919118,-0.016489271,-0.0376328,-0.04627733,0.02039068,0.044271257,0.03324131,-0.009874286,-0.13729432,-0.019860934,-0.02086444,-0.020611737,0.016757589,0.01936238,0.015221155,0.086892754,0.02398539,-0.045437675,-0.0035490391,0.012664994,0.02350025,-0.0011603708,-0.07461456,-0.050496608,-0.04974728,-0.021253338,0.03415631,0.050432518,-0.027017383,0.08181516,0.0015166391,0.07573559,0.0023620322,0.11406341,-0.036974575,-0.025848836,-0.008844016,0.058856092,-0.02910652,-0.033404645,-0.014913668,-0.003884328,0.022413727,-0.014323624,0.018991064,0.046338074,-0.028158534,0.0051271855,0.009443612,-0.023056261,-0.0019401974,-0.05316448,0.0187079,0.028510852,-0.0074475855,0.061302196,0.021427598,0.084126435,0.036535826,-0.04041037,-0.0055666934,0.04930407,-0.0141845355,-0.018480929,-0.028134072,0.0097634215,0.025122447,-0.047740698,-0.04108126,-0.004570728,-0.016832318,0.0011516586,0.03126901,0.07296017,0.0021592798,-0.050232865,0.030889623,-0.08068679,-0.03480086,0.084013045,0.016613415,0.030968783,-0.019000998,0.051527966,0.0020442144,-0.038875345,0.01372618,-0.021294257,-0.049348682,0.0038927407,-0.02359195,-0.018069474,-0.0029286589,0.0065510427,0.0012158303,0.045271665,0.00883921,-0.0028866797,0.012677712,-0.03246245,-0.0035316173,0.011865439,-0.03686972,-0.035736114,-0.022728087,-0.04175751,-0.0042232894,0.034910753,0.02264279,-0.03249335,-0.018848427,0.050478816,-0.0032511526,0.07181831,-0.0023167126,-0.0063632904,0.017965974,-0.022420073,0.009922602,0.08823686,-0.028824568,-0.040675256,-0.05132971,0.06476256,-0.010754348,-0.018992547,-0.035964746,-0.010089294]'::vector)), c.chunk_id\n              Sort Method: top-N heapsort  Memory: 27kB\n              Buffers: shared hit=3335 read=5656\n              Worker 0:  Sort Method: top-N heapsort  Memory: 27kB\n              Worker 1:  Sort Method: top-N heapsort  Memory: 27kB\n              ->  Parallel Hash Join  (cost=3062.54..11972.11 rows=20835 width=45) (actual time=11.022..27.888 rows=16668 loops=3)\n                    Hash Cond: (e.chunk_id = c.chunk_id)\n                    Buffers: shared hit=3303 read=5656\n                    ->  Parallel Seq Scan on chunk_embeddings e  (cost=0.00..8698.61 rows=20835 width=1077) (actual time=0.028..9.230 rows=16668 loops=3)\n                          Filter: ((tenant_id = 'phase4b-closure'::text) AND (embedding_version = 'model2vec:minishlab/potion-base-8M@bf8b056651a2c21b8d2565580b8569da283cab23:normalized'::text) AND (dimension = 256))\n                          Buffers: shared hit=2678 read=5656\n                    ->  Parallel Hash  (cost=2802.11..2802.11 rows=20835 width=45) (actual time=10.692..10.692 rows=16668 loops=3)\n                          Buckets: 65536  Batches: 1  Memory Usage: 4480kB\n                          Buffers: shared hit=553\n                          ->  Parallel Index Only Scan using chunks_pkey on chunks c  (cost=0.41..2802.11 rows=20835 width=45) (actual time=0.040..5.446 rows=16668 loops=3)\n                                Index Cond: (tenant_id = 'phase4b-closure'::text)\n                                Heap Fetches: 6\n                                Buffers: shared hit=553\nPlanning:\n  Buffers: shared hit=221 read=5\nPlanning Time: 0.715 ms\nExecution Time: 36.593 ms"
+    }
+  }
+}
