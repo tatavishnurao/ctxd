@@ -1,0 +1,150 @@
+{
+  "experimental_metric": true,
+  "definition": "Good requires a relevant generated source in top 5 and latency within budget.",
+  "results": {
+    "1200": {
+      "hybrid": {
+        "100": {
+          "raw_qps": 124.04056284999866,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 124.04056284999866
+        },
+        "150": {
+          "raw_qps": 124.04056284999866,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 124.04056284999866
+        },
+        "250": {
+          "raw_qps": 124.04056284999866,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 124.04056284999866
+        }
+      },
+      "hybrid_reranked": {
+        "100": {
+          "raw_qps": 52.149250906381006,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 52.149250906381006
+        },
+        "150": {
+          "raw_qps": 52.149250906381006,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 52.149250906381006
+        },
+        "250": {
+          "raw_qps": 52.149250906381006,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 52.149250906381006
+        }
+      }
+    },
+    "12000": {
+      "hybrid": {
+        "100": {
+          "raw_qps": 33.48527170425263,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 33.48527170425263
+        },
+        "150": {
+          "raw_qps": 33.48527170425263,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 33.48527170425263
+        },
+        "250": {
+          "raw_qps": 33.48527170425263,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 33.48527170425263
+        }
+      },
+      "hybrid_reranked": {
+        "100": {
+          "raw_qps": 19.34470729844243,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 19.34470729844243
+        },
+        "150": {
+          "raw_qps": 19.34470729844243,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 19.34470729844243
+        },
+        "250": {
+          "raw_qps": 19.34470729844243,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 19.34470729844243
+        }
+      }
+    },
+    "50004": {
+      "hybrid": {
+        "100": {
+          "raw_qps": 16.115207463195432,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 16.115207463195432
+        },
+        "150": {
+          "raw_qps": 16.115207463195432,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 16.115207463195432
+        },
+        "250": {
+          "raw_qps": 16.115207463195432,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 16.115207463195432
+        }
+      },
+      "hybrid_reranked": {
+        "100": {
+          "raw_qps": 11.459410427243078,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 0.96,
+          "joint_pass_rate": 0.96,
+          "good_requests_per_second": 11.001034010153354
+        },
+        "150": {
+          "raw_qps": 11.459410427243078,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 11.459410427243078
+        },
+        "250": {
+          "raw_qps": 11.459410427243078,
+          "quality_pass_rate": 1.0,
+          "latency_pass_rate": 1.0,
+          "joint_pass_rate": 1.0,
+          "good_requests_per_second": 11.459410427243078
+        }
+      }
+    }
+  }
+}

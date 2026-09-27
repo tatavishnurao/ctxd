@@ -1,0 +1,3179 @@
+{
+  "model": {
+    "identifier": "cross-encoder/ms-marco-TinyBERT-L-2-v2",
+    "source_revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+    "flashrank_model_name": "ms-marco-TinyBERT-L-2-v2",
+    "input_limit": 512,
+    "license": "Apache-2.0",
+    "local_artifact_bytes": 4954219,
+    "local_artifact_sha256": "7384e127005ead4f2c975419dccd885987e22d0ede93e903601ccdae5f2ce974",
+    "scoring": "positive-class probability from pairwise cross-encoder logits"
+  },
+  "candidate_selection": [
+    {
+      "model": "cross-encoder/ms-marco-TinyBERT-L-2-v2",
+      "reason": "selected: smallest CPU ONNX option, Apache-2.0, batched"
+    },
+    {
+      "model": "cross-encoder/ms-marco-MiniLM-L-2-v2",
+      "reason": "not selected: larger model and latency footprint"
+    },
+    {
+      "model": "mixedbread-ai/mxbai-rerank-xsmall-v1",
+      "reason": "not selected: materially larger model for feasibility gate"
+    }
+  ],
+  "metrics": {
+    "lexical": {
+      "recall_at_1": 0.6666666666666666,
+      "recall_at_5": 0.8133333333333334,
+      "recall_at_10": 0.8133333333333334,
+      "mrr": 0.8033333333333333,
+      "ndcg_at_5": 0.798969186878508,
+      "ndcg_at_10": 0.798969186878508
+    },
+    "semantic": {
+      "recall_at_1": 0.54,
+      "recall_at_5": 0.78,
+      "recall_at_10": 0.8466666666666667,
+      "mrr": 0.7016455026455026,
+      "ndcg_at_5": 0.6924711560916789,
+      "ndcg_at_10": 0.7165054766936472
+    },
+    "hybrid": {
+      "recall_at_1": 0.68,
+      "recall_at_5": 0.9066666666666666,
+      "recall_at_10": 0.9733333333333334,
+      "mrr": 0.8613492063492064,
+      "ndcg_at_5": 0.8441547611824909,
+      "ndcg_at_10": 0.8688565036402972
+    },
+    "reranked_10": {
+      "recall_at_1": 0.6266666666666667,
+      "recall_at_5": 0.8666666666666667,
+      "recall_at_10": 0.9733333333333334,
+      "mrr": 0.7958492063492063,
+      "ndcg_at_5": 0.8023000496504208,
+      "ndcg_at_10": 0.8348261007334318
+    },
+    "reranked_20": {
+      "recall_at_1": 0.6133333333333333,
+      "recall_at_5": 0.8666666666666667,
+      "recall_at_10": 0.88,
+      "mrr": 0.770952380952381,
+      "ndcg_at_5": 0.7950838161360955,
+      "ndcg_at_10": 0.7996807529390378
+    },
+    "reranked_50": {
+      "recall_at_1": 0.62,
+      "recall_at_5": 0.8533333333333334,
+      "recall_at_10": 0.88,
+      "mrr": 0.7691825396825397,
+      "ndcg_at_5": 0.7892504381367063,
+      "ndcg_at_10": 0.7977250806018416
+    }
+  },
+  "categories": {
+    "exact": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 0.8,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.8758333333333332,
+        "ndcg_at_5": 0.906798123441679,
+        "ndcg_at_10": 0.906798123441679
+      },
+      "hybrid": {
+        "recall_at_1": 0.95,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.975,
+        "ndcg_at_5": 0.9815464876785729,
+        "ndcg_at_10": 0.9815464876785729
+      },
+      "reranked_10": {
+        "recall_at_1": 0.95,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.9666666666666666,
+        "ndcg_at_5": 0.975,
+        "ndcg_at_10": 0.975
+      },
+      "reranked_20": {
+        "recall_at_1": 0.975,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.9833333333333334,
+        "ndcg_at_5": 0.9875,
+        "ndcg_at_10": 0.9875
+      },
+      "reranked_50": {
+        "recall_at_1": 0.975,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.9833333333333334,
+        "ndcg_at_5": 0.9875,
+        "ndcg_at_10": 0.9875
+      }
+    },
+    "morphology": {
+      "lexical": {
+        "recall_at_1": 0.18518518518518517,
+        "recall_at_5": 0.2222222222222222,
+        "recall_at_10": 0.2222222222222222,
+        "mrr": 0.19753086419753085,
+        "ndcg_at_5": 0.2037037037037037,
+        "ndcg_at_10": 0.2037037037037037
+      },
+      "semantic": {
+        "recall_at_1": 0.3333333333333333,
+        "recall_at_5": 0.7037037037037037,
+        "recall_at_10": 0.8888888888888888,
+        "mrr": 0.5037918871252205,
+        "ndcg_at_5": 0.5360065975246379,
+        "ndcg_at_10": 0.5953030236879884
+      },
+      "hybrid": {
+        "recall_at_1": 0.2962962962962963,
+        "recall_at_5": 0.7407407407407407,
+        "recall_at_10": 0.9259259259259259,
+        "mrr": 0.4945326278659612,
+        "ndcg_at_5": 0.5382883127707434,
+        "ndcg_at_10": 0.597584738934094
+      },
+      "reranked_10": {
+        "recall_at_1": 0.4444444444444444,
+        "recall_at_5": 0.7777777777777778,
+        "recall_at_10": 0.9259259259259259,
+        "mrr": 0.5961346266901822,
+        "ndcg_at_5": 0.6285991901172304,
+        "ndcg_at_10": 0.6744841172320798
+      },
+      "reranked_20": {
+        "recall_at_1": 0.4444444444444444,
+        "recall_at_5": 0.7777777777777778,
+        "recall_at_10": 0.8148148148148148,
+        "mrr": 0.595679012345679,
+        "ndcg_at_5": 0.6376390770185977,
+        "ndcg_at_10": 0.6508319358003762
+      },
+      "reranked_50": {
+        "recall_at_1": 0.4444444444444444,
+        "recall_at_5": 0.7037037037037037,
+        "recall_at_10": 0.8148148148148148,
+        "mrr": 0.580026455026455,
+        "ndcg_at_5": 0.6006020399815606,
+        "ndcg_at_10": 0.6369772823316494
+      }
+    },
+    "multiple relevant": {
+      "lexical": {
+        "recall_at_1": 0.3076923076923077,
+        "recall_at_5": 0.9230769230769231,
+        "recall_at_10": 0.9230769230769231,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.9404841835023782,
+        "ndcg_at_10": 0.9404841835023782
+      },
+      "semantic": {
+        "recall_at_1": 0.19230769230769232,
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.6153846153846154,
+        "mrr": 0.6666666666666666,
+        "ndcg_at_5": 0.48335716180852395,
+        "ndcg_at_10": 0.537743691112482
+      },
+      "hybrid": {
+        "recall_at_1": 0.3076923076923077,
+        "recall_at_5": 0.8076923076923077,
+        "recall_at_10": 0.9230769230769231,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.8131827419417722,
+        "ndcg_at_10": 0.8692975822815641
+      },
+      "reranked_10": {
+        "recall_at_1": 0.23076923076923078,
+        "recall_at_5": 0.9230769230769231,
+        "recall_at_10": 0.9230769230769231,
+        "mrr": 0.8461538461538461,
+        "ndcg_at_5": 0.8521759321113755,
+        "ndcg_at_10": 0.8521759321113755
+      },
+      "reranked_20": {
+        "recall_at_1": 0.19230769230769232,
+        "recall_at_5": 0.9230769230769231,
+        "recall_at_10": 0.9230769230769231,
+        "mrr": 0.7692307692307693,
+        "ndcg_at_5": 0.8153512503014837,
+        "ndcg_at_10": 0.8153512503014837
+      },
+      "reranked_50": {
+        "recall_at_1": 0.19230769230769232,
+        "recall_at_5": 0.9230769230769231,
+        "recall_at_10": 0.9230769230769231,
+        "mrr": 0.7692307692307693,
+        "ndcg_at_5": 0.8153512503014837,
+        "ndcg_at_10": 0.8153512503014837
+      }
+    },
+    "long chunk": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.2,
+        "mrr": 0.021111111111111112,
+        "ndcg_at_5": 0.0,
+        "ndcg_at_10": 0.05900948219818691
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_10": {
+        "recall_at_1": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.10555555555555556,
+        "ndcg_at_5": 0.0,
+        "ndcg_at_10": 0.29504741099093457
+      },
+      "reranked_20": {
+        "recall_at_1": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_5": 0.0,
+        "ndcg_at_10": 0.0
+      },
+      "reranked_50": {
+        "recall_at_1": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.0,
+        "ndcg_at_5": 0.0,
+        "ndcg_at_10": 0.0
+      }
+    },
+    "tenant isolation": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_10": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_20": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_50": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      }
+    },
+    "semantic paraphrase": {
+      "lexical": {
+        "recall_at_1": 0.47058823529411764,
+        "recall_at_5": 0.7058823529411765,
+        "recall_at_10": 0.7058823529411765,
+        "mrr": 0.5686274509803921,
+        "ndcg_at_5": 0.6036387945378185,
+        "ndcg_at_10": 0.6036387945378185
+      },
+      "semantic": {
+        "recall_at_1": 0.47058823529411764,
+        "recall_at_5": 0.9411764705882353,
+        "recall_at_10": 0.9411764705882353,
+        "mrr": 0.6509803921568628,
+        "ndcg_at_5": 0.7233779193385244,
+        "ndcg_at_10": 0.7233779193385244
+      },
+      "hybrid": {
+        "recall_at_1": 0.5294117647058824,
+        "recall_at_5": 0.8823529411764706,
+        "recall_at_10": 1.0,
+        "mrr": 0.6676470588235294,
+        "ndcg_at_5": 0.7090523047860644,
+        "ndcg_at_10": 0.747009482046412
+      },
+      "reranked_10": {
+        "recall_at_1": 0.7058823529411765,
+        "recall_at_5": 0.8823529411764706,
+        "recall_at_10": 1.0,
+        "mrr": 0.7976190476190477,
+        "ndcg_at_5": 0.8054432979539005,
+        "ndcg_at_10": 0.8460045050386862
+      },
+      "reranked_20": {
+        "recall_at_1": 0.5882352941176471,
+        "recall_at_5": 0.8823529411764706,
+        "recall_at_10": 0.9411764705882353,
+        "mrr": 0.719187675070028,
+        "ndcg_at_5": 0.7543215187522215,
+        "ndcg_at_10": 0.7739293618894765
+      },
+      "reranked_50": {
+        "recall_at_1": 0.6470588235294118,
+        "recall_at_5": 0.8823529411764706,
+        "recall_at_10": 0.9411764705882353,
+        "mrr": 0.7382352941176471,
+        "ndcg_at_5": 0.7693758160265205,
+        "ndcg_at_10": 0.7863796293393375
+      }
+    },
+    "distractor-heavy": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 0.8571428571428571,
+        "recall_at_5": 0.8571428571428571,
+        "recall_at_10": 0.8571428571428571,
+        "mrr": 0.8571428571428571,
+        "ndcg_at_5": 0.8571428571428571,
+        "ndcg_at_10": 0.8571428571428571
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_10": {
+        "recall_at_1": 0.8571428571428571,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.9285714285714286,
+        "ndcg_at_5": 0.9472756790816368,
+        "ndcg_at_10": 0.9472756790816368
+      },
+      "reranked_20": {
+        "recall_at_1": 0.8571428571428571,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.9285714285714286,
+        "ndcg_at_5": 0.9472756790816368,
+        "ndcg_at_10": 0.9472756790816368
+      },
+      "reranked_50": {
+        "recall_at_1": 0.8571428571428571,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.9285714285714286,
+        "ndcg_at_5": 0.9472756790816368,
+        "ndcg_at_10": 0.9472756790816368
+      }
+    },
+    "near duplicate": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 0.8,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.9,
+        "ndcg_at_5": 0.9261859507142916,
+        "ndcg_at_10": 0.9261859507142916
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_10": {
+        "recall_at_1": 0.6,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_5": 0.8523719014285831,
+        "ndcg_at_10": 0.8523719014285831
+      },
+      "reranked_20": {
+        "recall_at_1": 0.6,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.8,
+        "ndcg_at_5": 0.8523719014285831,
+        "ndcg_at_10": 0.8523719014285831
+      },
+      "reranked_50": {
+        "recall_at_1": 0.6,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.7666666666666667,
+        "ndcg_at_5": 0.8261859507142916,
+        "ndcg_at_10": 0.8261859507142916
+      }
+    },
+    "ambiguous": {
+      "lexical": {
+        "recall_at_1": 0.5,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.75,
+        "ndcg_at_5": 0.8154648767857288,
+        "ndcg_at_10": 0.8154648767857288
+      },
+      "semantic": {
+        "recall_at_1": 0.5,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.75,
+        "ndcg_at_5": 0.8154648767857288,
+        "ndcg_at_10": 0.8154648767857288
+      },
+      "hybrid": {
+        "recall_at_1": 0.5,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.75,
+        "ndcg_at_5": 0.8154648767857288,
+        "ndcg_at_10": 0.8154648767857288
+      },
+      "reranked_10": {
+        "recall_at_1": 0.5,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.75,
+        "ndcg_at_5": 0.8154648767857288,
+        "ndcg_at_10": 0.8154648767857288
+      },
+      "reranked_20": {
+        "recall_at_1": 0.5,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.75,
+        "ndcg_at_5": 0.8154648767857288,
+        "ndcg_at_10": 0.8154648767857288
+      },
+      "reranked_50": {
+        "recall_at_1": 0.5,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.75,
+        "ndcg_at_5": 0.8154648767857288,
+        "ndcg_at_10": 0.8154648767857288
+      }
+    },
+    "rare term": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_10": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_20": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_50": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      }
+    },
+    "exact lexical": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_10": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_20": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "reranked_50": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      }
+    }
+  },
+  "transitions": {
+    "fixed": 9,
+    "unchanged correct": 92,
+    "unchanged incorrect": 13,
+    "regressed": 36,
+    "candidate missing": 0
+  },
+  "regressions": [
+    {
+      "case_id": "exact-subject-02",
+      "query": "subject_2 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 3,
+      "transition": "regressed",
+      "reranker_score": 0.9978663325309753,
+      "top_incorrect_candidate": "expanded/service-8.md"
+    },
+    {
+      "case_id": "morphology-02",
+      "query": "authentication",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 7,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "semantic/authentication.md"
+    },
+    {
+      "case_id": "morphology-03",
+      "query": "authorization",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 10,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "semantic/authorization.md"
+    },
+    {
+      "case_id": "morphology-04",
+      "query": "classification",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 3,
+      "transition": "regressed",
+      "reranker_score": 2.6604036975186318e-05,
+      "top_incorrect_candidate": "semantic/metrics.md"
+    },
+    {
+      "case_id": "morphology-06",
+      "query": "configuration",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-15.md"
+    },
+    {
+      "case_id": "morphology-09",
+      "query": "encryption",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 6,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "semantic/encryption.md"
+    },
+    {
+      "case_id": "morphology-14",
+      "query": "retrieval",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-14.md"
+      ],
+      "rrf_rank": 8,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "semantic/encryption.md"
+    },
+    {
+      "case_id": "morphology-17",
+      "query": "validation",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-17.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 6,
+      "transition": "regressed",
+      "reranker_score": 1.2320126188569702e-05,
+      "top_incorrect_candidate": "semantic/authentication.md"
+    },
+    {
+      "case_id": "ambiguous-group-04",
+      "query": "sharedgroup_1 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999414682388306,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "ambiguous-group-05",
+      "query": "sharedgroup_1 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999414682388306,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "ambiguous-group-06",
+      "query": "sharedgroup_1 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999414682388306,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "ambiguous-group-07",
+      "query": "sharedgroup_1 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999414682388306,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "ambiguous-group-08",
+      "query": "sharedgroup_2 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999566078186035,
+      "top_incorrect_candidate": "expanded/service-2.md"
+    },
+    {
+      "case_id": "ambiguous-group-09",
+      "query": "sharedgroup_2 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999566078186035,
+      "top_incorrect_candidate": "expanded/service-2.md"
+    },
+    {
+      "case_id": "ambiguous-group-10",
+      "query": "sharedgroup_2 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999566078186035,
+      "top_incorrect_candidate": "expanded/service-2.md"
+    },
+    {
+      "case_id": "ambiguous-group-11",
+      "query": "sharedgroup_2 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999566078186035,
+      "top_incorrect_candidate": "expanded/service-2.md"
+    },
+    {
+      "case_id": "ambiguous-group-12",
+      "query": "sharedgroup_3 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999544620513916,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "ambiguous-group-13",
+      "query": "sharedgroup_3 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999544620513916,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "ambiguous-group-14",
+      "query": "sharedgroup_3 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999544620513916,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "ambiguous-group-15",
+      "query": "sharedgroup_3 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999544620513916,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "long-tail-00",
+      "query": "tailmarker_0",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "long-tail-01",
+      "query": "tailmarker_1",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-13.md"
+    },
+    {
+      "case_id": "long-tail-02",
+      "query": "tailmarker_2",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-11.md"
+    },
+    {
+      "case_id": "long-tail-03",
+      "query": "tailmarker_3",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "long-tail-04",
+      "query": "tailmarker_4",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "long-tail-05",
+      "query": "tailmarker_5",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "long-tail-06",
+      "query": "tailmarker_6",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "long-tail-07",
+      "query": "tailmarker_7",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "long-tail-08",
+      "query": "tailmarker_8",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-15.md"
+    },
+    {
+      "case_id": "long-tail-09",
+      "query": "tailmarker_9",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-15.md"
+    },
+    {
+      "case_id": "semantic-000",
+      "query": "How does the system make room when RAM is scarce?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/cache-eviction.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-7.md"
+    },
+    {
+      "case_id": "semantic-004",
+      "query": "Where do repeatedly failing events go?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/dead-letter.md"
+      ],
+      "rrf_rank": 6,
+      "reranked_rank": 7,
+      "transition": "regressed",
+      "reranker_score": 1.1432326573412865e-05,
+      "top_incorrect_candidate": "semantic/polling.md"
+    },
+    {
+      "case_id": "semantic-009",
+      "query": "When is a replicated update considered committed?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/quorum.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 2.0162700820947066e-05,
+      "top_incorrect_candidate": "semantic/write-through.md"
+    },
+    {
+      "case_id": "semantic-015",
+      "query": "What step confirms who the user is?",
+      "category": "distractor-heavy",
+      "expected_sources": [
+        "semantic/authentication.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 5.235656863078475e-05,
+      "top_incorrect_candidate": "semantic/authorization.md"
+    },
+    {
+      "case_id": "semantic-020",
+      "query": "Which caching pattern reads the database after a miss?",
+      "category": "near duplicate",
+      "expected_sources": [
+        "semantic/cache-aside.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 8.386917761527002e-05,
+      "top_incorrect_candidate": "semantic/write-through.md"
+    },
+    {
+      "case_id": "semantic-022",
+      "query": "How are multi-service transactions undone after a partial failure?",
+      "category": "near duplicate",
+      "expected_sources": [
+        "semantic/saga.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 1.6527717889402993e-05,
+      "top_incorrect_candidate": "semantic/token-rotation.md"
+    }
+  ],
+  "exact_match_protection": {
+    "lexical_top_1_correct": 44,
+    "preserved_by_reranker": 43,
+    "demoted_by_reranker": 1,
+    "regressions": [
+      {
+        "case_id": "exact-subject-02",
+        "query": "subject_2 workflow",
+        "category": "exact",
+        "expected_sources": [
+          "expanded/service-2.md"
+        ],
+        "rrf_rank": 2,
+        "reranked_rank": 3,
+        "transition": "regressed",
+        "reranker_score": 0.9978663325309753,
+        "top_incorrect_candidate": "expanded/service-8.md"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "exact-rare-00",
+      "query": "codename_0",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9958834052085876,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "exact-subject-00",
+      "query": "subject_0 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9995273351669312,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "morphology-00",
+      "query": "archival",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ],
+      "rrf_rank": 10,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 0.000902741972822696,
+      "top_incorrect_candidate": "semantic/deprovisioning.md"
+    },
+    {
+      "case_id": "exact-rare-01",
+      "query": "codename_1",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.47545158863067627,
+      "top_incorrect_candidate": "expanded/service-4.md"
+    },
+    {
+      "case_id": "exact-subject-01",
+      "query": "subject_1 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9949772953987122,
+      "top_incorrect_candidate": "expanded/service-6.md"
+    },
+    {
+      "case_id": "morphology-01",
+      "query": "analysis",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 6.640626088483259e-05,
+      "top_incorrect_candidate": "semantic/authentication.md"
+    },
+    {
+      "case_id": "exact-rare-02",
+      "query": "codename_2",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9521680474281311,
+      "top_incorrect_candidate": "expanded/service-8.md"
+    },
+    {
+      "case_id": "exact-subject-02",
+      "query": "subject_2 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 3,
+      "transition": "regressed",
+      "reranker_score": 0.9978663325309753,
+      "top_incorrect_candidate": "expanded/service-8.md"
+    },
+    {
+      "case_id": "morphology-02",
+      "query": "authentication",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 7,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "semantic/authentication.md"
+    },
+    {
+      "case_id": "exact-rare-03",
+      "query": "codename_3",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9908095598220825,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "exact-subject-03",
+      "query": "subject_3 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9993139505386353,
+      "top_incorrect_candidate": "expanded/service-13.md"
+    },
+    {
+      "case_id": "morphology-03",
+      "query": "authorization",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 10,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "semantic/authorization.md"
+    },
+    {
+      "case_id": "exact-rare-04",
+      "query": "codename_4",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9925978183746338,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "exact-subject-04",
+      "query": "subject_4 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9994291663169861,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "morphology-04",
+      "query": "classification",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 3,
+      "transition": "regressed",
+      "reranker_score": 2.6604036975186318e-05,
+      "top_incorrect_candidate": "semantic/metrics.md"
+    },
+    {
+      "case_id": "exact-rare-05",
+      "query": "codename_5",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9926885962486267,
+      "top_incorrect_candidate": "expanded/service-9.md"
+    },
+    {
+      "case_id": "exact-subject-05",
+      "query": "subject_5 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9995238780975342,
+      "top_incorrect_candidate": "expanded/service-6.md"
+    },
+    {
+      "case_id": "morphology-05",
+      "query": "compression",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ],
+      "rrf_rank": null,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 2.3209931896417402e-05,
+      "top_incorrect_candidate": "semantic/compression.md"
+    },
+    {
+      "case_id": "exact-rare-06",
+      "query": "codename_6",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9950985312461853,
+      "top_incorrect_candidate": "expanded/service-7.md"
+    },
+    {
+      "case_id": "exact-subject-06",
+      "query": "subject_6 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9995811581611633,
+      "top_incorrect_candidate": "expanded/service-7.md"
+    },
+    {
+      "case_id": "morphology-06",
+      "query": "configuration",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-15.md"
+    },
+    {
+      "case_id": "exact-rare-07",
+      "query": "codename_7",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9888052940368652,
+      "top_incorrect_candidate": "expanded/service-6.md"
+    },
+    {
+      "case_id": "exact-subject-07",
+      "query": "subject_7 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 0.9993255138397217,
+      "top_incorrect_candidate": "expanded/service-6.md"
+    },
+    {
+      "case_id": "morphology-07",
+      "query": "connection",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 6.73737667966634e-05,
+      "top_incorrect_candidate": "semantic/traces.md"
+    },
+    {
+      "case_id": "exact-rare-08",
+      "query": "codename_8",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9953188300132751,
+      "top_incorrect_candidate": "expanded/service-9.md"
+    },
+    {
+      "case_id": "exact-subject-08",
+      "query": "subject_8 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9996998310089111,
+      "top_incorrect_candidate": "expanded/service-9.md"
+    },
+    {
+      "case_id": "morphology-08",
+      "query": "detection",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ],
+      "rrf_rank": 3,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 0.00045263569336384535,
+      "top_incorrect_candidate": "semantic/encryption.md"
+    },
+    {
+      "case_id": "exact-rare-09",
+      "query": "codename_9",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9967107772827148,
+      "top_incorrect_candidate": "expanded/service-8.md"
+    },
+    {
+      "case_id": "exact-subject-09",
+      "query": "subject_9 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9996517896652222,
+      "top_incorrect_candidate": "expanded/service-8.md"
+    },
+    {
+      "case_id": "morphology-09",
+      "query": "encryption",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 6,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "semantic/encryption.md"
+    },
+    {
+      "case_id": "exact-rare-10",
+      "query": "codename_10",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-10.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9967867136001587,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "exact-subject-10",
+      "query": "subject_10 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-10.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9994871616363525,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "morphology-10",
+      "query": "ingestion",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-10.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.0006880934815853834,
+      "top_incorrect_candidate": "expanded/service-4.md"
+    },
+    {
+      "case_id": "exact-rare-11",
+      "query": "codename_11",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-11.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9978094696998596,
+      "top_incorrect_candidate": "expanded/service-19.md"
+    },
+    {
+      "case_id": "exact-subject-11",
+      "query": "subject_11 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-11.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9996850490570068,
+      "top_incorrect_candidate": "expanded/service-19.md"
+    },
+    {
+      "case_id": "morphology-11",
+      "query": "migration",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-11.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 1.4555424968420994e-05,
+      "top_incorrect_candidate": "semantic/schema-migration.md"
+    },
+    {
+      "case_id": "exact-rare-12",
+      "query": "codename_12",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-12.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9985234141349792,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "exact-subject-12",
+      "query": "subject_12 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-12.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9997732043266296,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "morphology-12",
+      "query": "observation",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-12.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 1.452235574106453e-05,
+      "top_incorrect_candidate": "semantic/incident-runbook.md"
+    },
+    {
+      "case_id": "exact-rare-13",
+      "query": "codename_13",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-13.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9994611144065857,
+      "top_incorrect_candidate": "expanded/service-14.md"
+    },
+    {
+      "case_id": "exact-subject-13",
+      "query": "subject_13 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-13.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.999871015548706,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "morphology-13",
+      "query": "persistence",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-13.md"
+      ],
+      "rrf_rank": null,
+      "reranked_rank": 4,
+      "transition": "unchanged incorrect",
+      "reranker_score": 1.120317119784886e-05,
+      "top_incorrect_candidate": "semantic/schema-migration.md"
+    },
+    {
+      "case_id": "exact-rare-14",
+      "query": "codename_14",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-14.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9990222454071045,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "exact-subject-14",
+      "query": "subject_14 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-14.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9997183680534363,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "morphology-14",
+      "query": "retrieval",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-14.md"
+      ],
+      "rrf_rank": 8,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "semantic/encryption.md"
+    },
+    {
+      "case_id": "exact-rare-15",
+      "query": "codename_15",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9974718689918518,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "exact-subject-15",
+      "query": "subject_15 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9996404647827148,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "morphology-15",
+      "query": "rotation",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 3,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 0.00028922013007104397,
+      "top_incorrect_candidate": "semantic/token-rotation.md"
+    },
+    {
+      "case_id": "exact-rare-16",
+      "query": "codename_16",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-16.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9978014826774597,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "exact-subject-16",
+      "query": "subject_16 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-16.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9997586607933044,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "morphology-16",
+      "query": "synchronization",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-16.md"
+      ],
+      "rrf_rank": 4,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 0.005010298453271389,
+      "top_incorrect_candidate": "semantic/tombstone.md"
+    },
+    {
+      "case_id": "exact-rare-17",
+      "query": "codename_17",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-17.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9991870522499084,
+      "top_incorrect_candidate": "expanded/service-19.md"
+    },
+    {
+      "case_id": "exact-subject-17",
+      "query": "subject_17 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-17.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9998883008956909,
+      "top_incorrect_candidate": "expanded/service-19.md"
+    },
+    {
+      "case_id": "morphology-17",
+      "query": "validation",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-17.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 6,
+      "transition": "regressed",
+      "reranker_score": 1.2320126188569702e-05,
+      "top_incorrect_candidate": "semantic/authentication.md"
+    },
+    {
+      "case_id": "exact-rare-18",
+      "query": "codename_18",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-18.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9987084865570068,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "exact-subject-18",
+      "query": "subject_18 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-18.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9996769428253174,
+      "top_incorrect_candidate": "expanded/service-16.md"
+    },
+    {
+      "case_id": "morphology-18",
+      "query": "verification",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-18.md"
+      ],
+      "rrf_rank": 5,
+      "reranked_rank": 3,
+      "transition": "unchanged incorrect",
+      "reranker_score": 0.001912650535814464,
+      "top_incorrect_candidate": "semantic/authentication.md"
+    },
+    {
+      "case_id": "exact-rare-19",
+      "query": "codename_19",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-19.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9996473789215088,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "exact-subject-19",
+      "query": "subject_19 workflow",
+      "category": "exact",
+      "expected_sources": [
+        "expanded/service-19.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999003410339355,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "morphology-19",
+      "query": "indexing",
+      "category": "morphology",
+      "expected_sources": [
+        "expanded/service-19.md"
+      ],
+      "rrf_rank": 3,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 0.000651988317258656,
+      "top_incorrect_candidate": "semantic/hashing.md"
+    },
+    {
+      "case_id": "ambiguous-group-00",
+      "query": "sharedgroup_0 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-0.md",
+        "expanded/service-1.md",
+        "expanded/service-2.md",
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999691247940063,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "ambiguous-group-01",
+      "query": "sharedgroup_0 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-0.md",
+        "expanded/service-1.md",
+        "expanded/service-2.md",
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999691247940063,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "ambiguous-group-02",
+      "query": "sharedgroup_0 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-0.md",
+        "expanded/service-1.md",
+        "expanded/service-2.md",
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999691247940063,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "ambiguous-group-03",
+      "query": "sharedgroup_0 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-0.md",
+        "expanded/service-1.md",
+        "expanded/service-2.md",
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999691247940063,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "ambiguous-group-04",
+      "query": "sharedgroup_1 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999414682388306,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "ambiguous-group-05",
+      "query": "sharedgroup_1 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999414682388306,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "ambiguous-group-06",
+      "query": "sharedgroup_1 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999414682388306,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "ambiguous-group-07",
+      "query": "sharedgroup_1 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-4.md",
+        "expanded/service-5.md",
+        "expanded/service-6.md",
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999414682388306,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "ambiguous-group-08",
+      "query": "sharedgroup_2 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999566078186035,
+      "top_incorrect_candidate": "expanded/service-2.md"
+    },
+    {
+      "case_id": "ambiguous-group-09",
+      "query": "sharedgroup_2 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999566078186035,
+      "top_incorrect_candidate": "expanded/service-2.md"
+    },
+    {
+      "case_id": "ambiguous-group-10",
+      "query": "sharedgroup_2 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999566078186035,
+      "top_incorrect_candidate": "expanded/service-2.md"
+    },
+    {
+      "case_id": "ambiguous-group-11",
+      "query": "sharedgroup_2 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999566078186035,
+      "top_incorrect_candidate": "expanded/service-2.md"
+    },
+    {
+      "case_id": "ambiguous-group-12",
+      "query": "sharedgroup_3 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999544620513916,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "ambiguous-group-13",
+      "query": "sharedgroup_3 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999544620513916,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "ambiguous-group-14",
+      "query": "sharedgroup_3 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999544620513916,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "ambiguous-group-15",
+      "query": "sharedgroup_3 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 0.9999544620513916,
+      "top_incorrect_candidate": "expanded/service-3.md"
+    },
+    {
+      "case_id": "ambiguous-group-16",
+      "query": "sharedgroup_4 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999645948410034,
+      "top_incorrect_candidate": "expanded/service-4.md"
+    },
+    {
+      "case_id": "ambiguous-group-17",
+      "query": "sharedgroup_4 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999645948410034,
+      "top_incorrect_candidate": "expanded/service-4.md"
+    },
+    {
+      "case_id": "ambiguous-group-18",
+      "query": "sharedgroup_4 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999645948410034,
+      "top_incorrect_candidate": "expanded/service-4.md"
+    },
+    {
+      "case_id": "ambiguous-group-19",
+      "query": "sharedgroup_4 common operational",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999645948410034,
+      "top_incorrect_candidate": "expanded/service-4.md"
+    },
+    {
+      "case_id": "long-tail-00",
+      "query": "tailmarker_0",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-0.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "long-tail-01",
+      "query": "tailmarker_1",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-1.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-13.md"
+    },
+    {
+      "case_id": "long-tail-02",
+      "query": "tailmarker_2",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-11.md"
+    },
+    {
+      "case_id": "long-tail-03",
+      "query": "tailmarker_3",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "long-tail-04",
+      "query": "tailmarker_4",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-4.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "long-tail-05",
+      "query": "tailmarker_5",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-5.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "long-tail-06",
+      "query": "tailmarker_6",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-6.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "long-tail-07",
+      "query": "tailmarker_7",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-12.md"
+    },
+    {
+      "case_id": "long-tail-08",
+      "query": "tailmarker_8",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-8.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-15.md"
+    },
+    {
+      "case_id": "long-tail-09",
+      "query": "tailmarker_9",
+      "category": "long chunk",
+      "expected_sources": [
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-15.md"
+    },
+    {
+      "case_id": "tenant-isolation-00",
+      "query": "othersecret_0 codename_0",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-0.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9998958110809326,
+      "top_incorrect_candidate": "private/tenant-b-5.txt"
+    },
+    {
+      "case_id": "tenant-isolation-01",
+      "query": "othersecret_1 codename_1",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-1.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.999563992023468,
+      "top_incorrect_candidate": "private/tenant-b-6.txt"
+    },
+    {
+      "case_id": "tenant-isolation-02",
+      "query": "othersecret_2 codename_2",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-2.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.999647855758667,
+      "top_incorrect_candidate": "private/tenant-b-3.txt"
+    },
+    {
+      "case_id": "tenant-isolation-03",
+      "query": "othersecret_3 codename_3",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-3.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9996963739395142,
+      "top_incorrect_candidate": "private/tenant-b-4.txt"
+    },
+    {
+      "case_id": "tenant-isolation-04",
+      "query": "othersecret_4 codename_4",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-4.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9998470544815063,
+      "top_incorrect_candidate": "private/tenant-b-6.txt"
+    },
+    {
+      "case_id": "tenant-isolation-05",
+      "query": "othersecret_5 codename_5",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-5.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9998389482498169,
+      "top_incorrect_candidate": "private/tenant-b-6.txt"
+    },
+    {
+      "case_id": "tenant-isolation-06",
+      "query": "othersecret_6 codename_6",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-6.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9998680353164673,
+      "top_incorrect_candidate": "private/tenant-b-9.txt"
+    },
+    {
+      "case_id": "tenant-isolation-07",
+      "query": "othersecret_7 codename_7",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-7.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9998459815979004,
+      "top_incorrect_candidate": "private/tenant-b-6.txt"
+    },
+    {
+      "case_id": "tenant-isolation-08",
+      "query": "othersecret_8 codename_8",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-8.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9997856020927429,
+      "top_incorrect_candidate": "private/tenant-b-9.txt"
+    },
+    {
+      "case_id": "tenant-isolation-09",
+      "query": "othersecret_9 codename_9",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "private/tenant-b-9.txt"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999048709869385,
+      "top_incorrect_candidate": "private/tenant-b-8.txt"
+    },
+    {
+      "case_id": "semantic-000",
+      "query": "How does the system make room when RAM is scarce?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/cache-eviction.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": null,
+      "transition": "regressed",
+      "reranker_score": null,
+      "top_incorrect_candidate": "expanded/service-7.md"
+    },
+    {
+      "case_id": "semantic-001",
+      "query": "What happens to callers who send too many requests?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/rate-limit.md"
+      ],
+      "rrf_rank": 4,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 4.03184603783302e-05,
+      "top_incorrect_candidate": "semantic/dead-letter.md"
+    },
+    {
+      "case_id": "semantic-002",
+      "query": "How is a failing dependency given time to recover?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/circuit-breaker.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.1695820540189743,
+      "top_incorrect_candidate": "semantic/cache-eviction.md"
+    },
+    {
+      "case_id": "semantic-003",
+      "query": "How do duplicate checkout retries avoid double billing?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/idempotency.md"
+      ],
+      "rrf_rank": 4,
+      "reranked_rank": 4,
+      "transition": "unchanged incorrect",
+      "reranker_score": 4.087586421519518e-05,
+      "top_incorrect_candidate": "expanded/service-5.md"
+    },
+    {
+      "case_id": "semantic-004",
+      "query": "Where do repeatedly failing events go?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/dead-letter.md"
+      ],
+      "rrf_rank": 6,
+      "reranked_rank": 7,
+      "transition": "regressed",
+      "reranker_score": 1.1432326573412865e-05,
+      "top_incorrect_candidate": "semantic/polling.md"
+    },
+    {
+      "case_id": "semantic-005",
+      "query": "How can release traffic be moved back quickly?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/blue-green.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.7945237755775452,
+      "top_incorrect_candidate": "semantic/canary.md"
+    },
+    {
+      "case_id": "semantic-006",
+      "query": "How does the pipeline avoid unlimited backlog?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/backpressure.md"
+      ],
+      "rrf_rank": 10,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 2.2016134607838467e-05,
+      "top_incorrect_candidate": "semantic/retry-policy.md"
+    },
+    {
+      "case_id": "semantic-007",
+      "query": "How does the job know where to continue after a crash?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/checkpoint.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 0.0006614112062379718,
+      "top_incorrect_candidate": "semantic/two-phase.md"
+    },
+    {
+      "case_id": "semantic-008",
+      "query": "How are deletions communicated to replicas?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/tombstone.md"
+      ],
+      "rrf_rank": 3,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 3.487680442049168e-05,
+      "top_incorrect_candidate": "semantic/quorum.md"
+    },
+    {
+      "case_id": "semantic-009",
+      "query": "When is a replicated update considered committed?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/quorum.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 2.0162700820947066e-05,
+      "top_incorrect_candidate": "semantic/write-through.md"
+    },
+    {
+      "case_id": "semantic-010",
+      "query": "Which policy keeps audit records before purging them?",
+      "category": "morphology",
+      "expected_sources": [
+        "semantic/audit-retention.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.605457067489624,
+      "top_incorrect_candidate": "semantic/provisioning.md"
+    },
+    {
+      "case_id": "semantic-011",
+      "query": "When are credentials rotated and old tokens invalidated?",
+      "category": "morphology",
+      "expected_sources": [
+        "semantic/token-rotation.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9995008707046509,
+      "top_incorrect_candidate": "semantic/authentication.md"
+    },
+    {
+      "case_id": "semantic-012",
+      "query": "What triggers shard rebalancing?",
+      "category": "morphology",
+      "expected_sources": [
+        "semantic/shard-rebalance.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.012147696688771248,
+      "top_incorrect_candidate": "semantic/retry-policy.md"
+    },
+    {
+      "case_id": "semantic-013",
+      "query": "How should migrated schemas introduce required fields?",
+      "category": "morphology",
+      "expected_sources": [
+        "semantic/schema-migration.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 1,
+      "transition": "fixed",
+      "reranker_score": 0.010984398424625397,
+      "top_incorrect_candidate": "expanded/service-11.md"
+    },
+    {
+      "case_id": "semantic-014",
+      "query": "When does the service compress responses?",
+      "category": "morphology",
+      "expected_sources": [
+        "semantic/compression.md"
+      ],
+      "rrf_rank": 4,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 3.0050348868826404e-05,
+      "top_incorrect_candidate": "expanded/service-5.md"
+    },
+    {
+      "case_id": "semantic-015",
+      "query": "What step confirms who the user is?",
+      "category": "distractor-heavy",
+      "expected_sources": [
+        "semantic/authentication.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 5.235656863078475e-05,
+      "top_incorrect_candidate": "semantic/authorization.md"
+    },
+    {
+      "case_id": "semantic-016",
+      "query": "What step decides if the known user may access a resource?",
+      "category": "distractor-heavy",
+      "expected_sources": [
+        "semantic/authorization.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.4954330027103424,
+      "top_incorrect_candidate": "semantic/provisioning.md"
+    },
+    {
+      "case_id": "semantic-017",
+      "query": "How is readable data made unreadable at rest?",
+      "category": "distractor-heavy",
+      "expected_sources": [
+        "semantic/encryption.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.02372310310602188,
+      "top_incorrect_candidate": "semantic/schema-migration.md"
+    },
+    {
+      "case_id": "semantic-018",
+      "query": "What one-way transformation stores passwords safely?",
+      "category": "distractor-heavy",
+      "expected_sources": [
+        "semantic/hashing.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.016057126224040985,
+      "top_incorrect_candidate": "semantic/encryption.md"
+    },
+    {
+      "case_id": "semantic-019",
+      "query": "What combines telemetry to understand incidents?",
+      "category": "distractor-heavy",
+      "expected_sources": [
+        "semantic/observability.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.01893574930727482,
+      "top_incorrect_candidate": "semantic/incident-runbook.md"
+    },
+    {
+      "case_id": "semantic-020",
+      "query": "Which caching pattern reads the database after a miss?",
+      "category": "near duplicate",
+      "expected_sources": [
+        "semantic/cache-aside.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 8.386917761527002e-05,
+      "top_incorrect_candidate": "semantic/write-through.md"
+    },
+    {
+      "case_id": "semantic-021",
+      "query": "Which caching pattern updates cache and storage on writes?",
+      "category": "near duplicate",
+      "expected_sources": [
+        "semantic/write-through.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9990379810333252,
+      "top_incorrect_candidate": "semantic/cache-aside.md"
+    },
+    {
+      "case_id": "semantic-022",
+      "query": "How are multi-service transactions undone after a partial failure?",
+      "category": "near duplicate",
+      "expected_sources": [
+        "semantic/saga.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 2,
+      "transition": "regressed",
+      "reranker_score": 1.6527717889402993e-05,
+      "top_incorrect_candidate": "semantic/token-rotation.md"
+    },
+    {
+      "case_id": "semantic-023",
+      "query": "Which protocol prepares participants before committing?",
+      "category": "near duplicate",
+      "expected_sources": [
+        "semantic/two-phase.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.07481034845113754,
+      "top_incorrect_candidate": "semantic/authorization.md"
+    },
+    {
+      "case_id": "semantic-024",
+      "query": "What technique repeatedly asks for updates?",
+      "category": "near duplicate",
+      "expected_sources": [
+        "semantic/polling.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.0002705596562009305,
+      "top_incorrect_candidate": "semantic/write-through.md"
+    },
+    {
+      "case_id": "semantic-025",
+      "query": "What should responders do first during an outage?",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "semantic/incident-runbook.md",
+        "semantic/oncall-guide.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.0011916551738977432,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "semantic-026",
+      "query": "What should responders do first during an outage?",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "semantic/incident-runbook.md",
+        "semantic/oncall-guide.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.0011916551738977432,
+      "top_incorrect_candidate": "expanded/service-1.md"
+    },
+    {
+      "case_id": "semantic-027",
+      "query": "What protections apply to personal data?",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "semantic/pii-policy.md",
+        "semantic/privacy-standard.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.0026007250417023897,
+      "top_incorrect_candidate": "semantic/schema-migration.md"
+    },
+    {
+      "case_id": "semantic-028",
+      "query": "What protections apply to personal data?",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "semantic/pii-policy.md",
+        "semantic/privacy-standard.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.0026007250417023897,
+      "top_incorrect_candidate": "semantic/schema-migration.md"
+    },
+    {
+      "case_id": "semantic-029",
+      "query": "How should transient network failures be retried?",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "semantic/client-resilience.md",
+        "semantic/retry-policy.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9505670666694641,
+      "top_incorrect_candidate": "semantic/circuit-breaker.md"
+    },
+    {
+      "case_id": "semantic-030",
+      "query": "How should transient network failures be retried?",
+      "category": "multiple relevant",
+      "expected_sources": [
+        "semantic/client-resilience.md",
+        "semantic/retry-policy.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9505670666694641,
+      "top_incorrect_candidate": "semantic/circuit-breaker.md"
+    },
+    {
+      "case_id": "semantic-031",
+      "query": "What does Java use here?",
+      "category": "ambiguous",
+      "expected_sources": [
+        "semantic/java-language.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.09835498780012131,
+      "top_incorrect_candidate": "semantic/java-coffee.md"
+    },
+    {
+      "case_id": "semantic-032",
+      "query": "What does Java use here?",
+      "category": "ambiguous",
+      "expected_sources": [
+        "semantic/java-coffee.md"
+      ],
+      "rrf_rank": 2,
+      "reranked_rank": 2,
+      "transition": "unchanged incorrect",
+      "reranker_score": 0.0027036862447857857,
+      "top_incorrect_candidate": "semantic/java-language.md"
+    },
+    {
+      "case_id": "semantic-033",
+      "query": "Where is the flibbertigibbet sentinel documented?",
+      "category": "rare term",
+      "expected_sources": [
+        "semantic/flibbertigibbet.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9987595081329346,
+      "top_incorrect_candidate": "semantic/shard-rebalance.md"
+    },
+    {
+      "case_id": "semantic-034",
+      "query": "What identifies benchmark rows excluded from billing?",
+      "category": "rare term",
+      "expected_sources": [
+        "semantic/zyzzyva.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999393224716187,
+      "top_incorrect_candidate": "expanded/service-17.md"
+    },
+    {
+      "case_id": "semantic-035",
+      "query": "Which flag controls the new checkout flow?",
+      "category": "exact lexical",
+      "expected_sources": [
+        "semantic/feature-flag.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9998175501823425,
+      "top_incorrect_candidate": "semantic/canary.md"
+    },
+    {
+      "case_id": "semantic-036",
+      "query": "Which environment variable caps context tokens?",
+      "category": "exact lexical",
+      "expected_sources": [
+        "semantic/env-var.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999066591262817,
+      "top_incorrect_candidate": "semantic/token-rotation.md"
+    },
+    {
+      "case_id": "semantic-037",
+      "query": "How can a user keep reaching the server with their local state?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/session-stickiness.md"
+      ],
+      "rrf_rank": 4,
+      "reranked_rank": 4,
+      "transition": "unchanged incorrect",
+      "reranker_score": 1.3660574040841311e-05,
+      "top_incorrect_candidate": "semantic/authorization.md"
+    },
+    {
+      "case_id": "semantic-038",
+      "query": "How does the service exit without dropping current requests?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/graceful-shutdown.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.0009356352966278791,
+      "top_incorrect_candidate": "semantic/cache-eviction.md"
+    },
+    {
+      "case_id": "semantic-039",
+      "query": "What lets the database replay committed changes after a crash?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/write-ahead-log.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.7610589861869812,
+      "top_incorrect_candidate": "semantic/circuit-breaker.md"
+    },
+    {
+      "case_id": "semantic-040",
+      "query": "What gives temporary ownership that disappears without renewal?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/lease.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9458193778991699,
+      "top_incorrect_candidate": "semantic/backpressure.md"
+    },
+    {
+      "case_id": "semantic-041",
+      "query": "What message asks workers to terminate gracefully?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/poison-pill.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.0003419519925955683,
+      "top_incorrect_candidate": "semantic/graceful-shutdown.md"
+    },
+    {
+      "case_id": "semantic-042",
+      "query": "Which telemetry is numeric time series?",
+      "category": "distractor-heavy",
+      "expected_sources": [
+        "semantic/metrics.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.16099847853183746,
+      "top_incorrect_candidate": "semantic/idempotency.md"
+    },
+    {
+      "case_id": "semantic-043",
+      "query": "Which telemetry follows one request across services?",
+      "category": "distractor-heavy",
+      "expected_sources": [
+        "semantic/traces.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.023396186530590057,
+      "top_incorrect_candidate": "semantic/rate-limit.md"
+    },
+    {
+      "case_id": "semantic-044",
+      "query": "What process provisions resources for a new user?",
+      "category": "morphology",
+      "expected_sources": [
+        "semantic/provisioning.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.4833741784095764,
+      "top_incorrect_candidate": "semantic/authorization.md"
+    },
+    {
+      "case_id": "semantic-045",
+      "query": "What process revokes access after a user leaves?",
+      "category": "morphology",
+      "expected_sources": [
+        "semantic/deprovisioning.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.002326318994164467,
+      "top_incorrect_candidate": "semantic/hashing.md"
+    },
+    {
+      "case_id": "semantic-046",
+      "query": "Which vault stores the Orchid project reports?",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "semantic/tenant-a-secret.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999079704284668,
+      "top_incorrect_candidate": "semantic/materialized-view.md"
+    },
+    {
+      "case_id": "semantic-047",
+      "query": "Which vault stores the Orchid project reports?",
+      "category": "tenant isolation",
+      "expected_sources": [
+        "semantic/tenant-b-secret.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9999158382415771,
+      "top_incorrect_candidate": null
+    },
+    {
+      "case_id": "semantic-048",
+      "query": "What precomputes query results for fast reads?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/materialized-view.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 0.9715842604637146,
+      "top_incorrect_candidate": "semantic/dead-letter.md"
+    },
+    {
+      "case_id": "semantic-049",
+      "query": "How is a new version tested on a small slice of users?",
+      "category": "semantic paraphrase",
+      "expected_sources": [
+        "semantic/canary.md"
+      ],
+      "rrf_rank": 1,
+      "reranked_rank": 1,
+      "transition": "unchanged correct",
+      "reranker_score": 4.387769877212122e-05,
+      "top_incorrect_candidate": "semantic/blue-green.md"
+    }
+  ]
+}

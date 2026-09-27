@@ -1,0 +1,84 @@
+{
+  "manifest_version": 1,
+  "phase": "Phase 5",
+  "git_base_sha": "aa900dd9eef79b0a39cae30dbd553605aa36c1ef",
+  "working_tree_was_uncommitted": true,
+  "python_version": "3.13.15",
+  "postgresql_version": "17.11 (Debian 17.11-1.pgdg12+2)",
+  "os_kernel": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "uname": "Linux DESKTOP-37459PM 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux",
+  "models": {
+    "embedding": {
+      "identifier": "minishlab/potion-base-8M",
+      "revision": "bf8b056651a2c21b8d2565580b8569da283cab23"
+    },
+    "reranker": {
+      "identifier": "cross-encoder/ms-marco-TinyBERT-L-2-v2",
+      "source_revision": "81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc",
+      "artifact_sha256": "7384e127005ead4f2c975419dccd885987e22d0ede93e903601ccdae5f2ce974"
+    }
+  },
+  "important_environment_variables": {},
+  "artifacts": [
+    {
+      "filename": "benchmarks/phase5_tail_latency.json",
+      "sha256": "8caf6492220072fd1b5852081590f1d3d2cdb7b47b28dfc22843cd85d8b7e07a",
+      "bytes": 394549,
+      "description": "Tail-latency variants and raw per-query component timings."
+    },
+    {
+      "filename": "benchmarks/phase5_candidate_recall.json",
+      "sha256": "91b1d4ad0c9d9831f3f8a7fa452a636ce1a99d7c668a298d71cc9496c64d858c",
+      "bytes": 508912,
+      "description": "Hybrid candidate recall at depths 5, 10, 20, and 50."
+    },
+    {
+      "filename": "benchmarks/phase5_oracle_reranker.json",
+      "sha256": "89d3d9cf4ef2e2b81dacfb489102daef32f48d95107b6cc0bcbf09873d7cd39e",
+      "bytes": 2515,
+      "description": "Deterministic oracle reranking upper bound."
+    },
+    {
+      "filename": "benchmarks/phase5_semantic_overgeneralization.json",
+      "sha256": "c0ce72154ef2c88b1ed7f42113bfd83f3c5ddc0f5d5b66e5245aae675b34ec3b",
+      "bytes": 23264,
+      "description": "Semantic-overgeneralization case audit."
+    },
+    {
+      "filename": "benchmarks/phase5_reranker_quality.json",
+      "sha256": "4915c6be4e7ad0fcb9921f778b92e786c0dac72c5b27d2d09481dd5c2d681e4f",
+      "bytes": 93168,
+      "description": "TinyBERT reranker quality, categories, and transitions."
+    },
+    {
+      "filename": "benchmarks/phase5_candidate_depth.json",
+      "sha256": "35bc7f7844c9115a5ce997723f664cec221e8a52aa996d1c3493b97a455f8bb7",
+      "bytes": 1765,
+      "description": "Reranker candidate-depth quality and latency."
+    },
+    {
+      "filename": "benchmarks/phase5_reranker_latency.json",
+      "sha256": "5264b1b12034b1ab81cd7f26e9e5d80f5ead5be96db4081e38ff71748e461ca5",
+      "bytes": 4645,
+      "description": "Standalone reranker depth and batching latency."
+    },
+    {
+      "filename": "benchmarks/phase5_end_to_end_latency.json",
+      "sha256": "5fd0ee12de1acd3dd5152fdd88dc5d15ebed42ce5f596b22e0eeea441049dc3f",
+      "bytes": 8140,
+      "description": "PostgreSQL hybrid versus reranked end-to-end latency."
+    },
+    {
+      "filename": "benchmarks/phase5_concurrency.json",
+      "sha256": "0cba7508a8bdfcf7eac7a0de10e3d97bbb167b17e3ef97fec8fe3565f764d5d4",
+      "bytes": 9708,
+      "description": "PostgreSQL hybrid versus reranked controlled concurrency."
+    },
+    {
+      "filename": "benchmarks/phase5_goodput.json",
+      "sha256": "f0a20d1fd8190ddc176834e3ca0255c622caeb33e07a5bd50892a8c72647a573",
+      "bytes": 4561,
+      "description": "Experimental synthetic retrieval-goodput results."
+    }
+  ]
+}
