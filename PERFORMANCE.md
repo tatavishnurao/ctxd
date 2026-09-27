@@ -78,3 +78,58 @@ Ingestion is intentionally more expensive than Phase 2 because it now persists c
 - PostgreSQL caches warmed during each run.
 - Concurrency results are fixed-workload saturation observations, not service-level HTTP load tests.
 - The explicit postings design favors deterministic Phase 2 compatibility over minimum storage size.
+
+## Phase 4B measured baseline
+
+Measured on this development environment with local Model2Vec embeddings and exact in-memory vector scan:
+
+- ~1,424 chunks (`benchmarks/phase4_inmemory_1200_results.json`): lexical p50 0.33 ms / p95 0.86 ms; semantic p50 17.70 ms / p95 20.52 ms; hybrid parallel p50 18.21 ms / p95 21.02 ms; hybrid sequential p50 20.48 ms / p95 22.83 ms.
+- ~12,015 chunks (`benchmarks/phase4_inmemory_12000_results.json`): lexical p50 0.70 ms / p95 6.91 ms; semantic p50 146.97 ms / p95 165.37 ms; hybrid parallel p50 150.22 ms / p95 163.57 ms; hybrid sequential p50 148.27 ms / p95 160.76 ms.
+
+Exact vector scan is acceptable at the smaller scale but becomes the dominant cost around 12k chunks in the in-memory benchmark. PostgreSQL exact pgvector remains the default. ANN/HNSW is not enabled by default; it should only be added after a PostgreSQL exact-vs-ANN comparison shows a bottleneck and acceptable quality tradeoff.
+
+## Phase 4B PostgreSQL closure
+
+`benchmarks/phase4b_postgres_closure.py` is the destructive, production-path benchmark for exact pgvector. It uses the pinned Model2Vec provider, 256-dimensional normalized vectors, BM25, `SemanticRetriever`, `HybridRetriever(candidate_depth=20)`, and `ContextAssembler`. The machine-readable result is `benchmarks/phase4b_postgres_exact.json`; query plans and relation audits are included there.
+
+On this WSL2/PostgreSQL 17.11 machine, the sequential full-path results were:
+
+| Chunks | Lexical p50/p95/p99 | Semantic p50/p95/p99 | Hybrid parallel p50/p95/p99 | Hybrid sequential p50/p95/p99 |
+|---:|---:|---:|---:|---:|
+| 1,200 | 2.09/22.15/26.80 ms | 3.83/167.17/185.98 ms | 4.80/177.55/186.83 ms | 6.25/195.28/209.38 ms |
+| 12,000 | 9.26/12.08/15.29 ms | 21.87/25.94/29.99 ms | 22.80/28.54/34.84 ms | 31.75/36.88/41.81 ms |
+| 50,004 | 44.02/54.86/56.75 ms | 43.86/53.06/56.91 ms | 48.53/59.93/65.34 ms | 84.60/104.23/111.64 ms |
+
+At 50,004 chunks the exact vector path is 41.46 ms p50 in component timing, versus 39.89 ms for BM25; query embedding is only 0.33 ms and RRF/assembly are below 0.1/0.01 ms. The first concurrency knee was around 8–16 workers: semantic p95 rose from 55.65 ms at 8 to 101.06 ms at 16, and hybrid p95 from 75.94 ms to 133.58 ms. All measured requests succeeded.
+
+Storage was measured, not estimated. At 50,004 chunks the database was 373,495,475 bytes: 1,464.45 bytes/embedding and 7,469.31 bytes/chunk. `chunk_embeddings` was 19.61% of the database; lexical index bytes were 40.90%. The exact plans were sequential/parallel scans plus top-N sort (no vector index); at 50k PostgreSQL used a parallel sequential scan and Gather Merge.
+
+The HNSW experiment is isolated in `benchmarks/phase4b_hnsw_experiment.py` and `benchmarks/phase4b_hnsw.json`. With `m=16`, `ef_construction=64`, and `ef_search=40`, the recorded run measured 2.53/3.15/3.60 ms p50/p95/p99 versus exact 36.74/41.97/46.66 ms, with a 68.30 MB index and 6.08 s build. ANN recall against exact was R@1 0.060, R@5 0.052, R@10 0.396; hybrid top-10 overlap recall was 0.550 on the fixed synthetic query set. Because the speedup came with material and variable recall loss, HNSW is not enabled by default. At the measured 50k scale, ANN is an experiment rather than a justified production default.
+
+## Phase 5 tail-latency closure
+
+`benchmarks/phase5_tail_latency.json` contains 300 raw per-query samples per variant at 1,200 and 12,000 chunks. The original 1.2k p95 of 177.55 ms did not reproduce consistently. The exact Phase 4 operation sequence produced hybrid p50/p95/p99 of 11.92/24.40/119.60 ms. Isolated normal-warmup hybrid measured 11.81/19.84/54.45 ms p50/p95/p99. Increased warmup, model preload, disabled GC, and a persistent executor did not eliminate intermittent clustered spikes. Slow intervals simultaneously affected embedding, BM25, and vector work, which rules out any one component as a confirmed cause. **CAUSE NOT YET CONFIRMED.** WSL/host scheduler or shared-resource noise is plausible but not proven.
+
+## Phase 5 reranker performance
+
+The internal TinyBERT experiment uses 10 fixed RRF candidates and batch size 8. It is not exposed through the runtime or API.
+
+- 1,200 chunks: hybrid 7.96/10.26/10.82 ms versus reranked 19.19/21.33/22.84 ms p50/p95/p99.
+- 12,000 chunks: hybrid 28.44/41.29/46.12 ms versus reranked 50.22/63.72/71.17 ms.
+- 50,004 chunks: hybrid 60.64/70.20/83.63 ms versus reranked 87.02/98.95/105.78 ms.
+
+At 50k concurrency, hybrid throughput peaked at 31.29 QPS at concurrency 8; reranked throughput peaked at 21.54 QPS at concurrency 8. Both deteriorated beyond 8, so reranking did not improve the saturation knee. Standalone reranking over 10 candidates measured 11.10/38.69/49.41 ms p50/p95/p99 in the quality run. At 20 candidates, batch size 8 had the best measured pair throughput (785 pairs/s), while batch size 1 had the best p95 (61.07 ms); neither operational result offsets the quality regression.
+
+Experimental goodput used synthetic marker queries and therefore had a 100% top-5 quality pass rate for both modes. At 50k, 100 ms good requests/s were 16.1 for hybrid and 11.0 for reranked; at 150/250 ms they were 16.1 versus 11.5. This is an engineering workload indicator, not an industry-standard metric or semantic-evaluation result.
+
+## Phase 6 strict reproducibility protocol
+
+`benchmarks/phase6_reproducibility.py` destructively rebuilds each PostgreSQL corpus and then holds it stable for five runs. Each mode/run has 20 warmups and 100 measured queries. Models are preloaded, hybrid/reranked order alternates AB/BA, and cold model construction plus first-query timing are recorded separately. Every measured query records embedding, BM25, exact-vector search/materialization, RRF, reranker preparation/tokenization/inference, context selection, total latency, and synthetic quality pass. Outliers use a declared within-run rule: total latency above median plus three median absolute deviations.
+
+Median hybrid p95 across the five runs was 30.82 ms at 1.2k, 26.88 ms at 12k, and 64.91 ms at 50k. Reranked p95 was 50.23, 49.51, and 96.02 ms. Hybrid p95 ranges were 28.53–31.14, 26.02–28.22, and 64.82–68.81 ms respectively. The inverse 1.2k/12k medians and reranked-mode shifts in retrieval components show that this shared-host run still contains system-state effects; they are measurements, not a causal diagnosis.
+
+At 1.2k the robust outliers were BM25-dominant and no same-run/query outlier was shared by hybrid and reranked modes. The Phase 5 clustered simultaneous embedding/BM25/vector spikes therefore did not reproduce, but absence in five runs does not prove they were scheduling noise. The historical tail-latency cause remains **UNRESOLVED**.
+
+Five runs were also collected at every concurrency point for 12k and 50k. Throughput plateaus around 8–16 workers and latency rises sharply afterward. At 50k/concurrency 8, median-run hybrid versus reranked QPS was 30.3 versus 21.9 and p95 was 288.8 versus 370.9 ms. Pool wait becomes material at concurrency 32. Client process CPU, maximum RSS, and pool wait are recorded per run; these are not PostgreSQL-server CPU profiles.
+
+Phase 6 median 100 ms synthetic goodput at 50k was 17.32 requests/s hybrid versus 11.29 reranked. The workload still has 100% top-5 synthetic quality and must not be interpreted as semantic quality. See `benchmarks/phase6_reproducibility.json`, `phase6_concurrency.json`, `phase6_goodput.json`, and `phase6_outlier_analysis.json`.
