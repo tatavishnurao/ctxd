@@ -1,0 +1,953 @@
+{
+  "exact_duplicate_clusters": [],
+  "near_duplicate_pairs": [],
+  "same_fact_different_wording_clusters": [
+    [
+      "expanded/service-0.md",
+      "expanded/service-1.md",
+      "expanded/service-2.md",
+      "expanded/service-3.md"
+    ],
+    [
+      "expanded/service-10.md",
+      "expanded/service-11.md",
+      "expanded/service-8.md",
+      "expanded/service-9.md"
+    ],
+    [
+      "expanded/service-12.md",
+      "expanded/service-13.md",
+      "expanded/service-14.md",
+      "expanded/service-15.md"
+    ],
+    [
+      "expanded/service-16.md",
+      "expanded/service-17.md",
+      "expanded/service-18.md",
+      "expanded/service-19.md"
+    ],
+    [
+      "expanded/service-4.md",
+      "expanded/service-5.md",
+      "expanded/service-6.md",
+      "expanded/service-7.md"
+    ],
+    [
+      "semantic/client-resilience.md",
+      "semantic/retry-policy.md"
+    ],
+    [
+      "semantic/incident-runbook.md",
+      "semantic/oncall-guide.md"
+    ],
+    [
+      "semantic/pii-policy.md",
+      "semantic/privacy-standard.md"
+    ]
+  ],
+  "different_fact_semantic_similarity_pairs": [
+    {
+      "sources": [
+        "expanded/service-0.md",
+        "expanded/service-4.md"
+      ],
+      "embedding_cosine": 0.8684933449543287,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-0.md",
+        "expanded/service-5.md"
+      ],
+      "embedding_cosine": 0.8506887271724094,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-0.md",
+        "expanded/service-6.md"
+      ],
+      "embedding_cosine": 0.8569988937295304,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-0.md",
+        "expanded/service-7.md"
+      ],
+      "embedding_cosine": 0.8222586939416892,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-0.md",
+        "expanded/service-8.md"
+      ],
+      "embedding_cosine": 0.8784320269630264,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-0.md",
+        "expanded/service-9.md"
+      ],
+      "embedding_cosine": 0.846086525318944,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-1.md",
+        "expanded/service-4.md"
+      ],
+      "embedding_cosine": 0.8501947019751968,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-1.md",
+        "expanded/service-5.md"
+      ],
+      "embedding_cosine": 0.8314770374165941,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-1.md",
+        "expanded/service-6.md"
+      ],
+      "embedding_cosine": 0.8360543076786932,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-1.md",
+        "expanded/service-7.md"
+      ],
+      "embedding_cosine": 0.8327952466148755,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-1.md",
+        "expanded/service-8.md"
+      ],
+      "embedding_cosine": 0.8477703956820295,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-1.md",
+        "expanded/service-9.md"
+      ],
+      "embedding_cosine": 0.8107232535130077,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-2.md",
+        "expanded/service-4.md"
+      ],
+      "embedding_cosine": 0.8260157124611501,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-2.md",
+        "expanded/service-5.md"
+      ],
+      "embedding_cosine": 0.8241086941361249,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-2.md",
+        "expanded/service-6.md"
+      ],
+      "embedding_cosine": 0.8016494709796514,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-2.md",
+        "expanded/service-7.md"
+      ],
+      "embedding_cosine": 0.8035235593015528,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-2.md",
+        "expanded/service-8.md"
+      ],
+      "embedding_cosine": 0.8391948998690405,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-3.md",
+        "expanded/service-4.md"
+      ],
+      "embedding_cosine": 0.8349402385309099,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-4.md",
+        "expanded/service-8.md"
+      ],
+      "embedding_cosine": 0.8492138063454405,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-4.md",
+        "expanded/service-9.md"
+      ],
+      "embedding_cosine": 0.8170981891660912,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-5.md",
+        "expanded/service-8.md"
+      ],
+      "embedding_cosine": 0.8136295221460009,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-6.md",
+        "expanded/service-8.md"
+      ],
+      "embedding_cosine": 0.8377288297335721,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-7.md",
+        "expanded/service-8.md"
+      ],
+      "embedding_cosine": 0.8315081746761177,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-10.md",
+        "expanded/service-12.md"
+      ],
+      "embedding_cosine": 0.8578414921282885,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-10.md",
+        "expanded/service-13.md"
+      ],
+      "embedding_cosine": 0.8195454459398986,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-10.md",
+        "expanded/service-14.md"
+      ],
+      "embedding_cosine": 0.8556005068568621,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-10.md",
+        "expanded/service-15.md"
+      ],
+      "embedding_cosine": 0.8691501541166766,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-10.md",
+        "expanded/service-16.md"
+      ],
+      "embedding_cosine": 0.852844503538122,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-10.md",
+        "expanded/service-17.md"
+      ],
+      "embedding_cosine": 0.8454117547424747,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-10.md",
+        "expanded/service-18.md"
+      ],
+      "embedding_cosine": 0.8575063337904062,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-10.md",
+        "expanded/service-19.md"
+      ],
+      "embedding_cosine": 0.8604839671918046,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-11.md",
+        "expanded/service-12.md"
+      ],
+      "embedding_cosine": 0.8705775063455583,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-11.md",
+        "expanded/service-13.md"
+      ],
+      "embedding_cosine": 0.8217786203464179,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-11.md",
+        "expanded/service-14.md"
+      ],
+      "embedding_cosine": 0.8178101194642872,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-11.md",
+        "expanded/service-15.md"
+      ],
+      "embedding_cosine": 0.836419908941947,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-11.md",
+        "expanded/service-16.md"
+      ],
+      "embedding_cosine": 0.8291031349364617,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-11.md",
+        "expanded/service-17.md"
+      ],
+      "embedding_cosine": 0.842273439836948,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-11.md",
+        "expanded/service-18.md"
+      ],
+      "embedding_cosine": 0.8680610839752392,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-11.md",
+        "expanded/service-19.md"
+      ],
+      "embedding_cosine": 0.8673980278528967,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-12.md",
+        "expanded/service-16.md"
+      ],
+      "embedding_cosine": 0.8360119975240151,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-12.md",
+        "expanded/service-17.md"
+      ],
+      "embedding_cosine": 0.8356904776089902,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-12.md",
+        "expanded/service-18.md"
+      ],
+      "embedding_cosine": 0.8863468087097128,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-12.md",
+        "expanded/service-19.md"
+      ],
+      "embedding_cosine": 0.8763447299374565,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-13.md",
+        "expanded/service-16.md"
+      ],
+      "embedding_cosine": 0.8087157924933284,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-13.md",
+        "expanded/service-17.md"
+      ],
+      "embedding_cosine": 0.8438797937951417,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-13.md",
+        "expanded/service-18.md"
+      ],
+      "embedding_cosine": 0.8508666003551049,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-13.md",
+        "expanded/service-19.md"
+      ],
+      "embedding_cosine": 0.8336370540651893,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-14.md",
+        "expanded/service-16.md"
+      ],
+      "embedding_cosine": 0.8345832853925366,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-14.md",
+        "expanded/service-17.md"
+      ],
+      "embedding_cosine": 0.8614911464356544,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-14.md",
+        "expanded/service-18.md"
+      ],
+      "embedding_cosine": 0.8655512117244072,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-14.md",
+        "expanded/service-19.md"
+      ],
+      "embedding_cosine": 0.8312441281829234,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-15.md",
+        "expanded/service-16.md"
+      ],
+      "embedding_cosine": 0.853713838652399,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-15.md",
+        "expanded/service-17.md"
+      ],
+      "embedding_cosine": 0.8487494102045772,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-15.md",
+        "expanded/service-18.md"
+      ],
+      "embedding_cosine": 0.8522897128628991,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "expanded/service-15.md",
+        "expanded/service-19.md"
+      ],
+      "embedding_cosine": 0.8347945060523011,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-1.txt"
+      ],
+      "embedding_cosine": 0.9711518036847764,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-2.txt"
+      ],
+      "embedding_cosine": 0.9565485579943714,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-3.txt"
+      ],
+      "embedding_cosine": 0.9559820737166177,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-4.txt"
+      ],
+      "embedding_cosine": 0.9578344934192172,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-5.txt"
+      ],
+      "embedding_cosine": 0.9615615154303869,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-6.txt"
+      ],
+      "embedding_cosine": 0.9488821344607152,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-7.txt"
+      ],
+      "embedding_cosine": 0.9550036306792982,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-8.txt"
+      ],
+      "embedding_cosine": 0.955538244364114,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-0.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.9532049346702053,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-1.txt",
+        "private/tenant-b-2.txt"
+      ],
+      "embedding_cosine": 0.9779774450754103,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-1.txt",
+        "private/tenant-b-3.txt"
+      ],
+      "embedding_cosine": 0.9691846289348389,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-1.txt",
+        "private/tenant-b-4.txt"
+      ],
+      "embedding_cosine": 0.9739482828892636,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-1.txt",
+        "private/tenant-b-5.txt"
+      ],
+      "embedding_cosine": 0.9778526585625811,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-1.txt",
+        "private/tenant-b-6.txt"
+      ],
+      "embedding_cosine": 0.9697569612383724,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-1.txt",
+        "private/tenant-b-7.txt"
+      ],
+      "embedding_cosine": 0.9686666105520833,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-1.txt",
+        "private/tenant-b-8.txt"
+      ],
+      "embedding_cosine": 0.9689810794731244,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-1.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.9584822136444084,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-2.txt",
+        "private/tenant-b-3.txt"
+      ],
+      "embedding_cosine": 0.9705215755127974,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-2.txt",
+        "private/tenant-b-4.txt"
+      ],
+      "embedding_cosine": 0.9693625214885311,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-2.txt",
+        "private/tenant-b-5.txt"
+      ],
+      "embedding_cosine": 0.9707153094473786,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-2.txt",
+        "private/tenant-b-6.txt"
+      ],
+      "embedding_cosine": 0.9656035682486499,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-2.txt",
+        "private/tenant-b-7.txt"
+      ],
+      "embedding_cosine": 0.9600787389178174,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-2.txt",
+        "private/tenant-b-8.txt"
+      ],
+      "embedding_cosine": 0.9683349561573533,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-2.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.9570231050303128,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-3.txt",
+        "private/tenant-b-4.txt"
+      ],
+      "embedding_cosine": 0.9685005703468975,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-3.txt",
+        "private/tenant-b-5.txt"
+      ],
+      "embedding_cosine": 0.9657413220676964,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-3.txt",
+        "private/tenant-b-6.txt"
+      ],
+      "embedding_cosine": 0.9648553295751094,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-3.txt",
+        "private/tenant-b-7.txt"
+      ],
+      "embedding_cosine": 0.9582733909015624,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-3.txt",
+        "private/tenant-b-8.txt"
+      ],
+      "embedding_cosine": 0.9633137158783771,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-3.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.9575971152695557,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-4.txt",
+        "private/tenant-b-5.txt"
+      ],
+      "embedding_cosine": 0.9788226562651519,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-4.txt",
+        "private/tenant-b-6.txt"
+      ],
+      "embedding_cosine": 0.9731960496889779,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-4.txt",
+        "private/tenant-b-7.txt"
+      ],
+      "embedding_cosine": 0.9640553540388271,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-4.txt",
+        "private/tenant-b-8.txt"
+      ],
+      "embedding_cosine": 0.9713817583685028,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-4.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.961578942177318,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-5.txt",
+        "private/tenant-b-6.txt"
+      ],
+      "embedding_cosine": 0.977696028381957,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-5.txt",
+        "private/tenant-b-7.txt"
+      ],
+      "embedding_cosine": 0.9715422170301207,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-5.txt",
+        "private/tenant-b-8.txt"
+      ],
+      "embedding_cosine": 0.9703554537701411,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-5.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.9629979417518947,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-6.txt",
+        "private/tenant-b-7.txt"
+      ],
+      "embedding_cosine": 0.9701442228784083,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-6.txt",
+        "private/tenant-b-8.txt"
+      ],
+      "embedding_cosine": 0.968737994184397,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-6.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.956137707317574,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-7.txt",
+        "private/tenant-b-8.txt"
+      ],
+      "embedding_cosine": 0.9684086138015159,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-7.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.9564639079551337,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    },
+    {
+      "sources": [
+        "private/tenant-b-8.txt",
+        "private/tenant-b-9.txt"
+      ],
+      "embedding_cosine": 0.9628117530775784,
+      "classification": "different facts but semantically similar",
+      "warning": "Similarity is an analysis signal, not an automatic duplicate label."
+    }
+  ],
+  "queries_with_explicit_equivalent_sources": 96,
+  "reranker_regressions_involving_equivalent_clusters": 12,
+  "rankings_penalized_despite_equivalent_evidence": 1
+}
