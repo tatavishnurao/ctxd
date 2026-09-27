@@ -1,0 +1,675 @@
+{
+  "source_taxonomy_artifact": "evals/retrieval_semantic_model2vec_results.json",
+  "total": 27,
+  "classification_counts": {
+    "A": 27,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F": 0
+  },
+  "candidate_present_at_50": 27,
+  "candidate_missing_at_50": 0,
+  "reranker_fixable": 4,
+  "cases": [
+    {
+      "case_id": "exact-rare-01",
+      "query": "codename_1",
+      "expected_source": [
+        "expanded/service-1.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 3,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-9.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [],
+        "competing_content_excerpt": "# Service 9\n\nCodename_9 subsystem handles subject_9 workflow. Sharedgroup_2 common operational procedure. The component will encrypt records. filler9_0 filler9_1 filler9_2 filler9_3 filler9_4 filler9_5 filler9_6 filler9_7 filler9_8 filler9_9 filler9_10 filler9_11 filler9_12 filler9_13 filler9_14 fil"
+      }
+    },
+    {
+      "case_id": "exact-subject-02",
+      "query": "subject_2 workflow",
+      "expected_source": [
+        "expanded/service-2.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 2,
+      "candidate_set_position": {
+        "10": 2,
+        "20": 2,
+        "50": 2
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "workflow"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "exact-rare-04",
+      "query": "codename_4",
+      "expected_source": [
+        "expanded/service-4.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 2,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-9.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [],
+        "competing_content_excerpt": "# Service 9\n\nCodename_9 subsystem handles subject_9 workflow. Sharedgroup_2 common operational procedure. The component will encrypt records. filler9_0 filler9_1 filler9_2 filler9_3 filler9_4 filler9_5 filler9_6 filler9_7 filler9_8 filler9_9 filler9_10 filler9_11 filler9_12 filler9_13 filler9_14 fil"
+      }
+    },
+    {
+      "case_id": "exact-rare-05",
+      "query": "codename_5",
+      "expected_source": [
+        "expanded/service-5.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 5,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-9.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [],
+        "competing_content_excerpt": "# Service 9\n\nCodename_9 subsystem handles subject_9 workflow. Sharedgroup_2 common operational procedure. The component will encrypt records. filler9_0 filler9_1 filler9_2 filler9_3 filler9_4 filler9_5 filler9_6 filler9_7 filler9_8 filler9_9 filler9_10 filler9_11 filler9_12 filler9_13 filler9_14 fil"
+      }
+    },
+    {
+      "case_id": "exact-subject-05",
+      "query": "subject_5 workflow",
+      "expected_source": [
+        "expanded/service-5.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 2,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "workflow"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "exact-subject-06",
+      "query": "subject_6 workflow",
+      "expected_source": [
+        "expanded/service-6.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 2,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "workflow"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "exact-subject-07",
+      "query": "subject_7 workflow",
+      "expected_source": [
+        "expanded/service-7.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 2,
+      "candidate_set_position": {
+        "10": 2,
+        "20": 2,
+        "50": 2
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "workflow"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "exact-subject-09",
+      "query": "subject_9 workflow",
+      "expected_source": [
+        "expanded/service-9.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 2,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "workflow"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "ambiguous-group-08",
+      "query": "sharedgroup_2 common operational",
+      "expected_source": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-15.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+      }
+    },
+    {
+      "case_id": "ambiguous-group-09",
+      "query": "sharedgroup_2 common operational",
+      "expected_source": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-15.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+      }
+    },
+    {
+      "case_id": "ambiguous-group-10",
+      "query": "sharedgroup_2 common operational",
+      "expected_source": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-15.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+      }
+    },
+    {
+      "case_id": "ambiguous-group-11",
+      "query": "sharedgroup_2 common operational",
+      "expected_source": [
+        "expanded/service-10.md",
+        "expanded/service-11.md",
+        "expanded/service-8.md",
+        "expanded/service-9.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-15.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+      }
+    },
+    {
+      "case_id": "ambiguous-group-12",
+      "query": "sharedgroup_3 common operational",
+      "expected_source": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 3,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "ambiguous-group-13",
+      "query": "sharedgroup_3 common operational",
+      "expected_source": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 3,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "ambiguous-group-14",
+      "query": "sharedgroup_3 common operational",
+      "expected_source": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 3,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "ambiguous-group-15",
+      "query": "sharedgroup_3 common operational",
+      "expected_source": [
+        "expanded/service-12.md",
+        "expanded/service-13.md",
+        "expanded/service-14.md",
+        "expanded/service-15.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 3,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-4.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 4\n\nCodename_4 subsystem handles subject_4 workflow. Sharedgroup_1 common operational procedure. The component will classify records. filler4_0 filler4_1 filler4_2 filler4_3 filler4_4 filler4_5 filler4_6 filler4_7 filler4_8 filler4_9 filler4_10 filler4_11 filler4_12 filler4_13 filler4_14 fi"
+      }
+    },
+    {
+      "case_id": "ambiguous-group-16",
+      "query": "sharedgroup_4 common operational",
+      "expected_source": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-15.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+      }
+    },
+    {
+      "case_id": "ambiguous-group-17",
+      "query": "sharedgroup_4 common operational",
+      "expected_source": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-15.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+      }
+    },
+    {
+      "case_id": "ambiguous-group-18",
+      "query": "sharedgroup_4 common operational",
+      "expected_source": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-15.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+      }
+    },
+    {
+      "case_id": "ambiguous-group-19",
+      "query": "sharedgroup_4 common operational",
+      "expected_source": [
+        "expanded/service-16.md",
+        "expanded/service-17.md",
+        "expanded/service-18.md",
+        "expanded/service-19.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-15.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "common",
+          "operational"
+        ],
+        "competing_content_excerpt": "# Service 15\n\nCodename_15 subsystem handles subject_15 workflow. Sharedgroup_3 common operational procedure. The component will rotate records. concise operational guidance tailmarker_15."
+      }
+    },
+    {
+      "case_id": "long-tail-01",
+      "query": "tailmarker_1",
+      "expected_source": [
+        "expanded/service-1.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 10,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-11.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [],
+        "competing_content_excerpt": "# Service 11\n\nCodename_11 subsystem handles subject_11 workflow. Sharedgroup_2 common operational procedure. The component will migrate records. concise operational guidance tailmarker_11."
+      }
+    },
+    {
+      "case_id": "long-tail-06",
+      "query": "tailmarker_6",
+      "expected_source": [
+        "expanded/service-6.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 9,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "expanded/service-11.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [],
+        "competing_content_excerpt": "# Service 11\n\nCodename_11 subsystem handles subject_11 workflow. Sharedgroup_2 common operational procedure. The component will migrate records. concise operational guidance tailmarker_11."
+      }
+    },
+    {
+      "case_id": "semantic-000",
+      "query": "How does the system make room when RAM is scarce?",
+      "expected_source": [
+        "semantic/cache-eviction.md"
+      ],
+      "lexical_rank": 3,
+      "semantic_rank": 2,
+      "hybrid_rank": 2,
+      "candidate_set_position": {
+        "10": 2,
+        "20": 2,
+        "50": 2
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "semantic/java-coffee.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "room",
+          "when"
+        ],
+        "competing_content_excerpt": "# java-coffee.md\n\nJava coffee is stocked in the break room and should be reordered when supplies are low."
+      }
+    },
+    {
+      "case_id": "semantic-002",
+      "query": "How is a failing dependency given time to recover?",
+      "expected_source": [
+        "semantic/circuit-breaker.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 2,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "semantic/client-resilience.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [],
+        "competing_content_excerpt": "# client-resilience.md\n\nClients retry temporary network failures with jittered exponential backoff until their retry budget is exhausted."
+      }
+    },
+    {
+      "case_id": "semantic-008",
+      "query": "How are deletions communicated to replicas?",
+      "expected_source": [
+        "semantic/tombstone.md"
+      ],
+      "lexical_rank": 3,
+      "semantic_rank": 3,
+      "hybrid_rank": 3,
+      "candidate_set_position": {
+        "10": 3,
+        "20": 3,
+        "50": 3
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "semantic/quorum.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "replicas"
+        ],
+        "competing_content_excerpt": "# quorum.md\n\nA quorum write succeeds only after a majority of replicas acknowledge the update."
+      }
+    },
+    {
+      "case_id": "semantic-009",
+      "query": "When is a replicated update considered committed?",
+      "expected_source": [
+        "semantic/quorum.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 2,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "semantic/write-ahead-log.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "committed"
+        ],
+        "competing_content_excerpt": "# write-ahead-log.md\n\nThe write ahead log records changes before data pages are modified so recovery can replay committed operations."
+      }
+    },
+    {
+      "case_id": "semantic-041",
+      "query": "What message asks workers to terminate gracefully?",
+      "expected_source": [
+        "semantic/poison-pill.md"
+      ],
+      "lexical_rank": 1,
+      "semantic_rank": 2,
+      "hybrid_rank": 1,
+      "candidate_set_position": {
+        "10": 1,
+        "20": 1,
+        "50": 1
+      },
+      "classification": "A",
+      "top_competing_incorrect_source": "semantic/two-phase.md",
+      "plausibility_evidence": {
+        "shared_query_tokens": [
+          "asks"
+        ],
+        "competing_content_excerpt": "# two-phase.md\n\nTwo phase commit asks participants to prepare and then commit only after every participant votes yes."
+      }
+    }
+  ]
+}

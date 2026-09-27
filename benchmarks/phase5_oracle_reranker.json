@@ -1,0 +1,85 @@
+{
+  "offline_evaluation_only": true,
+  "invariant": "Oracle only reorders the existing fixed candidate set.",
+  "note": "Reranking cannot improve recall at candidate depth; it can only reorder present items.",
+  "depths": {
+    "10": {
+      "hybrid_rrf": {
+        "recall_at_1": 0.6666666666666666,
+        "recall_at_5": 0.8933333333333333,
+        "recall_at_10": 0.9733333333333334,
+        "mrr": 0.8546455026455027,
+        "ndcg_at_5": 0.830601073378465,
+        "ndcg_at_10": 0.8627220605143205
+      },
+      "oracle": {
+        "recall_at_1": 0.8666666666666667,
+        "recall_at_5": 0.9733333333333334,
+        "recall_at_10": 0.9733333333333334,
+        "mrr": 0.9866666666666667,
+        "ndcg_at_5": 0.976350591807079,
+        "ndcg_at_10": 0.976350591807079
+      },
+      "delta": {
+        "mrr": 0.13202116402116404,
+        "ndcg_at_5": 0.14574951842861394,
+        "ndcg_at_10": 0.1136285312927584
+      },
+      "top_1_failures_fixable": 30,
+      "top_5_failures_fixable": 7,
+      "candidate_missing": 2
+    },
+    "20": {
+      "hybrid_rrf": {
+        "recall_at_1": 0.68,
+        "recall_at_5": 0.9066666666666666,
+        "recall_at_10": 0.9733333333333334,
+        "mrr": 0.8621587301587302,
+        "ndcg_at_5": 0.8441547611824909,
+        "ndcg_at_10": 0.8688565036402972
+      },
+      "oracle": {
+        "recall_at_1": 0.88,
+        "recall_at_5": 0.9866666666666667,
+        "recall_at_10": 0.9866666666666667,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.9896839251404123,
+        "ndcg_at_10": 0.9896839251404123
+      },
+      "delta": {
+        "mrr": 0.13784126984126976,
+        "ndcg_at_5": 0.14552916395792137,
+        "ndcg_at_10": 0.12082742150011505
+      },
+      "top_1_failures_fixable": 30,
+      "top_5_failures_fixable": 9,
+      "candidate_missing": 0
+    },
+    "50": {
+      "hybrid_rrf": {
+        "recall_at_1": 0.68,
+        "recall_at_5": 0.9,
+        "recall_at_10": 0.9666666666666667,
+        "mrr": 0.8609861111111111,
+        "ndcg_at_5": 0.8412835841286682,
+        "ndcg_at_10": 0.8662804499665775
+      },
+      "oracle": {
+        "recall_at_1": 0.88,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0
+      },
+      "delta": {
+        "mrr": 0.13901388888888888,
+        "ndcg_at_5": 0.15871641587133178,
+        "ndcg_at_10": 0.1337195500334225
+      },
+      "top_1_failures_fixable": 30,
+      "top_5_failures_fixable": 10,
+      "candidate_missing": 0
+    }
+  }
+}
