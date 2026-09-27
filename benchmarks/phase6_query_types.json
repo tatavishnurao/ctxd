@@ -1,0 +1,36 @@
+{
+  "exact_identifier": {
+    "cases": 80,
+    "regressions": 23,
+    "regression_rate": 0.2875
+  },
+  "code_like": {
+    "cases": 80,
+    "regressions": 23,
+    "regression_rate": 0.2875
+  },
+  "rare_term": {
+    "cases": 114,
+    "regressions": 19,
+    "regression_rate": 0.16666666666666666
+  },
+  "natural_language": {
+    "cases": 49,
+    "regressions": 6,
+    "regression_rate": 0.12244897959183673
+  },
+  "multiple_concept": {
+    "cases": 65,
+    "regressions": 16,
+    "regression_rate": 0.24615384615384617
+  },
+  "morphological_variation": {
+    "cases": 40,
+    "regressions": 9,
+    "regression_rate": 0.225
+  },
+  "query_token_count": {
+    "mean_all": 3.66,
+    "mean_regressed": 2.888888888888889
+  }
+}

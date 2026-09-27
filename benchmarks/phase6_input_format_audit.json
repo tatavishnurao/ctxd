@@ -1,0 +1,29 @@
+{
+  "model": "cross-encoder/ms-marco-TinyBERT-L-2-v2",
+  "local_metadata": {
+    "model_max_length": 512,
+    "do_lower_case": true,
+    "architecture": "BertForSequenceClassification",
+    "model_type": "bert"
+  },
+  "actual_pair_format": "Tokenizer.encode_batch([[raw query, raw chunk content], ...])",
+  "query_formatting": "raw query, no prompt or prefix",
+  "candidate_formatting": "raw chunk content; source path and metadata omitted",
+  "special_tokens": [
+    "[CLS]",
+    "[SEP]",
+    "[PAD]"
+  ],
+  "truncation": "longest_first, right, 512 pair tokens",
+  "padding": "right, dynamic to longest item in batch",
+  "whitespace_normalization": "tokenizer defaults; no custom rewrite",
+  "empty_or_malformed_pairs": 0,
+  "package_model_files": [
+    "config.json",
+    "flashrank-TinyBERT-L-2-v2.onnx",
+    "special_tokens_map.json",
+    "tokenizer.json",
+    "tokenizer_config.json"
+  ],
+  "result": "Input construction matches FlashRank's local pairwise implementation. No formatting bug was found. Omitting title/path is a design limitation, not a package-contract violation."
+}

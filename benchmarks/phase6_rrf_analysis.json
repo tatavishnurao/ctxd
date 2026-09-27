@@ -1,0 +1,359 @@
+{
+  "true_failure_count": 29,
+  "diagnosis_counts": {
+    "component-rank interaction": 23,
+    "semantic rank overweighting": 3,
+    "duplicate candidates": 1,
+    "lexical rank overweighting": 2
+  },
+  "cases": [
+    {
+      "case_id": "morphology-00",
+      "query": "archival",
+      "relevant_sources": [
+        "expanded/service-0.md"
+      ],
+      "rrf_rank": 10,
+      "lexical_rank": null,
+      "semantic_rank": 10,
+      "top_source": "semantic/audit-retention.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-01",
+      "query": "analysis",
+      "relevant_sources": [
+        "expanded/service-1.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": null,
+      "semantic_rank": 2,
+      "top_source": "semantic/observability.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "exact-subject-02",
+      "query": "subject_2 workflow",
+      "relevant_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "top_source": "expanded/service-4.md",
+      "diagnosis": "semantic rank overweighting"
+    },
+    {
+      "case_id": "morphology-02",
+      "query": "authentication",
+      "relevant_sources": [
+        "expanded/service-2.md"
+      ],
+      "rrf_rank": 7,
+      "lexical_rank": null,
+      "semantic_rank": 7,
+      "top_source": "semantic/authentication.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-03",
+      "query": "authorization",
+      "relevant_sources": [
+        "expanded/service-3.md"
+      ],
+      "rrf_rank": 10,
+      "lexical_rank": null,
+      "semantic_rank": 10,
+      "top_source": "semantic/authorization.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-05",
+      "query": "compression",
+      "relevant_sources": [
+        "expanded/service-5.md"
+      ],
+      "rrf_rank": 14,
+      "lexical_rank": null,
+      "semantic_rank": 14,
+      "top_source": "semantic/compression.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "exact-subject-07",
+      "query": "subject_7 workflow",
+      "relevant_sources": [
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": 1,
+      "semantic_rank": 4,
+      "top_source": "expanded/service-4.md",
+      "diagnosis": "duplicate candidates"
+    },
+    {
+      "case_id": "morphology-07",
+      "query": "connection",
+      "relevant_sources": [
+        "expanded/service-7.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": null,
+      "semantic_rank": 2,
+      "top_source": "semantic/traces.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-08",
+      "query": "detection",
+      "relevant_sources": [
+        "expanded/service-8.md"
+      ],
+      "rrf_rank": 3,
+      "lexical_rank": null,
+      "semantic_rank": 3,
+      "top_source": "semantic/feature-flag.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-09",
+      "query": "encryption",
+      "relevant_sources": [
+        "expanded/service-9.md"
+      ],
+      "rrf_rank": 6,
+      "lexical_rank": null,
+      "semantic_rank": 6,
+      "top_source": "semantic/encryption.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-11",
+      "query": "migration",
+      "relevant_sources": [
+        "expanded/service-11.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": null,
+      "semantic_rank": 2,
+      "top_source": "semantic/schema-migration.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-12",
+      "query": "observation",
+      "relevant_sources": [
+        "expanded/service-12.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": null,
+      "semantic_rank": 2,
+      "top_source": "semantic/observability.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-13",
+      "query": "persistence",
+      "relevant_sources": [
+        "expanded/service-13.md"
+      ],
+      "rrf_rank": 20,
+      "lexical_rank": null,
+      "semantic_rank": 20,
+      "top_source": "semantic/session-stickiness.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-14",
+      "query": "retrieval",
+      "relevant_sources": [
+        "expanded/service-14.md"
+      ],
+      "rrf_rank": 8,
+      "lexical_rank": null,
+      "semantic_rank": 8,
+      "top_source": "semantic/cache-aside.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-15",
+      "query": "rotation",
+      "relevant_sources": [
+        "expanded/service-15.md"
+      ],
+      "rrf_rank": 3,
+      "lexical_rank": null,
+      "semantic_rank": 3,
+      "top_source": "semantic/token-rotation.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-16",
+      "query": "synchronization",
+      "relevant_sources": [
+        "expanded/service-16.md"
+      ],
+      "rrf_rank": 4,
+      "lexical_rank": null,
+      "semantic_rank": 4,
+      "top_source": "semantic/tombstone.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-17",
+      "query": "validation",
+      "relevant_sources": [
+        "expanded/service-17.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": null,
+      "semantic_rank": 2,
+      "top_source": "semantic/authentication.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-18",
+      "query": "verification",
+      "relevant_sources": [
+        "expanded/service-18.md"
+      ],
+      "rrf_rank": 5,
+      "lexical_rank": null,
+      "semantic_rank": 5,
+      "top_source": "semantic/authentication.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "morphology-19",
+      "query": "indexing",
+      "relevant_sources": [
+        "expanded/service-19.md"
+      ],
+      "rrf_rank": 3,
+      "lexical_rank": null,
+      "semantic_rank": 3,
+      "top_source": "semantic/metrics.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "semantic-000",
+      "query": "How does the system make room when RAM is scarce?",
+      "relevant_sources": [
+        "semantic/cache-eviction.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": 3,
+      "semantic_rank": 2,
+      "top_source": "semantic/java-coffee.md",
+      "diagnosis": "lexical rank overweighting"
+    },
+    {
+      "case_id": "semantic-001",
+      "query": "What happens to callers who send too many requests?",
+      "relevant_sources": [
+        "semantic/rate-limit.md"
+      ],
+      "rrf_rank": 4,
+      "lexical_rank": null,
+      "semantic_rank": 1,
+      "top_source": "semantic/dead-letter.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "semantic-003",
+      "query": "How do duplicate checkout retries avoid double billing?",
+      "relevant_sources": [
+        "semantic/idempotency.md"
+      ],
+      "rrf_rank": 4,
+      "lexical_rank": null,
+      "semantic_rank": 3,
+      "top_source": "semantic/feature-flag.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "semantic-004",
+      "query": "Where do repeatedly failing events go?",
+      "relevant_sources": [
+        "semantic/dead-letter.md"
+      ],
+      "rrf_rank": 6,
+      "lexical_rank": null,
+      "semantic_rank": 5,
+      "top_source": "semantic/polling.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "semantic-006",
+      "query": "How does the pipeline avoid unlimited backlog?",
+      "relevant_sources": [
+        "semantic/backpressure.md"
+      ],
+      "rrf_rank": 10,
+      "lexical_rank": null,
+      "semantic_rank": 5,
+      "top_source": "semantic/circuit-breaker.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "semantic-007",
+      "query": "How does the job know where to continue after a crash?",
+      "relevant_sources": [
+        "semantic/checkpoint.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": 11,
+      "semantic_rank": 1,
+      "top_source": "semantic/two-phase.md",
+      "diagnosis": "lexical rank overweighting"
+    },
+    {
+      "case_id": "semantic-008",
+      "query": "How are deletions communicated to replicas?",
+      "relevant_sources": [
+        "semantic/tombstone.md"
+      ],
+      "rrf_rank": 3,
+      "lexical_rank": 3,
+      "semantic_rank": 3,
+      "top_source": "semantic/quorum.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "semantic-013",
+      "query": "How should migrated schemas introduce required fields?",
+      "relevant_sources": [
+        "semantic/schema-migration.md"
+      ],
+      "rrf_rank": 2,
+      "lexical_rank": null,
+      "semantic_rank": 1,
+      "top_source": "semantic/java-coffee.md",
+      "diagnosis": "component-rank interaction"
+    },
+    {
+      "case_id": "semantic-014",
+      "query": "When does the service compress responses?",
+      "relevant_sources": [
+        "semantic/compression.md"
+      ],
+      "rrf_rank": 4,
+      "lexical_rank": 3,
+      "semantic_rank": 12,
+      "top_source": "expanded/service-5.md",
+      "diagnosis": "semantic rank overweighting"
+    },
+    {
+      "case_id": "semantic-037",
+      "query": "How can a user keep reaching the server with their local state?",
+      "relevant_sources": [
+        "semantic/session-stickiness.md"
+      ],
+      "rrf_rank": 4,
+      "lexical_rank": 2,
+      "semantic_rank": 12,
+      "top_source": "semantic/authentication.md",
+      "diagnosis": "semantic rank overweighting"
+    }
+  ]
+}

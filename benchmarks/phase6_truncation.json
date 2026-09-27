@@ -1,0 +1,50 @@
+{
+  "0-64": {
+    "relevant_candidates": 204,
+    "pairwise_accuracy": 0.9472633979475484,
+    "regression_rate": 0.30392156862745096,
+    "mean_relevant_rank_change": -0.18137254901960784
+  },
+  "65-128": {
+    "relevant_candidates": 0,
+    "pairwise_accuracy": null,
+    "regression_rate": null,
+    "mean_relevant_rank_change": null
+  },
+  "129-256": {
+    "relevant_candidates": 0,
+    "pairwise_accuracy": null,
+    "regression_rate": null,
+    "mean_relevant_rank_change": null
+  },
+  "257-384": {
+    "relevant_candidates": 10,
+    "pairwise_accuracy": 0.4444444444444444,
+    "regression_rate": 1.0,
+    "mean_relevant_rank_change": 10.0
+  },
+  "385-512": {
+    "relevant_candidates": 0,
+    "pairwise_accuracy": null,
+    "regression_rate": null,
+    "mean_relevant_rank_change": null
+  },
+  ">512": {
+    "relevant_candidates": 0,
+    "pairwise_accuracy": null,
+    "regression_rate": null,
+    "mean_relevant_rank_change": null
+  },
+  "truncation_policy": {
+    "strategy": "longest_first",
+    "direction": "right",
+    "limit": 512,
+    "all_candidate_pairs": 2881,
+    "all_candidate_pairs_over_limit": 64,
+    "relevant_proxy_candidates_over_limit": 0,
+    "maximum_tokens_before_truncation": 614,
+    "maximum_tokens_retained": 512,
+    "relevant_evidence_loss_count": 0,
+    "conclusion": "No relevant-proxy input reached the limit; truncation did not remove labeled evidence under the declared source-to-chunk proxy."
+  }
+}
