@@ -10,18 +10,19 @@ Client
   -> Observability + Evaluation
 ```
 
-## Phase 3 implemented path
+## Current implemented path
 
 ```text
-Document
-  -> TextFileLoader / API content loader
-  -> StructureAwareChunker
-  -> DocumentStore (InMemoryDocumentStore | PostgresDocumentStore)
-  -> Incremental tenant-scoped lexical index
-  -> BM25Retriever
-  -> ContextAssembler
-  -> ContextPacket
+Document -> TextFileLoader / API loader -> StructureAwareChunker
+         -> persistent documents, chunks, lexical postings, and embeddings
+
+Query ----+-> BM25Retriever ------------------+
+          +-> exact pgvector SemanticRetriever +-> parallel deterministic RRF
+                                                -> token-bounded ContextAssembler
+                                                -> ContextPacket
 ```
+
+The Phase 3 lexical path remains intact. Phase 4B added the pinned local Model2Vec embedding provider, exact cosine retrieval, and hybrid RRF. Exact retrieval remains the default; HNSW was a rejected experiment.
 
 ### Ingestion
 
@@ -40,7 +41,7 @@ Token counting remains behind the `TokenCounter` protocol. The current word-and-
 - `RuntimeServices` is application-scoped; no document/index correctness depends on Python module globals.
 - Multiple runtimes connected to one database observe the same committed state.
 
-The FastAPI lifespan opens and verifies the PostgreSQL pool at startup and closes it at shutdown. PostgreSQL startup requires Alembic revision `0001_phase3`; tables are never created from request handlers.
+The FastAPI lifespan opens and verifies the PostgreSQL pool at startup and closes it at shutdown. PostgreSQL startup requires Alembic revision `0002_phase4`; tables are never created from request handlers.
 
 ### PostgreSQL schema
 
@@ -51,6 +52,7 @@ The migration creates:
 - `lexical_corpus_stats`: tenant-local document count, chunk count, and total lexical length
 - `lexical_terms`: tenant/term document frequency (`df`, measured over chunks)
 - `lexical_postings`: tenant/term/chunk term frequency (`tf`)
+- `chunk_embeddings`: tenant/chunk embedding, pinned model version, and dimension
 
 Composite tenant keys and foreign keys prevent cross-tenant references. Chunk and posting rows cascade when a document is deleted.
 
@@ -58,7 +60,7 @@ Composite tenant keys and foreign keys prevent cross-tenant references. Chunk an
 
 PostgreSQL native full-text search was considered. It offers compact built-in indexes and simpler update SQL, but its dictionaries, stemming, normalization, and `ts_rank` semantics would change the Phase 2 tokenizer and BM25 ordering. Exact tenant-local `N`, `df`, `tf`, and average length would also be less explicit.
 
-The implemented inverted index costs more rows and update complexity, but preserves the existing regex tokenizer and BM25 equation, makes tenant separation auditable, supports deterministic tie-breaking by `chunk_id`, and provides a clear future join point for hybrid retrieval without introducing semantic retrieval now.
+The implemented inverted index costs more rows and update complexity, but preserves the existing regex tokenizer and BM25 equation, makes tenant separation auditable, and supports deterministic tie-breaking by `chunk_id`. Hybrid retrieval joins its ranking with exact semantic retrieval through deterministic RRF rather than score blending.
 
 ### Transaction semantics
 
@@ -106,7 +108,7 @@ The API treats `x-tenant-id` as authoritative and rejects mismatching request bo
 
 ### Context assembly
 
-`ContextAssembler` preserves retrieval order and selects whole candidates that fit the token budget. Candidates that do not fit are dropped, not truncated. Packet metadata records retrieved/selected counts, token counts, budget drops, and `retrieval_type="lexical"`.
+`ContextAssembler` selects lexical, semantic, or hybrid retrieval according to `RetrievalMode`, preserves retrieval order, and selects whole candidates that fit the token budget. Candidates that do not fit are dropped, not truncated. Packet metadata records retrieved/selected counts, token counts, budget drops, and retrieval type.
 
 ### Observability and failures
 
@@ -116,8 +118,23 @@ Database unavailability, malformed persisted metadata, failed transactions, and 
 
 ### Evaluation
 
-The original 22-case corpus remains unchanged and produces the Phase 2 scores through both backends. The expanded corpus contains 30 documents and 100 cases covering exact terms, morphology variants, ambiguous/shared terms, near-duplicate content, multiple relevant documents, long chunks, rare terms, and tenant isolation.
+The original 22-case corpus remains unchanged and produces the Phase 2 scores through both backends. The current semantic corpus contains 80 documents and 150 cases covering exact terms, morphology variants, ambiguous/shared terms, near-duplicate content, multiple relevant documents, long chunks, rare terms, tenant isolation, semantic paraphrases, and distractor-heavy retrieval. Phase 6 preserves that source fixture and maintains a separate audited copy with per-case annotation provenance.
 
-## Deferred by design
+## Historical Phase 3 boundary
 
-Semantic/vector retrieval, reranking, dependency expansion, LLM inference, model routing, tools, SSE, frontend work, and distributed job infrastructure remain outside Phase 3.
+Semantic/vector retrieval and reranking were outside Phase 3. Semantic and hybrid retrieval were subsequently implemented in Phase 4B. Production reranking, dependency expansion, LLM inference, model routing, tools, SSE, frontend work, and distributed job infrastructure remain deferred.
+
+## Phase 4B additions
+
+- `FakeHashEmbeddingProvider` remains a fixture for deterministic tests only.
+- `RealEmbeddingProvider` is the single real semantic backend: local Model2Vec `minishlab/potion-base-8M`, 256 dimensions, normalized vectors, cosine distance, batched document embedding and query embedding.
+- Hybrid retrieval continues to use reciprocal-rank fusion: `RRF(d) = sum(1 / (k + rank_i(d)))`, configurable `k`, deterministic chunk-id tie-breaking, and union semantics that preserve lexical-only and semantic-only candidates. Component ranks, raw scores, and fused score are retained in metadata.
+- The Synapse/MCP evaluator is isolated in `ctxd/app/integrations/synapse/` and consumes generic MCP schemas plus invocation results. It does not couple ctxd to Synapse internals.
+
+## Phase 5 reranking decision
+
+The optional `ctxd/app/reranking/` experiment keeps reranking outside `HybridRetriever`: a fixed RRF candidate set is passed to a local ONNX cross-encoder and failures fall back to RRF order. The experiment preserves candidate identity and provenance and adds bounded telemetry. It is not wired into runtime or public retrieval modes. Measured TinyBERT quality regressed versus RRF, so reranking is rejected for now.
+
+## Phase 6 hardening boundary
+
+Phase 6 freezes all ten Phase 5 JSON artifacts by manifest and checksum test. Evaluation analysis is separate from retrieval behavior: the source corpus is untouched, the audited corpus uses binary judgments with explicit status/notes, and duplicate similarity is never converted into relevance automatically. TinyBERT forensic and performance scripts remain offline experiments. They do not alter candidate generation, RRF, context assembly, runtime configuration, retrieval modes, or API schemas.

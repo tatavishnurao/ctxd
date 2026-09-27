@@ -58,29 +58,22 @@ ctxd builds those concerns into the runtime rather than leaving them as ad-hoc g
 Document
    |
    v
-Loader
-   |
-   v
 Structure-aware Chunker
    |
    v
-DocumentStore
+Persistent lexical + embedding state
    |
-   v
-Incremental BM25 Index
-   |
-   v
-ContextAssembler
-   |
-   v
-ContextPacket
+   +-- BM25 ------------------+
+   |                          |
+   +-- exact semantic search -+--> parallel RRF --> ContextAssembler --> ContextPacket
 ```
 
 The implemented path is deliberately narrow and deterministic:
 
 ```text
-Document -> Loader -> Structure-aware Chunker -> DocumentStore
-         -> Incremental BM25 Index -> ContextAssembler -> ContextPacket
+Document -> Structure-aware Chunker -> persistent chunks/postings/embeddings
+Query -> BM25 + exact semantic retrieval -> parallel deterministic RRF
+      -> token-bounded ContextAssembler -> ContextPacket
 ```
 
 ## Production characteristics
@@ -97,11 +90,11 @@ Document -> Loader -> Structure-aware Chunker -> DocumentStore
 
 ### Retrieval
 
-- incremental BM25 indexing
-- tenant-isolated term statistics
-- tenant-isolated corpus statistics
-- SQL-backed search
-- deterministic ranking
+- incremental tenant-isolated BM25 indexing
+- pinned local Model2Vec document/query embeddings
+- exact cosine retrieval through PostgreSQL pgvector
+- parallel lexical/semantic retrieval
+- deterministic reciprocal-rank fusion with candidate depth 20
 
 ### Context assembly
 
@@ -143,9 +136,11 @@ Document -> Loader -> Structure-aware Chunker -> DocumentStore
 
 ctxd currently focuses on the context runtime itself.
 
-**Implemented:** ingestion, chunking, storage, BM25 retrieval, context assembly, evaluation, persistence, and observability.
+**Default:** ingestion, chunking, persistent lexical/embedding state, BM25, exact semantic retrieval, parallel hybrid RRF, context assembly, evaluation, and observability.
 
-**Not implemented yet:** inference, model routing, vector retrieval, reranking, tools, or a frontend.
+**Experimental and rejected for use:** an internal TinyBERT reranker feasibility implementation; it is not exposed through `RetrievalMode` or the API because measured aggregate quality regressed. Phase 6 confirmed that decision after auditing all 150 judgments and rerunning five-run performance tests.
+
+**Not implemented:** inference, model routing, production reranking, tools, or a frontend.
 
 `/v1/query` returns real retrieved context and explicitly reports that inference is not implemented.
 
@@ -227,6 +222,16 @@ uv run python -m ctxd.app.evals.retrieval evals/retrieval_expanded.json \
 uv run python benchmarks/postgres_retrieval_baseline.py
 uv run python benchmarks/postgres_concurrent_load.py
 ```
+
+### Phase 6 audit and reproducibility
+
+```bash
+uv run python benchmarks/phase6_evaluation_audit.py
+CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd \
+  uv run python benchmarks/phase6_reproducibility.py
+```
+
+The first command writes a separate audited corpus and forensic artifacts; it does not modify the source corpus. The second command requires a dedicated database because it repeatedly truncates and rebuilds benchmark data. See `PHASE6_REPORT.md` for the 36-item result and decision gates.
 
 ## API
 
