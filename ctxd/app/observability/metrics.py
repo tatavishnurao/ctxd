@@ -63,6 +63,24 @@ LEXICAL_SEARCH_LATENCY_SECONDS = Histogram(
     "ctxd_lexical_search_latency_seconds",
     "Lexical index search latency in seconds.",
 )
+RERANKER_REQUESTS_TOTAL = Counter(
+    "ctxd_reranker_requests_total",
+    "Reranker requests by bounded model identifier and outcome.",
+    ["model", "status"],
+)
+RERANKER_CANDIDATES = Histogram(
+    "ctxd_reranker_candidates",
+    "Candidates presented to the reranker.",
+    buckets=(0, 1, 5, 10, 20, 50, 100),
+)
+RERANKER_PREPARATION_LATENCY_SECONDS = Histogram(
+    "ctxd_reranker_preparation_latency_seconds",
+    "Reranker candidate preparation latency in seconds.",
+)
+RERANKER_INFERENCE_LATENCY_SECONDS = Histogram(
+    "ctxd_reranker_inference_latency_seconds",
+    "Reranker model inference latency in seconds.",
+)
 
 
 def render_metrics() -> tuple[bytes, str]:
