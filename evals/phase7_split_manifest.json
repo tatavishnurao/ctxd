@@ -1,0 +1,2737 @@
+{
+  "manifest_version": 1,
+  "phase": "Phase 7 frozen split",
+  "seed": 731,
+  "holdout_fraction_target": 0.3,
+  "grouping_policy": "identical normalized query strings stay in one partition",
+  "stratification_policy": "seeded shuffling within primary annotation category; ambiguous duplicate-query group kept intact and assigned to holdout",
+  "source_corpus": "evals/retrieval_semantic_phase6_audited.json",
+  "source_corpus_sha256": "e9486b0a339d5df1830251e1ec3eb6e81e005d35502877b6ccd1ea085192c164",
+  "created_at_utc": "2026-09-27T17:53:43.497683+00:00",
+  "git_base_sha": "c00d75132c0b2a22958692d7b58d7fb79cfd7e82",
+  "case_count": 150,
+  "partition_counts": {
+    "development": 103,
+    "holdout": 47
+  },
+  "category_distribution": {
+    "development": {
+      "distractor-heavy": 5,
+      "exact": 28,
+      "exact lexical": 1,
+      "long chunk": 7,
+      "morphology": 19,
+      "multiple relevant": 18,
+      "near duplicate": 4,
+      "rare term": 1,
+      "semantic paraphrase": 12,
+      "tenant isolation": 8
+    },
+    "holdout": {
+      "ambiguous": 2,
+      "distractor-heavy": 2,
+      "exact": 12,
+      "exact lexical": 1,
+      "long chunk": 3,
+      "morphology": 8,
+      "multiple relevant": 8,
+      "near duplicate": 1,
+      "rare term": 1,
+      "semantic paraphrase": 5,
+      "tenant isolation": 4
+    }
+  },
+  "ambiguous_cases": [
+    {
+      "case_id": "semantic-031",
+      "partition": "holdout"
+    },
+    {
+      "case_id": "semantic-032",
+      "partition": "holdout"
+    }
+  ],
+  "identical_query_leakage_count": 0,
+  "cases": [
+    {
+      "case_id": "exact-rare-00",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_0"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_0"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-00",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_0",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_0"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-00",
+      "partition": "holdout",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-01",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_1"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_1"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-01",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_1",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_1"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-01",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-02",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_2"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_2"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-02",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_2",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_2"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-02",
+      "partition": "holdout",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-03",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_3"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_3"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-03",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_3",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_3"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-03",
+      "partition": "holdout",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-04",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_4"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_4"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-04",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_4",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_4"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-04",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-05",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_5"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_5"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-05",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_5",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_5"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-05",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-06",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_6"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_6"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-06",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_6",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_6"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-06",
+      "partition": "holdout",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-07",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_7"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_7"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-07",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_7",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_7"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-07",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-08",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_8"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_8"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-08",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_8",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_8"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-08",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-09",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_9"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_9"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-09",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_9",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_9"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-09",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-10",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_10"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_10"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-10",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_10",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_10"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-10",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-11",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_11"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_11"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-11",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_11",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_11"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-11",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-12",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_12"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_12"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-12",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_12",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_12"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-12",
+      "partition": "holdout",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-13",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_13"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_13"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-13",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_13",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_13"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-13",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-14",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_14"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_14"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-14",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_14",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_14"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-14",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-15",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_15"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_15"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-15",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_15",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_15"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-15",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-16",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_16"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_16"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-16",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_16",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_16"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-16",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-17",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_17"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_17"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-17",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_17",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_17"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-17",
+      "partition": "holdout",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-18",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_18"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_18"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-18",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_18",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_18"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-18",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-rare-19",
+      "partition": "development",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_19"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_19"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "exact-subject-19",
+      "partition": "holdout",
+      "category": "exact",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "subject_19",
+        "workflow"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "subject_19"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "morphology-19",
+      "partition": "holdout",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-00",
+      "partition": "holdout",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_0"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_0"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-01",
+      "partition": "holdout",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_0"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_0"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-02",
+      "partition": "holdout",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_0"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_0"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-03",
+      "partition": "holdout",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_0"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_0"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-04",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_1"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_1"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-05",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_1"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_1"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-06",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_1"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_1"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-07",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_1"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_1"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-08",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_2"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_2"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-09",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_2"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_2"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-10",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_2"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_2"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-11",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_2"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_2"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-12",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_3"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_3"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-13",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_3"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_3"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-14",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_3"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_3"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-15",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_3"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_3"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-16",
+      "partition": "holdout",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_4"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_4"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-17",
+      "partition": "holdout",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_4"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_4"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-18",
+      "partition": "holdout",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_4"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_4"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "ambiguous-group-19",
+      "partition": "holdout",
+      "category": "multiple relevant",
+      "relevance_count": 4,
+      "query_length": 3,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "common",
+        "operational",
+        "sharedgroup_4"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "sharedgroup_4"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-00",
+      "partition": "development",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_0"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_0"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-01",
+      "partition": "holdout",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_1"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_1"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-02",
+      "partition": "development",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_2"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_2"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-03",
+      "partition": "holdout",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_3"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_3"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-04",
+      "partition": "development",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_4"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_4"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-05",
+      "partition": "development",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_5"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_5"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-06",
+      "partition": "holdout",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_6"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_6"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-07",
+      "partition": "development",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_7"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_7"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-08",
+      "partition": "development",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_8"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_8"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "long-tail-09",
+      "partition": "development",
+      "category": "long chunk",
+      "relevance_count": 1,
+      "query_length": 1,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "tailmarker_9"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "tailmarker_9"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-00",
+      "partition": "holdout",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_0",
+        "othersecret_0"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_0",
+        "othersecret_0"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-01",
+      "partition": "development",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_1",
+        "othersecret_1"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_1",
+        "othersecret_1"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-02",
+      "partition": "development",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_2",
+        "othersecret_2"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_2",
+        "othersecret_2"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-03",
+      "partition": "development",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_3",
+        "othersecret_3"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_3",
+        "othersecret_3"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-04",
+      "partition": "holdout",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_4",
+        "othersecret_4"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_4",
+        "othersecret_4"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-05",
+      "partition": "holdout",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_5",
+        "othersecret_5"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_5",
+        "othersecret_5"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-06",
+      "partition": "development",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_6",
+        "othersecret_6"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_6",
+        "othersecret_6"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-07",
+      "partition": "development",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_7",
+        "othersecret_7"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_7",
+        "othersecret_7"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-08",
+      "partition": "development",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_8",
+        "othersecret_8"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_8",
+        "othersecret_8"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "tenant-isolation-09",
+      "partition": "holdout",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 2,
+      "query_length_bucket": "1-3",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "codename_9",
+        "othersecret_9"
+      ],
+      "has_identifier": true,
+      "has_exact_identifier_overlap": true,
+      "exact_identifier_overlap": [
+        "codename_9",
+        "othersecret_9"
+      ],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-000",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 10,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "the",
+        "when"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-001",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 9,
+      "query_length_bucket": "8+",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-002",
+      "partition": "holdout",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 9,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "dependency",
+        "recover"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-003",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-004",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-005",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "back",
+        "can",
+        "quickly",
+        "traffic"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-006",
+      "partition": "holdout",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-007",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 11,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "after",
+        "the"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-008",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "replicas"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-009",
+      "partition": "holdout",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "a",
+        "update"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-010",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "audit",
+        "records"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-011",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "credentials",
+        "rotated",
+        "tokens"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-012",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 4,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "shard"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-013",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": false,
+      "exact_query_tokens": [],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-014",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "responses"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-015",
+      "partition": "development",
+      "category": "distractor-heavy",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "is",
+        "the",
+        "user"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-016",
+      "partition": "holdout",
+      "category": "distractor-heavy",
+      "relevance_count": 1,
+      "query_length": 11,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "a",
+        "decides",
+        "may",
+        "resource",
+        "user"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-017",
+      "partition": "holdout",
+      "category": "distractor-heavy",
+      "relevance_count": 1,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "data",
+        "is",
+        "unreadable"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-018",
+      "partition": "development",
+      "category": "distractor-heavy",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "one",
+        "passwords",
+        "way"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-019",
+      "partition": "development",
+      "category": "distractor-heavy",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "combines",
+        "incidents",
+        "to"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-020",
+      "partition": "holdout",
+      "category": "near duplicate",
+      "relevance_count": 1,
+      "query_length": 9,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "a",
+        "database",
+        "miss",
+        "the"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-021",
+      "partition": "development",
+      "category": "near duplicate",
+      "relevance_count": 1,
+      "query_length": 9,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "and",
+        "cache",
+        "caching",
+        "writes"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-022",
+      "partition": "development",
+      "category": "near duplicate",
+      "relevance_count": 1,
+      "query_length": 10,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "a",
+        "transactions"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-023",
+      "partition": "development",
+      "category": "near duplicate",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "participants"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-024",
+      "partition": "development",
+      "category": "near duplicate",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "asks",
+        "repeatedly"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-025",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 2,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "an",
+        "during",
+        "responders"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-026",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 2,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "an",
+        "during",
+        "responders"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-027",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 2,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "data",
+        "personal"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-028",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 2,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "data",
+        "personal"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-029",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 2,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "failures",
+        "network",
+        "transient"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-030",
+      "partition": "development",
+      "category": "multiple relevant",
+      "relevance_count": 2,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "failures",
+        "network",
+        "transient"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-031",
+      "partition": "holdout",
+      "category": "ambiguous",
+      "relevance_count": 2,
+      "query_length": 5,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "java",
+        "use"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "ambiguous"
+    },
+    {
+      "case_id": "semantic-032",
+      "partition": "holdout",
+      "category": "ambiguous",
+      "relevance_count": 2,
+      "query_length": 5,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "java",
+        "use"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "ambiguous"
+    },
+    {
+      "case_id": "semantic-033",
+      "partition": "development",
+      "category": "rare term",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "flibbertigibbet",
+        "sentinel",
+        "the"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-034",
+      "partition": "holdout",
+      "category": "rare term",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "benchmark",
+        "billing",
+        "excluded",
+        "from",
+        "identifies",
+        "rows"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-035",
+      "partition": "holdout",
+      "category": "exact lexical",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "checkout",
+        "controls",
+        "flag",
+        "flow",
+        "new",
+        "the"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-036",
+      "partition": "development",
+      "category": "exact lexical",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "caps",
+        "context",
+        "environment",
+        "variable"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-037",
+      "partition": "holdout",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 12,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "a",
+        "state",
+        "the"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-038",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 9,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "requests"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-039",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 10,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "changes",
+        "committed",
+        "replay",
+        "the"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-040",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "ownership",
+        "temporary"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-041",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "message",
+        "to",
+        "workers"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-042",
+      "partition": "development",
+      "category": "distractor-heavy",
+      "relevance_count": 1,
+      "query_length": 6,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "numeric",
+        "series",
+        "time"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-043",
+      "partition": "development",
+      "category": "distractor-heavy",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "across",
+        "request",
+        "services"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-044",
+      "partition": "development",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "a",
+        "resources",
+        "user"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-045",
+      "partition": "holdout",
+      "category": "morphology",
+      "relevance_count": 1,
+      "query_length": 8,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "after",
+        "revokes"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-046",
+      "partition": "development",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "orchid",
+        "project",
+        "reports",
+        "stores",
+        "the",
+        "vault"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-047",
+      "partition": "development",
+      "category": "tenant isolation",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "orchid",
+        "project",
+        "reports",
+        "stores",
+        "the",
+        "vault"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-048",
+      "partition": "development",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 7,
+      "query_length_bucket": "4-7",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "for",
+        "query",
+        "reads",
+        "results"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    },
+    {
+      "case_id": "semantic-049",
+      "partition": "holdout",
+      "category": "semantic paraphrase",
+      "relevance_count": 1,
+      "query_length": 12,
+      "query_length_bucket": "8+",
+      "has_exact_term": true,
+      "exact_query_tokens": [
+        "a",
+        "new",
+        "of",
+        "small",
+        "version"
+      ],
+      "has_identifier": false,
+      "has_exact_identifier_overlap": false,
+      "exact_identifier_overlap": [],
+      "annotation_status": "confirmed"
+    }
+  ],
+  "split_manifest_sha256": "66bce2d758247004dd2a57225ef049d7a6117a98b4981d30e55526895a15cc92"
+}
