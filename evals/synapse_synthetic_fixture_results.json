@@ -1,0 +1,871 @@
+{
+  "synthetic": true,
+  "case_count": 50,
+  "tool_selection_accuracy": 0.96,
+  "schema_validity_rate": 0.92,
+  "argument_validity_rate": 0.92,
+  "task_success_rate": 0.84,
+  "execution_success_rate": 0.96,
+  "retry_rate": 0.04,
+  "p50_latency_ms": 20.0,
+  "p95_latency_ms": 35.0,
+  "p99_latency_ms": 35.0,
+  "failure_counts": {
+    "execution_error": 2,
+    "incorrect_output": 2,
+    "schema_violation": 2,
+    "wrong_tool": 2
+  },
+  "results": [
+    {
+      "case_id": "syn-fixture-000",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 8.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-001",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 11.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-002",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 14.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-003",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 17.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-004",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 20.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-005",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 1,
+      "latency_ms": 23.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-006",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 26.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-007",
+      "selected_tool": "search_code",
+      "tool_selection_correct": false,
+      "argument_validity": false,
+      "schema_validity": false,
+      "execution_success": true,
+      "task_success": false,
+      "retry_count": 0,
+      "latency_ms": 29.0,
+      "error_category": "wrong_tool",
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-008",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 32.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-009",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 35.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-010",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 8.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-011",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": false,
+      "schema_validity": false,
+      "execution_success": true,
+      "task_success": false,
+      "retry_count": 0,
+      "latency_ms": 11.0,
+      "error_category": "schema_violation",
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-012",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 14.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-013",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 17.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-014",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 20.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-015",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 23.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-016",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 26.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-017",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": false,
+      "task_success": false,
+      "retry_count": 0,
+      "latency_ms": 29.0,
+      "error_category": "execution_error",
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-018",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 32.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-019",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": false,
+      "retry_count": 0,
+      "latency_ms": 35.0,
+      "error_category": "incorrect_output",
+      "output_match_status": "mismatch",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-020",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 8.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-021",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 11.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-022",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 14.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-023",
+      "selected_tool": "read_file",
+      "tool_selection_correct": false,
+      "argument_validity": false,
+      "schema_validity": false,
+      "execution_success": true,
+      "task_success": false,
+      "retry_count": 0,
+      "latency_ms": 17.0,
+      "error_category": "wrong_tool",
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-024",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 20.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-025",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 23.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-026",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 26.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-027",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 29.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-028",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 32.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-029",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": false,
+      "schema_validity": false,
+      "execution_success": true,
+      "task_success": false,
+      "retry_count": 0,
+      "latency_ms": 35.0,
+      "error_category": "schema_violation",
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-030",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 8.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-031",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 1,
+      "latency_ms": 11.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-032",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 14.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-033",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 17.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-034",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 20.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-035",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 23.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-036",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 26.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-037",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": false,
+      "retry_count": 0,
+      "latency_ms": 29.0,
+      "error_category": "incorrect_output",
+      "output_match_status": "mismatch",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-038",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 32.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-039",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 35.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-040",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 8.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-041",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": false,
+      "task_success": false,
+      "retry_count": 0,
+      "latency_ms": 11.0,
+      "error_category": "execution_error",
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-042",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 14.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-043",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 17.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-044",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 20.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-045",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 23.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-046",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 26.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-047",
+      "selected_tool": "run_tests",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 29.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-048",
+      "selected_tool": "search_code",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 32.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    },
+    {
+      "case_id": "syn-fixture-049",
+      "selected_tool": "read_file",
+      "tool_selection_correct": true,
+      "argument_validity": true,
+      "schema_validity": true,
+      "execution_success": true,
+      "task_success": true,
+      "retry_count": 0,
+      "latency_ms": 35.0,
+      "error_category": null,
+      "output_match_status": "match",
+      "metadata": {
+        "fixture": true,
+        "synthetic_server": "fake-synapse-mcp-v1"
+      }
+    }
+  ]
+}
