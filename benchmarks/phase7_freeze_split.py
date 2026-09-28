@@ -1,4 +1,4 @@
-"""Create the immutable Phase 7 development/holdout split manifest."""
+"""Freeze the Phase 7 development/holdout split before reranker evaluation."""
 
 from __future__ import annotations
 
