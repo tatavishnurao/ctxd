@@ -106,6 +106,12 @@ Repeated query terms retain the Phase 2 query-frequency multiplier. Scores sort 
 
 The API treats `x-tenant-id` as authoritative and rejects mismatching request bodies. Every document/chunk/index key and every search join includes tenant ID. Corpus and term statistics are tenant-local, so another tenant cannot affect IDF.
 
+### Phase 8 evaluation boundary (experimental)
+
+`ctxd/app/evals/context_selection.py` contains offline, label-free packing/decision functions and source-coverage evaluation. It is not imported by runtime assembly. Source judgments are not chunk/span evidence judgments; source suppression can remove complementary chunks. The shared evaluation nDCG helper now credits each judged source once, without compressing chunk positions.
+
+Runtime hybrid candidate depth is derived from request `top_k` when unset: `max(top_k, min(100, top_k * 2))`. The default API `top_k=10` yields depth20, but depth20 is not a universal runtime invariant. No runtime depth behavior was changed in Phase 8.
+
 ### Context assembly
 
 `ContextAssembler` selects lexical, semantic, or hybrid retrieval according to `RetrievalMode`, preserves retrieval order, and selects whole candidates that fit the token budget. Candidates that do not fit are dropped, not truncated. Packet metadata records retrieved/selected counts, token counts, budget drops, and retrieval type.
@@ -138,3 +144,7 @@ The optional `ctxd/app/reranking/` experiment keeps reranking outside `HybridRet
 ## Phase 6 hardening boundary
 
 Phase 6 freezes all ten Phase 5 JSON artifacts by manifest and checksum test. Evaluation analysis is separate from retrieval behavior: the source corpus is untouched, the audited corpus uses binary judgments with explicit status/notes, and duplicate similarity is never converted into relevance automatically. TinyBERT forensic and performance scripts remain offline experiments. They do not alter candidate generation, RRF, context assembly, runtime configuration, retrieval modes, or API schemas.
+
+## Phase 7 holdout decision boundary
+
+Phase 7 freezes a 103/47 development/holdout split and reports one holdout evaluation of a checksummed MiniLM-L6 configuration with a label-free exact-token protection. The result improves holdout nDCG@5, while MRR and Recall@1 confidence intervals cross zero; CPU cost is substantial. This is an offline research result only. It does not change `HybridRetriever`, candidate generation, RRF, `ContextAssembler`, `RetrievalMode`, runtime wiring, or public API behavior. Reranking remains unexposed.

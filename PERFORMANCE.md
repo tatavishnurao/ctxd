@@ -1,5 +1,11 @@
 # Performance Methodology
 
+## Phase 8 diagnostic scope
+
+`benchmarks/phase8_profile.py` records 243 scorer calls: three development pools by input length, N=5/10/20, threads=4/1/2, batches=16/8/1, three repeats each. It separates cached initialization, pairs, tokenizer, tensors, inference, conversion, sorting and total scoring. This is not a full retrieval/API latency or load benchmark.
+
+N20/four-thread/batch16 warm median was 84.37 ms, maximum 1,349.77 ms across six observations. Batch size 1 maximum fell to 455.68 ms but median rose to 100.16 ms and sampled ranking changed: rejected as a semantics-preserving optimization. Cached initialization timings are order/cache-confounded. Historical 12k end-to-end tail causation remains unresolved. No selective/packing policy passed the promotion gates, so no survivor-only scale/concurrency benchmark was run. Raw evidence and limitations: `benchmarks/phase8_profile.json`, `PHASE8_REPORT.md`.
+
 No performance claims are made without measurements.
 
 Every benchmark entry documents workload, platform, Python/PostgreSQL versions, commit, corpus size, warmup, samples, concurrency, pool settings, measurement method, results, and confounders.
@@ -133,3 +139,11 @@ At 1.2k the robust outliers were BM25-dominant and no same-run/query outlier was
 Five runs were also collected at every concurrency point for 12k and 50k. Throughput plateaus around 8–16 workers and latency rises sharply afterward. At 50k/concurrency 8, median-run hybrid versus reranked QPS was 30.3 versus 21.9 and p95 was 288.8 versus 370.9 ms. Pool wait becomes material at concurrency 32. Client process CPU, maximum RSS, and pool wait are recorded per run; these are not PostgreSQL-server CPU profiles.
 
 Phase 6 median 100 ms synthetic goodput at 50k was 17.32 requests/s hybrid versus 11.29 reranked. The workload still has 100% top-5 synthetic quality and must not be interpreted as semantic quality. See `benchmarks/phase6_reproducibility.json`, `phase6_concurrency.json`, `phase6_goodput.json`, and `phase6_outlier_analysis.json`.
+
+## Phase 7 selected reranker performance (offline only)
+
+`benchmarks/phase7_performance.py` measures only the configuration frozen before holdout: MiniLM-L6 CPU ONNX over the fixed parallel BM25 + exact pgvector RRF candidate pool (N=20), with exact-overlap top-1 protection. Sequential comparisons use five runs, 10 warmups, 50 queries/mode/run, alternating order, and the same generated 12-chunk-document workloads at 1,200, 12,000, and 50,004 chunks. Concurrency uses 32 synchronized requests per level at 1/4/8/16. The test database is separate and benchmark documents are removed afterward.
+
+Selected standalone N20 scoring p50/p95/p99 was 142/1,857/2,179 ms. Hybrid versus selected end-to-end p95/QPS was 13.58 ms/85.87 versus 218.49 ms/5.57 at 1.2k; 117.43/15.92 versus 1,021.93/2.36 at 12k; and 79.87/14.68 versus 247.06/4.75 at 50k. At concurrency 16, selected p95/QPS reached 1,665 ms/10.64 at 12k and 1,770 ms/9.53 at 50k; all requests succeeded. Client CPU reached about 14.7 core-equivalents at 12k and 13.4 at 50k. This is CPU-heavy inference, not an improvement to the current concurrency/latency envelope.
+
+The host is shared WSL2, so results are measurements rather than production SLO claims; nonmonotonic corpus-size tails and very broad scorer tails are retained as observed. CPU accounting is client-process only, not PostgreSQL server profiling. Goodput is not reported because the available generated workload has no quality-varying pass condition. Full per-query/raw-run evidence is in `benchmarks/phase7_latency.json` and `benchmarks/phase7_concurrency.json`; quality/latency comparison and scope caveats are in `benchmarks/phase7_frontier.json` and `PHASE7_REPORT.md`.

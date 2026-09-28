@@ -1,0 +1,219 @@
+{
+  "initial_state": {
+    "git_base_sha": "474ad980a2b996f7f14a25de0ddc80c8e8fc4119",
+    "initial_git_status": " M ARCHITECTURE.md\n M BENCHMARKS.md\n M PERFORMANCE.md\n M README.md\n?? PHASE7_REPORT.md\n?? benchmarks/phase7_bootstrap.json\n?? benchmarks/phase7_candidate_pools.json\n?? benchmarks/phase7_concurrency.json\n?? benchmarks/phase7_dev_model_comparison.json\n?? benchmarks/phase7_development_baseline.json\n?? benchmarks/phase7_exact_match_analysis.json\n?? benchmarks/phase7_frontier.json\n?? benchmarks/phase7_guardrail_dev.json\n?? benchmarks/phase7_holdout.json\n?? benchmarks/phase7_latency.json\n?? benchmarks/phase7_model_survey.json\n?? benchmarks/phase7_pairwise_analysis.json\n?? benchmarks/phase7_partition_baselines.json\n?? benchmarks/phase7_selected_config.json\n",
+    "python": "3.13.15",
+    "os_kernel": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "cpu": "Architecture:                         x86_64\nCPU op-mode(s):                       32-bit, 64-bit\nAddress sizes:                        39 bits physical, 48 bits virtual\nByte Order:                           Little Endian\nCPU(s):                               24\nOn-line CPU(s) list:                  0-23\nVendor ID:                            GenuineIntel\nModel name:                           Intel(R) Core(TM) i7-14650HX\nCPU family:                           6\nModel:                                183\nThread(s) per core:                   2\nCore(s) per socket:                   12\nSocket(s):                            1\nStepping:                             1\nBogoMIPS:                             4838.39\nFlags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize flush_l1d arch_capabilities\nVirtualization:                       VT-x\nHypervisor vendor:                    Microsoft\nVirtualization type:                  full\nL1d cache:                            576 KiB (12 instances)\nL1i cache:                            384 KiB (12 instances)\nL2 cache:                             24 MiB (12 instances)\nL3 cache:                             30 MiB (1 instance)\nNUMA node(s):                         1\nNUMA node0 CPU(s):                    0-23\nVulnerability Gather data sampling:   Not affected\nVulnerability Itlb multihit:          Not affected\nVulnerability L1tf:                   Not affected\nVulnerability Mds:                    Not affected\nVulnerability Meltdown:               Not affected\nVulnerability Mmio stale data:        Not affected\nVulnerability Reg file data sampling: Mitigation; Clear Register File\nVulnerability Retbleed:               Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:   Not affected\nVulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                  Not affected\nVulnerability Tsx async abort:        Not affected\n",
+    "postgres": "PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+    "historical_artifacts": {
+      "PHASE6_REPORT.md": "aca61faaf0854b11729c470e55f25a4ddeabd0afa148c7b0c61d3a7006fe894d",
+      "PHASE7_REPORT.md": "5733a93f19e34ce8527977bb9c102bfec954b290902168777a313b1e10386cd4",
+      "benchmarks/phase2_baseline.json": "29f57749bc61a201856f686bbba23b5d73c4a11fd6049d698a4ba07600cd7075",
+      "benchmarks/phase2_rebuild_analysis.json": "c9090e6a64445d27eae259089403e4d41d176f16e50980ef4bb7133398cfed44",
+      "benchmarks/phase3_concurrent_load.json": "e7622e1d3a9d1cf802521c77e886e3e6f61621e7ace209d29fb719eb74c48036",
+      "benchmarks/phase3_postgres_baseline.json": "db43aa8ce15498d122af84777ef02045f59778359ef9b533367a86428eae8131",
+      "benchmarks/phase4_inmemory_12000_results.json": "68d0691eab69903bd31d3805c72745103c7efe5db7dff0b9b2e6e7273795b01c",
+      "benchmarks/phase4_inmemory_1200_results.json": "6133bc6be8bab0bde892869fc74c042d0ad6ed08b699170e5f82b7237729b8c2",
+      "benchmarks/phase4b_hnsw.json": "115d3c4964ce337eace6192f1eae1ace208850f4ffb8f7dfde8dc34db932028e",
+      "benchmarks/phase4b_hnsw_ef1000.json": "dab9a2b367bc0558e909b4295de93d38edd7d237febb52de0eb9ec34fc06b516",
+      "benchmarks/phase4b_hnsw_ef200.json": "d57ed169a46b5e37b3a2e47997de3488ae96b317b71cba649c078e609b028036",
+      "benchmarks/phase4b_postgres_exact.json": "e46443eb9b5a0424dff8a33c94895cb44967b746ee2e2a3530d000a5b7d54596",
+      "benchmarks/phase5_artifact_manifest.json": "7f458b403956d63ba1b1871015d43d57c3b2a154e1ec169bd96a294f5ece8cb5",
+      "benchmarks/phase5_candidate_depth.json": "35bc7f7844c9115a5ce997723f664cec221e8a52aa996d1c3493b97a455f8bb7",
+      "benchmarks/phase5_candidate_recall.json": "91b1d4ad0c9d9831f3f8a7fa452a636ce1a99d7c668a298d71cc9496c64d858c",
+      "benchmarks/phase5_concurrency.json": "0cba7508a8bdfcf7eac7a0de10e3d97bbb167b17e3ef97fec8fe3565f764d5d4",
+      "benchmarks/phase5_end_to_end_latency.json": "5fd0ee12de1acd3dd5152fdd88dc5d15ebed42ce5f596b22e0eeea441049dc3f",
+      "benchmarks/phase5_goodput.json": "f0a20d1fd8190ddc176834e3ca0255c622caeb33e07a5bd50892a8c72647a573",
+      "benchmarks/phase5_oracle_reranker.json": "89d3d9cf4ef2e2b81dacfb489102daef32f48d95107b6cc0bcbf09873d7cd39e",
+      "benchmarks/phase5_reranker_latency.json": "5264b1b12034b1ab81cd7f26e9e5d80f5ead5be96db4081e38ff71748e461ca5",
+      "benchmarks/phase5_reranker_quality.json": "4915c6be4e7ad0fcb9921f778b92e786c0dac72c5b27d2d09481dd5c2d681e4f",
+      "benchmarks/phase5_semantic_overgeneralization.json": "c0ce72154ef2c88b1ed7f42113bfd83f3c5ddc0f5d5b66e5245aae675b34ec3b",
+      "benchmarks/phase5_tail_latency.json": "8caf6492220072fd1b5852081590f1d3d2cdb7b47b28dfc22843cd85d8b7e07a",
+      "benchmarks/phase6_audited_metrics.json": "d67d3b09341ffb2bd36d2e1c2b51334a2d7bc7fa5ac55490f6a156f790ea9f7b",
+      "benchmarks/phase6_audited_oracle.json": "09f6a372413e40c7c6a9057f5cdca44a24e9c7f843c17fd54f63be7ed7c8b987",
+      "benchmarks/phase6_concurrency.json": "f8bf3f35ceac81413b0cbfa8b5bd85a87180825412c6e9f3e94032145e6b5158",
+      "benchmarks/phase6_duplicate_analysis.json": "98a7de2763b270df3bb412ed581d2f6ab7d6dc3103293e7cca3d6f57ef92f908",
+      "benchmarks/phase6_goodput.json": "3191201cbfe1970830643a4c0446232d514e1e5c65e3e16e1e9e85e3e9dd5aba",
+      "benchmarks/phase6_input_format_audit.json": "a35c1048d2298638ba7ce1c743f9c2e289bb82f880d484e1c0ed03c198f74bbd",
+      "benchmarks/phase6_oracle_decomposition.json": "c57f1bcb464ef7dabea7236aa79b390e83d27518b872e3c90fc39c5095497004",
+      "benchmarks/phase6_outlier_analysis.json": "7e2b4ad191bf1c426847fbbd39d73107594bca46a7165cf2d577d04a124717aa",
+      "benchmarks/phase6_query_types.json": "9109a0f5be3d31ba8dc28520909e5a014502f2207c0cc0c8dac365e6c4c205fa",
+      "benchmarks/phase6_reproducibility.json": "04dca92f799995e185c07596199b1bbf7f2aef4c1d331c42fabdd1d54843a49a",
+      "benchmarks/phase6_reranker_forensics.json": "c0c141a7110a0641a943b756954517ee2b7ad4dd69f707ddb075e92632838ab9",
+      "benchmarks/phase6_rrf_analysis.json": "e42a67f468bda3a5b3b03b1c026c63c17c5fd2b3b3920294e5e3f1bb2ae2b6e8",
+      "benchmarks/phase6_score_distribution.json": "31ce0e632a0a73ef655c5e5d1d6d0ae95a9b0251c89ba7716e5416e01c367899",
+      "benchmarks/phase6_truncation.json": "c676586c0cd1d2097e2a7d2a4368128228cccf00c40b91412277348cc6e1fae2",
+      "benchmarks/phase7_bootstrap.json": "a20ee12a60c767cd700da27d4e4fb100d7b6194f2a39571b13c37401bcec3c76",
+      "benchmarks/phase7_candidate_pools.json": "2602177b0b3546362436ecc2b286fa3c1f3b4eba2b661745ef5ceccfcb6de821",
+      "benchmarks/phase7_concurrency.json": "6bec965edd80c8ccd8bb3efb633835117c1f652c2a793736ba686edcc6bc6ea4",
+      "benchmarks/phase7_dev_model_comparison.json": "421576ee17b7b84f8764ca795e1a74d53105b954410407215f454c546887564e",
+      "benchmarks/phase7_development_baseline.json": "8a53c45ec540627ed8addfcdd4690d0953b34b0d87d0554963f4de6fbc890b2d",
+      "benchmarks/phase7_exact_match_analysis.json": "ca45342143d69d21111b62794de92ce066f6a1faf48201997294435a0d25da4a",
+      "benchmarks/phase7_frontier.json": "f59e392069fec296ffcec012fbd98a6091cd24c36a4b8819ab6ad020e8acdfbf",
+      "benchmarks/phase7_guardrail_dev.json": "4e9b21a487c6ccb9681f519c1e9c7466170cee1f854d2855fa00a85773e6faa3",
+      "benchmarks/phase7_holdout.json": "5bd2c1d013cb6491106cfd0cc15479526b6b126b079ed3104fbf1456b8c7a0c1",
+      "benchmarks/phase7_latency.json": "b7e6c51f891eb3f709b174e53c2810aa856e3791dba1bf25fe79f8fa46d2b5d3",
+      "benchmarks/phase7_model_survey.json": "2df29d2439c1953397ab172c38d6ed24e99f79bbd8800c7c746089f8fb60cff4",
+      "benchmarks/phase7_pairwise_analysis.json": "b8a061e7ffa1e98bf62ea857d2f654c3129251658f7c16826d098e15d39894ea",
+      "benchmarks/phase7_partition_baselines.json": "6e9a22f7f24c3e609d8223ff993626b1a961ded769c69df4425d19f45b2c1091",
+      "benchmarks/phase7_selected_config.json": "4ea96b05e294b245431e658b01b4e4b9a65f60b0d64c60de77ad2aab43ef2f9b",
+      "evals/golden.schema.json": "367349be189b2835126554b3b082d714e654e75c1cb9aa80aad7efa694cc5419",
+      "evals/phase6_annotation_audit.json": "d0b8d34fd97caef2bbc06f903c386fe51a51f423d60fc455b39eac2c62c62ef6",
+      "evals/phase7_split_manifest.json": "7812b0b9d985d32bc88e55f221e5278374597f844994dc44582c5c6be9cb470a",
+      "evals/retrieval_corpus.json": "5ac0dd1194151cdd9d956d5326fc5b0d75b9c7473fc2bfb311b7d48ffdd39282",
+      "evals/retrieval_expanded.json": "98e8b039641582f35093e1bda380219364384bd13ff1d98c74a5029d228db19c",
+      "evals/retrieval_expanded_results.json": "8bf004af8101a30afe9a37d1fa0d442bab14ea3408d6e8ca832f9cbcba0ea0a0",
+      "evals/retrieval_phase2_results.json": "30681d0a797df5713b7d878acab36cc5edb6f8f5bc7e55da4a87d1386464e6b0",
+      "evals/retrieval_phase3_postgres_results.json": "30681d0a797df5713b7d878acab36cc5edb6f8f5bc7e55da4a87d1386464e6b0",
+      "evals/retrieval_results.json": "30681d0a797df5713b7d878acab36cc5edb6f8f5bc7e55da4a87d1386464e6b0",
+      "evals/retrieval_semantic.json": "aa657c1a7457017c62525cd7665f1723817df3c50f72cc2444644ea5eba9a5a9",
+      "evals/retrieval_semantic_depth_10.json": "1f314ebe5a901d438539310e1f9350e048512769bdd10aec8ce772d8e294ef10",
+      "evals/retrieval_semantic_depth_20.json": "e23924f4da8099b94abcbdbc96112127dfa907fbd6b5e183eb5065a875854581",
+      "evals/retrieval_semantic_depth_5.json": "be08c54799e8ee6f0d45aad89c9ebc9870ae45b2d7eb2a48c2345847c9f9b8d9",
+      "evals/retrieval_semantic_depth_50.json": "1b574d759afd36eb16cd059c5969f3a5c4d5c36ab3e4453e18f8eb643a8801b2",
+      "evals/retrieval_semantic_model2vec_results.json": "e23924f4da8099b94abcbdbc96112127dfa907fbd6b5e183eb5065a875854581",
+      "evals/retrieval_semantic_phase6_audited.json": "e9486b0a339d5df1830251e1ec3eb6e81e005d35502877b6ccd1ea085192c164",
+      "evals/synapse_synthetic_fixture_results.json": "585a68865f6298a4064fa07f504f6d23ea6d2215047c683961e044117e1d91e0"
+    },
+    "model": {
+      "model_id": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "license": "Apache-2.0",
+      "onnx_artifact": {
+        "filename": "onnx/model_quint8_avx2.onnx",
+        "bytes": 23200716,
+        "sha256": "c80a8b34256ea453093d612e3ac48d3d965a0c0a48c7906709af8b8e28461bf9"
+      },
+      "tokenizer_artifact": {
+        "filename": "tokenizer.json",
+        "bytes": 711396,
+        "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+      },
+      "maximum_input_length": 512,
+      "backend": "ONNX Runtime CPUExecutionProvider",
+      "dtype": "quantized uint8 ONNX",
+      "intra_op_threads": 4,
+      "execution_device": "CPU",
+      "python_dependency_delta": [],
+      "model_cache_total_bytes": 23912112
+    },
+    "environment": {
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "TOKENIZERS_PARALLELISM": null,
+      "HF_HUB_OFFLINE": null
+    },
+    "commands": []
+  },
+  "final_git_status": " M ARCHITECTURE.md\n M BENCHMARKS.md\n M PERFORMANCE.md\n M README.md\n M ctxd/app/evals/retrieval.py\n?? PHASE7_REPORT.md\n?? PHASE8_REPORT.md\n?? benchmarks/phase7_bootstrap.json\n?? benchmarks/phase7_candidate_pools.json\n?? benchmarks/phase7_concurrency.json\n?? benchmarks/phase7_dev_model_comparison.json\n?? benchmarks/phase7_development_baseline.json\n?? benchmarks/phase7_exact_match_analysis.json\n?? benchmarks/phase7_frontier.json\n?? benchmarks/phase7_guardrail_dev.json\n?? benchmarks/phase7_holdout.json\n?? benchmarks/phase7_latency.json\n?? benchmarks/phase7_model_survey.json\n?? benchmarks/phase7_pairwise_analysis.json\n?? benchmarks/phase7_partition_baselines.json\n?? benchmarks/phase7_selected_config.json\n?? benchmarks/phase8_audit.json\n?? benchmarks/phase8_audit.py\n?? benchmarks/phase8_finalize.py\n?? benchmarks/phase8_freeze.py\n?? benchmarks/phase8_holdout.json\n?? benchmarks/phase8_holdout.py\n?? benchmarks/phase8_initial_manifest.json\n?? benchmarks/phase8_profile.json\n?? benchmarks/phase8_profile.py\n?? benchmarks/phase8_selected_config.json\n?? ctxd/app/evals/context_selection.py\n?? tests/test_context_selection.py\n?? tests/test_phase8_artifacts.py\n",
+  "artifacts": {
+    "ARCHITECTURE.md": {
+      "sha256": "4524d4262e06227f4e7fb19fbd7e0642ceb6e721ba99183107476b0bbbc0cc9d",
+      "bytes": 10741
+    },
+    "BENCHMARKS.md": {
+      "sha256": "471f872510dbe7946bdf21ff9979b42a7fd155476f4bb24f239341089c553c6e",
+      "bytes": 12340
+    },
+    "PERFORMANCE.md": {
+      "sha256": "0332a4dadca48b53aa5d0da6a9343ffc1bb1d09340de38b04da044a164b1344f",
+      "bytes": 14620
+    },
+    "PHASE8_REPORT.md": {
+      "sha256": "71487c5b066773a0c3a4d77f9add2f648574e06ff740a95215042459fa0614ed",
+      "bytes": 14723
+    },
+    "README.md": {
+      "sha256": "57dde700d6a29aff67f44694d3954b30cb9aa324df8ea46351ca6ae14156e375",
+      "bytes": 9052
+    },
+    "benchmarks/phase8_audit.json": {
+      "sha256": "64a2fcaecc1060593203a7205c5a12342e763071cac0ad7badb3c285b1dbbf28",
+      "bytes": 2206010
+    },
+    "benchmarks/phase8_audit.py": {
+      "sha256": "742f8eb6be487f1e51eb22727db995de77fc8e236ed7310b9acab1fc4f786e08",
+      "bytes": 6883
+    },
+    "benchmarks/phase8_finalize.py": {
+      "sha256": "c71a0a822d8557887c5ce7865bb6b2581faf63551fa2097229549d1196714d66",
+      "bytes": 2821
+    },
+    "benchmarks/phase8_freeze.py": {
+      "sha256": "eb6f087183039ea0120684ea378c486a1258101ac4cb3f815f134a58a177f3f0",
+      "bytes": 1871
+    },
+    "benchmarks/phase8_holdout.json": {
+      "sha256": "75e577d26ae922b595ba4f36c5d2aaae51434cc44917ec3c62d9226ac86a5d12",
+      "bytes": 49553
+    },
+    "benchmarks/phase8_holdout.py": {
+      "sha256": "f606f113ba4652f016e741f9d80f38822c8df6897094024cfbb4ed4ed4869b96",
+      "bytes": 4769
+    },
+    "benchmarks/phase8_initial_manifest.json": {
+      "sha256": "cfdf62592080998362f5525c2cfcc0bbd2be586a66aa75d09ca566066090d675",
+      "bytes": 12515
+    },
+    "benchmarks/phase8_profile.json": {
+      "sha256": "ec0cfceefec7e4c979f097e1ba294516131e946c6b2bb90e03a0895d14826ccf",
+      "bytes": 219339
+    },
+    "benchmarks/phase8_profile.py": {
+      "sha256": "c64f649e4de31381e4c576bf45d81a403d3be7a9401221f2fe53503e0fc5eaa5",
+      "bytes": 5094
+    },
+    "benchmarks/phase8_selected_config.json": {
+      "sha256": "8a789c64ed15d63de07f43015e3c022fa7f70ae3149f38e8cb11a87423050207",
+      "bytes": 999
+    },
+    "ctxd/app/evals/context_selection.py": {
+      "sha256": "c84f6d68daaf56bf6e17eaa5671ba39690b2af6dca3d43603dd347e7d0bbaabf",
+      "bytes": 5743
+    },
+    "ctxd/app/evals/retrieval.py": {
+      "sha256": "9f55c50f8e984619e06a5904d568f1af089b5660ca20be292ac1d0fd9a40661b",
+      "bytes": 11809
+    },
+    "tests/test_context_selection.py": {
+      "sha256": "7c06749f5d6a077163600f1c0a222066f4da69a7ee4211b18db3b5b910d9c9e2",
+      "bytes": 3113
+    },
+    "tests/test_phase8_artifacts.py": {
+      "sha256": "e42007a2d32aea99950a2fc1015e8fcff0c970958a7c72d15bc8cda4de67b058",
+      "bytes": 2354
+    }
+  },
+  "commands": [
+    "uv run python benchmarks/phase8_profile.py",
+    "uv run python benchmarks/phase8_audit.py (before duplicate-gain repair)",
+    "uv run python benchmarks/phase8_freeze.py",
+    "uv run python benchmarks/phase8_holdout.py",
+    "uv sync --python 3.13",
+    "uv run ruff check .",
+    "uv run mypy",
+    "CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd uv run alembic upgrade head",
+    "CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test uv run alembic upgrade head",
+    "CTXD_TEST_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test uv run pytest"
+  ],
+  "validation": {
+    "passed": 104,
+    "skipped": 0,
+    "ruff": "pass",
+    "mypy": "pass",
+    "postgres": "migrations and all integration tests pass"
+  },
+  "production_changed": false,
+  "decisions": {
+    "reranking": "R2",
+    "packing": "C1"
+  },
+  "not_completed": [
+    "full database-path profiling",
+    "packing holdout (no selected candidate)",
+    "combined path (quality gates failed)",
+    "survivor scale/load benchmarks"
+  ],
+  "git_commit_or_push_performed": false
+}

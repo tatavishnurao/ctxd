@@ -233,6 +233,14 @@ CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd \
 
 The first command writes a separate audited corpus and forensic artifacts; it does not modify the source corpus. The second command requires a dedicated database because it repeatedly truncates and rebuilds benchmark data. See `PHASE6_REPORT.md` for the 36-item result and decision gates.
 
+### Phase 7 frozen reranker evaluation
+
+Phase 7 froze a deterministic 103/47 development/holdout split, compared at most two new local rerankers on development, froze MiniLM-L6 plus an exact-token lexical protection, and evaluated that configuration on holdout once. Holdout nDCG@5 improved, but MRR/Recall@1 uncertainty crosses zero and CPU latency/throughput costs are large. **Decision: interesting but inconclusive; reranking stays offline and is not exposed through runtime modes, APIs, or defaults.** See `PHASE7_REPORT.md` and `benchmarks/phase7_frontier.json`.
+
+### Phase 8 correctness-first investigation (experimental)
+
+Production selection is unchanged. Offline context evaluation now preserves chunk rank positions and prevents repeated-source nDCG gains. A development-selected selective reranker failed its reused-holdout uncertainty/regression gate; packing alternatives lack chunk-evidence labels sufficient for promotion. **R2: keep reranking offline. C1: keep greedy packing.** See `PHASE8_REPORT.md` for measured results, limitations, and unfinished full-path profiling.
+
 ## API
 
 | Method | Endpoint | Purpose |
