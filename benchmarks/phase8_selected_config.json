@@ -1,0 +1,14 @@
+{
+  "policy": "no_lexical_winner",
+  "reason": "development: zero first-relevant-rank regressions and <10% model calls",
+  "model_config": "benchmarks/phase7_selected_config.json",
+  "model_config_file_sha256": "4ea96b05e294b245431e658b01b4e4b9a65f60b0d64c60de77ad2aab43ef2f9b",
+  "development_evidence_sha256": "64a2fcaecc1060593203a7205c5a12342e763071cac0ad7badb3c285b1dbbf28",
+  "ranking_metric": "unique-source credit at original chunk positions; binary judgments",
+  "holdout_method": "one replay of stored Phase 7 scores, no inference or parameter changes",
+  "holdout_limitation": "previously observed Phase 7 holdout, not an independent fresh test",
+  "production_gate": "positive 95% paired intervals for Recall@1, MRR, nDCG@5; zero rank regressions; independent evidence required",
+  "packing_decision": "retain greedy; dev budgets mostly inactive; no evidence-span judgments",
+  "production_enabled": false,
+  "sha256": "76f7439c29864dd9bea7b0efa0c9e0848f980fbad35e90acc931023322c655b1"
+}
