@@ -46,11 +46,14 @@ def reciprocal_rank(retrieved: list[str], relevant: set[str]) -> float:
 def ndcg_at_k(retrieved: list[str], relevant: set[str], k: int) -> float:
     if not relevant:
         return 0.0
-    dcg = sum(
-        1.0 / math.log2(rank + 1)
-        for rank, source in enumerate(retrieved[:k], start=1)
-        if source in relevant
-    )
+    # Judgments identify sources, not chunks. Repeated chunks consume rank positions
+    # but must not earn a second gain for the same judged source.
+    seen: set[str] = set()
+    dcg = 0.0
+    for rank, source in enumerate(retrieved[:k], start=1):
+        if source in relevant and source not in seen:
+            dcg += 1.0 / math.log2(rank + 1)
+        seen.add(source)
     ideal_count = min(k, len(relevant))
     ideal_dcg = sum(1.0 / math.log2(rank + 1) for rank in range(1, ideal_count + 1))
     return dcg / ideal_dcg
