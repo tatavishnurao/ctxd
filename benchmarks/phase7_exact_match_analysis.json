@@ -1,0 +1,4638 @@
+{
+  "definition": {
+    "exact_match_query": "query has a normalized token in expected-source content",
+    "catastrophic_demotion": "baseline relevant rank <= 3 and reranked relevant rank > 10",
+    "classification_order": "catastrophic, improved, preserved, demoted"
+  },
+  "models": {
+    "tinybert_negative_control": [
+      {
+        "case_id": "exact-rare-00",
+        "category": "exact",
+        "query": "codename_0",
+        "query_exact_tokens": [
+          "codename_0"
+        ],
+        "identifier_overlap": [
+          "codename_0"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-0.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-01",
+        "category": "exact",
+        "query": "subject_1 workflow",
+        "query_exact_tokens": [
+          "subject_1",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 3,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-1.md": 3
+        }
+      },
+      {
+        "case_id": "exact-rare-02",
+        "category": "exact",
+        "query": "codename_2",
+        "query_exact_tokens": [
+          "codename_2"
+        ],
+        "identifier_overlap": [
+          "codename_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-02",
+        "category": "exact",
+        "query": "subject_2 workflow",
+        "query_exact_tokens": [
+          "subject_2",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_2"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 3,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 3
+        }
+      },
+      {
+        "case_id": "exact-rare-03",
+        "category": "exact",
+        "query": "codename_3",
+        "query_exact_tokens": [
+          "codename_3"
+        ],
+        "identifier_overlap": [
+          "codename_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-3.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-03",
+        "category": "exact",
+        "query": "subject_3 workflow",
+        "query_exact_tokens": [
+          "subject_3",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-3.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-04",
+        "category": "exact",
+        "query": "codename_4",
+        "query_exact_tokens": [
+          "codename_4"
+        ],
+        "identifier_overlap": [
+          "codename_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-04",
+        "category": "exact",
+        "query": "subject_4 workflow",
+        "query_exact_tokens": [
+          "subject_4",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-05",
+        "category": "exact",
+        "query": "codename_5",
+        "query_exact_tokens": [
+          "codename_5"
+        ],
+        "identifier_overlap": [
+          "codename_5"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-5.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-06",
+        "category": "exact",
+        "query": "codename_6",
+        "query_exact_tokens": [
+          "codename_6"
+        ],
+        "identifier_overlap": [
+          "codename_6"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-06",
+        "category": "exact",
+        "query": "subject_6 workflow",
+        "query_exact_tokens": [
+          "subject_6",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_6"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-07",
+        "category": "exact",
+        "query": "codename_7",
+        "query_exact_tokens": [
+          "codename_7"
+        ],
+        "identifier_overlap": [
+          "codename_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-7.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-08",
+        "category": "exact",
+        "query": "codename_8",
+        "query_exact_tokens": [
+          "codename_8"
+        ],
+        "identifier_overlap": [
+          "codename_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-08",
+        "category": "exact",
+        "query": "subject_8 workflow",
+        "query_exact_tokens": [
+          "subject_8",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-09",
+        "category": "exact",
+        "query": "subject_9 workflow",
+        "query_exact_tokens": [
+          "subject_9",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_9"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "expanded/service-9.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-10",
+        "category": "exact",
+        "query": "codename_10",
+        "query_exact_tokens": [
+          "codename_10"
+        ],
+        "identifier_overlap": [
+          "codename_10"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-10.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-10",
+        "category": "exact",
+        "query": "subject_10 workflow",
+        "query_exact_tokens": [
+          "subject_10",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_10"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-10.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-12",
+        "category": "exact",
+        "query": "codename_12",
+        "query_exact_tokens": [
+          "codename_12"
+        ],
+        "identifier_overlap": [
+          "codename_12"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-13",
+        "category": "exact",
+        "query": "codename_13",
+        "query_exact_tokens": [
+          "codename_13"
+        ],
+        "identifier_overlap": [
+          "codename_13"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-13.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-13",
+        "category": "exact",
+        "query": "subject_13 workflow",
+        "query_exact_tokens": [
+          "subject_13",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_13"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-13.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-14",
+        "category": "exact",
+        "query": "codename_14",
+        "query_exact_tokens": [
+          "codename_14"
+        ],
+        "identifier_overlap": [
+          "codename_14"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-14.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-15",
+        "category": "exact",
+        "query": "subject_15 workflow",
+        "query_exact_tokens": [
+          "subject_15",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_15"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-15.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-16",
+        "category": "exact",
+        "query": "codename_16",
+        "query_exact_tokens": [
+          "codename_16"
+        ],
+        "identifier_overlap": [
+          "codename_16"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-16.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-16",
+        "category": "exact",
+        "query": "subject_16 workflow",
+        "query_exact_tokens": [
+          "subject_16",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_16"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-16.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-17",
+        "category": "exact",
+        "query": "codename_17",
+        "query_exact_tokens": [
+          "codename_17"
+        ],
+        "identifier_overlap": [
+          "codename_17"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-17.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-17",
+        "category": "exact",
+        "query": "subject_17 workflow",
+        "query_exact_tokens": [
+          "subject_17",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_17"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-17.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-18",
+        "category": "exact",
+        "query": "codename_18",
+        "query_exact_tokens": [
+          "codename_18"
+        ],
+        "identifier_overlap": [
+          "codename_18"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-18.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-19",
+        "category": "exact",
+        "query": "codename_19",
+        "query_exact_tokens": [
+          "codename_19"
+        ],
+        "identifier_overlap": [
+          "codename_19"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-19.md": 1
+        }
+      },
+      {
+        "case_id": "ambiguous-group-04",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 2,
+          "expanded/service-5.md": 3,
+          "expanded/service-7.md": 4,
+          "expanded/service-4.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-05",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 2,
+          "expanded/service-5.md": 3,
+          "expanded/service-7.md": 4,
+          "expanded/service-4.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-06",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 2,
+          "expanded/service-5.md": 3,
+          "expanded/service-7.md": 4,
+          "expanded/service-4.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-07",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 2,
+          "expanded/service-5.md": 3,
+          "expanded/service-7.md": 4,
+          "expanded/service-4.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-08",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-11.md": 1,
+          "expanded/service-10.md": 3,
+          "expanded/service-9.md": 4,
+          "expanded/service-8.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-09",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-11.md": 1,
+          "expanded/service-10.md": 3,
+          "expanded/service-9.md": 4,
+          "expanded/service-8.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-10",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-11.md": 1,
+          "expanded/service-10.md": 3,
+          "expanded/service-9.md": 4,
+          "expanded/service-8.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-11",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-11.md": 1,
+          "expanded/service-10.md": 3,
+          "expanded/service-9.md": 4,
+          "expanded/service-8.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-12",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 2,
+          "expanded/service-13.md": 3,
+          "expanded/service-14.md": 4,
+          "expanded/service-15.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-13",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 2,
+          "expanded/service-13.md": 3,
+          "expanded/service-14.md": 4,
+          "expanded/service-15.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-14",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 2,
+          "expanded/service-13.md": 3,
+          "expanded/service-14.md": 4,
+          "expanded/service-15.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-15",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 2,
+          "expanded/service-13.md": 3,
+          "expanded/service-14.md": 4,
+          "expanded/service-15.md": 5
+        }
+      },
+      {
+        "case_id": "long-tail-00",
+        "category": "long chunk",
+        "query": "tailmarker_0",
+        "query_exact_tokens": [
+          "tailmarker_0"
+        ],
+        "identifier_overlap": [
+          "tailmarker_0"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-0.md": 11
+        }
+      },
+      {
+        "case_id": "long-tail-02",
+        "category": "long chunk",
+        "query": "tailmarker_2",
+        "query_exact_tokens": [
+          "tailmarker_2"
+        ],
+        "identifier_overlap": [
+          "tailmarker_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 11
+        }
+      },
+      {
+        "case_id": "long-tail-04",
+        "category": "long chunk",
+        "query": "tailmarker_4",
+        "query_exact_tokens": [
+          "tailmarker_4"
+        ],
+        "identifier_overlap": [
+          "tailmarker_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 11
+        }
+      },
+      {
+        "case_id": "long-tail-05",
+        "category": "long chunk",
+        "query": "tailmarker_5",
+        "query_exact_tokens": [
+          "tailmarker_5"
+        ],
+        "identifier_overlap": [
+          "tailmarker_5"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-5.md": 11
+        }
+      },
+      {
+        "case_id": "long-tail-07",
+        "category": "long chunk",
+        "query": "tailmarker_7",
+        "query_exact_tokens": [
+          "tailmarker_7"
+        ],
+        "identifier_overlap": [
+          "tailmarker_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-7.md": 11
+        }
+      },
+      {
+        "case_id": "long-tail-08",
+        "category": "long chunk",
+        "query": "tailmarker_8",
+        "query_exact_tokens": [
+          "tailmarker_8"
+        ],
+        "identifier_overlap": [
+          "tailmarker_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 11
+        }
+      },
+      {
+        "case_id": "long-tail-09",
+        "category": "long chunk",
+        "query": "tailmarker_9",
+        "query_exact_tokens": [
+          "tailmarker_9"
+        ],
+        "identifier_overlap": [
+          "tailmarker_9"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-9.md": 11
+        }
+      },
+      {
+        "case_id": "tenant-isolation-01",
+        "category": "tenant isolation",
+        "query": "othersecret_1 codename_1",
+        "query_exact_tokens": [
+          "codename_1",
+          "othersecret_1"
+        ],
+        "identifier_overlap": [
+          "codename_1",
+          "othersecret_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-1.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-02",
+        "category": "tenant isolation",
+        "query": "othersecret_2 codename_2",
+        "query_exact_tokens": [
+          "codename_2",
+          "othersecret_2"
+        ],
+        "identifier_overlap": [
+          "codename_2",
+          "othersecret_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-2.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-03",
+        "category": "tenant isolation",
+        "query": "othersecret_3 codename_3",
+        "query_exact_tokens": [
+          "codename_3",
+          "othersecret_3"
+        ],
+        "identifier_overlap": [
+          "codename_3",
+          "othersecret_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-3.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-06",
+        "category": "tenant isolation",
+        "query": "othersecret_6 codename_6",
+        "query_exact_tokens": [
+          "codename_6",
+          "othersecret_6"
+        ],
+        "identifier_overlap": [
+          "codename_6",
+          "othersecret_6"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-6.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-07",
+        "category": "tenant isolation",
+        "query": "othersecret_7 codename_7",
+        "query_exact_tokens": [
+          "codename_7",
+          "othersecret_7"
+        ],
+        "identifier_overlap": [
+          "codename_7",
+          "othersecret_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-7.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-08",
+        "category": "tenant isolation",
+        "query": "othersecret_8 codename_8",
+        "query_exact_tokens": [
+          "codename_8",
+          "othersecret_8"
+        ],
+        "identifier_overlap": [
+          "codename_8",
+          "othersecret_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-8.txt": 1
+        }
+      },
+      {
+        "case_id": "semantic-000",
+        "category": "semantic paraphrase",
+        "query": "How does the system make room when RAM is scarce?",
+        "query_exact_tokens": [
+          "the",
+          "when"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 9,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "semantic/cache-eviction.md": 9
+        }
+      },
+      {
+        "case_id": "semantic-005",
+        "category": "semantic paraphrase",
+        "query": "How can release traffic be moved back quickly?",
+        "query_exact_tokens": [
+          "back",
+          "can",
+          "quickly",
+          "traffic"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/blue-green.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-007",
+        "category": "semantic paraphrase",
+        "query": "How does the job know where to continue after a crash?",
+        "query_exact_tokens": [
+          "after",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/checkpoint.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-008",
+        "category": "semantic paraphrase",
+        "query": "How are deletions communicated to replicas?",
+        "query_exact_tokens": [
+          "replicas"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 3,
+        "reranked_relevant_rank": 2,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/tombstone.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-010",
+        "category": "morphology",
+        "query": "Which policy keeps audit records before purging them?",
+        "query_exact_tokens": [
+          "audit",
+          "records"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/audit-retention.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-011",
+        "category": "morphology",
+        "query": "When are credentials rotated and old tokens invalidated?",
+        "query_exact_tokens": [
+          "credentials",
+          "rotated",
+          "tokens"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/token-rotation.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-012",
+        "category": "morphology",
+        "query": "What triggers shard rebalancing?",
+        "query_exact_tokens": [
+          "shard"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/shard-rebalance.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-014",
+        "category": "morphology",
+        "query": "When does the service compress responses?",
+        "query_exact_tokens": [
+          "responses"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 4,
+        "reranked_relevant_rank": 2,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/compression.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-015",
+        "category": "distractor-heavy",
+        "query": "What step confirms who the user is?",
+        "query_exact_tokens": [
+          "is",
+          "the",
+          "user"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "semantic/authentication.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-018",
+        "category": "distractor-heavy",
+        "query": "What one-way transformation stores passwords safely?",
+        "query_exact_tokens": [
+          "one",
+          "passwords",
+          "way"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/hashing.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-019",
+        "category": "distractor-heavy",
+        "query": "What combines telemetry to understand incidents?",
+        "query_exact_tokens": [
+          "combines",
+          "incidents",
+          "to"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/observability.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-021",
+        "category": "near duplicate",
+        "query": "Which caching pattern updates cache and storage on writes?",
+        "query_exact_tokens": [
+          "and",
+          "cache",
+          "caching",
+          "writes"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/write-through.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-022",
+        "category": "near duplicate",
+        "query": "How are multi-service transactions undone after a partial failure?",
+        "query_exact_tokens": [
+          "a",
+          "transactions"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "semantic/saga.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-023",
+        "category": "near duplicate",
+        "query": "Which protocol prepares participants before committing?",
+        "query_exact_tokens": [
+          "participants"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/two-phase.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-024",
+        "category": "near duplicate",
+        "query": "What technique repeatedly asks for updates?",
+        "query_exact_tokens": [
+          "asks",
+          "repeatedly"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/polling.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-025",
+        "category": "multiple relevant",
+        "query": "What should responders do first during an outage?",
+        "query_exact_tokens": [
+          "an",
+          "during",
+          "responders"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/incident-runbook.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-026",
+        "category": "multiple relevant",
+        "query": "What should responders do first during an outage?",
+        "query_exact_tokens": [
+          "an",
+          "during",
+          "responders"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/incident-runbook.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-027",
+        "category": "multiple relevant",
+        "query": "What protections apply to personal data?",
+        "query_exact_tokens": [
+          "data",
+          "personal"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/privacy-standard.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-028",
+        "category": "multiple relevant",
+        "query": "What protections apply to personal data?",
+        "query_exact_tokens": [
+          "data",
+          "personal"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/privacy-standard.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-029",
+        "category": "multiple relevant",
+        "query": "How should transient network failures be retried?",
+        "query_exact_tokens": [
+          "failures",
+          "network",
+          "transient"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/retry-policy.md": 1,
+          "semantic/client-resilience.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-030",
+        "category": "multiple relevant",
+        "query": "How should transient network failures be retried?",
+        "query_exact_tokens": [
+          "failures",
+          "network",
+          "transient"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/retry-policy.md": 1,
+          "semantic/client-resilience.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-033",
+        "category": "rare term",
+        "query": "Where is the flibbertigibbet sentinel documented?",
+        "query_exact_tokens": [
+          "flibbertigibbet",
+          "sentinel",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/flibbertigibbet.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-036",
+        "category": "exact lexical",
+        "query": "Which environment variable caps context tokens?",
+        "query_exact_tokens": [
+          "caps",
+          "context",
+          "environment",
+          "variable"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/env-var.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-038",
+        "category": "semantic paraphrase",
+        "query": "How does the service exit without dropping current requests?",
+        "query_exact_tokens": [
+          "requests"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/graceful-shutdown.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-039",
+        "category": "semantic paraphrase",
+        "query": "What lets the database replay committed changes after a crash?",
+        "query_exact_tokens": [
+          "changes",
+          "committed",
+          "replay",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/write-ahead-log.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-040",
+        "category": "semantic paraphrase",
+        "query": "What gives temporary ownership that disappears without renewal?",
+        "query_exact_tokens": [
+          "ownership",
+          "temporary"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/lease.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-041",
+        "category": "semantic paraphrase",
+        "query": "What message asks workers to terminate gracefully?",
+        "query_exact_tokens": [
+          "message",
+          "to",
+          "workers"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/poison-pill.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-042",
+        "category": "distractor-heavy",
+        "query": "Which telemetry is numeric time series?",
+        "query_exact_tokens": [
+          "numeric",
+          "series",
+          "time"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/metrics.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-043",
+        "category": "distractor-heavy",
+        "query": "Which telemetry follows one request across services?",
+        "query_exact_tokens": [
+          "across",
+          "request",
+          "services"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/traces.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-044",
+        "category": "morphology",
+        "query": "What process provisions resources for a new user?",
+        "query_exact_tokens": [
+          "a",
+          "resources",
+          "user"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/provisioning.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-046",
+        "category": "tenant isolation",
+        "query": "Which vault stores the Orchid project reports?",
+        "query_exact_tokens": [
+          "orchid",
+          "project",
+          "reports",
+          "stores",
+          "the",
+          "vault"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/tenant-a-secret.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-047",
+        "category": "tenant isolation",
+        "query": "Which vault stores the Orchid project reports?",
+        "query_exact_tokens": [
+          "orchid",
+          "project",
+          "reports",
+          "stores",
+          "the",
+          "vault"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/tenant-b-secret.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-048",
+        "category": "semantic paraphrase",
+        "query": "What precomputes query results for fast reads?",
+        "query_exact_tokens": [
+          "for",
+          "query",
+          "reads",
+          "results"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/materialized-view.md": 1
+        }
+      }
+    ],
+    "minilm_l6": [
+      {
+        "case_id": "exact-rare-00",
+        "category": "exact",
+        "query": "codename_0",
+        "query_exact_tokens": [
+          "codename_0"
+        ],
+        "identifier_overlap": [
+          "codename_0"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-0.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-01",
+        "category": "exact",
+        "query": "subject_1 workflow",
+        "query_exact_tokens": [
+          "subject_1",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-1.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-02",
+        "category": "exact",
+        "query": "codename_2",
+        "query_exact_tokens": [
+          "codename_2"
+        ],
+        "identifier_overlap": [
+          "codename_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-02",
+        "category": "exact",
+        "query": "subject_2 workflow",
+        "query_exact_tokens": [
+          "subject_2",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_2"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-03",
+        "category": "exact",
+        "query": "codename_3",
+        "query_exact_tokens": [
+          "codename_3"
+        ],
+        "identifier_overlap": [
+          "codename_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-3.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-03",
+        "category": "exact",
+        "query": "subject_3 workflow",
+        "query_exact_tokens": [
+          "subject_3",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-3.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-04",
+        "category": "exact",
+        "query": "codename_4",
+        "query_exact_tokens": [
+          "codename_4"
+        ],
+        "identifier_overlap": [
+          "codename_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-04",
+        "category": "exact",
+        "query": "subject_4 workflow",
+        "query_exact_tokens": [
+          "subject_4",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-05",
+        "category": "exact",
+        "query": "codename_5",
+        "query_exact_tokens": [
+          "codename_5"
+        ],
+        "identifier_overlap": [
+          "codename_5"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-5.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-06",
+        "category": "exact",
+        "query": "codename_6",
+        "query_exact_tokens": [
+          "codename_6"
+        ],
+        "identifier_overlap": [
+          "codename_6"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-06",
+        "category": "exact",
+        "query": "subject_6 workflow",
+        "query_exact_tokens": [
+          "subject_6",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_6"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-07",
+        "category": "exact",
+        "query": "codename_7",
+        "query_exact_tokens": [
+          "codename_7"
+        ],
+        "identifier_overlap": [
+          "codename_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-7.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-08",
+        "category": "exact",
+        "query": "codename_8",
+        "query_exact_tokens": [
+          "codename_8"
+        ],
+        "identifier_overlap": [
+          "codename_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-08",
+        "category": "exact",
+        "query": "subject_8 workflow",
+        "query_exact_tokens": [
+          "subject_8",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-09",
+        "category": "exact",
+        "query": "subject_9 workflow",
+        "query_exact_tokens": [
+          "subject_9",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_9"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "expanded/service-9.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-10",
+        "category": "exact",
+        "query": "codename_10",
+        "query_exact_tokens": [
+          "codename_10"
+        ],
+        "identifier_overlap": [
+          "codename_10"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-10.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-10",
+        "category": "exact",
+        "query": "subject_10 workflow",
+        "query_exact_tokens": [
+          "subject_10",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_10"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-10.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-12",
+        "category": "exact",
+        "query": "codename_12",
+        "query_exact_tokens": [
+          "codename_12"
+        ],
+        "identifier_overlap": [
+          "codename_12"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-13",
+        "category": "exact",
+        "query": "codename_13",
+        "query_exact_tokens": [
+          "codename_13"
+        ],
+        "identifier_overlap": [
+          "codename_13"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-13.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-13",
+        "category": "exact",
+        "query": "subject_13 workflow",
+        "query_exact_tokens": [
+          "subject_13",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_13"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-13.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-14",
+        "category": "exact",
+        "query": "codename_14",
+        "query_exact_tokens": [
+          "codename_14"
+        ],
+        "identifier_overlap": [
+          "codename_14"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-14.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-15",
+        "category": "exact",
+        "query": "subject_15 workflow",
+        "query_exact_tokens": [
+          "subject_15",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_15"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-15.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-16",
+        "category": "exact",
+        "query": "codename_16",
+        "query_exact_tokens": [
+          "codename_16"
+        ],
+        "identifier_overlap": [
+          "codename_16"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-16.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-16",
+        "category": "exact",
+        "query": "subject_16 workflow",
+        "query_exact_tokens": [
+          "subject_16",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_16"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-16.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-17",
+        "category": "exact",
+        "query": "codename_17",
+        "query_exact_tokens": [
+          "codename_17"
+        ],
+        "identifier_overlap": [
+          "codename_17"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-17.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-17",
+        "category": "exact",
+        "query": "subject_17 workflow",
+        "query_exact_tokens": [
+          "subject_17",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_17"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-17.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-18",
+        "category": "exact",
+        "query": "codename_18",
+        "query_exact_tokens": [
+          "codename_18"
+        ],
+        "identifier_overlap": [
+          "codename_18"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-18.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-19",
+        "category": "exact",
+        "query": "codename_19",
+        "query_exact_tokens": [
+          "codename_19"
+        ],
+        "identifier_overlap": [
+          "codename_19"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-19.md": 1
+        }
+      },
+      {
+        "case_id": "ambiguous-group-04",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1,
+          "expanded/service-7.md": 2,
+          "expanded/service-5.md": 3,
+          "expanded/service-6.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-05",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1,
+          "expanded/service-7.md": 2,
+          "expanded/service-5.md": 3,
+          "expanded/service-6.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-06",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1,
+          "expanded/service-7.md": 2,
+          "expanded/service-5.md": 3,
+          "expanded/service-6.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-07",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1,
+          "expanded/service-7.md": 2,
+          "expanded/service-5.md": 3,
+          "expanded/service-6.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-08",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1,
+          "expanded/service-9.md": 2,
+          "expanded/service-10.md": 3,
+          "expanded/service-11.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-09",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1,
+          "expanded/service-9.md": 2,
+          "expanded/service-10.md": 3,
+          "expanded/service-11.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-10",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1,
+          "expanded/service-9.md": 2,
+          "expanded/service-10.md": 3,
+          "expanded/service-11.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-11",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1,
+          "expanded/service-9.md": 2,
+          "expanded/service-10.md": 3,
+          "expanded/service-11.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-12",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 1,
+          "expanded/service-14.md": 2,
+          "expanded/service-13.md": 3,
+          "expanded/service-15.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-13",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 1,
+          "expanded/service-14.md": 2,
+          "expanded/service-13.md": 3,
+          "expanded/service-15.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-14",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 1,
+          "expanded/service-14.md": 2,
+          "expanded/service-13.md": 3,
+          "expanded/service-15.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-15",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 1,
+          "expanded/service-14.md": 2,
+          "expanded/service-13.md": 3,
+          "expanded/service-15.md": 5
+        }
+      },
+      {
+        "case_id": "long-tail-00",
+        "category": "long chunk",
+        "query": "tailmarker_0",
+        "query_exact_tokens": [
+          "tailmarker_0"
+        ],
+        "identifier_overlap": [
+          "tailmarker_0"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-0.md": 11
+        }
+      },
+      {
+        "case_id": "long-tail-02",
+        "category": "long chunk",
+        "query": "tailmarker_2",
+        "query_exact_tokens": [
+          "tailmarker_2"
+        ],
+        "identifier_overlap": [
+          "tailmarker_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 11,
+        "classification": "catastrophically demoted",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 11
+        }
+      },
+      {
+        "case_id": "long-tail-04",
+        "category": "long chunk",
+        "query": "tailmarker_4",
+        "query_exact_tokens": [
+          "tailmarker_4"
+        ],
+        "identifier_overlap": [
+          "tailmarker_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 5,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 5
+        }
+      },
+      {
+        "case_id": "long-tail-05",
+        "category": "long chunk",
+        "query": "tailmarker_5",
+        "query_exact_tokens": [
+          "tailmarker_5"
+        ],
+        "identifier_overlap": [
+          "tailmarker_5"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-5.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-07",
+        "category": "long chunk",
+        "query": "tailmarker_7",
+        "query_exact_tokens": [
+          "tailmarker_7"
+        ],
+        "identifier_overlap": [
+          "tailmarker_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-7.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-08",
+        "category": "long chunk",
+        "query": "tailmarker_8",
+        "query_exact_tokens": [
+          "tailmarker_8"
+        ],
+        "identifier_overlap": [
+          "tailmarker_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-09",
+        "category": "long chunk",
+        "query": "tailmarker_9",
+        "query_exact_tokens": [
+          "tailmarker_9"
+        ],
+        "identifier_overlap": [
+          "tailmarker_9"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-9.md": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-01",
+        "category": "tenant isolation",
+        "query": "othersecret_1 codename_1",
+        "query_exact_tokens": [
+          "codename_1",
+          "othersecret_1"
+        ],
+        "identifier_overlap": [
+          "codename_1",
+          "othersecret_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-1.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-02",
+        "category": "tenant isolation",
+        "query": "othersecret_2 codename_2",
+        "query_exact_tokens": [
+          "codename_2",
+          "othersecret_2"
+        ],
+        "identifier_overlap": [
+          "codename_2",
+          "othersecret_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-2.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-03",
+        "category": "tenant isolation",
+        "query": "othersecret_3 codename_3",
+        "query_exact_tokens": [
+          "codename_3",
+          "othersecret_3"
+        ],
+        "identifier_overlap": [
+          "codename_3",
+          "othersecret_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-3.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-06",
+        "category": "tenant isolation",
+        "query": "othersecret_6 codename_6",
+        "query_exact_tokens": [
+          "codename_6",
+          "othersecret_6"
+        ],
+        "identifier_overlap": [
+          "codename_6",
+          "othersecret_6"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-6.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-07",
+        "category": "tenant isolation",
+        "query": "othersecret_7 codename_7",
+        "query_exact_tokens": [
+          "codename_7",
+          "othersecret_7"
+        ],
+        "identifier_overlap": [
+          "codename_7",
+          "othersecret_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-7.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-08",
+        "category": "tenant isolation",
+        "query": "othersecret_8 codename_8",
+        "query_exact_tokens": [
+          "codename_8",
+          "othersecret_8"
+        ],
+        "identifier_overlap": [
+          "codename_8",
+          "othersecret_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-8.txt": 1
+        }
+      },
+      {
+        "case_id": "semantic-000",
+        "category": "semantic paraphrase",
+        "query": "How does the system make room when RAM is scarce?",
+        "query_exact_tokens": [
+          "the",
+          "when"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 8,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "semantic/cache-eviction.md": 8
+        }
+      },
+      {
+        "case_id": "semantic-005",
+        "category": "semantic paraphrase",
+        "query": "How can release traffic be moved back quickly?",
+        "query_exact_tokens": [
+          "back",
+          "can",
+          "quickly",
+          "traffic"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/blue-green.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-007",
+        "category": "semantic paraphrase",
+        "query": "How does the job know where to continue after a crash?",
+        "query_exact_tokens": [
+          "after",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/checkpoint.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-008",
+        "category": "semantic paraphrase",
+        "query": "How are deletions communicated to replicas?",
+        "query_exact_tokens": [
+          "replicas"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 3,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/tombstone.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-010",
+        "category": "morphology",
+        "query": "Which policy keeps audit records before purging them?",
+        "query_exact_tokens": [
+          "audit",
+          "records"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/audit-retention.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-011",
+        "category": "morphology",
+        "query": "When are credentials rotated and old tokens invalidated?",
+        "query_exact_tokens": [
+          "credentials",
+          "rotated",
+          "tokens"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/token-rotation.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-012",
+        "category": "morphology",
+        "query": "What triggers shard rebalancing?",
+        "query_exact_tokens": [
+          "shard"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/shard-rebalance.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-014",
+        "category": "morphology",
+        "query": "When does the service compress responses?",
+        "query_exact_tokens": [
+          "responses"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 4,
+        "reranked_relevant_rank": 2,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/compression.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-015",
+        "category": "distractor-heavy",
+        "query": "What step confirms who the user is?",
+        "query_exact_tokens": [
+          "is",
+          "the",
+          "user"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/authentication.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-018",
+        "category": "distractor-heavy",
+        "query": "What one-way transformation stores passwords safely?",
+        "query_exact_tokens": [
+          "one",
+          "passwords",
+          "way"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/hashing.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-019",
+        "category": "distractor-heavy",
+        "query": "What combines telemetry to understand incidents?",
+        "query_exact_tokens": [
+          "combines",
+          "incidents",
+          "to"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/observability.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-021",
+        "category": "near duplicate",
+        "query": "Which caching pattern updates cache and storage on writes?",
+        "query_exact_tokens": [
+          "and",
+          "cache",
+          "caching",
+          "writes"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/write-through.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-022",
+        "category": "near duplicate",
+        "query": "How are multi-service transactions undone after a partial failure?",
+        "query_exact_tokens": [
+          "a",
+          "transactions"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/saga.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-023",
+        "category": "near duplicate",
+        "query": "Which protocol prepares participants before committing?",
+        "query_exact_tokens": [
+          "participants"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/two-phase.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-024",
+        "category": "near duplicate",
+        "query": "What technique repeatedly asks for updates?",
+        "query_exact_tokens": [
+          "asks",
+          "repeatedly"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/polling.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-025",
+        "category": "multiple relevant",
+        "query": "What should responders do first during an outage?",
+        "query_exact_tokens": [
+          "an",
+          "during",
+          "responders"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/incident-runbook.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-026",
+        "category": "multiple relevant",
+        "query": "What should responders do first during an outage?",
+        "query_exact_tokens": [
+          "an",
+          "during",
+          "responders"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/incident-runbook.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-027",
+        "category": "multiple relevant",
+        "query": "What protections apply to personal data?",
+        "query_exact_tokens": [
+          "data",
+          "personal"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/privacy-standard.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-028",
+        "category": "multiple relevant",
+        "query": "What protections apply to personal data?",
+        "query_exact_tokens": [
+          "data",
+          "personal"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/privacy-standard.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-029",
+        "category": "multiple relevant",
+        "query": "How should transient network failures be retried?",
+        "query_exact_tokens": [
+          "failures",
+          "network",
+          "transient"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/retry-policy.md": 1,
+          "semantic/client-resilience.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-030",
+        "category": "multiple relevant",
+        "query": "How should transient network failures be retried?",
+        "query_exact_tokens": [
+          "failures",
+          "network",
+          "transient"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/retry-policy.md": 1,
+          "semantic/client-resilience.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-033",
+        "category": "rare term",
+        "query": "Where is the flibbertigibbet sentinel documented?",
+        "query_exact_tokens": [
+          "flibbertigibbet",
+          "sentinel",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/flibbertigibbet.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-036",
+        "category": "exact lexical",
+        "query": "Which environment variable caps context tokens?",
+        "query_exact_tokens": [
+          "caps",
+          "context",
+          "environment",
+          "variable"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/env-var.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-038",
+        "category": "semantic paraphrase",
+        "query": "How does the service exit without dropping current requests?",
+        "query_exact_tokens": [
+          "requests"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/graceful-shutdown.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-039",
+        "category": "semantic paraphrase",
+        "query": "What lets the database replay committed changes after a crash?",
+        "query_exact_tokens": [
+          "changes",
+          "committed",
+          "replay",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/write-ahead-log.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-040",
+        "category": "semantic paraphrase",
+        "query": "What gives temporary ownership that disappears without renewal?",
+        "query_exact_tokens": [
+          "ownership",
+          "temporary"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/lease.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-041",
+        "category": "semantic paraphrase",
+        "query": "What message asks workers to terminate gracefully?",
+        "query_exact_tokens": [
+          "message",
+          "to",
+          "workers"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/poison-pill.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-042",
+        "category": "distractor-heavy",
+        "query": "Which telemetry is numeric time series?",
+        "query_exact_tokens": [
+          "numeric",
+          "series",
+          "time"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/metrics.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-043",
+        "category": "distractor-heavy",
+        "query": "Which telemetry follows one request across services?",
+        "query_exact_tokens": [
+          "across",
+          "request",
+          "services"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/traces.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-044",
+        "category": "morphology",
+        "query": "What process provisions resources for a new user?",
+        "query_exact_tokens": [
+          "a",
+          "resources",
+          "user"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/provisioning.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-046",
+        "category": "tenant isolation",
+        "query": "Which vault stores the Orchid project reports?",
+        "query_exact_tokens": [
+          "orchid",
+          "project",
+          "reports",
+          "stores",
+          "the",
+          "vault"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/tenant-a-secret.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-047",
+        "category": "tenant isolation",
+        "query": "Which vault stores the Orchid project reports?",
+        "query_exact_tokens": [
+          "orchid",
+          "project",
+          "reports",
+          "stores",
+          "the",
+          "vault"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/tenant-b-secret.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-048",
+        "category": "semantic paraphrase",
+        "query": "What precomputes query results for fast reads?",
+        "query_exact_tokens": [
+          "for",
+          "query",
+          "reads",
+          "results"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/materialized-view.md": 1
+        }
+      }
+    ],
+    "bge_reranker_base": [
+      {
+        "case_id": "exact-rare-00",
+        "category": "exact",
+        "query": "codename_0",
+        "query_exact_tokens": [
+          "codename_0"
+        ],
+        "identifier_overlap": [
+          "codename_0"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-0.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-01",
+        "category": "exact",
+        "query": "subject_1 workflow",
+        "query_exact_tokens": [
+          "subject_1",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-1.md": 2
+        }
+      },
+      {
+        "case_id": "exact-rare-02",
+        "category": "exact",
+        "query": "codename_2",
+        "query_exact_tokens": [
+          "codename_2"
+        ],
+        "identifier_overlap": [
+          "codename_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 2
+        }
+      },
+      {
+        "case_id": "exact-subject-02",
+        "category": "exact",
+        "query": "subject_2 workflow",
+        "query_exact_tokens": [
+          "subject_2",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_2"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-03",
+        "category": "exact",
+        "query": "codename_3",
+        "query_exact_tokens": [
+          "codename_3"
+        ],
+        "identifier_overlap": [
+          "codename_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-3.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-03",
+        "category": "exact",
+        "query": "subject_3 workflow",
+        "query_exact_tokens": [
+          "subject_3",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-3.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-04",
+        "category": "exact",
+        "query": "codename_4",
+        "query_exact_tokens": [
+          "codename_4"
+        ],
+        "identifier_overlap": [
+          "codename_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-04",
+        "category": "exact",
+        "query": "subject_4 workflow",
+        "query_exact_tokens": [
+          "subject_4",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-05",
+        "category": "exact",
+        "query": "codename_5",
+        "query_exact_tokens": [
+          "codename_5"
+        ],
+        "identifier_overlap": [
+          "codename_5"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-5.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-06",
+        "category": "exact",
+        "query": "codename_6",
+        "query_exact_tokens": [
+          "codename_6"
+        ],
+        "identifier_overlap": [
+          "codename_6"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-06",
+        "category": "exact",
+        "query": "subject_6 workflow",
+        "query_exact_tokens": [
+          "subject_6",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_6"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-07",
+        "category": "exact",
+        "query": "codename_7",
+        "query_exact_tokens": [
+          "codename_7"
+        ],
+        "identifier_overlap": [
+          "codename_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-7.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-08",
+        "category": "exact",
+        "query": "codename_8",
+        "query_exact_tokens": [
+          "codename_8"
+        ],
+        "identifier_overlap": [
+          "codename_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-08",
+        "category": "exact",
+        "query": "subject_8 workflow",
+        "query_exact_tokens": [
+          "subject_8",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-09",
+        "category": "exact",
+        "query": "subject_9 workflow",
+        "query_exact_tokens": [
+          "subject_9",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_9"
+        ],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "expanded/service-9.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-10",
+        "category": "exact",
+        "query": "codename_10",
+        "query_exact_tokens": [
+          "codename_10"
+        ],
+        "identifier_overlap": [
+          "codename_10"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-10.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-10",
+        "category": "exact",
+        "query": "subject_10 workflow",
+        "query_exact_tokens": [
+          "subject_10",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_10"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-10.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-12",
+        "category": "exact",
+        "query": "codename_12",
+        "query_exact_tokens": [
+          "codename_12"
+        ],
+        "identifier_overlap": [
+          "codename_12"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-12.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-13",
+        "category": "exact",
+        "query": "codename_13",
+        "query_exact_tokens": [
+          "codename_13"
+        ],
+        "identifier_overlap": [
+          "codename_13"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-13.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-13",
+        "category": "exact",
+        "query": "subject_13 workflow",
+        "query_exact_tokens": [
+          "subject_13",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_13"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-13.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-14",
+        "category": "exact",
+        "query": "codename_14",
+        "query_exact_tokens": [
+          "codename_14"
+        ],
+        "identifier_overlap": [
+          "codename_14"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-14.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-15",
+        "category": "exact",
+        "query": "subject_15 workflow",
+        "query_exact_tokens": [
+          "subject_15",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_15"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-15.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-16",
+        "category": "exact",
+        "query": "codename_16",
+        "query_exact_tokens": [
+          "codename_16"
+        ],
+        "identifier_overlap": [
+          "codename_16"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-16.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-16",
+        "category": "exact",
+        "query": "subject_16 workflow",
+        "query_exact_tokens": [
+          "subject_16",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_16"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-16.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-17",
+        "category": "exact",
+        "query": "codename_17",
+        "query_exact_tokens": [
+          "codename_17"
+        ],
+        "identifier_overlap": [
+          "codename_17"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-17.md": 1
+        }
+      },
+      {
+        "case_id": "exact-subject-17",
+        "category": "exact",
+        "query": "subject_17 workflow",
+        "query_exact_tokens": [
+          "subject_17",
+          "workflow"
+        ],
+        "identifier_overlap": [
+          "subject_17"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-17.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-18",
+        "category": "exact",
+        "query": "codename_18",
+        "query_exact_tokens": [
+          "codename_18"
+        ],
+        "identifier_overlap": [
+          "codename_18"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-18.md": 1
+        }
+      },
+      {
+        "case_id": "exact-rare-19",
+        "category": "exact",
+        "query": "codename_19",
+        "query_exact_tokens": [
+          "codename_19"
+        ],
+        "identifier_overlap": [
+          "codename_19"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-19.md": 1
+        }
+      },
+      {
+        "case_id": "ambiguous-group-04",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1,
+          "expanded/service-5.md": 2,
+          "expanded/service-7.md": 3,
+          "expanded/service-4.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-05",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1,
+          "expanded/service-5.md": 2,
+          "expanded/service-7.md": 3,
+          "expanded/service-4.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-06",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1,
+          "expanded/service-5.md": 2,
+          "expanded/service-7.md": 3,
+          "expanded/service-4.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-07",
+        "category": "multiple relevant",
+        "query": "sharedgroup_1 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_1"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-6.md": 1,
+          "expanded/service-5.md": 2,
+          "expanded/service-7.md": 3,
+          "expanded/service-4.md": 4
+        }
+      },
+      {
+        "case_id": "ambiguous-group-08",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1,
+          "expanded/service-11.md": 2,
+          "expanded/service-9.md": 3,
+          "expanded/service-10.md": 6
+        }
+      },
+      {
+        "case_id": "ambiguous-group-09",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1,
+          "expanded/service-11.md": 2,
+          "expanded/service-9.md": 3,
+          "expanded/service-10.md": 6
+        }
+      },
+      {
+        "case_id": "ambiguous-group-10",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1,
+          "expanded/service-11.md": 2,
+          "expanded/service-9.md": 3,
+          "expanded/service-10.md": 6
+        }
+      },
+      {
+        "case_id": "ambiguous-group-11",
+        "category": "multiple relevant",
+        "query": "sharedgroup_2 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_2"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1,
+          "expanded/service-11.md": 2,
+          "expanded/service-9.md": 3,
+          "expanded/service-10.md": 6
+        }
+      },
+      {
+        "case_id": "ambiguous-group-12",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-15.md": 1,
+          "expanded/service-14.md": 2,
+          "expanded/service-12.md": 3,
+          "expanded/service-13.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-13",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-15.md": 1,
+          "expanded/service-14.md": 2,
+          "expanded/service-12.md": 3,
+          "expanded/service-13.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-14",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-15.md": 1,
+          "expanded/service-14.md": 2,
+          "expanded/service-12.md": 3,
+          "expanded/service-13.md": 5
+        }
+      },
+      {
+        "case_id": "ambiguous-group-15",
+        "category": "multiple relevant",
+        "query": "sharedgroup_3 common operational",
+        "query_exact_tokens": [
+          "common",
+          "operational",
+          "sharedgroup_3"
+        ],
+        "identifier_overlap": [
+          "sharedgroup_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-15.md": 1,
+          "expanded/service-14.md": 2,
+          "expanded/service-12.md": 3,
+          "expanded/service-13.md": 5
+        }
+      },
+      {
+        "case_id": "long-tail-00",
+        "category": "long chunk",
+        "query": "tailmarker_0",
+        "query_exact_tokens": [
+          "tailmarker_0"
+        ],
+        "identifier_overlap": [
+          "tailmarker_0"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-0.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-02",
+        "category": "long chunk",
+        "query": "tailmarker_2",
+        "query_exact_tokens": [
+          "tailmarker_2"
+        ],
+        "identifier_overlap": [
+          "tailmarker_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-2.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-04",
+        "category": "long chunk",
+        "query": "tailmarker_4",
+        "query_exact_tokens": [
+          "tailmarker_4"
+        ],
+        "identifier_overlap": [
+          "tailmarker_4"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-4.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-05",
+        "category": "long chunk",
+        "query": "tailmarker_5",
+        "query_exact_tokens": [
+          "tailmarker_5"
+        ],
+        "identifier_overlap": [
+          "tailmarker_5"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-5.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-07",
+        "category": "long chunk",
+        "query": "tailmarker_7",
+        "query_exact_tokens": [
+          "tailmarker_7"
+        ],
+        "identifier_overlap": [
+          "tailmarker_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-7.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-08",
+        "category": "long chunk",
+        "query": "tailmarker_8",
+        "query_exact_tokens": [
+          "tailmarker_8"
+        ],
+        "identifier_overlap": [
+          "tailmarker_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-8.md": 1
+        }
+      },
+      {
+        "case_id": "long-tail-09",
+        "category": "long chunk",
+        "query": "tailmarker_9",
+        "query_exact_tokens": [
+          "tailmarker_9"
+        ],
+        "identifier_overlap": [
+          "tailmarker_9"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "expanded/service-9.md": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-01",
+        "category": "tenant isolation",
+        "query": "othersecret_1 codename_1",
+        "query_exact_tokens": [
+          "codename_1",
+          "othersecret_1"
+        ],
+        "identifier_overlap": [
+          "codename_1",
+          "othersecret_1"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-1.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-02",
+        "category": "tenant isolation",
+        "query": "othersecret_2 codename_2",
+        "query_exact_tokens": [
+          "codename_2",
+          "othersecret_2"
+        ],
+        "identifier_overlap": [
+          "codename_2",
+          "othersecret_2"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 2,
+        "classification": "demoted",
+        "relevant_source_ranks": {
+          "private/tenant-b-2.txt": 2
+        }
+      },
+      {
+        "case_id": "tenant-isolation-03",
+        "category": "tenant isolation",
+        "query": "othersecret_3 codename_3",
+        "query_exact_tokens": [
+          "codename_3",
+          "othersecret_3"
+        ],
+        "identifier_overlap": [
+          "codename_3",
+          "othersecret_3"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-3.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-06",
+        "category": "tenant isolation",
+        "query": "othersecret_6 codename_6",
+        "query_exact_tokens": [
+          "codename_6",
+          "othersecret_6"
+        ],
+        "identifier_overlap": [
+          "codename_6",
+          "othersecret_6"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-6.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-07",
+        "category": "tenant isolation",
+        "query": "othersecret_7 codename_7",
+        "query_exact_tokens": [
+          "codename_7",
+          "othersecret_7"
+        ],
+        "identifier_overlap": [
+          "codename_7",
+          "othersecret_7"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-7.txt": 1
+        }
+      },
+      {
+        "case_id": "tenant-isolation-08",
+        "category": "tenant isolation",
+        "query": "othersecret_8 codename_8",
+        "query_exact_tokens": [
+          "codename_8",
+          "othersecret_8"
+        ],
+        "identifier_overlap": [
+          "codename_8",
+          "othersecret_8"
+        ],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "private/tenant-b-8.txt": 1
+        }
+      },
+      {
+        "case_id": "semantic-000",
+        "category": "semantic paraphrase",
+        "query": "How does the system make room when RAM is scarce?",
+        "query_exact_tokens": [
+          "the",
+          "when"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/cache-eviction.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-005",
+        "category": "semantic paraphrase",
+        "query": "How can release traffic be moved back quickly?",
+        "query_exact_tokens": [
+          "back",
+          "can",
+          "quickly",
+          "traffic"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/blue-green.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-007",
+        "category": "semantic paraphrase",
+        "query": "How does the job know where to continue after a crash?",
+        "query_exact_tokens": [
+          "after",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 2,
+        "reranked_relevant_rank": 2,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/checkpoint.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-008",
+        "category": "semantic paraphrase",
+        "query": "How are deletions communicated to replicas?",
+        "query_exact_tokens": [
+          "replicas"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 3,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/tombstone.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-010",
+        "category": "morphology",
+        "query": "Which policy keeps audit records before purging them?",
+        "query_exact_tokens": [
+          "audit",
+          "records"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/audit-retention.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-011",
+        "category": "morphology",
+        "query": "When are credentials rotated and old tokens invalidated?",
+        "query_exact_tokens": [
+          "credentials",
+          "rotated",
+          "tokens"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/token-rotation.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-012",
+        "category": "morphology",
+        "query": "What triggers shard rebalancing?",
+        "query_exact_tokens": [
+          "shard"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/shard-rebalance.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-014",
+        "category": "morphology",
+        "query": "When does the service compress responses?",
+        "query_exact_tokens": [
+          "responses"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 4,
+        "reranked_relevant_rank": 1,
+        "classification": "improved",
+        "relevant_source_ranks": {
+          "semantic/compression.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-015",
+        "category": "distractor-heavy",
+        "query": "What step confirms who the user is?",
+        "query_exact_tokens": [
+          "is",
+          "the",
+          "user"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/authentication.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-018",
+        "category": "distractor-heavy",
+        "query": "What one-way transformation stores passwords safely?",
+        "query_exact_tokens": [
+          "one",
+          "passwords",
+          "way"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/hashing.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-019",
+        "category": "distractor-heavy",
+        "query": "What combines telemetry to understand incidents?",
+        "query_exact_tokens": [
+          "combines",
+          "incidents",
+          "to"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/observability.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-021",
+        "category": "near duplicate",
+        "query": "Which caching pattern updates cache and storage on writes?",
+        "query_exact_tokens": [
+          "and",
+          "cache",
+          "caching",
+          "writes"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/write-through.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-022",
+        "category": "near duplicate",
+        "query": "How are multi-service transactions undone after a partial failure?",
+        "query_exact_tokens": [
+          "a",
+          "transactions"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/saga.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-023",
+        "category": "near duplicate",
+        "query": "Which protocol prepares participants before committing?",
+        "query_exact_tokens": [
+          "participants"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/two-phase.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-024",
+        "category": "near duplicate",
+        "query": "What technique repeatedly asks for updates?",
+        "query_exact_tokens": [
+          "asks",
+          "repeatedly"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/polling.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-025",
+        "category": "multiple relevant",
+        "query": "What should responders do first during an outage?",
+        "query_exact_tokens": [
+          "an",
+          "during",
+          "responders"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/incident-runbook.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-026",
+        "category": "multiple relevant",
+        "query": "What should responders do first during an outage?",
+        "query_exact_tokens": [
+          "an",
+          "during",
+          "responders"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/incident-runbook.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-027",
+        "category": "multiple relevant",
+        "query": "What protections apply to personal data?",
+        "query_exact_tokens": [
+          "data",
+          "personal"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/privacy-standard.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-028",
+        "category": "multiple relevant",
+        "query": "What protections apply to personal data?",
+        "query_exact_tokens": [
+          "data",
+          "personal"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/privacy-standard.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-029",
+        "category": "multiple relevant",
+        "query": "How should transient network failures be retried?",
+        "query_exact_tokens": [
+          "failures",
+          "network",
+          "transient"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/retry-policy.md": 1,
+          "semantic/client-resilience.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-030",
+        "category": "multiple relevant",
+        "query": "How should transient network failures be retried?",
+        "query_exact_tokens": [
+          "failures",
+          "network",
+          "transient"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/retry-policy.md": 1,
+          "semantic/client-resilience.md": 2
+        }
+      },
+      {
+        "case_id": "semantic-033",
+        "category": "rare term",
+        "query": "Where is the flibbertigibbet sentinel documented?",
+        "query_exact_tokens": [
+          "flibbertigibbet",
+          "sentinel",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/flibbertigibbet.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-036",
+        "category": "exact lexical",
+        "query": "Which environment variable caps context tokens?",
+        "query_exact_tokens": [
+          "caps",
+          "context",
+          "environment",
+          "variable"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/env-var.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-038",
+        "category": "semantic paraphrase",
+        "query": "How does the service exit without dropping current requests?",
+        "query_exact_tokens": [
+          "requests"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/graceful-shutdown.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-039",
+        "category": "semantic paraphrase",
+        "query": "What lets the database replay committed changes after a crash?",
+        "query_exact_tokens": [
+          "changes",
+          "committed",
+          "replay",
+          "the"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/write-ahead-log.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-040",
+        "category": "semantic paraphrase",
+        "query": "What gives temporary ownership that disappears without renewal?",
+        "query_exact_tokens": [
+          "ownership",
+          "temporary"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/lease.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-041",
+        "category": "semantic paraphrase",
+        "query": "What message asks workers to terminate gracefully?",
+        "query_exact_tokens": [
+          "message",
+          "to",
+          "workers"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/poison-pill.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-042",
+        "category": "distractor-heavy",
+        "query": "Which telemetry is numeric time series?",
+        "query_exact_tokens": [
+          "numeric",
+          "series",
+          "time"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/metrics.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-043",
+        "category": "distractor-heavy",
+        "query": "Which telemetry follows one request across services?",
+        "query_exact_tokens": [
+          "across",
+          "request",
+          "services"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/traces.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-044",
+        "category": "morphology",
+        "query": "What process provisions resources for a new user?",
+        "query_exact_tokens": [
+          "a",
+          "resources",
+          "user"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/provisioning.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-046",
+        "category": "tenant isolation",
+        "query": "Which vault stores the Orchid project reports?",
+        "query_exact_tokens": [
+          "orchid",
+          "project",
+          "reports",
+          "stores",
+          "the",
+          "vault"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/tenant-a-secret.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-047",
+        "category": "tenant isolation",
+        "query": "Which vault stores the Orchid project reports?",
+        "query_exact_tokens": [
+          "orchid",
+          "project",
+          "reports",
+          "stores",
+          "the",
+          "vault"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/tenant-b-secret.md": 1
+        }
+      },
+      {
+        "case_id": "semantic-048",
+        "category": "semantic paraphrase",
+        "query": "What precomputes query results for fast reads?",
+        "query_exact_tokens": [
+          "for",
+          "query",
+          "reads",
+          "results"
+        ],
+        "identifier_overlap": [],
+        "baseline_relevant_rank": 1,
+        "reranked_relevant_rank": 1,
+        "classification": "preserved",
+        "relevant_source_ranks": {
+          "semantic/materialized-view.md": 1
+        }
+      }
+    ]
+  }
+}

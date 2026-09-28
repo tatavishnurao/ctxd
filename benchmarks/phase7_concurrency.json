@@ -1,0 +1,245 @@
+{
+  "protocol": {
+    "configuration_sha256": "4e8ffdf7877ce452774445ef3d71182dd0f0c024ed29cb35e7fa991d30688049",
+    "queries_per_level": 32,
+    "levels": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "same_fixed_depth_20_candidate_generation": true
+  },
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "cpu_count": 24,
+    "cpu_model": "x86_64",
+    "memory_available_bytes_at_start": 5579141120,
+    "model_device": "CPU",
+    "onnx_intra_op_threads": 4,
+    "database_url_variable_set": true
+  },
+  "results": {
+    "12000": {
+      "hybrid": {
+        "1": {
+          "p50_ms": 62.391109007876366,
+          "p95_ms": 79.31085201562382,
+          "p99_ms": 82.2750250226818,
+          "qps": 15.758340079322341,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 0.40989263200003734,
+          "client_cpu_percent_of_one_core": 20.185085909578472,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 3658706944
+        },
+        "4": {
+          "p50_ms": 105.9101830032887,
+          "p95_ms": 152.68878499045968,
+          "p99_ms": 184.68622799264267,
+          "qps": 30.608893673021335,
+          "errors": 0,
+          "pool_wait_ms": 458,
+          "pool_queued": 12,
+          "client_cpu_seconds": 0.6604437260000395,
+          "client_cpu_percent_of_one_core": 63.17328683171639,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 3616149504
+        },
+        "8": {
+          "p50_ms": 176.65192000276875,
+          "p95_ms": 212.021104991436,
+          "p99_ms": 220.05929399165325,
+          "qps": 39.0375429442045,
+          "errors": 0,
+          "pool_wait_ms": 565,
+          "pool_queued": 19,
+          "client_cpu_seconds": 0.8016314169999532,
+          "client_cpu_percent_of_one_core": 97.79287770799743,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 3592482816
+        },
+        "16": {
+          "p50_ms": 278.2465240015881,
+          "p95_ms": 318.7439730099868,
+          "p99_ms": 333.354538975982,
+          "qps": 47.293219573298025,
+          "errors": 0,
+          "pool_wait_ms": 350,
+          "pool_queued": 12,
+          "client_cpu_seconds": 0.7570484980001311,
+          "client_cpu_percent_of_one_core": 111.88519013611146,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 3562168320
+        }
+      },
+      "selected": {
+        "1": {
+          "p50_ms": 287.55401649686974,
+          "p95_ms": 322.01583398273215,
+          "p99_ms": 323.85680798324756,
+          "qps": 3.4886412381432277,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 35.66155837499991,
+          "client_cpu_percent_of_one_core": 388.78244738586466,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 4250275840
+        },
+        "4": {
+          "p50_ms": 611.6623589914525,
+          "p95_ms": 684.5839929883368,
+          "p99_ms": 702.9128010035492,
+          "qps": 6.239476480666045,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 33.037431462000086,
+          "client_cpu_percent_of_one_core": 644.1758643398937,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 4549955584
+        },
+        "8": {
+          "p50_ms": 863.3733324968489,
+          "p95_ms": 1090.598539012717,
+          "p99_ms": 1091.7113140167203,
+          "qps": 8.482053792446566,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 35.186642377,
+          "client_cpu_percent_of_one_core": 932.6718544290435,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 4454543360
+        },
+        "16": {
+          "p50_ms": 1268.7414279935183,
+          "p95_ms": 1665.1420940179378,
+          "p99_ms": 1674.610963993473,
+          "qps": 10.63691155530941,
+          "errors": 0,
+          "pool_wait_ms": 12,
+          "pool_queued": 1,
+          "client_cpu_seconds": 44.279102300000204,
+          "client_cpu_percent_of_one_core": 1471.8527966049987,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 4326318080
+        }
+      }
+    },
+    "50004": {
+      "hybrid": {
+        "1": {
+          "p50_ms": 65.13531248492654,
+          "p95_ms": 69.53880700166337,
+          "p99_ms": 71.00807598908432,
+          "qps": 15.145594199542318,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 1.4586652709999726,
+          "client_cpu_percent_of_one_core": 69.03860083603439,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 5534023680
+        },
+        "4": {
+          "p50_ms": 137.45574199128896,
+          "p95_ms": 163.808084995253,
+          "p99_ms": 163.95479798666202,
+          "qps": 24.748431804067202,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 0.386350388999972,
+          "client_cpu_percent_of_one_core": 29.879894545752006,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 5535256576
+        },
+        "8": {
+          "p50_ms": 246.7414674902102,
+          "p95_ms": 292.16329101473093,
+          "p99_ms": 293.21487600100227,
+          "qps": 27.437123172257493,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 0.4990617769999517,
+          "client_cpu_percent_of_one_core": 42.79006076910431,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 5540909056
+        },
+        "16": {
+          "p50_ms": 465.3912450012285,
+          "p95_ms": 528.7289690168109,
+          "p99_ms": 532.7081759751309,
+          "qps": 29.572533036433498,
+          "errors": 0,
+          "pool_wait_ms": 2148,
+          "pool_queued": 25,
+          "client_cpu_seconds": 0.765382948000024,
+          "client_cpu_percent_of_one_core": 70.73222661016742,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 5529886720
+        }
+      },
+      "selected": {
+        "1": {
+          "p50_ms": 205.65590749902185,
+          "p95_ms": 242.66609598998912,
+          "p99_ms": 243.37763999938034,
+          "qps": 4.764831771842793,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 25.601457800999697,
+          "client_cpu_percent_of_one_core": 381.20824854904964,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 5508673536
+        },
+        "4": {
+          "p50_ms": 509.5376675017178,
+          "p95_ms": 571.7126670060679,
+          "p99_ms": 605.6731029821094,
+          "qps": 7.441962849218075,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 26.74921365,
+          "client_cpu_percent_of_one_core": 622.0832944659282,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 5503459328
+        },
+        "8": {
+          "p50_ms": 883.3128504920751,
+          "p95_ms": 967.2003119776491,
+          "p99_ms": 990.6800590106286,
+          "qps": 8.481277016890342,
+          "errors": 0,
+          "pool_wait_ms": 0,
+          "pool_queued": 0,
+          "client_cpu_seconds": 32.29823664899959,
+          "client_cpu_percent_of_one_core": 856.0321630538924,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 5506883584
+        },
+        "16": {
+          "p50_ms": 1518.250775479828,
+          "p95_ms": 1769.9779649847187,
+          "p99_ms": 1773.0836640112102,
+          "qps": 9.532730323729348,
+          "errors": 0,
+          "pool_wait_ms": 644,
+          "pool_queued": 15,
+          "client_cpu_seconds": 44.92700149500024,
+          "client_cpu_percent_of_one_core": 1338.3655922050705,
+          "process_max_rss_kib": 1320652,
+          "memory_available_bytes_after": 5483556864
+        }
+      }
+    }
+  }
+}

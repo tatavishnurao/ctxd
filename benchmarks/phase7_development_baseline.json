@@ -1,0 +1,366 @@
+{
+  "protocol": {
+    "store": "PostgreSQL exact pgvector",
+    "candidate_generation": "parallel BM25 + exact pgvector -> deterministic RRF",
+    "candidate_depth": 20,
+    "embedding_model": "model2vec:minishlab/potion-base-8M@bf8b056651a2c21b8d2565580b8569da283cab23:normalized",
+    "RRF_k": 60,
+    "split_manifest_sha256": "66bce2d758247004dd2a57225ef049d7a6117a98b4981d30e55526895a15cc92",
+    "ambiguous_policy": "primary includes both; secondary excludes ambiguous queries",
+    "partition": "development only"
+  },
+  "metrics": {
+    "lexical": {
+      "all": {
+        "recall_at_1": 0.6699029126213593,
+        "recall_at_5": 0.8058252427184466,
+        "recall_at_10": 0.8058252427184466,
+        "mrr": 0.8018534863195058,
+        "ndcg_at_5": 0.7920729953847893,
+        "ndcg_at_10": 0.7920729953847893,
+        "candidate_recall_at_20": 0.8155339805825242
+      },
+      "excluding_ambiguous": {
+        "recall_at_1": 0.6699029126213593,
+        "recall_at_5": 0.8058252427184466,
+        "recall_at_10": 0.8058252427184466,
+        "mrr": 0.8018534863195058,
+        "ndcg_at_5": 0.7920729953847893,
+        "ndcg_at_10": 0.7920729953847893,
+        "candidate_recall_at_20": 0.8155339805825242
+      }
+    },
+    "semantic": {
+      "all": {
+        "recall_at_1": 0.5631067961165048,
+        "recall_at_5": 0.7961165048543689,
+        "recall_at_10": 0.8349514563106796,
+        "mrr": 0.7225636822724202,
+        "ndcg_at_5": 0.712907346689816,
+        "ndcg_at_10": 0.7289482177281512,
+        "candidate_recall_at_20": 1.0
+      },
+      "excluding_ambiguous": {
+        "recall_at_1": 0.5631067961165048,
+        "recall_at_5": 0.7961165048543689,
+        "recall_at_10": 0.8349514563106796,
+        "mrr": 0.7225636822724202,
+        "ndcg_at_5": 0.712907346689816,
+        "ndcg_at_10": 0.7289482177281512,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "hybrid": {
+      "all": {
+        "recall_at_1": 0.6796116504854369,
+        "recall_at_5": 0.912621359223301,
+        "recall_at_10": 0.9514563106796117,
+        "mrr": 0.8629218677762367,
+        "ndcg_at_5": 0.8473405464251902,
+        "ndcg_at_10": 0.8625469002200657,
+        "candidate_recall_at_20": 0.9805825242718447
+      },
+      "excluding_ambiguous": {
+        "recall_at_1": 0.6796116504854369,
+        "recall_at_5": 0.912621359223301,
+        "recall_at_10": 0.9514563106796117,
+        "mrr": 0.8629218677762367,
+        "ndcg_at_5": 0.8473405464251902,
+        "ndcg_at_10": 0.8625469002200657,
+        "candidate_recall_at_20": 0.9805825242718447
+      }
+    }
+  },
+  "category_metrics": {
+    "exact": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 0.8214285714285714,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.8910714285714285,
+        "ndcg_at_5": 0.9182256652150824,
+        "ndcg_at_10": 0.9182256652150824,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 0.8928571428571429,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.9464285714285714,
+        "ndcg_at_5": 0.9604567593112276,
+        "ndcg_at_10": 0.9604567593112276,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "morphology": {
+      "lexical": {
+        "recall_at_1": 0.21052631578947367,
+        "recall_at_5": 0.2631578947368421,
+        "recall_at_10": 0.2631578947368421,
+        "mrr": 0.22807017543859648,
+        "ndcg_at_5": 0.23684210526315788,
+        "ndcg_at_10": 0.23684210526315788,
+        "candidate_recall_at_20": 0.2631578947368421
+      },
+      "semantic": {
+        "recall_at_1": 0.3684210526315789,
+        "recall_at_5": 0.7368421052631579,
+        "recall_at_10": 0.8421052631578947,
+        "mrr": 0.5332080200501254,
+        "ndcg_at_5": 0.5637009803169635,
+        "ndcg_at_10": 0.5999925866559823,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 0.3684210526315789,
+        "recall_at_5": 0.7894736842105263,
+        "recall_at_10": 0.8947368421052632,
+        "mrr": 0.5419799498746867,
+        "ndcg_at_5": 0.5863681675839842,
+        "ndcg_at_10": 0.622659773923003,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "multiple relevant": {
+      "lexical": {
+        "recall_at_1": 0.3333333333333333,
+        "recall_at_5": 0.8888888888888888,
+        "recall_at_10": 0.8888888888888888,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.9140327095034352,
+        "ndcg_at_10": 0.9140327095034352,
+        "candidate_recall_at_20": 0.8888888888888888
+      },
+      "semantic": {
+        "recall_at_1": 0.2222222222222222,
+        "recall_at_5": 0.5555555555555556,
+        "recall_at_10": 0.6666666666666666,
+        "mrr": 0.6851851851851852,
+        "ndcg_at_5": 0.5405098549476403,
+        "ndcg_at_10": 0.5939914769758163,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 0.3333333333333333,
+        "recall_at_5": 0.7777777777777778,
+        "recall_at_10": 0.8333333333333334,
+        "mrr": 1.0,
+        "ndcg_at_5": 0.8083197650982341,
+        "ndcg_at_10": 0.8372368058383898,
+        "candidate_recall_at_20": 0.8888888888888888
+      }
+    },
+    "long chunk": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr": 0.08088340231197375,
+        "ndcg_at_5": 0.0,
+        "ndcg_at_10": 0.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "tenant isolation": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "semantic paraphrase": {
+      "lexical": {
+        "recall_at_1": 0.4166666666666667,
+        "recall_at_5": 0.6666666666666666,
+        "recall_at_10": 0.6666666666666666,
+        "mrr": 0.5214646464646465,
+        "ndcg_at_5": 0.5525774794642881,
+        "ndcg_at_10": 0.5525774794642881,
+        "candidate_recall_at_20": 0.75
+      },
+      "semantic": {
+        "recall_at_1": 0.5833333333333334,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.7388888888888889,
+        "ndcg_at_5": 0.8040593595314548,
+        "ndcg_at_10": 0.8040593595314548,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 0.5,
+        "recall_at_5": 0.9166666666666666,
+        "recall_at_10": 1.0,
+        "mrr": 0.6736111111111112,
+        "ndcg_at_5": 0.7243780054346923,
+        "ndcg_at_10": 0.7540619376936942,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "distractor-heavy": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 0.8,
+        "recall_at_5": 0.8,
+        "recall_at_10": 0.8,
+        "mrr": 0.8153846153846154,
+        "ndcg_at_5": 0.8,
+        "ndcg_at_10": 0.8,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "near duplicate": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 0.75,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 0.875,
+        "ndcg_at_5": 0.9077324383928644,
+        "ndcg_at_10": 0.9077324383928644,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "rare term": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      }
+    },
+    "exact lexical": {
+      "lexical": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "semantic": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      },
+      "hybrid": {
+        "recall_at_1": 1.0,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr": 1.0,
+        "ndcg_at_5": 1.0,
+        "ndcg_at_10": 1.0,
+        "candidate_recall_at_20": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "method": "paired query-level percentile bootstrap over per-case metric deltas",
+  "resamples": 1000,
+  "interval": "two-sided 95%, empirical 2.5th and 97.5th percentiles",
+  "including_ambiguous": {
+    "delta_mrr": {
+      "point_estimate": 0.0475177304964539,
+      "ci_95_low": -0.012411347517730495,
+      "ci_95_high": 0.11170212765957446,
+      "resamples": 1000,
+      "seed": 7312026
+    },
+    "delta_ndcg_at_5": {
+      "point_estimate": 0.09988091178073781,
+      "ci_95_low": 0.041185570460710245,
+      "ci_95_high": 0.1660393174062891,
+      "resamples": 1000,
+      "seed": 7312026
+    },
+    "delta_recall_at_1": {
+      "point_estimate": 0.06382978723404255,
+      "ci_95_low": -0.02127659574468085,
+      "ci_95_high": 0.1702127659574468,
+      "resamples": 1000,
+      "seed": 7312026
+    }
+  },
+  "excluding_ambiguous": {
+    "delta_mrr": {
+      "point_estimate": 0.04962962962962963,
+      "ci_95_low": -0.01148148148148148,
+      "ci_95_high": 0.11227513227513229,
+      "resamples": 1000,
+      "seed": 7312027
+    },
+    "delta_ndcg_at_5": {
+      "point_estimate": 0.10432006341543726,
+      "ci_95_low": 0.036981595025280645,
+      "ci_95_high": 0.17112797467998023,
+      "resamples": 1000,
+      "seed": 7312027
+    },
+    "delta_recall_at_1": {
+      "point_estimate": 0.06666666666666667,
+      "ci_95_low": -0.022222222222222223,
+      "ci_95_high": 0.17777777777777778,
+      "resamples": 1000,
+      "seed": 7312027
+    }
+  },
+  "interpretation": "Small holdout; intervals quantify query-sample uncertainty, not corpus shift."
+}

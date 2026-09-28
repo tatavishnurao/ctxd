@@ -1,0 +1,126 @@
+{
+  "configuration_version": 1,
+  "status": "frozen before holdout reranker evaluation",
+  "created_at_utc": "2026-09-27T18:35:18.092389+00:00",
+  "split_manifest_sha256": "66bce2d758247004dd2a57225ef049d7a6117a98b4981d30e55526895a15cc92",
+  "selection_partition": "development only",
+  "selected_model": {
+    "model_id": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "license": "Apache-2.0",
+    "onnx_artifact": {
+      "filename": "onnx/model_quint8_avx2.onnx",
+      "bytes": 23200716,
+      "sha256": "c80a8b34256ea453093d612e3ac48d3d965a0c0a48c7906709af8b8e28461bf9"
+    },
+    "tokenizer_artifact": {
+      "filename": "tokenizer.json",
+      "bytes": 711396,
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+    },
+    "maximum_input_length": 512,
+    "backend": "ONNX Runtime CPUExecutionProvider",
+    "dtype": "quantized uint8 ONNX",
+    "intra_op_threads": 4,
+    "execution_device": "CPU",
+    "python_dependency_delta": [],
+    "model_cache_total_bytes": 23912112
+  },
+  "candidate_depth": 20,
+  "candidate_pool": "parallel BM25 + exact pgvector + deterministic RRF, RRF k=60",
+  "batch_size": 16,
+  "threads": 4,
+  "guardrail": {
+    "name": "protect_exact_overlap_top1",
+    "rule": "If a candidate in the fixed RRF-20 pool has lexical_rank == 1 and its content shares at least one normalized query token, place that candidate first. Rerank every remaining candidate by model score descending; stable RRF rank breaks exact score ties. Otherwise rerank all 20.",
+    "signals": [
+      "BM25 rank",
+      "exact normalized query-token overlap"
+    ],
+    "uses_ground_truth_or_category": false,
+    "uses_query_rewrite_or_threshold_tuning": false
+  },
+  "development_evidence": {
+    "hybrid_baseline": {
+      "recall_at_1": 0.6796116504854369,
+      "recall_at_5": 0.912621359223301,
+      "recall_at_10": 0.9514563106796117,
+      "mrr": 0.8629218677762367,
+      "ndcg_at_5": 0.8473405464251902,
+      "ndcg_at_10": 0.8625469002200657,
+      "candidate_recall_at_20": 0.9805825242718447
+    },
+    "selected_model_ungarded_metrics": {
+      "recall_at_1": 0.7378640776699029,
+      "recall_at_5": 0.941747572815534,
+      "recall_at_10": 0.9514563106796117,
+      "mrr": 0.901136646524996,
+      "ndcg_at_5": 0.8976817844232273,
+      "ndcg_at_10": 0.9007445502172635,
+      "candidate_recall_at_20": 0.9805825242718447
+    },
+    "selected_model_guarded_metrics": {
+      "recall_at_1": 0.7184466019417476,
+      "recall_at_5": 0.9611650485436893,
+      "recall_at_10": 0.970873786407767,
+      "mrr": 0.9021491992365778,
+      "ndcg_at_5": 0.9051361141380112,
+      "ndcg_at_10": 0.9080587354551373,
+      "candidate_recall_at_20": 0.9805825242718447
+    },
+    "selected_model_guarded_transitions": {
+      "fixed": 6,
+      "regressed": 5,
+      "unchanged_correct": 80,
+      "unchanged_incorrect": 12
+    },
+    "selected_model_guarded_exact_match": {
+      "preserved": 79,
+      "improved": 5,
+      "demoted": 2,
+      "catastrophically demoted": 0,
+      "relevant source absent from candidate set": 0,
+      "relevant source absent after guardrail": 0
+    },
+    "selected_model_standalone_n20_latency": {
+      "tokenization": {
+        "p50": 8.547281002392992,
+        "p95": 12.657304003369063,
+        "p99": 15.328754961956292
+      },
+      "inference": {
+        "p50": 227.11092498502694,
+        "p95": 2158.665329014184,
+        "p99": 2265.3867169865407
+      },
+      "total": {
+        "p50": 237.2045160154812,
+        "p95": 2174.5390569849405,
+        "p99": 2283.1756900122855
+      }
+    },
+    "competing_bge_development_mrr": 0.914967637540453,
+    "competing_bge_standalone_n20_latency": {
+      "tokenization": {
+        "p50": 10.372908000135794,
+        "p95": 19.697920011822134,
+        "p99": 25.263796997023746
+      },
+      "inference": {
+        "p50": 1500.3997489984613,
+        "p95": 13858.764016011264,
+        "p99": 14593.790315004298
+      },
+      "total": {
+        "p50": 1512.7429149870295,
+        "p95": 13871.418550988892,
+        "p99": 14616.461668018019
+      }
+    },
+    "guardrail_sort_cost_ms_p50": 0.008756003808230162,
+    "development_score_inversion_cases": 15,
+    "holdout_metrics_read_for_selection": false
+  },
+  "selection_rationale": "MiniLM-L6 substantially improves development quality over TinyBERT and hybrid, has only two exact-match demotions and zero catastrophic demotions with the exact-overlap guard, adds no Python dependencies, and is far less costly than BGE-reranker-base. BGE's modest additional development gain does not justify its measured multi-second per-query CPU cost. This is an offline holdout-test configuration, not a production recommendation.",
+  "configuration_sha256": "4e8ffdf7877ce452774445ef3d71182dd0f0c024ed29cb35e7fa991d30688049"
+}

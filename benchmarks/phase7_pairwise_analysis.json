@@ -1,0 +1,275 @@
+{
+  "protocol": "development only; first-RRF source-level proxy per relevant source; within-query positive-negative score pairs",
+  "models": {
+    "tinybert_negative_control": {
+      "overall": {
+        "relevant_count": 141,
+        "nonrelevant_count": 1832,
+        "relevant_score_median": 0.9991832375526428,
+        "nonrelevant_score_median": 6.235538967303e-05,
+        "median_score_separation": 0.9991208821629698,
+        "pairwise_accuracy": 0.92430441898527,
+        "strict_win_pairs": 2259,
+        "pair_count": 2444,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.6043371522094927
+      },
+      "morphology": {
+        "relevant_count": 19,
+        "nonrelevant_count": 360,
+        "relevant_score_median": 0.00026990033802576363,
+        "nonrelevant_score_median": 1.1453470960987033e-05,
+        "median_score_separation": 0.0002584468670647766,
+        "pairwise_accuracy": 0.8777777777777778,
+        "strict_win_pairs": 316,
+        "pair_count": 360,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.7111111111111111
+      },
+      "multiple relevant": {
+        "relevant_count": 56,
+        "nonrelevant_count": 304,
+        "relevant_score_median": 0.9999427795410156,
+        "nonrelevant_score_median": 0.9998570680618286,
+        "median_score_separation": 8.571147918701172e-05,
+        "pairwise_accuracy": 0.9519650655021834,
+        "strict_win_pairs": 872,
+        "pair_count": 916,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.9606986899563319
+      },
+      "long chunk": {
+        "relevant_count": 7,
+        "nonrelevant_count": 126,
+        "relevant_score_median": 0.005939495284110308,
+        "nonrelevant_score_median": 0.03589558228850365,
+        "median_score_separation": -0.02995608700439334,
+        "pairwise_accuracy": 0.4444444444444444,
+        "strict_win_pairs": 56,
+        "pair_count": 126,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.40476190476190477
+      },
+      "semantic paraphrase": {
+        "relevant_count": 12,
+        "nonrelevant_count": 228,
+        "relevant_score_median": 0.0005763497756561264,
+        "nonrelevant_score_median": 1.1735701718862401e-05,
+        "median_score_separation": 0.000564614073937264,
+        "pairwise_accuracy": 0.9078947368421053,
+        "strict_win_pairs": 207,
+        "pair_count": 228,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.6666666666666666
+      },
+      "near duplicate": {
+        "relevant_count": 4,
+        "nonrelevant_count": 76,
+        "relevant_score_median": 0.03179264357459033,
+        "nonrelevant_score_median": 1.1323020316922339e-05,
+        "median_score_separation": 0.03178132055427341,
+        "pairwise_accuracy": 0.9868421052631579,
+        "strict_win_pairs": 75,
+        "pair_count": 76,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.5
+      },
+      "rare term": {
+        "relevant_count": 1,
+        "nonrelevant_count": 19,
+        "relevant_score_median": 0.9987931251525879,
+        "nonrelevant_score_median": 9.704672265797853e-06,
+        "median_score_separation": 0.9987834204803221,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 19,
+        "pair_count": 19,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "exact lexical": {
+        "relevant_count": 1,
+        "nonrelevant_count": 19,
+        "relevant_score_median": 0.9999034404754639,
+        "nonrelevant_score_median": 1.0925049537036102e-05,
+        "median_score_separation": 0.9998925154259268,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 19,
+        "pair_count": 19,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      }
+    },
+    "minilm_l6": {
+      "overall": {
+        "relevant_count": 141,
+        "nonrelevant_count": 1832,
+        "relevant_score_median": 7.208418369293213,
+        "nonrelevant_score_median": -7.805413722991943,
+        "median_score_separation": 15.013832092285156,
+        "pairwise_accuracy": 0.9729950900163666,
+        "strict_win_pairs": 2378,
+        "pair_count": 2444,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0016366612111292963
+      },
+      "morphology": {
+        "relevant_count": 19,
+        "nonrelevant_count": 360,
+        "relevant_score_median": -4.9972920417785645,
+        "nonrelevant_score_median": -11.135268211364746,
+        "median_score_separation": 6.137976169586182,
+        "pairwise_accuracy": 0.9638888888888889,
+        "strict_win_pairs": 347,
+        "pair_count": 360,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "multiple relevant": {
+        "relevant_count": 56,
+        "nonrelevant_count": 304,
+        "relevant_score_median": 7.608381748199463,
+        "nonrelevant_score_median": 5.343637943267822,
+        "median_score_separation": 2.2647438049316406,
+        "pairwise_accuracy": 0.9956331877729258,
+        "strict_win_pairs": 912,
+        "pair_count": 916,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "long chunk": {
+        "relevant_count": 7,
+        "nonrelevant_count": 126,
+        "relevant_score_median": -1.6410216093063354,
+        "nonrelevant_score_median": -3.670135259628296,
+        "median_score_separation": 2.0291136503219604,
+        "pairwise_accuracy": 0.8095238095238095,
+        "strict_win_pairs": 102,
+        "pair_count": 126,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "semantic paraphrase": {
+        "relevant_count": 12,
+        "nonrelevant_count": 228,
+        "relevant_score_median": -3.2106664776802063,
+        "nonrelevant_score_median": -11.305643081665039,
+        "median_score_separation": 8.094976603984833,
+        "pairwise_accuracy": 0.8903508771929824,
+        "strict_win_pairs": 203,
+        "pair_count": 228,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.017543859649122806
+      },
+      "near duplicate": {
+        "relevant_count": 4,
+        "nonrelevant_count": 76,
+        "relevant_score_median": 3.023671329021454,
+        "nonrelevant_score_median": -11.329438209533691,
+        "median_score_separation": 14.353109538555145,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 76,
+        "pair_count": 76,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "rare term": {
+        "relevant_count": 1,
+        "nonrelevant_count": 19,
+        "relevant_score_median": 2.167506456375122,
+        "nonrelevant_score_median": -11.444259643554688,
+        "median_score_separation": 13.61176609992981,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 19,
+        "pair_count": 19,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "exact lexical": {
+        "relevant_count": 1,
+        "nonrelevant_count": 19,
+        "relevant_score_median": 7.596680164337158,
+        "nonrelevant_score_median": -11.434723854064941,
+        "median_score_separation": 19.0314040184021,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 19,
+        "pair_count": 19,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      }
+    },
+    "bge_reranker_base": {
+      "overall": {
+        "relevant_count": 141,
+        "nonrelevant_count": 1832,
+        "relevant_score_median": 4.310009002685547,
+        "nonrelevant_score_median": -7.2563560009002686,
+        "median_score_separation": 11.566365003585815,
+        "pairwise_accuracy": 0.983633387888707,
+        "strict_win_pairs": 2404,
+        "pair_count": 2444,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.004091653027823241
+      },
+      "morphology": {
+        "relevant_count": 19,
+        "nonrelevant_count": 360,
+        "relevant_score_median": -3.968695640563965,
+        "nonrelevant_score_median": -9.7040433883667,
+        "median_score_separation": 5.735347747802734,
+        "pairwise_accuracy": 0.9527777777777777,
+        "strict_win_pairs": 343,
+        "pair_count": 360,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "multiple relevant": {
+        "relevant_count": 56,
+        "nonrelevant_count": 304,
+        "relevant_score_median": 4.612451553344727,
+        "nonrelevant_score_median": 0.7300829589366913,
+        "median_score_separation": 3.8823685944080353,
+        "pairwise_accuracy": 0.9868995633187773,
+        "strict_win_pairs": 904,
+        "pair_count": 916,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "long chunk": {
+        "relevant_count": 7,
+        "nonrelevant_count": 126,
+        "relevant_score_median": 3.263033390045166,
+        "nonrelevant_score_median": -6.660728693008423,
+        "median_score_separation": 9.923762083053589,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 126,
+        "pair_count": 126,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "semantic paraphrase": {
+        "relevant_count": 12,
+        "nonrelevant_count": 228,
+        "relevant_score_median": -2.865957736968994,
+        "nonrelevant_score_median": -10.172065258026123,
+        "median_score_separation": 7.306107521057129,
+        "pairwise_accuracy": 0.9649122807017544,
+        "strict_win_pairs": 220,
+        "pair_count": 228,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.043859649122807015
+      },
+      "near duplicate": {
+        "relevant_count": 4,
+        "nonrelevant_count": 76,
+        "relevant_score_median": 0.4805414378643036,
+        "nonrelevant_score_median": -9.721309661865234,
+        "median_score_separation": 10.201851099729538,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 76,
+        "pair_count": 76,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "rare term": {
+        "relevant_count": 1,
+        "nonrelevant_count": 19,
+        "relevant_score_median": -2.7025861740112305,
+        "nonrelevant_score_median": -10.19399642944336,
+        "median_score_separation": 7.491410255432129,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 19,
+        "pair_count": 19,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      },
+      "exact lexical": {
+        "relevant_count": 1,
+        "nonrelevant_count": 19,
+        "relevant_score_median": 5.586529731750488,
+        "nonrelevant_score_median": -10.14622688293457,
+        "median_score_separation": 15.732756614685059,
+        "pairwise_accuracy": 1.0,
+        "strict_win_pairs": 19,
+        "pair_count": 19,
+        "tie_or_near_tie_rate_abs_delta_le_0_01": 0.0
+      }
+    }
+  }
+}
