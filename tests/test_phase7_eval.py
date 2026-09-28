@@ -2,13 +2,16 @@ from types import SimpleNamespace
 
 from ctxd.app.evals.phase7 import (
     apply_lexical_guardrail,
+    apply_rank_guardrail,
     bootstrap_deltas,
     candidate_identity_preserved,
     canonical_manifest_hash,
+    lexical_protection_ids,
     query_features,
     rank_delta_buckets,
     stratified_partitions,
     transition_counts,
+    transition_label,
 )
 
 
@@ -65,12 +68,42 @@ def test_guardrail_is_deterministic_and_preserves_candidate_identity() -> None:
     ]
 
 
+def test_lexical_guardrails_use_only_runtime_candidate_signals() -> None:
+    candidates = [
+        {
+            "source_id": "a",
+            "lexical_rank": 1,
+            "lexical_raw_score": 10.0,
+            "exact_query_token_overlap": ["token_9"],
+            "rare_identifier_overlap": ["token_9"],
+            "rrf_rank": 2,
+        },
+        {
+            "source_id": "b",
+            "lexical_rank": 2,
+            "lexical_raw_score": 4.0,
+            "exact_query_token_overlap": [],
+            "rare_identifier_overlap": [],
+            "rrf_rank": 1,
+        },
+    ]
+    protected = lexical_protection_ids(candidates, "protect_strong_identifier_winner")
+    assert protected == {"a"}
+    result = apply_rank_guardrail(candidates, {"a": -1.0, "b": 2.0}, protected)
+    assert [item["source_id"] for item in result] == ["a", "b"]
+    assert set(item["source_id"] for item in result) == {"a", "b"}
+
+
 def test_bootstrap_is_reproducible_and_transition_accounting_exact() -> None:
     baseline = [{"mrr": 0.0, "ndcg_at_5": 0.2, "recall_at_1": 0.0} for _ in range(8)]
     candidate = [{"mrr": 0.1, "ndcg_at_5": 0.3, "recall_at_1": 1.0} for _ in range(8)]
     first = bootstrap_deltas(baseline, candidate, seed=99, resamples=1000)
     assert first == bootstrap_deltas(baseline, candidate, seed=99, resamples=1000)
     assert first["delta_mrr"]["ci_95_low"] == 0.1
+    assert transition_label(2, 5) == "regressed"
+    assert transition_label(1, 4) == "regressed"
+    assert transition_label(None, 1) == "fixed"
+    assert transition_label(None, None) == "unchanged_incorrect"
     assert transition_counts([1, 2, 1, None], [2, 1, 1, None]) == {
         "fixed": 1,
         "regressed": 1,
