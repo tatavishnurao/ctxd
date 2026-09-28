@@ -1,0 +1,2000 @@
+{
+  "config_sha256": "76f7439c29864dd9bea7b0efa0c9e0848f980fbad35e90acc931023322c655b1",
+  "scope": "one replay of stored Phase 7 scores, no inference or parameter changes",
+  "limitation": "previously observed Phase 7 holdout, not an independent fresh test",
+  "summary": {
+    "all": {
+      "count": 47,
+      "fraction_reranked": 0.10638297872340426,
+      "modes": {
+        "hybrid": {
+          "metrics": {
+            "recall_at_1": 0.6382978723404256,
+            "recall_at_5": 0.851063829787234,
+            "recall_at_10": 0.9787234042553191,
+            "mrr": 0.8516210739614994,
+            "ndcg_at_5": 0.8088492717516517,
+            "ndcg_at_10": 0.8554683986587902
+          },
+          "transitions": {
+            "fixed": 0,
+            "regressed": 0,
+            "unchanged_correct": 37,
+            "unchanged_incorrect": 10
+          },
+          "bootstrap_vs_hybrid": {
+            "delta_mrr": {
+              "point_estimate": 0.0,
+              "ci_95_low": 0.0,
+              "ci_95_high": 0.0,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_ndcg_at_5": {
+              "point_estimate": 0.0,
+              "ci_95_low": 0.0,
+              "ci_95_high": 0.0,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_recall_at_1": {
+              "point_estimate": 0.0,
+              "ci_95_low": 0.0,
+              "ci_95_high": 0.0,
+              "resamples": 2000,
+              "seed": 812026
+            }
+          },
+          "exact_overlap_demotions": 0
+        },
+        "always": {
+          "metrics": {
+            "recall_at_1": 0.7021276595744681,
+            "recall_at_5": 0.9574468085106383,
+            "recall_at_10": 1.0,
+            "mrr": 0.8991388044579534,
+            "ndcg_at_5": 0.9087301835323895,
+            "ndcg_at_10": 0.9234012584353971
+          },
+          "transitions": {
+            "fixed": 4,
+            "regressed": 2,
+            "unchanged_correct": 36,
+            "unchanged_incorrect": 5
+          },
+          "bootstrap_vs_hybrid": {
+            "delta_mrr": {
+              "point_estimate": 0.0475177304964539,
+              "ci_95_low": -0.012158054711246197,
+              "ci_95_high": 0.10866261398176293,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_ndcg_at_5": {
+              "point_estimate": 0.09988091178073781,
+              "ci_95_low": 0.0368756272566131,
+              "ci_95_high": 0.1632517458052699,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_recall_at_1": {
+              "point_estimate": 0.06382978723404255,
+              "ci_95_low": -0.02127659574468085,
+              "ci_95_high": 0.14893617021276595,
+              "resamples": 2000,
+              "seed": 812026
+            }
+          },
+          "exact_overlap_demotions": 0
+        },
+        "selective": {
+          "metrics": {
+            "recall_at_1": 0.6595744680851063,
+            "recall_at_5": 0.8723404255319149,
+            "recall_at_10": 0.9787234042553191,
+            "mrr": 0.8626139817629179,
+            "ndcg_at_5": 0.8234577741290235,
+            "ndcg_at_10": 0.86392658558259
+          },
+          "transitions": {
+            "fixed": 2,
+            "regressed": 2,
+            "unchanged_correct": 36,
+            "unchanged_incorrect": 7
+          },
+          "bootstrap_vs_hybrid": {
+            "delta_mrr": {
+              "point_estimate": 0.010992907801418443,
+              "ci_95_low": -0.039361702127659576,
+              "ci_95_high": 0.06276595744680852,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_ndcg_at_5": {
+              "point_estimate": 0.014608502377371855,
+              "ci_95_low": -0.02941965596149212,
+              "ci_95_high": 0.06104404779635196,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_recall_at_1": {
+              "point_estimate": 0.02127659574468085,
+              "ci_95_low": -0.0425531914893617,
+              "ci_95_high": 0.0851063829787234,
+              "resamples": 2000,
+              "seed": 812026
+            }
+          },
+          "exact_overlap_demotions": 0
+        }
+      }
+    },
+    "excluding_ambiguous": {
+      "count": 45,
+      "fraction_reranked": 0.1111111111111111,
+      "modes": {
+        "hybrid": {
+          "metrics": {
+            "recall_at_1": 0.6444444444444445,
+            "recall_at_5": 0.8444444444444444,
+            "recall_at_10": 0.9777777777777777,
+            "mrr": 0.845026455026455,
+            "ndcg_at_5": 0.8003536838295029,
+            "ndcg_at_10": 0.8490447719325142
+          },
+          "transitions": {
+            "fixed": 0,
+            "regressed": 0,
+            "unchanged_correct": 35,
+            "unchanged_incorrect": 10
+          },
+          "bootstrap_vs_hybrid": {
+            "delta_mrr": {
+              "point_estimate": 0.0,
+              "ci_95_low": 0.0,
+              "ci_95_high": 0.0,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_ndcg_at_5": {
+              "point_estimate": 0.0,
+              "ci_95_low": 0.0,
+              "ci_95_high": 0.0,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_recall_at_1": {
+              "point_estimate": 0.0,
+              "ci_95_low": 0.0,
+              "ci_95_high": 0.0,
+              "resamples": 2000,
+              "seed": 812026
+            }
+          },
+          "exact_overlap_demotions": 0
+        },
+        "always": {
+          "metrics": {
+            "recall_at_1": 0.7111111111111111,
+            "recall_at_5": 0.9555555555555556,
+            "recall_at_10": 1.0,
+            "mrr": 0.8946560846560847,
+            "ndcg_at_5": 0.9046737472449402,
+            "ndcg_at_10": 0.9199968699214147
+          },
+          "transitions": {
+            "fixed": 4,
+            "regressed": 2,
+            "unchanged_correct": 34,
+            "unchanged_incorrect": 5
+          },
+          "bootstrap_vs_hybrid": {
+            "delta_mrr": {
+              "point_estimate": 0.04962962962962963,
+              "ci_95_low": -0.013333333333333332,
+              "ci_95_high": 0.11375661375661376,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_ndcg_at_5": {
+              "point_estimate": 0.10432006341543726,
+              "ci_95_low": 0.03923970664326322,
+              "ci_95_high": 0.16838639291484975,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_recall_at_1": {
+              "point_estimate": 0.06666666666666667,
+              "ci_95_low": -0.022222222222222223,
+              "ci_95_high": 0.15555555555555556,
+              "resamples": 2000,
+              "seed": 812026
+            }
+          },
+          "exact_overlap_demotions": 0
+        },
+        "selective": {
+          "metrics": {
+            "recall_at_1": 0.6666666666666666,
+            "recall_at_5": 0.8666666666666667,
+            "recall_at_10": 0.9777777777777777,
+            "mrr": 0.8565079365079366,
+            "ndcg_at_5": 0.8156114529792023,
+            "ndcg_at_10": 0.8578788782751495
+          },
+          "transitions": {
+            "fixed": 2,
+            "regressed": 2,
+            "unchanged_correct": 34,
+            "unchanged_incorrect": 7
+          },
+          "bootstrap_vs_hybrid": {
+            "delta_mrr": {
+              "point_estimate": 0.011481481481481485,
+              "ci_95_low": -0.04111111111111111,
+              "ci_95_high": 0.06740740740740742,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_ndcg_at_5": {
+              "point_estimate": 0.015257769149699493,
+              "ci_95_low": -0.030898688010486355,
+              "ci_95_high": 0.061374655714287005,
+              "resamples": 2000,
+              "seed": 812026
+            },
+            "delta_recall_at_1": {
+              "point_estimate": 0.022222222222222223,
+              "ci_95_low": -0.044444444444444446,
+              "ci_95_high": 0.08888888888888889,
+              "resamples": 2000,
+              "seed": 812026
+            }
+          },
+          "exact_overlap_demotions": 0
+        }
+      }
+    }
+  },
+  "per_query": [
+    {
+      "case_id": "exact-subject-00",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "morphology-00",
+      "ambiguous": false,
+      "reranked": true,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.1,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.2890648263178879
+        },
+        "always": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        }
+      },
+      "ranks": {
+        "hybrid": 10,
+        "always": 2,
+        "selective": 2
+      },
+      "exact_overlap": false
+    },
+    {
+      "case_id": "exact-rare-01",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "morphology-02",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.14285714285714285,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.3333333333333333
+        },
+        "always": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.16666666666666666,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.3562071871080222
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.14285714285714285,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.3333333333333333
+        }
+      },
+      "ranks": {
+        "hybrid": 7,
+        "always": 6,
+        "selective": 7
+      },
+      "exact_overlap": false
+    },
+    {
+      "case_id": "morphology-03",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.1,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.2890648263178879
+        },
+        "always": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.14285714285714285,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.3333333333333333
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.1,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.2890648263178879
+        }
+      },
+      "ranks": {
+        "hybrid": 10,
+        "always": 7,
+        "selective": 10
+      },
+      "exact_overlap": false
+    },
+    {
+      "case_id": "exact-subject-05",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        }
+      },
+      "ranks": {
+        "hybrid": 2,
+        "always": 1,
+        "selective": 2
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "morphology-06",
+      "ambiguous": false,
+      "reranked": true,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.25,
+          "ndcg_at_5": 0.43067655807339306,
+          "ndcg_at_10": 0.43067655807339306
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.25,
+          "ndcg_at_5": 0.43067655807339306,
+          "ndcg_at_10": 0.43067655807339306
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 4,
+        "selective": 4
+      },
+      "exact_overlap": false
+    },
+    {
+      "case_id": "exact-subject-07",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        }
+      },
+      "ranks": {
+        "hybrid": 2,
+        "always": 1,
+        "selective": 2
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "exact-rare-09",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "exact-rare-11",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "exact-subject-11",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "exact-subject-12",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "morphology-12",
+      "ambiguous": false,
+      "reranked": true,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 2,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": false
+    },
+    {
+      "case_id": "exact-subject-14",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "exact-rare-15",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "morphology-17",
+      "ambiguous": false,
+      "reranked": true,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        },
+        "always": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.2,
+          "ndcg_at_5": 0.38685280723454163,
+          "ndcg_at_10": 0.38685280723454163
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.2,
+          "ndcg_at_5": 0.38685280723454163,
+          "ndcg_at_10": 0.38685280723454163
+        }
+      },
+      "ranks": {
+        "hybrid": 2,
+        "always": 5,
+        "selective": 5
+      },
+      "exact_overlap": false
+    },
+    {
+      "case_id": "exact-subject-18",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "exact-subject-19",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "morphology-19",
+      "ambiguous": false,
+      "reranked": true,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg_at_5": 0.5,
+          "ndcg_at_10": 0.5
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 3,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": false
+    },
+    {
+      "case_id": "ambiguous-group-00",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.75,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8318724637288826,
+          "ndcg_at_10": 0.9493885684853096
+        },
+        "always": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.75,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8318724637288826,
+          "ndcg_at_10": 0.9493885684853096
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "ambiguous-group-01",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.75,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8318724637288826,
+          "ndcg_at_10": 0.9493885684853096
+        },
+        "always": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.75,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8318724637288826,
+          "ndcg_at_10": 0.9493885684853096
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "ambiguous-group-02",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.75,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8318724637288826,
+          "ndcg_at_10": 0.9493885684853096
+        },
+        "always": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.75,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8318724637288826,
+          "ndcg_at_10": 0.9493885684853096
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "ambiguous-group-03",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.75,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8318724637288826,
+          "ndcg_at_10": 0.9493885684853096
+        },
+        "always": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.75,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.8318724637288826,
+          "ndcg_at_10": 0.9493885684853096
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "ambiguous-group-16",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.5585075862632192,
+          "ndcg_at_10": 0.6886342695939197
+        },
+        "always": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.5585075862632192,
+          "ndcg_at_10": 0.6886342695939197
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "ambiguous-group-17",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.5585075862632192,
+          "ndcg_at_10": 0.6886342695939197
+        },
+        "always": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.5585075862632192,
+          "ndcg_at_10": 0.6886342695939197
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "ambiguous-group-18",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.5585075862632192,
+          "ndcg_at_10": 0.6886342695939197
+        },
+        "always": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.5585075862632192,
+          "ndcg_at_10": 0.6886342695939197
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "ambiguous-group-19",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.5585075862632192,
+          "ndcg_at_10": 0.6886342695939197
+        },
+        "always": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_5": 0.5585075862632192,
+          "ndcg_at_10": 0.6886342695939197
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "long-tail-01",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "long-tail-03",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "long-tail-06",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "tenant-isolation-00",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "tenant-isolation-04",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "tenant-isolation-05",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "tenant-isolation-09",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-002",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-006",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.1,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.2890648263178879
+        },
+        "always": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 0.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.1,
+          "ndcg_at_5": 0.0,
+          "ndcg_at_10": 0.2890648263178879
+        }
+      },
+      "ranks": {
+        "hybrid": 10,
+        "always": 2,
+        "selective": 10
+      },
+      "exact_overlap": false
+    },
+    {
+      "case_id": "semantic-009",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-016",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-017",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-020",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-031",
+      "ambiguous": true,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-032",
+      "ambiguous": true,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 0.5,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-034",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-035",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-037",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.25,
+          "ndcg_at_5": 0.43067655807339306,
+          "ndcg_at_10": 0.43067655807339306
+        },
+        "always": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.5,
+          "ndcg_at_5": 0.6309297535714575,
+          "ndcg_at_10": 0.6309297535714575
+        },
+        "selective": {
+          "recall_at_1": 0.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 0.25,
+          "ndcg_at_5": 0.43067655807339306,
+          "ndcg_at_10": 0.43067655807339306
+        }
+      },
+      "ranks": {
+        "hybrid": 4,
+        "always": 2,
+        "selective": 4
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-045",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    },
+    {
+      "case_id": "semantic-049",
+      "ambiguous": false,
+      "reranked": false,
+      "metrics": {
+        "hybrid": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "always": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        },
+        "selective": {
+          "recall_at_1": 1.0,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_5": 1.0,
+          "ndcg_at_10": 1.0
+        }
+      },
+      "ranks": {
+        "hybrid": 1,
+        "always": 1,
+        "selective": 1
+      },
+      "exact_overlap": true
+    }
+  ]
+}
