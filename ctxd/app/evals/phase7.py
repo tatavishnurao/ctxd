@@ -115,6 +115,16 @@ def partition_metrics(rows: Sequence[tuple[list[str], set[str]]]) -> dict[str, f
     }
 
 
+def transition_label(baseline: int | None, candidate: int | None) -> str:
+    if baseline != 1 and candidate == 1:
+        return "fixed"
+    if baseline == 1 and candidate == 1:
+        return "unchanged_correct"
+    if baseline is not None and (candidate is None or candidate > baseline):
+        return "regressed"
+    return "unchanged_incorrect"
+
+
 def transition_counts(
     baseline_ranks: Sequence[int | None], candidate_ranks: Sequence[int | None]
 ) -> dict[str, int]:
@@ -122,14 +132,7 @@ def transition_counts(
         raise ValueError("rank arrays must have equal length")
     counts: Counter[str] = Counter()
     for baseline, candidate in zip(baseline_ranks, candidate_ranks, strict=True):
-        if baseline != 1 and candidate == 1:
-            counts["fixed"] += 1
-        elif baseline == 1 and candidate == 1:
-            counts["unchanged_correct"] += 1
-        elif baseline == 1 and candidate != 1:
-            counts["regressed"] += 1
-        else:
-            counts["unchanged_incorrect"] += 1
+        counts[transition_label(baseline, candidate)] += 1
     return {
         key: counts[key]
         for key in ("fixed", "regressed", "unchanged_correct", "unchanged_incorrect")
@@ -219,6 +222,53 @@ def apply_lexical_guardrail(
     rest = [candidate for candidate in candidates if candidate.source_id not in protected_ids]
     rest.sort(key=lambda candidate: (-scores[candidate.source_id], candidate.source_id))
     return protected + rest
+
+
+def lexical_protection_ids(candidates: Sequence[Mapping[str, Any]], strategy: str) -> set[str]:
+    """Choose protected candidates from inference-time ranking/term signals only."""
+    lexical = sorted(
+        (candidate for candidate in candidates if candidate.get("lexical_rank") is not None),
+        key=lambda candidate: int(candidate["lexical_rank"]),
+    )
+    if not lexical or strategy not in {
+        "protect_lexical_top1",
+        "protect_exact_overlap_top1",
+        "protect_strong_identifier_winner",
+    }:
+        if strategy not in {
+            "protect_lexical_top1",
+            "protect_exact_overlap_top1",
+            "protect_strong_identifier_winner",
+        }:
+            raise ValueError(f"unknown lexical protection strategy: {strategy}")
+        return set()
+    winner = lexical[0]
+    if strategy == "protect_lexical_top1":
+        return {str(winner["source_id"])}
+    exact_overlap = winner.get("exact_query_token_overlap", [])
+    identifier_overlap = winner.get("rare_identifier_overlap", [])
+    if strategy == "protect_exact_overlap_top1":
+        return {str(winner["source_id"])} if exact_overlap else set()
+    if not exact_overlap or not identifier_overlap or len(lexical) < 2:
+        return set()
+    first_score = float(winner.get("lexical_raw_score") or 0.0)
+    second_score = float(lexical[1].get("lexical_raw_score") or 0.0)
+    relative_margin = (first_score - second_score) / max(abs(first_score), 1e-9)
+    return {str(winner["source_id"])} if relative_margin >= 0.50 else set()
+
+
+def apply_rank_guardrail(
+    candidates: Sequence[Any], scores: Mapping[str, float], protected_ids: set[str]
+) -> list[Any]:
+    protected = [candidate for candidate in candidates if candidate["source_id"] in protected_ids]
+    protected_ids_actual = {candidate["source_id"] for candidate in protected}
+    remainder = [
+        candidate for candidate in candidates if candidate["source_id"] not in protected_ids_actual
+    ]
+    remainder.sort(
+        key=lambda candidate: (-scores[str(candidate["source_id"])], candidate["rrf_rank"])
+    )
+    return protected + remainder
 
 
 def candidate_identity_preserved(before: Sequence[Any], after: Sequence[Any]) -> bool:
