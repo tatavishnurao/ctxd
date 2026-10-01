@@ -1,0 +1,533 @@
+{
+  "holdout_changes": [
+    {
+      "case_id": "rollback-0",
+      "query": "Which two prerequisites must Cedar rollback satisfy?",
+      "budget": 4096,
+      "required_groups": [
+        {
+          "group_id": "fact-0",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "rollback/spec.txt",
+                  "chunk_id": "chk_c6fdb7cb5a5a216abf8bbb5f",
+                  "start": 0,
+                  "end": 42,
+                  "excerpt": "Cedar rollback requires a sealed snapshot."
+                }
+              ]
+            },
+            {
+              "spans": [
+                {
+                  "source": "rollback/mirror.txt",
+                  "chunk_id": "chk_ae254117a7e0ad54127b94b4",
+                  "start": 0,
+                  "end": 42,
+                  "excerpt": "Cedar rollback requires a sealed snapshot."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "fact-1",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "rollback/spec.txt",
+                  "chunk_id": "chk_2bb6e83718c98f21022359fd",
+                  "start": 0,
+                  "end": 47,
+                  "excerpt": "Cedar rollback requires two operator approvals."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "baseline_chunks": [
+        "chk_038ba76838222e1d73c8f36a",
+        "chk_3855a62fa4b9ef6abe58768b",
+        "chk_ae254117a7e0ad54127b94b4",
+        "chk_80e92c8a96b7a8f400619b77",
+        "chk_2929148458a4c911299fbc21",
+        "chk_2bb6e83718c98f21022359fd",
+        "chk_cc565239cea292af60ccc827",
+        "chk_c6fdb7cb5a5a216abf8bbb5f"
+      ],
+      "candidate_chunks": [
+        "chk_038ba76838222e1d73c8f36a",
+        "chk_3855a62fa4b9ef6abe58768b",
+        "chk_ae254117a7e0ad54127b94b4",
+        "chk_80e92c8a96b7a8f400619b77",
+        "chk_2929148458a4c911299fbc21",
+        "chk_2bb6e83718c98f21022359fd",
+        "chk_cc565239cea292af60ccc827",
+        "chk_8b2bfd75d7f9a826bfc86b5b"
+      ],
+      "evidence_groups_lost": [],
+      "evidence_groups_gained": [],
+      "tokens_saved": -157.0,
+      "reason": "exact duplicate skipped; later fitting chunks admitted; no semantic cause inferred"
+    },
+    {
+      "case_id": "schema-0",
+      "query": "Which six fields must a Larch audit record contain?",
+      "budget": 4096,
+      "required_groups": [
+        {
+          "group_id": "fact-0",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "schema/spec.txt",
+                  "chunk_id": "chk_4fd7f97dfa092373a12de928",
+                  "start": 0,
+                  "end": 37,
+                  "excerpt": "Larch audit field actor is mandatory."
+                }
+              ]
+            },
+            {
+              "spans": [
+                {
+                  "source": "schema/mirror.txt",
+                  "chunk_id": "chk_39a990b69ebf8f05e7bacf20",
+                  "start": 0,
+                  "end": 37,
+                  "excerpt": "Larch audit field actor is mandatory."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "fact-1",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "schema/spec.txt",
+                  "chunk_id": "chk_6246c71f1e02cfb840be2edb",
+                  "start": 0,
+                  "end": 38,
+                  "excerpt": "Larch audit field action is mandatory."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "fact-2",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "schema/spec.txt",
+                  "chunk_id": "chk_973588fd4801c4456c8903ce",
+                  "start": 0,
+                  "end": 40,
+                  "excerpt": "Larch audit field resource is mandatory."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "fact-3",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "schema/spec.txt",
+                  "chunk_id": "chk_b1a2e45f73748f62b8939cd8",
+                  "start": 0,
+                  "end": 41,
+                  "excerpt": "Larch audit field timestamp is mandatory."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "fact-4",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "schema/spec.txt",
+                  "chunk_id": "chk_2b6ec629b2b860b3892a5846",
+                  "start": 0,
+                  "end": 39,
+                  "excerpt": "Larch audit field outcome is mandatory."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "fact-5",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "schema/spec.txt",
+                  "chunk_id": "chk_bf6283d6801a2d6c5b97784b",
+                  "start": 0,
+                  "end": 41,
+                  "excerpt": "Larch audit field signature is mandatory."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "baseline_chunks": [
+        "chk_39693adffc2e1b19ecfa4748",
+        "chk_13197bcb28db3a96577f5ec1",
+        "chk_17d849a674b9e37af42c05ed",
+        "chk_39a990b69ebf8f05e7bacf20",
+        "chk_b1a2e45f73748f62b8939cd8",
+        "chk_973588fd4801c4456c8903ce",
+        "chk_6246c71f1e02cfb840be2edb",
+        "chk_2b6ec629b2b860b3892a5846",
+        "chk_4fd7f97dfa092373a12de928"
+      ],
+      "candidate_chunks": [
+        "chk_39693adffc2e1b19ecfa4748",
+        "chk_13197bcb28db3a96577f5ec1",
+        "chk_17d849a674b9e37af42c05ed",
+        "chk_39a990b69ebf8f05e7bacf20",
+        "chk_b1a2e45f73748f62b8939cd8",
+        "chk_973588fd4801c4456c8903ce",
+        "chk_6246c71f1e02cfb840be2edb",
+        "chk_2b6ec629b2b860b3892a5846",
+        "chk_cedad4243244b1c9fbad7cdf"
+      ],
+      "evidence_groups_lost": [],
+      "evidence_groups_gained": [],
+      "tokens_saved": -156.0,
+      "reason": "exact duplicate skipped; later fitting chunks admitted; no semantic cause inferred"
+    },
+    {
+      "case_id": "compatibility-0",
+      "query": "Which of wire revisions 5 and 6 can Pine client v4 accept?",
+      "budget": 4096,
+      "required_groups": [
+        {
+          "group_id": "fact-0",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "compatibility/spec.txt",
+                  "chunk_id": "chk_965ef5c3ebf65467612d97ee",
+                  "start": 0,
+                  "end": 39,
+                  "excerpt": "Pine client v4 accepts wire revision 6."
+                }
+              ]
+            },
+            {
+              "spans": [
+                {
+                  "source": "compatibility/mirror.txt",
+                  "chunk_id": "chk_5eab83af438cd2dd59656c01",
+                  "start": 0,
+                  "end": 39,
+                  "excerpt": "Pine client v4 accepts wire revision 6."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "fact-1",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "compatibility/spec.txt",
+                  "chunk_id": "chk_b636ecf37d2c936303b7a66f",
+                  "start": 0,
+                  "end": 39,
+                  "excerpt": "Pine client v4 rejects wire revision 5."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "baseline_chunks": [
+        "chk_1498086342370cfdcd3ff8df",
+        "chk_a2c3df8413a0779526e20ad4",
+        "chk_5eab83af438cd2dd59656c01",
+        "chk_b636ecf37d2c936303b7a66f",
+        "chk_f4af8d75950139eac4364d5f",
+        "chk_965ef5c3ebf65467612d97ee",
+        "chk_3a1b8502370ecd49d3e22eeb"
+      ],
+      "candidate_chunks": [
+        "chk_1498086342370cfdcd3ff8df",
+        "chk_a2c3df8413a0779526e20ad4",
+        "chk_5eab83af438cd2dd59656c01",
+        "chk_b636ecf37d2c936303b7a66f",
+        "chk_f4af8d75950139eac4364d5f",
+        "chk_3a1b8502370ecd49d3e22eeb",
+        "chk_72d6e4794b895f8f024044c4"
+      ],
+      "evidence_groups_lost": [],
+      "evidence_groups_gained": [],
+      "tokens_saved": -1.0,
+      "reason": "exact duplicate skipped; later fitting chunks admitted; no semantic cause inferred"
+    }
+  ],
+  "development_reranker": {
+    "always/256": {
+      "evidence_regressions": [],
+      "evidence_improvements": [],
+      "exact_token_overlap_mrr_demotions": []
+    },
+    "selective/256": {
+      "evidence_regressions": [],
+      "evidence_improvements": [],
+      "exact_token_overlap_mrr_demotions": []
+    },
+    "always/512": {
+      "evidence_regressions": [
+        "error_contract-0"
+      ],
+      "evidence_improvements": [],
+      "exact_token_overlap_mrr_demotions": []
+    },
+    "selective/512": {
+      "evidence_regressions": [],
+      "evidence_improvements": [],
+      "exact_token_overlap_mrr_demotions": []
+    },
+    "always/1024": {
+      "evidence_regressions": [
+        "error_contract-0"
+      ],
+      "evidence_improvements": [],
+      "exact_token_overlap_mrr_demotions": []
+    },
+    "selective/1024": {
+      "evidence_regressions": [],
+      "evidence_improvements": [],
+      "exact_token_overlap_mrr_demotions": []
+    },
+    "always/2048": {
+      "evidence_regressions": [
+        "procedure-0",
+        "event-1"
+      ],
+      "evidence_improvements": [
+        "retention-1"
+      ],
+      "exact_token_overlap_mrr_demotions": [
+        "procedure-0",
+        "event-1"
+      ]
+    },
+    "selective/2048": {
+      "evidence_regressions": [],
+      "evidence_improvements": [],
+      "exact_token_overlap_mrr_demotions": []
+    },
+    "always/4096": {
+      "evidence_regressions": [
+        "procedure-0",
+        "event-0",
+        "event-1",
+        "precedence-1"
+      ],
+      "evidence_improvements": [
+        "retention-1"
+      ],
+      "exact_token_overlap_mrr_demotions": [
+        "procedure-0",
+        "event-0",
+        "event-1",
+        "precedence-1",
+        "idempotency-0",
+        "idempotency-1"
+      ]
+    },
+    "selective/4096": {
+      "evidence_regressions": [],
+      "evidence_improvements": [],
+      "exact_token_overlap_mrr_demotions": []
+    }
+  },
+  "position_counts_total_then_selected": {
+    "development/256": {
+      "first": [
+        18,
+        10
+      ],
+      "later": [
+        24,
+        0
+      ]
+    },
+    "development/512": {
+      "first": [
+        18,
+        10
+      ],
+      "later": [
+        24,
+        2
+      ]
+    },
+    "development/1024": {
+      "first": [
+        18,
+        10
+      ],
+      "later": [
+        24,
+        2
+      ]
+    },
+    "development/2048": {
+      "first": [
+        18,
+        12
+      ],
+      "later": [
+        24,
+        1
+      ]
+    },
+    "development/4096": {
+      "first": [
+        18,
+        13
+      ],
+      "later": [
+        24,
+        3
+      ]
+    },
+    "holdout/256": {
+      "first": [
+        8,
+        0
+      ],
+      "later": [
+        16,
+        0
+      ]
+    },
+    "holdout/512": {
+      "first": [
+        8,
+        5
+      ],
+      "later": [
+        16,
+        1
+      ]
+    },
+    "holdout/1024": {
+      "first": [
+        8,
+        5
+      ],
+      "later": [
+        16,
+        1
+      ]
+    },
+    "holdout/2048": {
+      "first": [
+        8,
+        7
+      ],
+      "later": [
+        16,
+        1
+      ]
+    },
+    "holdout/4096": {
+      "first": [
+        8,
+        4
+      ],
+      "later": [
+        16,
+        8
+      ]
+    }
+  },
+  "pressure": {
+    "development/256": {
+      "whole_corpus_feasible_fraction": 0.25,
+      "top10_feasible_fraction": 0.25,
+      "budget_drops_fraction": 1
+    },
+    "development/512": {
+      "whole_corpus_feasible_fraction": 0.5,
+      "top10_feasible_fraction": 0.4375,
+      "budget_drops_fraction": 1
+    },
+    "development/1024": {
+      "whole_corpus_feasible_fraction": 0.5,
+      "top10_feasible_fraction": 0.4375,
+      "budget_drops_fraction": 1
+    },
+    "development/2048": {
+      "whole_corpus_feasible_fraction": 0.875,
+      "top10_feasible_fraction": 0.75,
+      "budget_drops_fraction": 1
+    },
+    "development/4096": {
+      "whole_corpus_feasible_fraction": 0.875,
+      "top10_feasible_fraction": 0.75,
+      "budget_drops_fraction": 1
+    },
+    "holdout/256": {
+      "whole_corpus_feasible_fraction": 0,
+      "top10_feasible_fraction": 0,
+      "budget_drops_fraction": 1
+    },
+    "holdout/512": {
+      "whole_corpus_feasible_fraction": 0,
+      "top10_feasible_fraction": 0,
+      "budget_drops_fraction": 1
+    },
+    "holdout/1024": {
+      "whole_corpus_feasible_fraction": 0.5,
+      "top10_feasible_fraction": 0.25,
+      "budget_drops_fraction": 1
+    },
+    "holdout/2048": {
+      "whole_corpus_feasible_fraction": 0.75,
+      "top10_feasible_fraction": 0.5,
+      "budget_drops_fraction": 1
+    },
+    "holdout/4096": {
+      "whole_corpus_feasible_fraction": 1,
+      "top10_feasible_fraction": 0.5,
+      "budget_drops_fraction": 1
+    }
+  },
+  "challenge": "not run; current corpus itself is an authored stress fixture"
+}

@@ -1,0 +1,167 @@
+{
+  "definition": "source-only group coverage says full, exact-span group coverage does not",
+  "cases": [
+    {
+      "stage": "development",
+      "case_id": "procedure-0",
+      "budget": 2048,
+      "selected_chunks": [
+        "chk_78400a6096473bcc2c5b14be",
+        "chk_1bbc87454a929221cc4bf028",
+        "chk_04ebe2db070dfb10b095bd83"
+      ],
+      "required_recall": 0.25
+    },
+    {
+      "stage": "development",
+      "case_id": "procedure-0",
+      "budget": 4096,
+      "selected_chunks": [
+        "chk_78400a6096473bcc2c5b14be",
+        "chk_1bbc87454a929221cc4bf028",
+        "chk_04ebe2db070dfb10b095bd83",
+        "chk_478fe21bdae4b20983cef43c",
+        "chk_037b5ee85e0a184d7b6b9b0b",
+        "chk_a041b08ce8bda433535fde75",
+        "chk_5f9710e64f3726d15584505e"
+      ],
+      "required_recall": 0.375
+    },
+    {
+      "stage": "development",
+      "case_id": "event-0",
+      "budget": 4096,
+      "selected_chunks": [
+        "chk_a6a45cb57a8014a771a4925b",
+        "chk_b00376e1573858c90e80ba7a",
+        "chk_0e8928c63c64ad04de65aeca",
+        "chk_3a06fe8fcea79147761f3cda",
+        "chk_9550ccc8cf6a9488b61b221d",
+        "chk_bafe01ccb330d8c7cbc92bcc",
+        "chk_11b6546ad71c289375a2f177"
+      ],
+      "required_recall": 0.5
+    },
+    {
+      "stage": "development",
+      "case_id": "event-1",
+      "budget": 4096,
+      "selected_chunks": [
+        "chk_a6a45cb57a8014a771a4925b",
+        "chk_e7d78875843c2d4df0b558b0",
+        "chk_3a06fe8fcea79147761f3cda",
+        "chk_11b6546ad71c289375a2f177",
+        "chk_0e8928c63c64ad04de65aeca",
+        "chk_9550ccc8cf6a9488b61b221d",
+        "chk_bafe01ccb330d8c7cbc92bcc"
+      ],
+      "required_recall": 0.5
+    },
+    {
+      "stage": "development",
+      "case_id": "precedence-0",
+      "budget": 512,
+      "selected_chunks": [
+        "chk_5090051373594d7e6eea88f4",
+        "chk_58f045482c9c99ebca8ed63a"
+      ],
+      "required_recall": 0.5
+    },
+    {
+      "stage": "development",
+      "case_id": "precedence-0",
+      "budget": 1024,
+      "selected_chunks": [
+        "chk_c5e11687ebe5b3b3d83b4986",
+        "chk_5090051373594d7e6eea88f4",
+        "chk_58f045482c9c99ebca8ed63a"
+      ],
+      "required_recall": 0.5
+    },
+    {
+      "stage": "development",
+      "case_id": "precedence-1",
+      "budget": 512,
+      "selected_chunks": [
+        "chk_5090051373594d7e6eea88f4",
+        "chk_58f045482c9c99ebca8ed63a"
+      ],
+      "required_recall": 0.5
+    },
+    {
+      "stage": "development",
+      "case_id": "precedence-1",
+      "budget": 1024,
+      "selected_chunks": [
+        "chk_628c4b3811e40896925fa5a8",
+        "chk_5090051373594d7e6eea88f4",
+        "chk_58f045482c9c99ebca8ed63a"
+      ],
+      "required_recall": 0.5
+    },
+    {
+      "stage": "holdout",
+      "case_id": "schema-0",
+      "budget": 4096,
+      "selected_chunks": [
+        "chk_39693adffc2e1b19ecfa4748",
+        "chk_13197bcb28db3a96577f5ec1",
+        "chk_17d849a674b9e37af42c05ed",
+        "chk_39a990b69ebf8f05e7bacf20",
+        "chk_b1a2e45f73748f62b8939cd8",
+        "chk_973588fd4801c4456c8903ce",
+        "chk_6246c71f1e02cfb840be2edb",
+        "chk_2b6ec629b2b860b3892a5846",
+        "chk_4fd7f97dfa092373a12de928"
+      ],
+      "required_recall": 0.8333333333333334
+    },
+    {
+      "stage": "holdout",
+      "case_id": "schema-1",
+      "budget": 512,
+      "selected_chunks": [
+        "chk_973588fd4801c4456c8903ce"
+      ],
+      "required_recall": 0.16666666666666666
+    },
+    {
+      "stage": "holdout",
+      "case_id": "schema-1",
+      "budget": 1024,
+      "selected_chunks": [
+        "chk_17d849a674b9e37af42c05ed",
+        "chk_973588fd4801c4456c8903ce"
+      ],
+      "required_recall": 0.16666666666666666
+    },
+    {
+      "stage": "holdout",
+      "case_id": "schema-1",
+      "budget": 2048,
+      "selected_chunks": [
+        "chk_17d849a674b9e37af42c05ed",
+        "chk_24df82bb3162e1b212a56c04",
+        "chk_973588fd4801c4456c8903ce",
+        "chk_39a990b69ebf8f05e7bacf20"
+      ],
+      "required_recall": 0.3333333333333333
+    },
+    {
+      "stage": "holdout",
+      "case_id": "schema-1",
+      "budget": 4096,
+      "selected_chunks": [
+        "chk_17d849a674b9e37af42c05ed",
+        "chk_24df82bb3162e1b212a56c04",
+        "chk_973588fd4801c4456c8903ce",
+        "chk_39a990b69ebf8f05e7bacf20",
+        "chk_2b6ec629b2b860b3892a5846",
+        "chk_13197bcb28db3a96577f5ec1",
+        "chk_db6ea805cba100ff97daa838",
+        "chk_39693adffc2e1b19ecfa4748"
+      ],
+      "required_recall": 0.5
+    }
+  ]
+}
