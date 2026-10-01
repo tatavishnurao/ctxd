@@ -1,0 +1,24 @@
+{
+  "git_base_sha": "a18c68d83fd78c831c9615581488fbcb8b95f687",
+  "dirty_state": "",
+  "python": "3.13.15",
+  "postgres": "PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "dependencies": {
+    "numpy": "2.5.3",
+    "onnxruntime": "1.30.0",
+    "tokenizers": "0.23.2",
+    "model2vec": "0.6.0",
+    "psycopg": "3.3.6",
+    "pydantic": "2.13.5"
+  },
+  "sha256": {
+    "PHASE8_REPORT.md": "71487c5b066773a0c3a4d77f9add2f648574e06ff740a95215042459fa0614ed",
+    "benchmarks/phase8_audit.json": "64a2fcaecc1060593203a7205c5a12342e763071cac0ad7badb3c285b1dbbf28",
+    "benchmarks/phase8_experiment_manifest.json": "a3062904bd4ed42e8e7ac1a130574009ebd685d80392f45fd9833d7eafd0be68",
+    "benchmarks/phase8_holdout.json": "75e577d26ae922b595ba4f36c5d2aaae51434cc44917ec3c62d9226ac86a5d12",
+    "benchmarks/phase8_initial_manifest.json": "cfdf62592080998362f5525c2cfcc0bbd2be586a66aa75d09ca566066090d675",
+    "benchmarks/phase8_profile.json": "ec0cfceefec7e4c979f097e1ba294516131e946c6b2bb90e03a0895d14826ccf",
+    "benchmarks/phase8_selected_config.json": "8a789c64ed15d63de07f43015e3c022fa7f70ae3149f38e8cb11a87423050207"
+  }
+}
