@@ -1,0 +1,220 @@
+{
+  "created_at_utc": "2026-09-30T00:58:56.610914+00:00",
+  "git_base_sha": "a18c68d83fd78c831c9615581488fbcb8b95f687",
+  "initial_dirty_state": "",
+  "final_dirty_state": " M ARCHITECTURE.md\n M BENCHMARKS.md\n M PERFORMANCE.md\n M README.md\n?? PHASE9_REPORT.md\n?? benchmarks/phase9_analysis.py\n?? benchmarks/phase9_baseline.json\n?? benchmarks/phase9_bootstrap.json\n?? benchmarks/phase9_build.py\n?? benchmarks/phase9_case_analysis.json\n?? benchmarks/phase9_challenge.json\n?? benchmarks/phase9_challenge.py\n?? benchmarks/phase9_development_budget_pressure.json\n?? benchmarks/phase9_development_pools.json\n?? benchmarks/phase9_development_started.json\n?? benchmarks/phase9_finalize.py\n?? benchmarks/phase9_holdout.json\n?? benchmarks/phase9_holdout_budget_pressure.json\n?? benchmarks/phase9_holdout_pools.json\n?? benchmarks/phase9_holdout_started.json\n?? benchmarks/phase9_packing_dev.json\n?? benchmarks/phase9_phase8_freeze.json\n?? benchmarks/phase9_protocol.json\n?? benchmarks/phase9_reranker_replay.json\n?? benchmarks/phase9_run.py\n?? benchmarks/phase9_select.py\n?? benchmarks/phase9_selected_config.json\n?? benchmarks/phase9_source_proxy_gap.json\n?? ctxd/app/evals/evidence.py\n?? evals/phase9_challenge_cases.json\n?? evals/phase9_evidence_cases.json\n?? evals/phase9_split_manifest.json\n?? tests/test_evidence_eval.py\n?? tests/test_phase9_artifacts.py\n",
+  "python": "3.13.15",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "postgres": "PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+  "cpu": "Architecture:                         x86_64\nCPU op-mode(s):                       32-bit, 64-bit\nAddress sizes:                        39 bits physical, 48 bits virtual\nByte Order:                           Little Endian\nCPU(s):                               24\nOn-line CPU(s) list:                  0-23\nVendor ID:                            GenuineIntel\nModel name:                           Intel(R) Core(TM) i7-14650HX\nCPU family:                           6\nModel:                                183\nThread(s) per core:                   2\nCore(s) per socket:                   12\nSocket(s):                            1\nStepping:                             1\nBogoMIPS:                             4838.39\nFlags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize flush_l1d arch_capabilities\nVirtualization:                       VT-x\nHypervisor vendor:                    Microsoft\nVirtualization type:                  full\nL1d cache:                            576 KiB (12 instances)\nL1i cache:                            384 KiB (12 instances)\nL2 cache:                             24 MiB (12 instances)\nL3 cache:                             30 MiB (1 instance)\nNUMA node(s):                         1\nNUMA node0 CPU(s):                    0-23\nVulnerability Gather data sampling:   Not affected\nVulnerability Itlb multihit:          Not affected\nVulnerability L1tf:                   Not affected\nVulnerability Mds:                    Not affected\nVulnerability Meltdown:               Not affected\nVulnerability Mmio stale data:        Not affected\nVulnerability Reg file data sampling: Mitigation; Clear Register File\nVulnerability Retbleed:               Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:   Not affected\nVulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                  Not affected\nVulnerability Tsx async abort:        Not affected\n",
+  "dependencies": {
+    "numpy": "2.5.3",
+    "onnxruntime": "1.30.0",
+    "tokenizers": "0.23.2",
+    "model2vec": "0.6.0",
+    "psycopg": "3.3.6",
+    "pydantic": "2.13.5"
+  },
+  "environment": {
+    "HF_HUB_OFFLINE": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "TOKENIZERS_PARALLELISM": null
+  },
+  "database_scope": {
+    "migration": "ctxd",
+    "measurements": "ctxd_phase9",
+    "tests": "ctxd_test"
+  },
+  "model_identity": {
+    "model_id": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "license": "Apache-2.0",
+    "onnx_artifact": {
+      "filename": "onnx/model_quint8_avx2.onnx",
+      "bytes": 23200716,
+      "sha256": "c80a8b34256ea453093d612e3ac48d3d965a0c0a48c7906709af8b8e28461bf9"
+    },
+    "tokenizer_artifact": {
+      "filename": "tokenizer.json",
+      "bytes": 711396,
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+    },
+    "maximum_input_length": 512,
+    "backend": "ONNX Runtime CPUExecutionProvider",
+    "dtype": "quantized uint8 ONNX",
+    "intra_op_threads": 4,
+    "execution_device": "CPU",
+    "python_dependency_delta": [],
+    "model_cache_total_bytes": 23912112
+  },
+  "artifacts": {
+    "ARCHITECTURE.md": {
+      "sha256": "2719d4fec9ec33f1c399b5346fe02d51a44babd536f802fd2e4d994f4d68cc02",
+      "bytes": 11768
+    },
+    "BENCHMARKS.md": {
+      "sha256": "c5fffaf3f80e3c946177596998e79cb9f46fb3b97a33ac2ac2dd5227943611a8",
+      "bytes": 13534
+    },
+    "PERFORMANCE.md": {
+      "sha256": "80b6a5dc1e3e654a57b9332ba8f71660ddf1c6209af04efacf82a66f817d89c8",
+      "bytes": 15864
+    },
+    "PHASE9_REPORT.md": {
+      "sha256": "652dc2683dd6d028c2e7f476c98555a8f5aec7ebaf5a6de6ca747abc5455b309",
+      "bytes": 21468
+    },
+    "README.md": {
+      "sha256": "66a624fc8a83755387c5314a1986b523d6768cffec48be7d47929979bf0a7f28",
+      "bytes": 9709
+    },
+    "benchmarks/phase9_analysis.py": {
+      "sha256": "85b4a69bff9bc5101ac09bbd976555075980c8842d67733adb07856f0ad5c5c5",
+      "bytes": 8413
+    },
+    "benchmarks/phase9_baseline.json": {
+      "sha256": "7c9e7dacf7d62ad1221dbea34f6367eb04d32aaea697d1d8635b0068f4fd706c",
+      "bytes": 17717
+    },
+    "benchmarks/phase9_bootstrap.json": {
+      "sha256": "b6e94f6b66c61f8f330fedb65b64fc52607e6e0c318a1347682dd085ae634941",
+      "bytes": 26328
+    },
+    "benchmarks/phase9_build.py": {
+      "sha256": "e443d72465d8e7c632841265208d60576f97ad7bf33812530a39502b467e1556",
+      "bytes": 11845
+    },
+    "benchmarks/phase9_case_analysis.json": {
+      "sha256": "fc5cdf62ca750a53772aa7f5317b1ed8b67db5f8f74c32ad47a5999bb79c3911",
+      "bytes": 13910
+    },
+    "benchmarks/phase9_challenge.json": {
+      "sha256": "c0118da5824884fb1ec59c49b035942827a5657727e34925cdfa75610dd5d29b",
+      "bytes": 1611
+    },
+    "benchmarks/phase9_challenge.py": {
+      "sha256": "29bbd8f92c0de71ad60bc642ee980fab5bc3e54f5d00dae7a3064e5f2073df09",
+      "bytes": 3999
+    },
+    "benchmarks/phase9_development_budget_pressure.json": {
+      "sha256": "ebf53742f97a7fdfcab3096282b6adab1fb819174b0de54046c08319940d00c3",
+      "bytes": 15281
+    },
+    "benchmarks/phase9_development_pools.json": {
+      "sha256": "7c4dc2633755b8c24277fc368a6ea1f5e9b0f423c4e55970818bfce4d8c8f5a2",
+      "bytes": 849192
+    },
+    "benchmarks/phase9_development_started.json": {
+      "sha256": "ff9cb27e6f8d852e2ec45670abe04bcd3214c005e1540cd912534d5e821645c4",
+      "bytes": 228
+    },
+    "benchmarks/phase9_finalize.py": {
+      "sha256": "8fd1831c44fee1311413ca5cb29e7a0c4436bdec4615a45e81eae8bbd83fbebd",
+      "bytes": 4442
+    },
+    "benchmarks/phase9_holdout.json": {
+      "sha256": "376aee8be035bdcbd8530b3ff663ab93d49a55c4e61615ddac026c7d1c92d2c0",
+      "bytes": 257574
+    },
+    "benchmarks/phase9_holdout_budget_pressure.json": {
+      "sha256": "f4ed69d14da4424481b8e53742e497178ec9530639dbcc7336e6b5c864ff6f07",
+      "bytes": 7606
+    },
+    "benchmarks/phase9_holdout_pools.json": {
+      "sha256": "9c08794624f4fbecbae616d0fbbdfd5a4ab30383b56e477dc0f8c28933cec9c1",
+      "bytes": 433017
+    },
+    "benchmarks/phase9_holdout_started.json": {
+      "sha256": "6b1d47490570f7a596af21264e8dab825bbb5538374fade23313b8ea664316b0",
+      "bytes": 1601
+    },
+    "benchmarks/phase9_packing_dev.json": {
+      "sha256": "b8c425ed35e41ee39d23a5ce2d57a728a32f05a9e4f1b4e75f40d86da30f722d",
+      "bytes": 1424771
+    },
+    "benchmarks/phase9_phase8_freeze.json": {
+      "sha256": "a3d89a4c9aa29bacb0c7d8891cd60c91f6c091e211810c1eb92c6e15f0ad09df",
+      "bytes": 1280
+    },
+    "benchmarks/phase9_protocol.json": {
+      "sha256": "48127b53c87002e88dfad4197315a8b8eb77807d17e44e63c93e657418bcc555",
+      "bytes": 582
+    },
+    "benchmarks/phase9_reranker_replay.json": {
+      "sha256": "4cf8898fcc31d7b6ca6c4abaa798bb6e68e1a58a3e6d1b7a227d49a1f6510052",
+      "bytes": 487510
+    },
+    "benchmarks/phase9_run.py": {
+      "sha256": "5e0b6dd4846dcae1d646849d670e3e7668153532be58bd085301604e1010fce2",
+      "bytes": 15650
+    },
+    "benchmarks/phase9_select.py": {
+      "sha256": "07661ff0881c3dcafdf461f4e93a0d047c57437f5194b0c880089fdad3e6a2a5",
+      "bytes": 2726
+    },
+    "benchmarks/phase9_selected_config.json": {
+      "sha256": "9391f80ac9f3d00d3de263fef2a909e81c9b9bfe62e841bb90befc25bf6a30b8",
+      "bytes": 1393
+    },
+    "benchmarks/phase9_source_proxy_gap.json": {
+      "sha256": "235f54189e5ea51c6cf952a18b85b4a5f260118052dbdf8f394e90185537f014",
+      "bytes": 4547
+    },
+    "ctxd/app/evals/evidence.py": {
+      "sha256": "7f026a57c597326954fe53b1ea7b35f209da65af9e947cb665ceeee7bd7ea8ab",
+      "bytes": 11957
+    },
+    "evals/phase9_challenge_cases.json": {
+      "sha256": "657669a2fc223edee16ebd1424db000d560c2e147316d2bc1af7f45817b471f1",
+      "bytes": 3791
+    },
+    "evals/phase9_evidence_cases.json": {
+      "sha256": "7256ecc7feef07c6cbf86607cb83722f417d83149f0c5a663918d04fab1046c4",
+      "bytes": 1267314
+    },
+    "evals/phase9_split_manifest.json": {
+      "sha256": "e9bd037d5163f3ab9963953f0d28e6d298fa498098c5f1a4231f9b7ede1ea0d0",
+      "bytes": 1487
+    },
+    "tests/test_evidence_eval.py": {
+      "sha256": "98fb785ec7a939b44b8da67efd701919d9ca6f2a8f81d8b152e5080a111ac23d",
+      "bytes": 9666
+    },
+    "tests/test_phase9_artifacts.py": {
+      "sha256": "5256a59c5aed38bfa3dcfcfda1e4a2ba977c9d4425df4a6f349589cd0873c89d",
+      "bytes": 2507
+    }
+  },
+  "validation": {
+    "tests": 122,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ruff": "passed",
+    "mypy": "passed",
+    "uv_sync": "passed",
+    "postgres_migrations": "passed"
+  },
+  "commands": [
+    "uv run python benchmarks/phase9_build.py",
+    "CTXD_DATABASE_URL=<dedicated migrated ctxd_phase9> uv run python benchmarks/phase9_run.py development",
+    "uv run python benchmarks/phase9_select.py",
+    "CTXD_DATABASE_URL=<dedicated migrated ctxd_phase9> uv run python benchmarks/phase9_run.py holdout",
+    "uv run python benchmarks/phase9_analysis.py",
+    "uv run python benchmarks/phase9_challenge.py",
+    "uv sync --python 3.13",
+    "uv run ruff check .",
+    "uv run mypy",
+    "CTXD_DATABASE_URL=<ctxd> uv run alembic upgrade head",
+    "CTXD_DATABASE_URL=<ctxd_test> uv run alembic upgrade head",
+    "CTXD_TEST_DATABASE_URL=<ctxd_test> uv run pytest --junitxml=/tmp/ctxd-phase9-validation.xml"
+  ],
+  "decisions": {
+    "packing": "P3",
+    "reranking": "R2",
+    "production_changed": false
+  },
+  "qualification": "synthetic exact-span fixtures, not independently human-judged deployment evidence",
+  "commits_or_pushes_performed": false
+}
