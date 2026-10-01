@@ -1,0 +1,642 @@
+[
+  {
+    "case_id": "timeout-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "timeout-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "timeout-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "timeout-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 5
+  },
+  {
+    "case_id": "timeout-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 1
+  },
+  {
+    "case_id": "timeout-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "timeout-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "timeout-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "timeout-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 5
+  },
+  {
+    "case_id": "timeout-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 72,
+    "retrieved_top10_oracle_tokens": 72,
+    "retrieved_tokens": 4536,
+    "dropped_count": 1
+  },
+  {
+    "case_id": "error_contract-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "error_contract-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "error_contract-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "error_contract-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "error_contract-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 2
+  },
+  {
+    "case_id": "error_contract-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "error_contract-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "error_contract-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "error_contract-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "error_contract-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 480,
+    "retrieved_top10_oracle_tokens": 480,
+    "retrieved_tokens": 4800,
+    "dropped_count": 2
+  },
+  {
+    "case_id": "retention-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "retention-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "retention-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "retention-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "retention-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "retention-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "retention-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "retention-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "retention-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "retention-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 1090,
+    "retrieved_top10_oracle_tokens": 1090,
+    "retrieved_tokens": 5370,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "credential-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": 1091,
+    "retrieved_tokens": 5451,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "credential-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": 1091,
+    "retrieved_tokens": 5451,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "credential-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": 1091,
+    "retrieved_tokens": 5451,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "credential-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": 1091,
+    "retrieved_tokens": 5451,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "credential-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": 1091,
+    "retrieved_tokens": 5451,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "credential-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5444,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "credential-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5444,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "credential-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5444,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "credential-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5444,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "credential-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 1091,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5444,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "procedure-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5404,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "procedure-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5404,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "procedure-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5404,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "procedure-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5404,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "procedure-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5404,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "procedure-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5344,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "procedure-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5344,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "procedure-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5344,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "procedure-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5344,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "procedure-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 4376,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5344,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "event-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "event-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "event-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "event-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "event-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "event-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "event-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "event-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "event-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "event-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5401,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "precedence-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4802,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "precedence-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4802,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "precedence-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4802,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "precedence-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4802,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "precedence-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4802,
+    "dropped_count": 2
+  },
+  {
+    "case_id": "precedence-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": 481,
+    "retrieved_tokens": 4505,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "precedence-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": 481,
+    "retrieved_tokens": 4505,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "precedence-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": 481,
+    "retrieved_tokens": 4505,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "precedence-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": 481,
+    "retrieved_tokens": 4505,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "precedence-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 481,
+    "retrieved_top10_oracle_tokens": 481,
+    "retrieved_tokens": 4505,
+    "dropped_count": 1
+  },
+  {
+    "case_id": "idempotency-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "idempotency-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "idempotency-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "idempotency-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 5
+  },
+  {
+    "case_id": "idempotency-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 1
+  },
+  {
+    "case_id": "idempotency-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "idempotency-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "idempotency-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "idempotency-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 5
+  },
+  {
+    "case_id": "idempotency-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 149,
+    "retrieved_top10_oracle_tokens": 149,
+    "retrieved_tokens": 4523,
+    "dropped_count": 1
+  }
+]

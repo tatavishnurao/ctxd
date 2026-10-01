@@ -1,0 +1,21 @@
+{
+  "stage": "before any retrieval measurement",
+  "selector_sha256": "07661ff0881c3dcafdf461f4e93a0d047c57437f5194b0c880089fdad3e6a2a5",
+  "runner_sha256": "5e0b6dd4846dcae1d646849d670e3e7668153532be58bd085301604e1010fce2",
+  "budgets": [
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "policies": [
+    "greedy",
+    "density",
+    "unique_source",
+    "exact_duplicate"
+  ],
+  "reranker": "pinned Phase 7 MiniLM, batch16 threads4, no tuning",
+  "promotion_gate": "synthetic evidence insufficient alone",
+  "holdout_bootstrap": "2000 template-group resamples, per-budget"
+}

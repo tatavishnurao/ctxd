@@ -1,0 +1,322 @@
+[
+  {
+    "case_id": "rollback-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": 744,
+    "retrieved_tokens": 4859,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "rollback-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": 744,
+    "retrieved_tokens": 4859,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "rollback-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": 744,
+    "retrieved_tokens": 4859,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "rollback-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": 744,
+    "retrieved_tokens": 4859,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "rollback-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": 744,
+    "retrieved_tokens": 4859,
+    "dropped_count": 2
+  },
+  {
+    "case_id": "rollback-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5026,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "rollback-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5026,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "rollback-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5026,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "rollback-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5026,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "rollback-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 744,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5026,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "range-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5020,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "range-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5020,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "range-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5020,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "range-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5020,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "range-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 5020,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "range-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": 746,
+    "retrieved_tokens": 5010,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "range-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": 746,
+    "retrieved_tokens": 5010,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "range-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": 746,
+    "retrieved_tokens": 5010,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "range-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": 746,
+    "retrieved_tokens": 5010,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "range-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 746,
+    "retrieved_top10_oracle_tokens": 746,
+    "retrieved_tokens": 5010,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "schema-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4354,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "schema-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4354,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "schema-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4354,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "schema-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4354,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "schema-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4354,
+    "dropped_count": 1
+  },
+  {
+    "case_id": "schema-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4520,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "schema-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4520,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "schema-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4520,
+    "dropped_count": 8
+  },
+  {
+    "case_id": "schema-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4520,
+    "dropped_count": 6
+  },
+  {
+    "case_id": "schema-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 2212,
+    "retrieved_top10_oracle_tokens": null,
+    "retrieved_tokens": 4520,
+    "dropped_count": 2
+  },
+  {
+    "case_id": "compatibility-0",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5415,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "compatibility-0",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5415,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "compatibility-0",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5415,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "compatibility-0",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5415,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "compatibility-0",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5415,
+    "dropped_count": 3
+  },
+  {
+    "case_id": "compatibility-1",
+    "budget": 256,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5416,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "compatibility-1",
+    "budget": 512,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5416,
+    "dropped_count": 10
+  },
+  {
+    "case_id": "compatibility-1",
+    "budget": 1024,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5416,
+    "dropped_count": 9
+  },
+  {
+    "case_id": "compatibility-1",
+    "budget": 2048,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5416,
+    "dropped_count": 7
+  },
+  {
+    "case_id": "compatibility-1",
+    "budget": 4096,
+    "all_chunk_oracle_tokens": 1088,
+    "retrieved_top10_oracle_tokens": 1088,
+    "retrieved_tokens": 5416,
+    "dropped_count": 3
+  }
+]
