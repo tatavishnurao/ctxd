@@ -1,5 +1,13 @@
 # Performance Methodology
 
+## Phase 9 context-budget methodology
+
+Phase 9 measures evidence coverage and approximate context-token expenditure, not service capacity. Default production chunking (target400/max600/overlap40), pinned embeddings, PostgreSQL exact retrieval, branch depth20 and return top10 are retained. A dedicated `ctxd_phase9` database keeps authored fixture tenants separate from existing application data. Every offline greedy packet is compared with the actual `ContextAssembler` output.
+
+Development policies are evaluated at 256/512/1024/2048/4096 tokens. Labels are used only by the evaluator, never packing decisions. The frozen candidate is tested once on template-grouped holdout; uncertainty uses 2,000 whole-template resamples per budget. All token metrics use `ApproximateTokenCounter`, not model-tokenizer billing units. Span precision, distractor-chunk fraction, and redundant labeled-span fraction are separate measures, not a disjoint token partition.
+
+Per-request retrieval, scorer and packing timing observations are retained for diagnostics, but no new latency/QPS/SLO improvement is claimed. The earlier one-second reranking tail remains unresolved. See `PHASE9_REPORT.md` for evidence-preservation results and benchmark limitations.
+
 ## Phase 8 diagnostic scope
 
 `benchmarks/phase8_profile.py` records 243 scorer calls: three development pools by input length, N=5/10/20, threads=4/1/2, batches=16/8/1, three repeats each. It separates cached initialization, pairs, tokenizer, tensors, inference, conversion, sorting and total scoring. This is not a full retrieval/API latency or load benchmark.

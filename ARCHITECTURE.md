@@ -112,6 +112,12 @@ The API treats `x-tenant-id` as authoritative and rejects mismatching request bo
 
 Runtime hybrid candidate depth is derived from request `top_k` when unset: `max(top_k, min(100, top_k * 2))`. The default API `top_k=10` yields depth20, but depth20 is not a universal runtime invariant. No runtime depth behavior was changed in Phase 8.
 
+### Phase 9 evidence boundary (experimental)
+
+`ctxd/app/evals/evidence.py` is an offline schema and metric layer, not runtime policy wiring. Evidence groups are conjunctive across required groups; an alternative is sufficient only when all of its exact, tenant-scoped chunk spans are selected. Chunk IDs/text are regenerated with production chunking to validate locators. Pending human-review cases are excluded from scored answerability rather than assigned invented labels. Standard binary chunk IR metrics remain separate from project-specific evidence coverage and token-efficiency metrics.
+
+Phase 9 keeps query paraphrases and each source/template family within a single partition, and bootstraps complete template clusters. Its current corpus is synthetic, not independently human-judged deployment evidence. Text equality is not automatically evidence equivalence: identical statements at distinct resources may both be required. Neither the selected offline packing policy nor reranking is integrated into production.
+
 ### Context assembly
 
 `ContextAssembler` selects lexical, semantic, or hybrid retrieval according to `RetrievalMode`, preserves retrieval order, and selects whole candidates that fit the token budget. Candidates that do not fit are dropped, not truncated. Packet metadata records retrieved/selected counts, token counts, budget drops, and retrieval type.

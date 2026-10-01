@@ -1,5 +1,13 @@
 # Benchmarks
 
+## Phase 9 evidence-grounded evaluation (synthetic; no promotion)
+
+A fresh 24-case, 12-family corpus supplies exact chunk/span locators, alternate evidence, and complementary required facts. The split is 16 development / 8 holdout. Greedy selections were checked against production `ContextAssembler` for every measured budget (256/512/1024/2048/4096).
+
+Frozen exact-text deduplication had the same holdout full answerability as greedy: 0/0/0/0/0.25 across those budgets. Required-evidence recall was also identical: 0/0.29167/0.29167/0.375/0.41667. At 4096 tokens, the candidate spent **39.25 more tokens per query**, with paired template-bootstrap 95% interval [0.25, 78.25]; only four holdout template clusters exist, so uncertainty remains poorly resolved. Zero observed evidence delta is not proof of deployment equivalence.
+
+A separate post-freeze, fixed-order challenge required identical statements from two distinct resource documents. Greedy preserved both; deduplication lost one requirement (answerability 1→0). Decision: **P3 / R2**, no production change. Full definitions, development results, per-case evidence and limitations: `PHASE9_REPORT.md`, `benchmarks/phase9_*.json`.
+
 ## Phase 8 status (experimental; no production promotion)
 
 The frozen selective policy reranked 5/47 reused-holdout queries, with 2 fixes and 2 regressions. Its ΔMRR was +0.01099 (95% interval −0.03936 to +0.06277); ΔnDCG@5 +0.01461 (−0.02942 to +0.06104). Neither supports promotion. Phase 7 nDCG used binary source judgments, not graded chunk evidence.

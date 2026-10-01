@@ -241,6 +241,10 @@ Phase 7 froze a deterministic 103/47 development/holdout split, compared at most
 
 Production selection is unchanged. Offline context evaluation now preserves chunk rank positions and prevents repeated-source nDCG gains. A development-selected selective reranker failed its reused-holdout uncertainty/regression gate; packing alternatives lack chunk-evidence labels sufficient for promotion. **R2: keep reranking offline. C1: keep greedy packing.** See `PHASE8_REPORT.md` for measured results, limitations, and unfinished full-path profiling.
 
+### Phase 9 evidence evaluation (experimental)
+
+The offline evaluator now validates exact chunk-local evidence spans, required groups and alternate evidence, and reports answerability under token budgets. A new synthetic corpus has 24 cases split by 12 source/template families (16 development, 8 fresh holdout). Frozen exact-text deduplication preserved holdout evidence but did not save tokens; a separate provenance challenge exposed evidence loss. **P3: evaluation still insufficient for promotion. R2: reranking remains inconclusive.** Production is unchanged. See `PHASE9_REPORT.md` for the dataset, metric definitions, uncertainty, and limitations.
+
 ## API
 
 | Method | Endpoint | Purpose |
