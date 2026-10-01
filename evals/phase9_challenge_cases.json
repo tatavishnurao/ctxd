@@ -1,0 +1,118 @@
+{
+  "provenance": "Authored post-freeze counterexample; identical statements belong to distinct resources. Fixed order, not a production retrieval measurement or independent holdout.",
+  "documents": [
+    {
+      "document_id": "doc_f7e2dd3ec4c0a684564fdd30",
+      "tenant_id": "phase9-challenge",
+      "source_path": "east/policy.txt",
+      "source_type": "text",
+      "content": "The request limit is 7.",
+      "content_hash": "1bc67a082e79bee34f8bd71ba434a1d20309a90881f6a95390dd36de2759e29a",
+      "metadata": {
+        "extension": ".txt",
+        "encoding": "utf-8"
+      }
+    },
+    {
+      "document_id": "doc_024086a7ca7b225fb4722ab4",
+      "tenant_id": "phase9-challenge",
+      "source_path": "west/policy.txt",
+      "source_type": "text",
+      "content": "The request limit is 7.",
+      "content_hash": "1bc67a082e79bee34f8bd71ba434a1d20309a90881f6a95390dd36de2759e29a",
+      "metadata": {
+        "extension": ".txt",
+        "encoding": "utf-8"
+      }
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "chk_0d0499c12bf45452beb01215",
+      "document_id": "doc_f7e2dd3ec4c0a684564fdd30",
+      "tenant_id": "phase9-challenge",
+      "content": "The request limit is 7.",
+      "content_hash": "1bc67a082e79bee34f8bd71ba434a1d20309a90881f6a95390dd36de2759e29a",
+      "start_line": 1,
+      "end_line": 1,
+      "token_count": 6,
+      "ordinal": 0,
+      "metadata": {
+        "source_path": "east/policy.txt",
+        "content_hash": "1bc67a082e79bee34f8bd71ba434a1d20309a90881f6a95390dd36de2759e29a",
+        "block_types": [
+          "paragraph"
+        ],
+        "extension": ".txt",
+        "encoding": "utf-8"
+      }
+    },
+    {
+      "chunk_id": "chk_d61762a33e1945ea4af2cc47",
+      "document_id": "doc_024086a7ca7b225fb4722ab4",
+      "tenant_id": "phase9-challenge",
+      "content": "The request limit is 7.",
+      "content_hash": "1bc67a082e79bee34f8bd71ba434a1d20309a90881f6a95390dd36de2759e29a",
+      "start_line": 1,
+      "end_line": 1,
+      "token_count": 6,
+      "ordinal": 0,
+      "metadata": {
+        "source_path": "west/policy.txt",
+        "content_hash": "1bc67a082e79bee34f8bd71ba434a1d20309a90881f6a95390dd36de2759e29a",
+        "block_types": [
+          "paragraph"
+        ],
+        "extension": ".txt",
+        "encoding": "utf-8"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "distinct-resource-identical-text",
+      "query": "What request limit is documented for EACH of east/policy.txt and west/policy.txt?",
+      "tenant_id": "phase9-challenge",
+      "template_group": "provenance-not-equivalence",
+      "evidence_groups": [
+        {
+          "group_id": "resource-0",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "east/policy.txt",
+                  "chunk_id": "chk_0d0499c12bf45452beb01215",
+                  "start": 0,
+                  "end": 23,
+                  "excerpt": "The request limit is 7."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "resource-1",
+          "requirement": "REQUIRED",
+          "alternatives": [
+            {
+              "spans": [
+                {
+                  "source": "west/policy.txt",
+                  "chunk_id": "chk_d61762a33e1945ea4af2cc47",
+                  "start": 0,
+                  "end": 23,
+                  "excerpt": "The request limit is 7."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "VERIFIED_FIXTURE",
+      "answerability_notes": "Both independent resource documents are required; neither proves the other's limit.",
+      "budget_pressure_class": "all evidence fits; deduplication can lose provenance"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "scope": "Authored post-freeze counterexample; identical statements belong to distinct resources. Fixed order, not a production retrieval measurement or independent holdout.",
+  "frozen_config_sha256": "16baf32b1159a2095290a08cd0307d4986dd901dc51e673622492a88a73ea2e1",
+  "metrics": {
+    "greedy": {
+      "required_recall": 1.0,
+      "full_answerability": 1.0,
+      "supporting_recall": 0.0,
+      "supporting_applicable": 0.0,
+      "retrieved_required_recall": 1.0,
+      "selected_tokens": 12.0,
+      "span_token_precision": 1.0,
+      "redundant_span_tokens": 0.0,
+      "redundant_token_fraction": 0.0,
+      "distractor_tokens": 0.0,
+      "required_groups_per_1k_tokens": 166.66666666666666,
+      "selected_count": 2.0,
+      "mrr": 1.0,
+      "ndcg_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "distractor_token_fraction": 0.0,
+      "recall_at_1": 0.5,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0
+    },
+    "exact_duplicate": {
+      "required_recall": 0.5,
+      "full_answerability": 0.0,
+      "supporting_recall": 0.0,
+      "supporting_applicable": 0.0,
+      "retrieved_required_recall": 1.0,
+      "selected_tokens": 6.0,
+      "span_token_precision": 1.0,
+      "redundant_span_tokens": 0.0,
+      "redundant_token_fraction": 0.0,
+      "distractor_tokens": 0.0,
+      "required_groups_per_1k_tokens": 166.66666666666666,
+      "selected_count": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_5": 0.6131471927654584,
+      "ndcg_at_10": 0.6131471927654584,
+      "distractor_token_fraction": 0.0,
+      "recall_at_1": 0.5,
+      "recall_at_5": 0.5,
+      "recall_at_10": 0.5
+    }
+  }
+}
