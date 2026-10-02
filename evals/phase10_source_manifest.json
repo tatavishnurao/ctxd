@@ -1,0 +1,252 @@
+[
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "131e494dffbecddad1d032179a8b5ff994e92e9392f4cbf1e2afc54ce441b55a",
+    "source": "ctxd/app/api/routes.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/api/routes.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "5ba5abddabf8c18be8e3a9abc2669c562b7f36be58d27155f3e5519a0718bd73",
+    "source": "ctxd/app/api/middleware.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/api/middleware.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "e9716bfcebb96d37aac062f6f56ef8ceeaa20d180d5f32e320c3f22978d0cd60",
+    "source": "ctxd/app/models/domain.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/models/domain.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "5a4988fd8846030cb73ae7f462c099130da11aca11f97626dbe9213d42f59690",
+    "source": "ctxd/app/config/settings.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/config/settings.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "d48c9a613626018eb273424473d4ff1efe8e2d280d020ca7dec1dc7daa06d0d3",
+    "source": "ctxd/app/runtime.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/runtime.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "45cbbd660ff8ea235c9c2f65573ed7b26c18a5234b004c3d3532a510e404fd99",
+    "source": "ctxd/app/ingestion/loaders.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/ingestion/loaders.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "cf042fe5c51332254a31eb1a73ae9d02840c7525718d8b1972d53b4c284bb625",
+    "source": "ctxd/app/ingestion/service.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/ingestion/service.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "53fea0e53f207cf7b174faf8082ce7e6fb92e0a1bff9d61f08a10c0d6a74d5c7",
+    "source": "ctxd/app/ingestion/chunking.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/ingestion/chunking.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "05d1a30fc2819219ab4ce4e686a7633fc4899d834313e0fe17ac32f38bff1f0f",
+    "source": "ctxd/app/retrieval/hybrid.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/retrieval/hybrid.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "d4e676278ecbcbc61930a1c8896247c123870bb379e1f796ab49a600a551f7bd",
+    "source": "ctxd/app/retrieval/lexical.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/retrieval/lexical.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "ee0f89621bfee11ada3feb9393a501908c53b7755fe4b277113d1a4f8ea29b15",
+    "source": "ctxd/app/retrieval/semantic.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/retrieval/semantic.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "e85eeb35d59ae4eb3d456cfd3e5b24f6ad708162464ee00ceb9221d20e58189e",
+    "source": "ctxd/app/storage/postgres.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/storage/postgres.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "b8e3e218a2221a5021bb334f62bfe6ca35850081b2abc09215013486758100d2",
+    "source": "ctxd/app/storage/documents.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/storage/documents.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "3a91aa5a7ccb4bce7a2f664647be36088de6c5b4b7f4a0c8afd2440f64aa68bf",
+    "source": "ctxd/app/reranking/base.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/reranking/base.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "9a43c25eabece5fc815de07663428f78fc3f22d22f0b9cf1103bdb342a5efc1d",
+    "source": "ctxd/app/reranking/retriever.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/reranking/retriever.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "278cfb24f554bb90fe18b241ea5d6461c6684e68b60ba2b36cb45ad60f1a9344",
+    "source": "ctxd/app/reranking/flashrank.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/reranking/flashrank.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "7838965fb64bcc5f3bffd370d4a1f5460458fb26673256a9d1a593bd5c01c5c5",
+    "source": "ctxd/app/observability/logging.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/observability/logging.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "e5e7b34dcbac1a33de08a54f3f6c001749f17293c35a903f150144de912eacc9",
+    "source": "ctxd/app/observability/tracing.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/observability/tracing.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "531698904595fe867e56194d4166826e230fe1fa468217fc780431b2d3babb56",
+    "source": "ctxd/app/integrations/synapse/evaluator.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/integrations/synapse/evaluator.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "8319cd12b37a43ac9d7432bcd80c5b015449680efe76ff9456c0934b37e2162d",
+    "source": "migrations/versions/0001_phase3.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/migrations/versions/0001_phase3.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "14ffe7a80d8c71d48e8ce919f7786c3250751ee28e55b98cc75879222e6f36e4",
+    "source": "migrations/versions/0002_phase4_embeddings.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/migrations/versions/0002_phase4_embeddings.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "7c458b8dbbbaecd35cc7dafc24f7b1a8d97b230b414c3a08c092521e9194f984",
+    "source": "ctxd/app/context/assembler.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/context/assembler.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "7f026a57c597326954fe53b1ea7b35f209da65af9e947cb665ceeee7bd7ea8ab",
+    "source": "ctxd/app/evals/evidence.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/evals/evidence.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "9f55c50f8e984619e06a5904d568f1af089b5660ca20be292ac1d0fd9a40661b",
+    "source": "ctxd/app/evals/retrieval.py",
+    "source_type": "repository_code",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/ctxd/app/evals/retrieval.py"
+  },
+  {
+    "git_revision": "60ccda005fe0283dfd2f1443a5155baeccfe40b7",
+    "license": "No root LICENSE at pinned revision; redistribution rights not inferred",
+    "permission_basis": "User-authorized local benchmark; no scraping",
+    "sha256": "66a624fc8a83755387c5314a1986b523d6768cffec48be7d47929979bf0a7f28",
+    "source": "README.md",
+    "source_type": "repository_documentation",
+    "transformation": "Verbatim UTF-8; .py ingested as text content, not file-loader extension",
+    "url": "https://github.com/tatavishnurao/ctxd/blob/60ccda005fe0283dfd2f1443a5155baeccfe40b7/README.md"
+  }
+]

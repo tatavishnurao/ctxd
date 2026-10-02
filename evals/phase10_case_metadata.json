@@ -1,0 +1,1212 @@
+{
+  "phase10-001": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 33,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 265
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "exact_symbol"
+  },
+  "phase10-002": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 20,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-003": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 11,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "contract"
+  },
+  "phase10-004": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 20,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-005": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 15,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-006": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 26,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 388
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-007": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 48,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 388
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "limits"
+  },
+  "phase10-008": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 74,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 380
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "provenance"
+  },
+  "phase10-009": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 28,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 380
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "cleanup"
+  },
+  "phase10-010": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 37,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 388
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "contract"
+  },
+  "phase10-011": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 23,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 300
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-012": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 58,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 300
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-013": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 19,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 229
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-014": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 40,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 229
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-015": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 33,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 237
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "lifecycle"
+  },
+  "phase10-016": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 21,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 300
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-017": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 35,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 229
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-018": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 38,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 370
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "identity"
+  },
+  "phase10-019": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 43,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 370
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "normalization"
+  },
+  "phase10-020": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 18,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 370
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-021": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 43,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 223
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "formats"
+  },
+  "phase10-022": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 50,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 223
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-023": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 34,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 372
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "idempotence"
+  },
+  "phase10-024": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 33,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 231
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-025": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 78,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 231
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-026": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 15,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 374
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-027": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 33,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 374
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "limits"
+  },
+  "phase10-028": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 40,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 374
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "tokenization"
+  },
+  "phase10-029": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 45,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 418
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "formats"
+  },
+  "phase10-030": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 37,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 364
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "limits"
+  },
+  "phase10-031": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 41,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 364
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "identity"
+  },
+  "phase10-032": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 42,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 352
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-033": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 35,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 241
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "provenance"
+  },
+  "phase10-034": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 57,
+      "stratum": "HARD",
+      "whole_chunk_tokens": 1375
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-035": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 32,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 259
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "exact_symbol"
+  },
+  "phase10-036": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 19,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 173
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-037": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 35,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 275
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "determinism"
+  },
+  "phase10-038": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 43,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 534
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "provenance"
+  },
+  "phase10-039": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 68,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 173
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "concurrency"
+  },
+  "phase10-040": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 31,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 178
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-041": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 30,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 319
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-042": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 73,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 853
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-043": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 35,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 344
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "version"
+  },
+  "phase10-044": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 63,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 639
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-045": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 18,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 272
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "offline"
+  },
+  "phase10-046": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 34,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 272
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-047": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 14,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 272
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "batching"
+  },
+  "phase10-048": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 21,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 306
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "provenance"
+  },
+  "phase10-049": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 20,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 306
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "isolation"
+  },
+  "phase10-050": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 46,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 578
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-051": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 20,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 610
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "startup"
+  },
+  "phase10-052": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 64,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 378
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-053": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 28,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 369
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "concurrency"
+  },
+  "phase10-054": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 14,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 369
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "idempotence"
+  },
+  "phase10-055": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 23,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "indexing"
+  },
+  "phase10-056": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 35,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 404
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "indexing"
+  },
+  "phase10-057": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 25,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 382
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-058": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 21,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "exact_search"
+  },
+  "phase10-059": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 38,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "determinism"
+  },
+  "phase10-060": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 29,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 754
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-061": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 46,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 890
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "timeouts"
+  },
+  "phase10-062": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 7,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 176
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "ordering"
+  },
+  "phase10-063": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 51,
+      "stratum": "HARD",
+      "whole_chunk_tokens": 1343
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-064": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 81,
+      "stratum": "HARD",
+      "whole_chunk_tokens": 1608
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-065": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 17,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 280
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "idempotence"
+  },
+  "phase10-066": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 13,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 387
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "isolation"
+  },
+  "phase10-067": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 22,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 387
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "cleanup"
+  },
+  "phase10-068": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 12,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 292
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "isolation"
+  },
+  "phase10-069": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 22,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 292
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "determinism"
+  },
+  "phase10-070": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 35,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 348
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "indexing"
+  },
+  "phase10-071": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 16,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 348
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-072": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 67,
+      "stratum": "HARD",
+      "whole_chunk_tokens": 1168
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-073": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 28,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 290
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-074": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 40,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 290
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "determinism"
+  },
+  "phase10-075": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 33,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 345
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-076": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 37,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 89
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "contract"
+  },
+  "phase10-077": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 31,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 287
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "offline"
+  },
+  "phase10-078": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 27,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 287
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "version"
+  },
+  "phase10-079": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 60,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 600
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "logits"
+  },
+  "phase10-080": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 77,
+      "stratum": "HARD",
+      "whole_chunk_tokens": 1235
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-081": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 7,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 175
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-082": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 24,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 175
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-083": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 30,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 175
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "provenance"
+  },
+  "phase10-084": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 50,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 279
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "logging"
+  },
+  "phase10-085": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 23,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 279
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-086": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 40,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 394
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "types"
+  },
+  "phase10-087": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 23,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 394
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "validation"
+  },
+  "phase10-088": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 25,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 150
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "alternatives"
+  },
+  "phase10-089": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 23,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 150
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-090": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 11,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 150
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "output"
+  },
+  "phase10-091": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 14,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 538
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-092": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 50,
+      "stratum": "MEDIUM",
+      "whole_chunk_tokens": 538
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "failure"
+  },
+  "phase10-093": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 26,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 394
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "statistics"
+  },
+  "phase10-094": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 22,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 245
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "dependency"
+  },
+  "phase10-095": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 25,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 245
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "version"
+  },
+  "phase10-096": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 18,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 245
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "isolation"
+  },
+  "phase10-097": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 11,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 245
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "indexing"
+  },
+  "phase10-098": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 15,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 345
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "identity"
+  },
+  "phase10-099": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 49,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 345
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "limits"
+  },
+  "phase10-100": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 30,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 485
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "rollback"
+  },
+  "phase10-101": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 20,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 295
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "selection"
+  },
+  "phase10-102": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 12,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 295
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-103": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 22,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 295
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "fallback"
+  },
+  "phase10-104": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 14,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 295
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "configuration"
+  },
+  "phase10-105": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 30,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 116
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "accounting"
+  },
+  "phase10-106": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 12,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 116
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "observability"
+  },
+  "phase10-107": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 34,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 337
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "correctness"
+  },
+  "phase10-108": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 23,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 441
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-109": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 26,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 338
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "alternatives"
+  },
+  "phase10-110": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 28,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 397
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "validation"
+  },
+  "phase10-111": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 67,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 384
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "leakage"
+  },
+  "phase10-112": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 60,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 441
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "provenance"
+  },
+  "phase10-113": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 75,
+      "stratum": "HARD",
+      "whole_chunk_tokens": 1227
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  },
+  "phase10-114": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 43,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 358
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "setup"
+  },
+  "phase10-115": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 14,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 379
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "setup"
+  },
+  "phase10-116": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 21,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 358
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "negative"
+  },
+  "phase10-117": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 14,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "safety"
+  },
+  "phase10-118": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 40,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 357
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "version"
+  },
+  "phase10-119": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 22,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 386
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "provenance"
+  },
+  "phase10-120": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 24,
+      "stratum": "EASY",
+      "whole_chunk_tokens": 358
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "contract"
+  },
+  "phase10-121": {
+    "author": "phase10-assistant",
+    "feasibility": {
+      "span_tokens": 84,
+      "stratum": "HARD",
+      "whole_chunk_tokens": 1117
+    },
+    "human_review_status": "UNREVIEWED",
+    "query_kind": "joint_requirements"
+  }
+}
