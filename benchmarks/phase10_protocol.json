@@ -1,0 +1,67 @@
+{
+  "phase": 10,
+  "status": "PRE_REVIEW_PROTOCOL; no retrieval outcomes observed",
+  "scope": "Offline evaluation only; never import policy or review code into production",
+  "budgets": [256, 512, 1024, 2048, 4096],
+  "dataset": "evals/phase10_evidence_cases.json",
+  "human_review_gate": {
+    "holdout_approved_fraction": 1.0,
+    "development_approved_fraction_minimum": 0.5,
+    "every_development_family_reviewed": true,
+    "every_scored_case_approved_for_canonical_metrics": true,
+    "independent_human_attestation_required": true,
+    "corrected_and_disputed_are_not_approved": true,
+    "unreviewed_label": "PROVISIONAL — NOT INDEPENDENTLY REVIEWED",
+    "identities": "Human attestations require external verification; software does not authenticate people"
+  },
+  "design_gate": {
+    "minimum_queries": 100,
+    "preferred_queries": "150–300",
+    "minimum_families": 12,
+    "minimum_holdout_families": 5,
+    "maximum_single_stratum_fraction_per_partition": 0.70,
+    "minimum_cases_per_stratum_per_partition": 2,
+    "strata": {"EASY": "whole-chunk minimum <=512", "MEDIUM": "513..1024", "HARD": "1025..2048", "VERY_HARD": ">2048"},
+    "failure_action": "Block canonical evaluation; report measured imbalance without padding evidence or moving cases using retrieval outcomes"
+  },
+  "retrieval": {
+    "database": "Dedicated ctxd_phase10 only; never truncate application ctxd or prior phase databases",
+    "modes": ["lexical", "semantic", "hybrid"],
+    "hybrid": "Production parallel deterministic RRF k=60; top_k=10 implies depth20 per branch; other top_k values have dynamic depth",
+    "embedding": "minishlab/potion-base-8M@bf8b056651a2c21b8d2565580b8569da283cab23; normalized 256d; offline",
+    "semantic_index": "exact pgvector only",
+    "token_counter": "Unchanged production ApproximateTokenCounter, not BPE or model tokens",
+    "packing_input": "fixed top10 chunks; preserve identity, content, cost, tenant and source",
+    "production_parity": "Verify offline greedy selection against actual ContextAssembler for every case/budget"
+  },
+  "packing": {
+    "baseline": "greedy",
+    "development_alternatives_maximum": 3,
+    "allowed_alternatives": ["density", "exact_duplicate", "unique_source"],
+    "source": "Existing ctxd.app.evals.context_selection.pack; no new ranking or packing algorithms",
+    "selection_gate": "On approved development cases: no case-budget required-recall or answerability regressions; >=5% lower total selected tokens with no aggregate evidence loss, or >=0.02 higher mean full answerability with <=5% token growth. Evidence improvement must have positive 95% template-cluster interval lower bound. Token saving must have negative token-delta upper bound. No provenance-regression challenges may fail. If none pass, freeze none.",
+    "tie_break": "Highest mean full answerability, then required recall, then lowest selected tokens, then policy name",
+    "holdout": "Exactly one frozen policy versus greedy, or no comparative holdout if none selected; checksums and durable start marker required before access; do not delete markers or retune from outcomes"
+  },
+  "reranking": {
+    "scope": "Development-only replay, if independently reviewed evidence and design gates pass",
+    "allowed": ["Phase7 MiniLM-L6 + protect_exact_overlap_top1", "Phase8 no_lexical_winner selective rule"],
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "artifact": "onnx/model_quint8_avx2.onnx",
+    "batch_size": 16,
+    "intra_op_threads": 4,
+    "maximum_pair_tokens": 512,
+    "new_models_or_algorithms": false,
+    "holdout_selection": false
+  },
+  "metrics": {
+    "standard_binary_chunk_IR": ["Recall@1", "Recall@5", "Recall@10", "MRR", "nDCG@5", "nDCG@10"],
+    "CTXD_specific": ["required evidence-group recall", "supporting-group recall where applicable", "full answerability", "selected approximate tokens", "span-token precision", "redundancy", "distractor tokens", "required groups per 1k tokens"],
+    "analyses": ["overall", "budget", "query kind", "template family", "whole-chunk feasibility stratum", "feasible versus infeasible", "case-level evidence losses", "source-proxy gaps", "dropped ordinals"],
+    "uncertainty": "At least 2000 paired template-cluster bootstrap resamples, seed 1002026; report cluster counts; zero deltas do not prove equivalence",
+    "failure_labels": ["SELECTED", "RETRIEVAL_MISS", "WRONG_CHUNK", "INSUFFICIENT_BUDGET", "BUDGET_DROP", "PACKING_ORDER", "DUPLICATE_WASTE", "PROVENANCE_CONFLICT", "ANNOTATION_AMBIGUITY", "OTHER"],
+    "failure_dimensions": {"A": "required alternative not retrieved", "B": "retrieved evidence not selected", "C": "required evidence selected", "D": "right source but wrong chunk", "E": "representation/identity/content changed"},
+    "causality": "Overlapping labels are diagnostics, not unobserved causal claims. Duplicate waste requires removable text duplication without losing labeled complete or partial evidence. Text equality alone never establishes evidence equivalence. Semantic conflict is not inferred by string matching."
+  },
+  "prohibitions": ["Production changes", "LLM inference or judging", "answer generation", "query rewriting", "ANN defaults", "retrieval retuning", "learned policies", "holdout tuning", "prior-artifact overwrite", "push", "automatic Phase11"]
+}

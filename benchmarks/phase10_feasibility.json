@@ -1,0 +1,210 @@
+{
+  "definition": "Exact REQUIRED whole-chunk union costs; not retrieval scores",
+  "distributions": {
+    "all": {
+      "cases": 121,
+      "families": [
+        "api",
+        "chunking",
+        "context",
+        "evaluation",
+        "fusion",
+        "ingestion",
+        "memory",
+        "migration",
+        "observability",
+        "operations",
+        "postgres",
+        "reranking",
+        "runtime",
+        "semantic",
+        "synapse"
+      ],
+      "feasible_at_budget": {
+        "1024": 114,
+        "2048": 121,
+        "256": 26,
+        "4096": 121,
+        "512": 104
+      },
+      "query_kinds": {
+        "accounting": 1,
+        "alternatives": 2,
+        "batching": 1,
+        "cleanup": 2,
+        "concurrency": 2,
+        "configuration": 12,
+        "contract": 4,
+        "correctness": 1,
+        "dependency": 1,
+        "determinism": 4,
+        "exact_search": 1,
+        "exact_symbol": 2,
+        "failure": 12,
+        "fallback": 1,
+        "formats": 2,
+        "idempotence": 3,
+        "identity": 3,
+        "indexing": 4,
+        "isolation": 4,
+        "joint_requirements": 12,
+        "leakage": 1,
+        "lifecycle": 1,
+        "limits": 4,
+        "logging": 1,
+        "logits": 1,
+        "negative": 10,
+        "normalization": 1,
+        "observability": 1,
+        "offline": 2,
+        "ordering": 1,
+        "output": 1,
+        "provenance": 7,
+        "rollback": 1,
+        "safety": 1,
+        "selection": 1,
+        "setup": 2,
+        "startup": 1,
+        "statistics": 1,
+        "timeouts": 1,
+        "tokenization": 1,
+        "types": 1,
+        "validation": 2,
+        "version": 4
+      },
+      "strata": {
+        "EASY": 104,
+        "HARD": 7,
+        "MEDIUM": 10
+      },
+      "whole_chunk_min_range": [
+        89,
+        1608
+      ]
+    },
+    "development": {
+      "cases": 82,
+      "families": [
+        "chunking",
+        "evaluation",
+        "fusion",
+        "ingestion",
+        "memory",
+        "migration",
+        "observability",
+        "operations",
+        "postgres",
+        "reranking"
+      ],
+      "feasible_at_budget": {
+        "1024": 75,
+        "2048": 82,
+        "256": 17,
+        "4096": 82,
+        "512": 69
+      },
+      "query_kinds": {
+        "alternatives": 1,
+        "cleanup": 1,
+        "concurrency": 2,
+        "configuration": 6,
+        "contract": 2,
+        "correctness": 1,
+        "dependency": 1,
+        "determinism": 4,
+        "exact_search": 1,
+        "exact_symbol": 1,
+        "failure": 8,
+        "formats": 2,
+        "idempotence": 3,
+        "identity": 3,
+        "indexing": 4,
+        "isolation": 3,
+        "joint_requirements": 9,
+        "leakage": 1,
+        "limits": 3,
+        "logging": 1,
+        "logits": 1,
+        "negative": 5,
+        "normalization": 1,
+        "offline": 1,
+        "ordering": 1,
+        "provenance": 5,
+        "rollback": 1,
+        "safety": 1,
+        "setup": 2,
+        "startup": 1,
+        "timeouts": 1,
+        "tokenization": 1,
+        "validation": 1,
+        "version": 3
+      },
+      "strata": {
+        "EASY": 69,
+        "HARD": 7,
+        "MEDIUM": 6
+      },
+      "whole_chunk_min_range": [
+        89,
+        1608
+      ]
+    },
+    "holdout": {
+      "cases": 39,
+      "families": [
+        "api",
+        "context",
+        "runtime",
+        "semantic",
+        "synapse"
+      ],
+      "feasible_at_budget": {
+        "1024": 39,
+        "2048": 39,
+        "256": 9,
+        "4096": 39,
+        "512": 35
+      },
+      "query_kinds": {
+        "accounting": 1,
+        "alternatives": 1,
+        "batching": 1,
+        "cleanup": 1,
+        "configuration": 6,
+        "contract": 2,
+        "exact_symbol": 1,
+        "failure": 4,
+        "fallback": 1,
+        "isolation": 1,
+        "joint_requirements": 3,
+        "lifecycle": 1,
+        "limits": 1,
+        "negative": 5,
+        "observability": 1,
+        "offline": 1,
+        "output": 1,
+        "provenance": 2,
+        "selection": 1,
+        "statistics": 1,
+        "types": 1,
+        "validation": 1,
+        "version": 1
+      },
+      "strata": {
+        "EASY": 35,
+        "MEDIUM": 4
+      },
+      "whole_chunk_min_range": [
+        116,
+        639
+      ]
+    }
+  },
+  "label": "PROVISIONAL — NOT INDEPENDENTLY REVIEWED",
+  "strata": {
+    "EASY": "<=512",
+    "HARD": "1025..2048",
+    "MEDIUM": "513..1024",
+    "VERY_HARD": ">2048"
+  }
+}

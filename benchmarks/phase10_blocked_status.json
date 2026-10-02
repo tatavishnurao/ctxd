@@ -1,0 +1,47 @@
+{
+  "phase": 10,
+  "canonical_eligible": false,
+  "status": "BLOCKED",
+  "label": "PROVISIONAL — NOT INDEPENDENTLY REVIEWED",
+  "dataset_sha256": "59d59de6350279834c611ff9b30ee68b11e3577ba2a2db348b50d13327e91748",
+  "split_sha256": "f2bcdfb47d8faac28e94732935796976584659cae56533ab8fcee401418a7ae1",
+  "protocol_sha256": "fdc1b28f0182c3067bcea905d68c5f687f804c01c7ecf7cf67fff4818b533550",
+  "review_sha256": "fc3fbc6c2b18eeeb43f0f96052325e608831a0cd5753f26fe0fd51ff0b54693b",
+  "case_count": 121,
+  "document_count": 25,
+  "chunk_count": 92,
+  "approved_cases": 0,
+  "review_status_counts": {
+    "UNREVIEWED": 121
+  },
+  "review_errors": [
+    "BLOCKED: every holdout case needs independent human approval"
+  ],
+  "design_errors": [
+    "development: too few VERY_HARD cases",
+    "development: single-stratum dominance exceeds limit",
+    "holdout: too few HARD cases",
+    "holdout: too few VERY_HARD cases",
+    "holdout: single-stratum dominance exceeds limit"
+  ],
+  "strata": {
+    "development": {
+      "EASY": 69,
+      "HARD": 7,
+      "MEDIUM": 6
+    },
+    "holdout": {
+      "EASY": 35,
+      "MEDIUM": 4
+    }
+  },
+  "selected_policy": null,
+  "retrieval_benchmark": "NOT_RUN",
+  "packing_search": "NOT_RUN",
+  "reranker_replay": "NOT_RUN",
+  "holdout": "NOT_RUN",
+  "bootstrap": "NOT_RUN",
+  "metrics": null,
+  "production_changes": false,
+  "note": "Eligibility only; no holdout markers, database access or model execution."
+}
