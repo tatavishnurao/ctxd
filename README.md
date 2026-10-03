@@ -1,106 +1,145 @@
-# ctxd — context retrieval and assembly
+<div align="center">
 
-A retrieval-engineering prototype that turns documents into token-bounded ContextPackets for AI-agent workloads. **Maturity: pre-alpha research checkpoint.** Read these two limits before anything else:
+# ctxd
 
-- **Tests prove behavior, not quality.** Every retrieval mode (lexical, semantic, hybrid) is exercised through the API on memory and PostgreSQL + pgvector, RRF math/ties/depth have unit tests, and CI runs a pinned Model2Vec smoke test. None of this measures retrieval quality on real text.
-- **Quality numbers are not evidence about real text.** 100 of the 150 cases behind the historical hybrid/reranker metrics (`evals/retrieval_semantic.json`) are synthetic marker queries such as `codename_0` against filler-padded documents; only 50 are natural-language paraphrases. The realistic Phase 10/10B benchmark has agent-authored labels and zero independent reviews. The only measurement on real, human-judged text is the [BEIR evaluation](docs/BEIR_EVAL.md) (SciFact, NFCorpus). There, hybrid RRF raises Recall@100 but does not beat BM25 at nDCG@10, and on SciFact it is worse (−0.059, 95% CI [−0.094, −0.026]).
+### Context Runtime
 
-## v0.1 scope
+**Turns a large, messy information space into the smallest _trustworthy_ context packet an AI task actually needs.**
 
-v0.1 is a retrieval-and-assembly service, nothing more: deterministic ingestion, tenant-isolated storage (memory or PostgreSQL + exact pgvector), lexical/semantic/hybrid retrieval, token-bounded ContextPackets that report only what actually ran, fail-loud configuration, readiness and request deadlines, and credential-derived tenancy outside development. See [CHANGELOG.md](CHANGELOG.md) for breaking API changes.
+Retrieval, evidence selection, provenance, and token-budgeted assembly — before inference, behind one API.
 
-**The server default retrieval mode is lexical (BM25).** BM25 is the null policy, and nothing has yet earned the right to replace it: on BEIR, hybrid RRF raised Recall@100 but lowered nDCG@10 on SciFact and tied on NFCorpus, and a ContextPacket is the top of the ranking cut to a budget. Scope: "Model2Vec (static embedding) on two BM25-friendly corpora; finding is provisional, not a claim that dense retrieval is useless." Hybrid and semantic remain supported: pass `"retrieval_mode": "hybrid"` per request (useful for recall-oriented callers with large budgets), or set `CTXD_DEFAULT_RETRIEVAL_MODE=hybrid`.
+![status](https://img.shields.io/badge/status-v0.1-blue.svg)
+![python](https://img.shields.io/badge/python-3.13%2B-3776AB.svg?logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-pgvector-336791.svg?logo=postgresql&logoColor=white)
 
-Implemented: deterministic ingestion, tenant-scoped storage, BM25, semantic retrieval, parallel deterministic RRF and token-bounded whole-chunk ContextPackets.
+</div>
 
-**Not implemented:** LLM inference, model routing, production/public reranking, tools/sandbox, agent loop, SSE or frontend. `/v1/query` returns retrieved context and an explicit inference-not-implemented placeholder.
+---
+
+## What is ctxd?
+
+An agent can reach millions of pieces of information; the model it calls can only receive a small slice. **ctxd decides the slice** — what to retrieve, what to keep, what to drop, how to spend a token budget — and returns a single, auditable `ContextPacket`.
+
+It is deliberately **not** a model runtime. ctxd answers _"give me the best context for this request"_ and stops at the packet boundary. The difference from ordinary RAG isn't better recall — it's a packet you can trust: it never reports a signal it didn't compute, and it degrades loudly rather than silently.
 
 ```text
-Documents -> structure-aware chunks -> documents/postings/embeddings
-                                          |
-Query -> BM25 + exact semantic search -> parallel deterministic RRF
-                                          |
-                              greedy ContextAssembler -> ContextPacket
+query · tenant · budget  ──►  ctxd  ──►  ContextPacket  ──►  your agent / model
 ```
 
-Out-of-box defaults are **memory + fake fixture embeddings + lexical queries**, for tests and local hacking only. `docker compose up` runs the evaluated path instead: **PostgreSQL + pinned Model2Vec + exact pgvector, with lexical as the server default mode and hybrid/semantic available per request**. The server refuses to start with PostgreSQL + fake embeddings unless `CTXD_ALLOW_FAKE_EMBEDDINGS=true`, and logs an `effective_configuration` line at startup. Candidate depth depends on request/configuration, not a universal 20. Outside `CTXD_ENVIRONMENT=development` the server refuses to start without authentication (see below).
+## Status
 
-## Quickstart
+ctxd is **v0.1** — a tested, authenticated baseline, not a finished product.
+
+- Tenant-scoped retrieval over text / Markdown, on PostgreSQL + pgvector.
+- Lexical (BM25), semantic (Model2Vec), and hybrid (RRF) modes through one API.
+- Token-budgeted, no-truncation context assembly into an observable `ContextPacket`.
+- API-key / JWT auth, deny-by-default outside development.
+
+The default mode is **lexical**: on the one real-text evaluation ctxd has, hybrid didn't improve top-of-ranking quality (see [Evaluation](#evaluation)). Out of scope for v0.1: reranking, approximate search, and anything past the packet — inference, routing, tools.
+
+## Architecture
+
+```text
+   documents ──►  PostgreSQL + pgvector   (BM25 stats · vectors · provenance)
+                        ▲
+   Request  (query · tenant · budget · mode)
+       │
+   ┌───┴──────────── ctxd runtime ───────────────┐
+   │  Retrieve   BM25  +  dense semantic           │
+   │  Fuse       deterministic RRF                 │
+   │  Select     whole chunks · provenance         │
+   │  Budget     token-bounded assembly            │
+   └──────────────────┬─────────────────────────────┘
+                      ▼
+                ContextPacket   ┄┄►  agent / model  (out of scope)
+```
+
+Invariants held everywhere: determinism, provenance integrity, truth-in-labeling, schema-enforced tenant isolation, bounded failure.
+
+## Quick start
+
+Docker Compose brings up the real stack — PostgreSQL + pgvector, the pinned Model2Vec model, migrations applied, API on `localhost:8000`:
 
 ```bash
-uv sync --python 3.13
-uv run uvicorn ctxd.app.main:app --host 0.0.0.0 --port 8000
+git clone https://github.com/tatavishnurao/ctxd.git
+cd ctxd
+docker compose up --build
 ```
-
-In development (`auth_mode=none`, the default), the tenant comes from the unauthenticated `x-tenant-id` header, which must match the body's `tenant_id`. Example:
 
 ```bash
-curl localhost:8000/v1/documents -H 'content-type: application/json' \
-  -H 'x-tenant-id: demo' -d '{"tenant_id":"demo","source_path":"hello.txt","source_type":"text","content":"ctxd assembles whole chunks within a token budget."}'
-curl localhost:8000/v1/query -H 'content-type: application/json' \
-  -H 'x-tenant-id: demo' -d '{"tenant_id":"demo","query":"token budget","retrieval_mode":"lexical"}'
+# ingest
+curl -s localhost:8000/v1/documents -H 'content-type: application/json' -H 'x-tenant-id: acme' \
+  -d '{"tenant_id":"acme","source_path":"cache.md","source_type":"markdown",
+       "content":"# Cache\n\nThe cache evicts entries under memory pressure."}'
+
+# query → ContextPacket
+curl -s localhost:8000/v1/query -H 'content-type: application/json' -H 'x-tenant-id: acme' \
+  -d '{"tenant_id":"acme","query":"how does the cache free memory?","max_context_tokens":2000}'
 ```
 
-### Persistent, real-embedding path
+The response is a `ContextPacket`: the selected candidates with provenance, the tokens used against the budget, and a `retrieval_type` naming what actually ran.
+
+> In development the tenant is trusted from `x-tenant-id`. Outside development, real authentication is required.
+
+## Configuration
+
+Environment variables, `CTXD_` prefix (or a `.env` file), validated at startup.
+
+| Variable | Default | Notes |
+|---|---|---|
+| `CTXD_ENVIRONMENT` | `development` | Any other value enforces authentication. |
+| `CTXD_STORAGE_BACKEND` | `memory` | `memory` or `postgres`. |
+| `CTXD_DATABASE_URL` | local dev DSN | Set it for any real `postgres` deployment. |
+| `CTXD_EMBEDDING_PROVIDER` | `fake` | `fake` (dev only) or `model2vec`. |
+| `CTXD_DEFAULT_RETRIEVAL_MODE` | `lexical` | `lexical` · `semantic` · `hybrid`. |
+| `CTXD_AUTH_MODE` | `none` | `none` (dev only) · `api_key` · `jwt`. |
+
+Auth adds `CTXD_AUTH_API_KEYS` / `CTXD_AUTH_JWT_SECRET` and an operator token for `/metrics`. Without Docker: `uv sync`, point `CTXD_DATABASE_URL` at a pgvector Postgres, `uv run alembic upgrade head`, then `uv run uvicorn ctxd.app.main:app`.
+
+## API
+
+| Method | Path | Purpose |
+|---|---|---|
+| `POST` | `/v1/documents` | Ingest / replace a document. |
+| `POST` | `/v1/query` | Retrieve, select, assemble a `ContextPacket`. |
+| `GET` | `/v1/index/statistics`, `/v1/index/semantic-statistics` | Per-tenant corpus stats. |
+| `GET` | `/health`, `/ready` | Liveness / readiness. |
+| `GET` | `/metrics` | Prometheus (operator-token gated when auth is on). |
+
+## Evaluation
+
+Run through the shipped code on public BEIR datasets, nothing tuned. BM25 reproduces the published baseline, so the harness is sound. Full protocol and intervals: [docs/BEIR_EVAL.md](docs/BEIR_EVAL.md).
+
+| Dataset | nDCG@10 (lexical) | nDCG@10 (hybrid) | Δ recall@100 (hybrid − lexical) |
+|---|---|---|---|
+| SciFact | **0.662** _(published 0.665)_ | 0.603 | +0.069 |
+| NFCorpus | 0.309 | 0.308 | +0.033 |
+
+A `ContextPacket` is the top of the ranking cut to a budget, so nDCG@10 is what matters — and hybrid didn't help there, so lexical is the default. Caveat: one static embedding model on two BM25-friendly corpora; provisional, not a claim that dense retrieval is weak.
+
+## Development
 
 ```bash
-docker compose up -d --wait        # postgres, migrations, app on 127.0.0.1:8000
-curl localhost:8000/ready          # storage + embedding model probe
+uv sync --all-groups
+uv run ruff check . && uv run mypy
+
+# Full suite: needs a migrated pgvector test database (tests TRUNCATE it) and the real model.
+export CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test
+export CTXD_TEST_DATABASE_URL=$CTXD_DATABASE_URL CTXD_RUN_MODEL2VEC=1
+uv run alembic upgrade head
+uv run pytest
+
+uv run pytest -m "not postgres"   # fast subset, no database
 ```
 
-Or run the app outside Docker:
+Without those variables the Postgres and Model2Vec tests skip. CI runs the full suite against `pgvector/pgvector:pg17` with the real model, migrates down and back up, and gates on ruff and mypy.
 
-```bash
-docker compose up -d postgres
-CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd uv run alembic upgrade head
-CTXD_STORAGE_BACKEND=postgres CTXD_EMBEDDING_PROVIDER=model2vec \
-CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd \
-  uv run uvicorn ctxd.app.main:app --host 0.0.0.0 --port 8000
-```
+## Roadmap
 
-Queries without `retrieval_mode` run lexical, with or without Model2Vec (`CTXD_DEFAULT_RETRIEVAL_MODE` overrides). Real embeddings require pinned model artifacts (first use may download them); configure `CTXD_EMBEDDING_CACHE_DIR` / `CTXD_EMBEDDING_OFFLINE` for deployment. Docker Compose's database startup is not authentication or deployment hardening.
+- The request deadline bounds the response, not hybrid's background threads ([#9](https://github.com/tatavishnurao/ctxd/issues/9)).
+- The container image isn't yet built from `uv.lock` ([#10](https://github.com/tatavishnurao/ctxd/issues/10)).
+- **Evidence-aware selection is unmeasured** — BEIR judges documents, not spans. A span-annotated evaluation (HotpotQA / MuSiQue) is the next real step ([#11](https://github.com/tatavishnurao/ctxd/issues/11)).
 
-### Validation
+## License
 
-```bash
-uv run ruff check .
-uv run mypy
-# Create a dedicated ctxd_test database first; tests TRUNCATE corpus tables.
-CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test uv run alembic upgrade head
-CTXD_TEST_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test uv run pytest
-```
-
-Without the test database variable, the PostgreSQL integration tests skip; without `CTXD_RUN_MODEL2VEC=1`, the real-model smoke test skips. v0.1: 235 passed, zero skipped, with PostgreSQL + pgvector and `CTXD_RUN_MODEL2VEC=1`. Configured mypy covers application code, not all historical scripts.
-
-## Read the project in 30 minutes
-
-1. [Current state](CURRENT_STATE.md): scope, defaults, blockers, validation.
-2. [Architecture](ARCHITECTURE.md): implementation and trust boundaries.
-3. [Experiments](EXPERIMENTS.md): keep/reject decisions and evidence.
-4. [Roadmap](ROADMAP.md): engineering objectives, not another numbered phase.
-5. [Benchmarks](BENCHMARKS.md) and [performance](PERFORMANCE.md): historical measurements and limitations.
-
-[Evidence inventory](docs/evidence_inventory.json) indexes reports/artifacts by SHA-256. [Code audit](docs/ENGINEERING_AUDIT.md) classifies offline and stale code without deleting it.
-
-**Phase 10/10B benchmark: PRE-REVIEW / NON-CANONICAL / BLOCKED.** 106 current candidates, zero independent human reviews; the full audit/review infrastructure is unfinished. No canonical result exists.
-
-### Authentication
-
-Any environment other than `development` requires `CTXD_AUTH_MODE=api_key` or `jwt`, and the tenant is then derived from the credential, never from a header:
-
-- `api_key`: `CTXD_AUTH_API_KEYS='{"<key of 32+ chars>": "tenant-a"}'`; clients send `Authorization: Bearer <key>`.
-- `jwt`: HS256 with `CTXD_AUTH_JWT_SECRET` (32+ chars); the token must carry `exp` and the tenant claim (`CTXD_AUTH_JWT_TENANT_CLAIM`, default `tenant_id`); optional `CTXD_AUTH_JWT_AUDIENCE` / `CTXD_AUTH_JWT_ISSUER`.
-- `/metrics` requires `Authorization: Bearer $CTXD_AUTH_OPERATOR_TOKEN` and returns 403 if no operator token is configured. `/health` and `/ready` stay open for orchestrators.
-
-A body `tenant_id` or `x-tenant-id` header naming a different tenant than the credential gets 403. This is a floor, not a complete identity system: there is no key rotation API, no per-tenant roles, and no TLS termination.
-
-## API surface
-
-- `GET /health`: static liveness.
-- `GET /ready`: readiness; probes storage and the embedding model, 503 if either fails.
-- `POST /v1/documents`: ingestion.
-- `POST /v1/query`: retrieval and context assembly.
-- `GET /v1/index/statistics`, `/v1/index/semantic-statistics`: tenant statistics.
-- `GET /metrics`: Prometheus metrics.
-
-No experimental reranker or packing policy is exposed by these endpoints.
+Not yet licensed — add a `LICENSE` file before publishing.
