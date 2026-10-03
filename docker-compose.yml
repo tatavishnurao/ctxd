@@ -1,5 +1,5 @@
 # Brings up the evaluated path: PostgreSQL + exact pgvector + pinned Model2Vec,
-# with hybrid as the server default retrieval mode. Credentials and published
+# with lexical as the server default retrieval mode (hybrid per request). Credentials and published
 # ports are for local development only; this is not a hardened deployment.
 x-ctxd-env: &ctxd-env
   CTXD_STORAGE_BACKEND: postgres

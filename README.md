@@ -5,6 +5,12 @@ A retrieval-engineering prototype that turns documents into token-bounded Contex
 - **Tests prove behavior, not quality.** Every retrieval mode (lexical, semantic, hybrid) is exercised through the API on memory and PostgreSQL + pgvector, RRF math/ties/depth have unit tests, and CI runs a pinned Model2Vec smoke test. None of this measures retrieval quality on real text.
 - **Quality numbers are not evidence about real text.** 100 of the 150 cases behind the historical hybrid/reranker metrics (`evals/retrieval_semantic.json`) are synthetic marker queries such as `codename_0` against filler-padded documents; only 50 are natural-language paraphrases. The realistic Phase 10/10B benchmark has agent-authored labels and zero independent reviews. The only measurement on real, human-judged text is the [BEIR evaluation](docs/BEIR_EVAL.md) (SciFact, NFCorpus). There, hybrid RRF raises Recall@100 but does not beat BM25 at nDCG@10, and on SciFact it is worse (−0.059, 95% CI [−0.094, −0.026]).
 
+## v0.1 scope
+
+v0.1 is a retrieval-and-assembly service, nothing more: deterministic ingestion, tenant-isolated storage (memory or PostgreSQL + exact pgvector), lexical/semantic/hybrid retrieval, token-bounded ContextPackets that report only what actually ran, fail-loud configuration, readiness and request deadlines, and credential-derived tenancy outside development. See [CHANGELOG.md](CHANGELOG.md) for breaking API changes.
+
+**The server default retrieval mode is lexical (BM25).** BM25 is the null policy, and nothing has yet earned the right to replace it: on BEIR, hybrid RRF raised Recall@100 but lowered nDCG@10 on SciFact and tied on NFCorpus, and a ContextPacket is the top of the ranking cut to a budget. Scope: "Model2Vec (static embedding) on two BM25-friendly corpora; finding is provisional, not a claim that dense retrieval is useless." Hybrid and semantic remain supported: pass `"retrieval_mode": "hybrid"` per request (useful for recall-oriented callers with large budgets), or set `CTXD_DEFAULT_RETRIEVAL_MODE=hybrid`.
+
 Implemented: deterministic ingestion, tenant-scoped storage, BM25, semantic retrieval, parallel deterministic RRF and token-bounded whole-chunk ContextPackets.
 
 **Not implemented:** LLM inference, model routing, production/public reranking, tools/sandbox, agent loop, SSE or frontend. `/v1/query` returns retrieved context and an explicit inference-not-implemented placeholder.
@@ -17,7 +23,7 @@ Query -> BM25 + exact semantic search -> parallel deterministic RRF
                               greedy ContextAssembler -> ContextPacket
 ```
 
-Out-of-box defaults are **memory + fake fixture embeddings + lexical queries**, for tests and local hacking only. `docker compose up` runs the evaluated path instead: **PostgreSQL + pinned Model2Vec + exact pgvector, with hybrid as the server default mode**. The server refuses to start with PostgreSQL + fake embeddings unless `CTXD_ALLOW_FAKE_EMBEDDINGS=true`, and logs an `effective_configuration` line at startup. Candidate depth depends on request/configuration, not a universal 20. Outside `CTXD_ENVIRONMENT=development` the server refuses to start without authentication (see below).
+Out-of-box defaults are **memory + fake fixture embeddings + lexical queries**, for tests and local hacking only. `docker compose up` runs the evaluated path instead: **PostgreSQL + pinned Model2Vec + exact pgvector, with lexical as the server default mode and hybrid/semantic available per request**. The server refuses to start with PostgreSQL + fake embeddings unless `CTXD_ALLOW_FAKE_EMBEDDINGS=true`, and logs an `effective_configuration` line at startup. Candidate depth depends on request/configuration, not a universal 20. Outside `CTXD_ENVIRONMENT=development` the server refuses to start without authentication (see below).
 
 ## Quickstart
 
@@ -52,7 +58,7 @@ CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd \
   uv run uvicorn ctxd.app.main:app --host 0.0.0.0 --port 8000
 ```
 
-With Model2Vec configured, queries without `retrieval_mode` run hybrid (`CTXD_DEFAULT_RETRIEVAL_MODE` overrides). Real embeddings require pinned model artifacts (first use may download them); configure `CTXD_EMBEDDING_CACHE_DIR` / `CTXD_EMBEDDING_OFFLINE` for deployment. Docker Compose's database startup is not authentication or deployment hardening.
+Queries without `retrieval_mode` run lexical, with or without Model2Vec (`CTXD_DEFAULT_RETRIEVAL_MODE` overrides). Real embeddings require pinned model artifacts (first use may download them); configure `CTXD_EMBEDDING_CACHE_DIR` / `CTXD_EMBEDDING_OFFLINE` for deployment. Docker Compose's database startup is not authentication or deployment hardening.
 
 ### Validation
 
@@ -64,7 +70,7 @@ CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test uv run alembic
 CTXD_TEST_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test uv run pytest
 ```
 
-Without the test database variable, the PostgreSQL integration tests skip; without `CTXD_RUN_MODEL2VEC=1`, the real-model smoke test skips. Current consolidation: 154 passed, zero skipped. Configured mypy covers application code, not all historical scripts.
+Without the test database variable, the PostgreSQL integration tests skip; without `CTXD_RUN_MODEL2VEC=1`, the real-model smoke test skips. v0.1: 235 passed, zero skipped, with PostgreSQL + pgvector and `CTXD_RUN_MODEL2VEC=1`. Configured mypy covers application code, not all historical scripts.
 
 ## Read the project in 30 minutes
 
