@@ -1,4 +1,5 @@
 import logging
+import time
 from typing import Any
 
 from opentelemetry import trace
@@ -13,6 +14,7 @@ from ctxd.app.observability.metrics import (
 from ctxd.app.retrieval.hybrid import HybridRetriever
 from ctxd.app.retrieval.lexical import Retriever
 from ctxd.app.retrieval.semantic import SemanticRetriever
+from ctxd.app.storage.errors import RetrievalTimeoutError
 
 logger = logging.getLogger(__name__)
 tracer = trace.get_tracer(__name__)
@@ -40,10 +42,26 @@ class ContextAssembler:
         top_k: int,
         max_context_tokens: int,
         retrieval_mode: RetrievalMode = RetrievalMode.LEXICAL,
+        deadline_seconds: float | None = None,
     ) -> ContextPacket:
         with tracer.start_as_current_span("context_assembly") as span:
             span.set_attribute("context.token_budget", max_context_tokens)
-            candidates, retrieval = self._retrieve(query, tenant_id, top_k, retrieval_mode)
+            started = time.perf_counter()
+            try:
+                candidates, retrieval = self._retrieve(
+                    query, tenant_id, top_k, retrieval_mode, deadline_seconds
+                )
+                if (
+                    deadline_seconds is not None
+                    and time.perf_counter() - started > deadline_seconds
+                ):
+                    raise RetrievalTimeoutError("retrieval exceeded request deadline")
+            except RetrievalTimeoutError:
+                RETRIEVAL_MODE_REQUESTS_TOTAL.labels(retrieval_mode.value, "timeout").inc()
+                raise
+            except Exception:
+                RETRIEVAL_MODE_REQUESTS_TOTAL.labels(retrieval_mode.value, "error").inc()
+                raise
             RETRIEVAL_MODE_REQUESTS_TOTAL.labels(retrieval_mode.value, "success").inc()
             selected = []
             selected_tokens = 0
@@ -75,13 +93,18 @@ class ContextAssembler:
             )
 
     def _retrieve(
-        self, query: str, tenant_id: str, top_k: int, mode: RetrievalMode
+        self,
+        query: str,
+        tenant_id: str,
+        top_k: int,
+        mode: RetrievalMode,
+        deadline_seconds: float | None = None,
     ) -> tuple[list[ContextCandidate], dict[str, Any]]:
         warnings: list[str] = []
         stale = 0
         counts: dict[str, int]
         if mode == RetrievalMode.HYBRID and self.hybrid is not None:
-            hybrid = self.hybrid.search_detailed(query, tenant_id, top_k)
+            hybrid = self.hybrid.search_detailed(query, tenant_id, top_k, timeout=deadline_seconds)
             candidates = hybrid.candidates
             counts = {"lexical": hybrid.lexical_count, "semantic": hybrid.semantic_count}
             stale = hybrid.stale_chunks
@@ -106,7 +129,7 @@ class ContextAssembler:
             warnings.append("embedding_version_mismatch")
             metadata["stale_embedding_chunks"] = stale
             EMBEDDING_VERSION_MISMATCH_TOTAL.inc()
-            logger.warning("embedding_version_mismatch", extra={"stale_chunks": stale})
+            logger.warning("embedding_version_mismatch", extra={"fields": {"stale_chunks": stale}})
         if warnings:
             metadata["warnings"] = warnings
         return candidates, metadata

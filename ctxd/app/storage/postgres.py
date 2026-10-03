@@ -101,6 +101,12 @@ class PostgresDocumentStore:
         self._pool.close()
         self._started = False
 
+    def ping(self) -> None:
+        if not self._started:
+            raise StorageUnavailableError("PostgreSQL store is not started")
+        with self._connection("ping") as connection:
+            connection.execute("SELECT 1").fetchone()
+
     def pool_statistics(self) -> dict[str, int]:
         return dict(self._pool.get_stats())
 

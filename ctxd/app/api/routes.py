@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException, Request, Response, status
+from fastapi.responses import JSONResponse
 
 from ctxd.app.ingestion.loaders import DocumentLoadError
 from ctxd.app.models.domain import (
@@ -10,6 +11,7 @@ from ctxd.app.models.domain import (
     SemanticIndexStatistics,
 )
 from ctxd.app.observability.metrics import render_metrics
+from ctxd.app.retrieval.semantic import EmbeddingError
 from ctxd.app.runtime import RuntimeServices
 from ctxd.app.storage.errors import RetrievalTimeoutError, StorageError
 
@@ -41,6 +43,16 @@ async def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
+@router.get("/ready")
+def ready(request: Request) -> JSONResponse:
+    checks = _services(request).readiness()
+    ok = all(value == "ok" for value in checks.values())
+    return JSONResponse(
+        status_code=status.HTTP_200_OK if ok else status.HTTP_503_SERVICE_UNAVAILABLE,
+        content={"status": "ready" if ok else "not_ready", "checks": checks},
+    )
+
+
 @router.get("/metrics", include_in_schema=False)
 async def metrics() -> Response:
     body, content_type = render_metrics()
@@ -54,8 +66,14 @@ def ingest_document(
     response: Response,
 ) -> DocumentIngestResponse:
     tenant_id = _require_tenant(request, request_body.tenant_id)
+    services = _services(request)
+    if len(request_body.content) > services.max_document_chars:
+        raise HTTPException(
+            status_code=status.HTTP_413_CONTENT_TOO_LARGE,
+            detail=f"document content exceeds {services.max_document_chars} characters",
+        )
     try:
-        document, chunks, created = _services(request).ingestion.ingest_content(
+        document, chunks, created = services.ingestion.ingest_content(
             content=request_body.content,
             source_path=request_body.source_path,
             source_type=request_body.source_type,
@@ -66,6 +84,11 @@ def ingest_document(
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
             detail=str(exc),
+        ) from exc
+    except EmbeddingError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="embedding model is unavailable",
         ) from exc
     except StorageError as exc:
         raise HTTPException(
@@ -80,18 +103,25 @@ def ingest_document(
 @router.post("/v1/query")
 def query(request_body: QueryRequest, request: Request) -> QueryResponse:
     tenant_id = _require_tenant(request, request_body.tenant_id)
+    services = _services(request)
     try:
-        context = _services(request).assembler.assemble(
+        context = services.assembler.assemble(
             query=request_body.query,
             tenant_id=tenant_id,
             top_k=request_body.top_k,
             max_context_tokens=request_body.max_context_tokens,
-            retrieval_mode=request_body.retrieval_mode,
+            retrieval_mode=request_body.retrieval_mode or services.default_retrieval_mode,
+            deadline_seconds=services.request_deadline_seconds,
         )
     except RetrievalTimeoutError as exc:
         raise HTTPException(
             status_code=status.HTTP_504_GATEWAY_TIMEOUT,
             detail="retrieval timed out",
+        ) from exc
+    except EmbeddingError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="embedding model is unavailable",
         ) from exc
     except StorageError as exc:
         raise HTTPException(
@@ -117,7 +147,7 @@ def semantic_index_statistics(request: Request) -> SemanticIndexStatistics:
         )
     try:
         return _services(request).semantic_retriever.statistics(tenant_id)
-    except StorageError as exc:
+    except (EmbeddingError, StorageError) as exc:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="semantic index statistics are unavailable",

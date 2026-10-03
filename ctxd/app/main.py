@@ -1,3 +1,4 @@
+import logging
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
@@ -10,11 +11,14 @@ from ctxd.app.observability.logging import configure_logging
 from ctxd.app.observability.tracing import configure_tracing
 from ctxd.app.runtime import CorpusBackend, RuntimeServices, create_runtime
 
+logger = logging.getLogger(__name__)
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     configure_logging(settings.log_level)
+    logger.info("effective_configuration", extra={"fields": settings.effective_configuration()})
     services: RuntimeServices = app.state.services
     services.start()
     try:

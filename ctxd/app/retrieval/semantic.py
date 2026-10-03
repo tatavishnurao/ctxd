@@ -18,6 +18,24 @@ from typing import Any, Protocol, cast
 from ctxd.app.models.domain import Chunk, ContextCandidate, SemanticIndexStatistics, SourceType
 
 
+class EmbeddingError(RuntimeError):
+    """The embedding model failed or returned malformed output."""
+
+
+def embed_documents(model: "EmbeddingModel", texts: Sequence[str]) -> list[list[float]]:
+    try:
+        vectors = model.embed_documents(texts)
+    except Exception as exc:
+        raise EmbeddingError(f"embedding model {model.version} failed") from exc
+    if len(vectors) != len(texts):
+        raise EmbeddingError("embedding provider returned an unexpected vector count")
+    return vectors
+
+
+def embed_query(model: "EmbeddingModel", text: str) -> list[float]:
+    return embed_documents(model, [text])[0]
+
+
 @dataclass(frozen=True)
 class SemanticHit:
     chunk: Chunk
@@ -162,11 +180,14 @@ class SemanticRetriever:
     def search(self, query: str, tenant_id: str, top_k: int) -> list[ContextCandidate]:
         return self.search_detailed(query, tenant_id, top_k).candidates
 
+    def embed_query(self, text: str) -> list[float]:
+        return embed_query(self.model, text)
+
     def search_detailed(self, query: str, tenant_id: str, top_k: int) -> SemanticSearchResult:
         if top_k <= 0:
             raise ValueError("top_k must be positive")
         hits = self.index.search_semantic(
-            self.model.embed_query(query), tenant_id, top_k, version=self.model.version
+            self.embed_query(query), tenant_id, top_k, version=self.model.version
         )
         candidates = [semantic_candidate(hit) for hit in hits]
         stale = 0

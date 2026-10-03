@@ -149,9 +149,7 @@ def run_mode_evaluation(
             parallel=parallel_hybrid,
         ),
     }
-    observations: dict[str, list[tuple[list[str], set[str]]]] = {
-        mode: [] for mode in retrievers
-    }
+    observations: dict[str, list[tuple[list[str], set[str]]]] = {mode: [] for mode in retrievers}
     category_observations: dict[str, dict[str, list[tuple[list[str], set[str]]]]] = {}
     failures: list[dict[str, Any]] = []
 
@@ -238,14 +236,12 @@ def run_retrieval_eval(
     return RetrievalEvalResult(
         case_count=count,
         recall_at_k=sum(
-            recall_at_k(got, rel, corpus.cases[i].top_k)
-            for i, (got, rel) in enumerate(rows)
+            recall_at_k(got, rel, corpus.cases[i].top_k) for i, (got, rel) in enumerate(rows)
         )
         / denominator,
         mrr=sum(reciprocal_rank(got, rel) for got, rel in rows) / denominator,
         ndcg_at_k=sum(
-            ndcg_at_k(got, rel, corpus.cases[i].top_k)
-            for i, (got, rel) in enumerate(rows)
+            ndcg_at_k(got, rel, corpus.cases[i].top_k) for i, (got, rel) in enumerate(rows)
         )
         / denominator,
         per_case=per_case,
