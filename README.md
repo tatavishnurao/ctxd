@@ -3,7 +3,7 @@
 A retrieval-engineering prototype that turns documents into token-bounded ContextPackets for AI-agent workloads. **Maturity: pre-alpha research checkpoint.** Read these two limits before anything else:
 
 - **Tests prove behavior, not quality.** Every retrieval mode (lexical, semantic, hybrid) is exercised through the API on memory and PostgreSQL + pgvector, RRF math/ties/depth have unit tests, and CI runs a pinned Model2Vec smoke test. None of this measures retrieval quality on real text.
-- **Quality numbers are not evidence about real text.** 100 of the 150 cases behind the historical hybrid/reranker metrics (`evals/retrieval_semantic.json`) are synthetic marker queries such as `codename_0` against filler-padded documents; only 50 are natural-language paraphrases. The realistic Phase 10/10B benchmark has agent-authored labels and zero independent reviews. No retrieval-quality claim on realistic, independently judged data exists yet.
+- **Quality numbers are not evidence about real text.** 100 of the 150 cases behind the historical hybrid/reranker metrics (`evals/retrieval_semantic.json`) are synthetic marker queries such as `codename_0` against filler-padded documents; only 50 are natural-language paraphrases. The realistic Phase 10/10B benchmark has agent-authored labels and zero independent reviews. The only measurement on real, human-judged text is the [BEIR evaluation](docs/BEIR_EVAL.md) (SciFact, NFCorpus). There, hybrid RRF raises Recall@100 but does not beat BM25 at nDCG@10, and on SciFact it is worse (−0.059, 95% CI [−0.094, −0.026]).
 
 Implemented: deterministic ingestion, tenant-scoped storage, BM25, semantic retrieval, parallel deterministic RRF and token-bounded whole-chunk ContextPackets.
 
