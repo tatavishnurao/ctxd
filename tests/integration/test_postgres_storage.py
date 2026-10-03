@@ -330,3 +330,51 @@ def test_malformed_persisted_metadata_is_reported() -> None:
             store.get_document(document_id, "tenant-a")
     finally:
         store.close()
+
+
+def test_version_switch_reembeds_unchanged_documents_in_postgres() -> None:
+    from ctxd.app.config.settings import Settings
+    from ctxd.app.models.domain import RetrievalMode
+    from ctxd.app.runtime import create_runtime
+
+    store = make_store()
+    try:
+        old = create_runtime(store, Settings(embedding_version="v1"))
+        new = create_runtime(store, Settings(embedding_version="v2"))
+        old.ingestion.ingest_content(
+            content="pgvector exact cosine search over chunks.",
+            source_path="a.md",
+            source_type=DocumentSourceType.MARKDOWN,
+            tenant_id="tenant-a",
+        )
+
+        stale = new.assembler.assemble(
+            query="cosine search",
+            tenant_id="tenant-a",
+            top_k=5,
+            max_context_tokens=1_000,
+            retrieval_mode=RetrievalMode.HYBRID,
+        )
+        assert stale.metadata["retrieval_type"] == "lexical"
+        assert stale.metadata["warnings"] == ["embedding_version_mismatch"]
+        assert new.semantic_retriever.statistics("tenant-a").stale_chunks == 1
+
+        _, _, created = new.ingestion.ingest_content(
+            content="pgvector exact cosine search over chunks.",
+            source_path="a.md",
+            source_type=DocumentSourceType.MARKDOWN,
+            tenant_id="tenant-a",
+        )
+        assert created is False
+        assert store.embedding_versions("tenant-a") == {"v2": 1}
+        fresh = new.assembler.assemble(
+            query="cosine search",
+            tenant_id="tenant-a",
+            top_k=5,
+            max_context_tokens=1_000,
+            retrieval_mode=RetrievalMode.HYBRID,
+        )
+        assert fresh.metadata["retrieval_type"] == "hybrid"
+        assert "warnings" not in fresh.metadata
+    finally:
+        store.close()

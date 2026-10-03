@@ -34,7 +34,6 @@ def apply_scores(
     return [
         candidate.model_copy(
             update={
-                "rerank_score": max(0.0, score),
                 "metadata": {
                     **candidate.metadata,
                     "reranker_score": score,

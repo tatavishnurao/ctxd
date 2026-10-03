@@ -1,16 +1,29 @@
+import logging
+from typing import Any
+
 from opentelemetry import trace
 
-from ctxd.app.models.domain import ContextPacket, RetrievalMode
+from ctxd.app.models.domain import ContextCandidate, ContextPacket, RetrievalMode
 from ctxd.app.observability.metrics import (
     CONTEXT_CANDIDATES_DROPPED_TOTAL,
     CONTEXT_TOKENS_SELECTED,
+    EMBEDDING_VERSION_MISMATCH_TOTAL,
     RETRIEVAL_MODE_REQUESTS_TOTAL,
 )
 from ctxd.app.retrieval.hybrid import HybridRetriever
 from ctxd.app.retrieval.lexical import Retriever
 from ctxd.app.retrieval.semantic import SemanticRetriever
 
+logger = logging.getLogger(__name__)
 tracer = trace.get_tracer(__name__)
+
+
+def executed_retrieval_type(counts: dict[str, int]) -> str:
+    """Name only the branches that actually contributed candidates."""
+    contributing = [branch for branch in ("lexical", "semantic") if counts.get(branch, 0) > 0]
+    if len(contributing) == 2:
+        return "hybrid"
+    return contributing[0] if contributing else "none"
 
 
 class ContextAssembler:
@@ -30,12 +43,7 @@ class ContextAssembler:
     ) -> ContextPacket:
         with tracer.start_as_current_span("context_assembly") as span:
             span.set_attribute("context.token_budget", max_context_tokens)
-            selected_retriever: Retriever = self.retriever
-            if retrieval_mode == RetrievalMode.SEMANTIC and self.semantic is not None:
-                selected_retriever = self.semantic
-            elif retrieval_mode == RetrievalMode.HYBRID and self.hybrid is not None:
-                selected_retriever = self.hybrid
-            candidates = selected_retriever.search(query, tenant_id, top_k)
+            candidates, retrieval = self._retrieve(query, tenant_id, top_k, retrieval_mode)
             RETRIEVAL_MODE_REQUESTS_TOTAL.labels(retrieval_mode.value, "success").inc()
             selected = []
             selected_tokens = 0
@@ -62,6 +70,43 @@ class ContextAssembler:
                     "candidate_tokens": candidate_tokens,
                     "selected_tokens": selected_tokens,
                     "dropped_due_to_budget": dropped,
-                    "retrieval_type": retrieval_mode.value,
+                    **retrieval,
                 },
             )
+
+    def _retrieve(
+        self, query: str, tenant_id: str, top_k: int, mode: RetrievalMode
+    ) -> tuple[list[ContextCandidate], dict[str, Any]]:
+        warnings: list[str] = []
+        stale = 0
+        counts: dict[str, int]
+        if mode == RetrievalMode.HYBRID and self.hybrid is not None:
+            hybrid = self.hybrid.search_detailed(query, tenant_id, top_k)
+            candidates = hybrid.candidates
+            counts = {"lexical": hybrid.lexical_count, "semantic": hybrid.semantic_count}
+            stale = hybrid.stale_chunks
+        elif mode == RetrievalMode.SEMANTIC and self.semantic is not None:
+            semantic = self.semantic.search_detailed(query, tenant_id, top_k)
+            candidates = semantic.candidates
+            counts = {"semantic": len(candidates)}
+            stale = semantic.stale_chunks
+        else:
+            if mode != RetrievalMode.LEXICAL:
+                warnings.append("semantic_retriever_unavailable")
+            candidates = self.retriever.search(query, tenant_id, top_k)
+            counts = {"lexical": len(candidates)}
+        metadata: dict[str, Any] = {
+            "requested_mode": mode.value,
+            "retrieval_type": executed_retrieval_type(counts),
+            "branch_candidate_counts": counts,
+        }
+        if "semantic" in counts and self.semantic is not None:
+            metadata["embedding_version"] = self.semantic.model.version
+        if stale:
+            warnings.append("embedding_version_mismatch")
+            metadata["stale_embedding_chunks"] = stale
+            EMBEDDING_VERSION_MISMATCH_TOTAL.inc()
+            logger.warning("embedding_version_mismatch", extra={"stale_chunks": stale})
+        if warnings:
+            metadata["warnings"] = warnings
+        return candidates, metadata

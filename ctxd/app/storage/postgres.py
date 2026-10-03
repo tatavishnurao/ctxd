@@ -607,6 +607,67 @@ class PostgresDocumentStore:
                 for row in rows
             ]
 
+    def replace_embeddings(
+        self,
+        document_id: str,
+        tenant_id: str,
+        *,
+        embedding_version: str,
+        embeddings: dict[str, list[float]],
+    ) -> None:
+        with self._connection("embedding_replace") as connection, connection.transaction():
+            connection.execute(
+                "SELECT pg_advisory_xact_lock(hashtextextended(%s, 0))",
+                (self._document_lock_key(tenant_id, document_id),),
+            )
+            rows = connection.execute(
+                "SELECT chunk_id FROM chunks WHERE tenant_id = %s AND document_id = %s",
+                (tenant_id, document_id),
+            ).fetchall()
+            chunk_ids = sorted(str(row["chunk_id"]) for row in rows)
+            if set(chunk_ids) != set(embeddings):
+                raise ValueError("embeddings must cover exactly the document's current chunks")
+            connection.execute(
+                "DELETE FROM chunk_embeddings WHERE tenant_id = %s AND chunk_id = ANY(%s)",
+                (tenant_id, chunk_ids),
+            )
+            self._executemany(
+                connection,
+                "INSERT INTO chunk_embeddings (tenant_id, chunk_id, "
+                "embedding_version, embedding, dimension) "
+                "VALUES (%s, %s, %s, %s::vector, %s)",
+                [
+                    (
+                        tenant_id,
+                        chunk_id,
+                        embedding_version,
+                        embeddings[chunk_id],
+                        len(embeddings[chunk_id]),
+                    )
+                    for chunk_id in chunk_ids
+                ],
+            )
+
+    def embedding_versions(self, tenant_id: str, document_id: str | None = None) -> dict[str, int]:
+        with self._connection("embedding_versions") as connection:
+            if document_id is None:
+                rows = connection.execute(
+                    "SELECT embedding_version, count(*) AS count FROM chunk_embeddings "
+                    "WHERE tenant_id = %s GROUP BY embedding_version",
+                    (tenant_id,),
+                ).fetchall()
+            else:
+                rows = connection.execute(
+                    """
+                    SELECT e.embedding_version, count(*) AS count
+                    FROM chunk_embeddings e JOIN chunks c USING (tenant_id, chunk_id)
+                    WHERE e.tenant_id = %s AND c.document_id = %s
+                    GROUP BY e.embedding_version
+                    """,
+                    (tenant_id, document_id),
+                ).fetchall()
+            return {str(row["embedding_version"]): int(row["count"]) for row in rows}
+
     def search_semantic(
         self, query_vector: list[float], tenant_id: str, top_k: int, *, version: str
     ) -> list[SemanticHit]:
