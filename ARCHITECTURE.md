@@ -15,7 +15,7 @@ FastAPI -> RuntimeServices (application lifespan)
            -> greedy whole-chunk selection -> ContextPacket
 ```
 
-`ctxd/app/runtime.py` constructs the storage, ingestion, retrievers and assembler. Literal defaults in `config/settings.py` and `models/domain.py` are memory storage, fake embeddings and lexical queries. Explicit PostgreSQL + Model2Vec configuration and hybrid requests enable the supported production-style path. There is no production reranker wiring.
+`ctxd/app/runtime.py` constructs the storage, ingestion, retrievers and assembler. Literal defaults in `config/settings.py` and `models/domain.py` are memory storage, fake embeddings and lexical queries. Explicit PostgreSQL + Model2Vec configuration enables the supported production-style path; the server default mode stays lexical and hybrid is requested explicitly. There is no production reranker wiring.
 
 ## Ingestion
 
@@ -39,15 +39,15 @@ Default pool min/max: 1/10; connection timeout: 5 seconds; query timeout: 5000 m
 
 `retrieval/hybrid.py` runs lexical/semantic branches with a two-worker executor and unions candidates. RRF is sum of `1/(k+rank)`, default k=60, with chunk-ID tie-breaking and component scores/ranks retained. Branch depth is explicit constructor configuration or `max(top_k, min(100, top_k * 2))`; default top_k=10 happens to yield 20. There is no public candidate-depth configuration field.
 
-`context/assembler.py` preserves returned order and selects whole candidates that fit; it skips those that do not and continues. It never silently truncates chunk content. Metadata records counts, selected tokens and budget drops. `requested_mode` is what the client asked for; `retrieval_type` names only the branches that actually returned candidates (`hybrid`, `lexical`, `semantic` or `none`), with per-branch counts in `branch_candidate_counts`. If the semantic branch returns short while the tenant has chunks embedded under another version, the packet carries `warnings: ["embedding_version_mismatch"]` and `stale_embedding_chunks`. Candidates carry only computed signals (`relevance_score` plus provenance metadata). Budgets use approximate tokens. API modes are lexical/semantic/hybrid only; request default is lexical.
+`context/assembler.py` preserves returned order and selects whole candidates that fit; it skips those that do not and continues. It never silently truncates chunk content. Metadata records counts, selected tokens and budget drops. `requested_mode` is what the client asked for; `retrieval_type` names only the branches that actually returned candidates (`hybrid`, `lexical`, `semantic` or `none`), with per-branch counts in `branch_candidate_counts`. If the semantic branch returns short while the tenant has chunks embedded under another version, the packet carries `warnings: ["embedding_version_mismatch"]` and `stale_embedding_chunks`. Candidates carry only computed signals (`relevance_score` plus provenance metadata). Budgets use approximate tokens. API modes are lexical/semantic/hybrid only. A request without `retrieval_mode` uses the server default: `CTXD_DEFAULT_RETRIEVAL_MODE` if set, otherwise lexical regardless of embedding provider (see `docs/BEIR_EVAL.md`).
 
 ## API, trust and failure boundaries
 
-`api/routes.py` requires `x-tenant-id` and body consistency for ingestion/query; statistics require the header. This is namespace enforcement, not identity authentication. Deploy behind a trusted authorization boundary. `/health` reports liveness, not continuous database readiness. Storage failures map to 503; retrieval timeout maps to 504; successful empty retrieval is 200. QueryResponse's answer explicitly says inference is not implemented. ModelDecision/ToolCall/ToolResult schemas do not implement execution.
+`api/auth.py` derives the request tenant from a verified credential: static API keys bound to one tenant each, or HS256 JWTs with a required tenant claim and `exp`. The development-only `none` mode trusts the `x-tenant-id` header and is refused by settings validation in any other environment. Body or header tenants that differ from the credential's tenant get 403; `/metrics` requires a separate operator token. `/health` is static liveness; `/ready` probes storage (`SELECT 1` on PostgreSQL) and the embedding model and returns 503 when either fails. Storage and embedding-model failures map to 503; database statement timeouts and the request deadline (`CTXD_REQUEST_DEADLINE_MS`, default 10 s, must exceed the database query timeout) map to 504; documents over `CTXD_MAX_DOCUMENT_CHARS` map to 413; successful empty retrieval is 200. Settings refuse PostgreSQL + fake embeddings without `CTXD_ALLOW_FAKE_EMBEDDINGS`. QueryResponse's answer explicitly says inference is not implemented. ModelDecision/ToolCall/ToolResult schemas do not implement execution.
 
 ## Observability
 
-`observability/` supplies structured logging, request/trace IDs, Prometheus metrics and OpenTelemetry spans. Metrics/spans cover database/index/retrieval/assembly work with bounded dimensions; raw text, tenant IDs and queries are not telemetry labels. OTLP export is optional. Static health, missing operational SLOs and client-only historical CPU profiles remain limitations, not readiness claims.
+`observability/` supplies structured logging, request/trace IDs, Prometheus metrics and OpenTelemetry spans. Metrics/spans cover database/index/retrieval/assembly work. HTTP metrics are labeled by route template (`unmatched` for unknown paths), and hybrid branches run in a copy of the request context so spans and log fields stay attached; raw text, tenant IDs and queries are not telemetry labels. OTLP export is optional. Missing operational SLOs and client-only historical CPU profiles remain limitations, not readiness claims.
 
 ## Offline evaluation (not runtime policy)
 
@@ -61,4 +61,4 @@ Phase 10 tools operate on the historical 121-case revision. Phase 10B builder pr
 
 ## Future only
 
-Authentication hardening, readiness/capacity/recovery work and reviewed ground truth are roadmap items. LLM inference, model routing, agent/tool execution, sandboxing, distributed jobs and streaming/frontend are not implemented. Redis URL is a dormant setting, not a cache subsystem.
+Authentication hardening, readiness/capacity/recovery work and reviewed ground truth are roadmap items. LLM inference, model routing, agent/tool execution, sandboxing, distributed jobs and streaming/frontend are not implemented.

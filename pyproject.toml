@@ -19,6 +19,7 @@ dependencies = [
   "alembic>=1.14.0",
   "model2vec>=0.6,<0.7",
   "flashrank==0.2.10",
+  "pyjwt>=2.8,<3",
 ]
 
 [dependency-groups]

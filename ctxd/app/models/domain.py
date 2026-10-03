@@ -27,7 +27,8 @@ class RetrievalMode(StrEnum):
 class QueryRequest(BaseModel):
     query: str = Field(min_length=1, max_length=20_000)
     tenant_id: str = Field(default="default", min_length=1, max_length=200)
-    retrieval_mode: RetrievalMode = RetrievalMode.LEXICAL
+    # None uses the server's configured default_retrieval_mode.
+    retrieval_mode: RetrievalMode | None = None
     task_type: str | None = None
     max_context_tokens: PositiveInt = 8_000
     top_k: PositiveInt = Field(default=10, le=100)

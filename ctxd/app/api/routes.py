@@ -1,5 +1,7 @@
 from fastapi import APIRouter, HTTPException, Request, Response, status
+from fastapi.responses import JSONResponse
 
+from ctxd.app.api.auth import Principal, RequestVerifier
 from ctxd.app.ingestion.loaders import DocumentLoadError
 from ctxd.app.models.domain import (
     DocumentIngestRequest,
@@ -10,6 +12,7 @@ from ctxd.app.models.domain import (
     SemanticIndexStatistics,
 )
 from ctxd.app.observability.metrics import render_metrics
+from ctxd.app.retrieval.semantic import EmbeddingError
 from ctxd.app.runtime import RuntimeServices
 from ctxd.app.storage.errors import RetrievalTimeoutError, StorageError
 
@@ -21,19 +24,27 @@ def _services(request: Request) -> RuntimeServices:
     return services
 
 
-def _require_tenant(request: Request, claimed_tenant: str) -> str:
-    authenticated_tenant = str(request.state.tenant_id)
-    if authenticated_tenant == "unknown":
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="x-tenant-id header is required",
-        )
-    if authenticated_tenant != claimed_tenant:
+def _principal(request: Request) -> Principal:
+    verifier: RequestVerifier = request.app.state.verifier
+    principal = verifier.tenant(request)
+    header_tenant = request.headers.get("x-tenant-id")
+    if header_tenant is not None and header_tenant != principal.tenant_id:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="tenant_id does not match the authenticated tenant",
+            detail="x-tenant-id does not match the credential's tenant",
         )
-    return authenticated_tenant
+    return principal
+
+
+def _require_tenant(request: Request, body_tenant: str) -> str:
+    """Return the request's tenant; the body may only name that same tenant."""
+    tenant_id = _principal(request).tenant_id
+    if body_tenant != tenant_id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="tenant_id does not match the request tenant",
+        )
+    return tenant_id
 
 
 @router.get("/health")
@@ -41,8 +52,20 @@ async def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
+@router.get("/ready")
+def ready(request: Request) -> JSONResponse:
+    checks = _services(request).readiness()
+    ok = all(value == "ok" for value in checks.values())
+    return JSONResponse(
+        status_code=status.HTTP_200_OK if ok else status.HTTP_503_SERVICE_UNAVAILABLE,
+        content={"status": "ready" if ok else "not_ready", "checks": checks},
+    )
+
+
 @router.get("/metrics", include_in_schema=False)
-async def metrics() -> Response:
+async def metrics(request: Request) -> Response:
+    verifier: RequestVerifier = request.app.state.verifier
+    verifier.operator(request)
     body, content_type = render_metrics()
     return Response(content=body, media_type=content_type)
 
@@ -54,8 +77,14 @@ def ingest_document(
     response: Response,
 ) -> DocumentIngestResponse:
     tenant_id = _require_tenant(request, request_body.tenant_id)
+    services = _services(request)
+    if len(request_body.content) > services.max_document_chars:
+        raise HTTPException(
+            status_code=status.HTTP_413_CONTENT_TOO_LARGE,
+            detail=f"document content exceeds {services.max_document_chars} characters",
+        )
     try:
-        document, chunks, created = _services(request).ingestion.ingest_content(
+        document, chunks, created = services.ingestion.ingest_content(
             content=request_body.content,
             source_path=request_body.source_path,
             source_type=request_body.source_type,
@@ -66,6 +95,11 @@ def ingest_document(
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
             detail=str(exc),
+        ) from exc
+    except EmbeddingError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="embedding model is unavailable",
         ) from exc
     except StorageError as exc:
         raise HTTPException(
@@ -80,18 +114,25 @@ def ingest_document(
 @router.post("/v1/query")
 def query(request_body: QueryRequest, request: Request) -> QueryResponse:
     tenant_id = _require_tenant(request, request_body.tenant_id)
+    services = _services(request)
     try:
-        context = _services(request).assembler.assemble(
+        context = services.assembler.assemble(
             query=request_body.query,
             tenant_id=tenant_id,
             top_k=request_body.top_k,
             max_context_tokens=request_body.max_context_tokens,
-            retrieval_mode=request_body.retrieval_mode,
+            retrieval_mode=request_body.retrieval_mode or services.default_retrieval_mode,
+            deadline_seconds=services.request_deadline_seconds,
         )
     except RetrievalTimeoutError as exc:
         raise HTTPException(
             status_code=status.HTTP_504_GATEWAY_TIMEOUT,
             detail="retrieval timed out",
+        ) from exc
+    except EmbeddingError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="embedding model is unavailable",
         ) from exc
     except StorageError as exc:
         raise HTTPException(
@@ -110,14 +151,10 @@ def query(request_body: QueryRequest, request: Request) -> QueryResponse:
 
 @router.get("/v1/index/semantic-statistics")
 def semantic_index_statistics(request: Request) -> SemanticIndexStatistics:
-    tenant_id = str(request.state.tenant_id)
-    if tenant_id == "unknown":
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, detail="x-tenant-id header is required"
-        )
+    tenant_id = _principal(request).tenant_id
     try:
         return _services(request).semantic_retriever.statistics(tenant_id)
-    except StorageError as exc:
+    except (EmbeddingError, StorageError) as exc:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="semantic index statistics are unavailable",
@@ -126,12 +163,7 @@ def semantic_index_statistics(request: Request) -> SemanticIndexStatistics:
 
 @router.get("/v1/index/statistics")
 def index_statistics(request: Request) -> LexicalIndexStatistics:
-    tenant_id = str(request.state.tenant_id)
-    if tenant_id == "unknown":
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="x-tenant-id header is required",
-        )
+    tenant_id = _principal(request).tenant_id
     try:
         return _services(request).retriever.statistics(tenant_id)
     except StorageError as exc:

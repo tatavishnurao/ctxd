@@ -13,7 +13,7 @@ from ctxd.app.observability.metrics import (
     INGESTED_DOCUMENTS_TOTAL,
     LEXICAL_INDEX_UPDATE_LATENCY_SECONDS,
 )
-from ctxd.app.retrieval.semantic import EmbeddingModel
+from ctxd.app.retrieval.semantic import EmbeddingModel, embed_documents
 from ctxd.app.storage.documents import DocumentStore
 
 logger = logging.getLogger(__name__)
@@ -79,9 +79,7 @@ class IngestionService:
             version = None
             if self.embedding_model is not None:
                 version = self.embedding_model.version
-                vectors = self.embedding_model.embed_documents([chunk.content for chunk in chunks])
-                if len(vectors) != len(chunks):
-                    raise RuntimeError("embedding provider returned an unexpected vector count")
+                vectors = embed_documents(self.embedding_model, [chunk.content for chunk in chunks])
                 embeddings = {
                     chunk.chunk_id: vector for chunk, vector in zip(chunks, vectors, strict=True)
                 }
@@ -103,9 +101,7 @@ class IngestionService:
         if counts == {version: len(chunks)}:
             return
         with tracer.start_as_current_span("embedding.refresh") as span:
-            vectors = self.embedding_model.embed_documents([chunk.content for chunk in chunks])
-            if len(vectors) != len(chunks):
-                raise RuntimeError("embedding provider returned an unexpected vector count")
+            vectors = embed_documents(self.embedding_model, [chunk.content for chunk in chunks])
             self.store.replace_embeddings(
                 document.document_id,
                 document.tenant_id,
@@ -118,5 +114,5 @@ class IngestionService:
         EMBEDDING_REFRESHES_TOTAL.inc()
         logger.warning(
             "embedding_version_refreshed",
-            extra={"previous_versions": sorted(counts), "embedding_version": version},
+            extra={"fields": {"previous_versions": sorted(counts), "embedding_version": version}},
         )

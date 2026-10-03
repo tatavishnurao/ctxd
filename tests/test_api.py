@@ -1,6 +1,7 @@
 from types import SimpleNamespace
 
 from ctxd.app.main import create_app
+from ctxd.app.models.domain import RetrievalMode
 from ctxd.app.storage.errors import RetrievalTimeoutError, StorageUnavailableError
 from fastapi.testclient import TestClient
 
@@ -121,9 +122,7 @@ def test_ingestion_rejects_empty_content_and_missing_tenant_header() -> None:
         "source_type": "text",
         "content": "   ",
     }
-    empty_response = client.post(
-        "/v1/documents", headers={"x-tenant-id": "tenant-a"}, json=payload
-    )
+    empty_response = client.post("/v1/documents", headers={"x-tenant-id": "tenant-a"}, json=payload)
     assert empty_response.status_code == 422
     payload["content"] = "valid"
     assert client.post("/v1/documents", json=payload).status_code == 400
@@ -143,12 +142,16 @@ def test_query_distinguishes_timeout_and_unavailable_from_empty_results() -> Non
     headers = {"x-tenant-id": "tenant-a"}
 
     app.state.services = SimpleNamespace(
-        assembler=FailingAssembler(RetrievalTimeoutError("timeout"))
+        assembler=FailingAssembler(RetrievalTimeoutError("timeout")),
+        default_retrieval_mode=RetrievalMode.LEXICAL,
+        request_deadline_seconds=10.0,
     )
     assert client.post("/v1/query", headers=headers, json=payload).status_code == 504
 
     app.state.services = SimpleNamespace(
-        assembler=FailingAssembler(StorageUnavailableError("unavailable"))
+        assembler=FailingAssembler(StorageUnavailableError("unavailable")),
+        default_retrieval_mode=RetrievalMode.LEXICAL,
+        request_deadline_seconds=10.0,
     )
     assert client.post("/v1/query", headers=headers, json=payload).status_code == 503
 

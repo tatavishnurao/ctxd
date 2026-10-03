@@ -20,6 +20,9 @@ class JsonFormatter(logging.Formatter):
             "trace_id": trace_id_var.get(),
             "tenant_id": tenant_id_var.get(),
         }
+        fields = getattr(record, "fields", None)
+        if isinstance(fields, dict):
+            payload["fields"] = fields
         if record.exc_info:
             payload["exception"] = self.formatException(record.exc_info)
         return json.dumps(payload, separators=(",", ":"), default=str)
