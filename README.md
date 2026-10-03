@@ -14,6 +14,10 @@ Retrieval, evidence selection, provenance, and token-budgeted assembly — befor
 
 </div>
 
+<p align="center">
+  <img src="docs/assets/ctxd-context-runtime.svg" alt="ctxd context runtime architecture: information space flows through retrieval, deterministic fusion, token-budgeted selection, and into an auditable ContextPacket" width="100%" />
+</p>
+
 ---
 
 ## What is ctxd?
