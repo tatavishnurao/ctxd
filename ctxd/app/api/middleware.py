@@ -20,6 +20,7 @@ class RequestContextMiddleware(BaseHTTPMiddleware):
         call_next: Callable[[Request], Awaitable[Response]],
     ) -> Response:
         request_id = request.headers.get("x-request-id", str(uuid4()))
+        # Log context only: the header is a client claim, not a verified identity.
         tenant_id = request.headers.get("x-tenant-id", "unknown")
         current_span = trace.get_current_span()
         span_context = current_span.get_span_context()
@@ -31,7 +32,6 @@ class RequestContextMiddleware(BaseHTTPMiddleware):
 
         request.state.request_id = request_id
         request.state.trace_id = trace_id
-        request.state.tenant_id = tenant_id
 
         start = time.perf_counter()
         ACTIVE_REQUESTS.inc()

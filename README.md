@@ -17,7 +17,7 @@ Query -> BM25 + exact semantic search -> parallel deterministic RRF
                               greedy ContextAssembler -> ContextPacket
 ```
 
-Out-of-box defaults are **memory + fake fixture embeddings + lexical queries**, for tests and local hacking only. `docker compose up` runs the evaluated path instead: **PostgreSQL + pinned Model2Vec + exact pgvector, with hybrid as the server default mode**. The server refuses to start with PostgreSQL + fake embeddings unless `CTXD_ALLOW_FAKE_EMBEDDINGS=true`, and logs an `effective_configuration` line at startup. Candidate depth depends on request/configuration, not a universal 20. Tenant headers require a trusted authentication boundary.
+Out-of-box defaults are **memory + fake fixture embeddings + lexical queries**, for tests and local hacking only. `docker compose up` runs the evaluated path instead: **PostgreSQL + pinned Model2Vec + exact pgvector, with hybrid as the server default mode**. The server refuses to start with PostgreSQL + fake embeddings unless `CTXD_ALLOW_FAKE_EMBEDDINGS=true`, and logs an `effective_configuration` line at startup. Candidate depth depends on request/configuration, not a universal 20. Outside `CTXD_ENVIRONMENT=development` the server refuses to start without authentication (see below).
 
 ## Quickstart
 
@@ -26,7 +26,7 @@ uv sync --python 3.13
 uv run uvicorn ctxd.app.main:app --host 0.0.0.0 --port 8000
 ```
 
-Both POST endpoints require `x-tenant-id` matching the body's `tenant_id`. Example:
+In development (`auth_mode=none`, the default), the tenant comes from the unauthenticated `x-tenant-id` header, which must match the body's `tenant_id`. Example:
 
 ```bash
 curl localhost:8000/v1/documents -H 'content-type: application/json' \
@@ -77,6 +77,16 @@ Without the test database variable, the PostgreSQL integration tests skip; witho
 [Evidence inventory](docs/evidence_inventory.json) indexes reports/artifacts by SHA-256. [Code audit](docs/ENGINEERING_AUDIT.md) classifies offline and stale code without deleting it.
 
 **Phase 10/10B benchmark: PRE-REVIEW / NON-CANONICAL / BLOCKED.** 106 current candidates, zero independent human reviews; the full audit/review infrastructure is unfinished. No canonical result exists.
+
+### Authentication
+
+Any environment other than `development` requires `CTXD_AUTH_MODE=api_key` or `jwt`, and the tenant is then derived from the credential, never from a header:
+
+- `api_key`: `CTXD_AUTH_API_KEYS='{"<key of 32+ chars>": "tenant-a"}'`; clients send `Authorization: Bearer <key>`.
+- `jwt`: HS256 with `CTXD_AUTH_JWT_SECRET` (32+ chars); the token must carry `exp` and the tenant claim (`CTXD_AUTH_JWT_TENANT_CLAIM`, default `tenant_id`); optional `CTXD_AUTH_JWT_AUDIENCE` / `CTXD_AUTH_JWT_ISSUER`.
+- `/metrics` requires `Authorization: Bearer $CTXD_AUTH_OPERATOR_TOKEN` and returns 403 if no operator token is configured. `/health` and `/ready` stay open for orchestrators.
+
+A body `tenant_id` or `x-tenant-id` header naming a different tenant than the credential gets 403. This is a floor, not a complete identity system: there is no key rotation API, no per-tenant roles, and no TLS termination.
 
 ## API surface
 
