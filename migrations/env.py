@@ -1,11 +1,16 @@
+import os
 from logging.config import fileConfig
 
 from alembic import context
-from ctxd.app.config.settings import get_settings
+from ctxd.app.config.settings import Settings
 from sqlalchemy import engine_from_config, pool
 
 config = context.config
-database_url = get_settings().database_url
+# Migrations need only the database URL; they must not be blocked by runtime
+# validation of unrelated settings (embedding provider, retrieval defaults).
+database_url = os.environ.get("CTXD_DATABASE_URL") or str(
+    Settings.model_fields["database_url"].default
+)
 if database_url.startswith("postgresql://"):
     database_url = database_url.replace("postgresql://", "postgresql+psycopg://", 1)
 config.set_main_option("sqlalchemy.url", database_url)

@@ -45,7 +45,10 @@ class RequestContextMiddleware(BaseHTTPMiddleware):
             return response
         finally:
             duration = time.perf_counter() - start
-            path = request.url.path
+            # Label by route template, never the raw URL, so unmatched or
+            # parameterized paths cannot create unbounded metric series.
+            route = request.scope.get("route")
+            path = getattr(route, "path_format", None) or "unmatched"
             REQUEST_LATENCY_SECONDS.labels(request.method, path).observe(duration)
             REQUESTS_TOTAL.labels(request.method, path, str(status_code)).inc()
             ACTIVE_REQUESTS.dec()

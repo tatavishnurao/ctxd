@@ -73,3 +73,23 @@ def test_semantic_isolation_and_statistics_on_postgres(client: TestClient) -> No
     stats = client.get("/v1/index/semantic-statistics", headers={"x-tenant-id": "t"}).json()
     assert stats["indexed_chunks"] == 2
     assert stats["stale_chunks"] == 0
+
+
+def test_ready_probes_postgres(client: TestClient) -> None:
+    response = client.get("/ready")
+    assert response.status_code == 200
+    assert response.json()["checks"] == {"storage": "ok", "embedding_model": "ok"}
+
+
+def test_ping_fails_before_start_and_after_close() -> None:
+    from ctxd.app.storage.errors import StorageUnavailableError
+
+    assert DATABASE_URL is not None
+    store = PostgresDocumentStore(DATABASE_URL, pool_min_size=1, pool_max_size=2)
+    with pytest.raises(StorageUnavailableError):
+        store.ping()
+    store.start()
+    store.ping()
+    store.close()
+    with pytest.raises(StorageUnavailableError):
+        store.ping()
