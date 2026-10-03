@@ -32,6 +32,22 @@ class DocumentStore(Protocol):
     def list_chunks(self, tenant_id: str, document_id: str | None = None) -> list[Chunk]: ...
 
     def delete_document(self, document_id: str, tenant_id: str) -> bool: ...
+
+    def replace_embeddings(
+        self,
+        document_id: str,
+        tenant_id: str,
+        *,
+        embedding_version: str,
+        embeddings: dict[str, list[float]],
+    ) -> None:
+        """Atomically replace every chunk embedding of an unchanged document."""
+        ...
+
+    def embedding_versions(self, tenant_id: str, document_id: str | None = None) -> dict[str, int]:
+        """Count embedded chunks per embedding version for a tenant or one document."""
+        ...
+
     def search_semantic(
         self, query_vector: list[float], tenant_id: str, top_k: int, *, version: str
     ) -> list[SemanticHit]: ...
@@ -172,6 +188,41 @@ class InMemoryDocumentStore:
                 self._remove_chunk_locked(tenant_id, chunk_id)
                 self._embeddings.pop((tenant_id, chunk_id), None)
             return removed is not None
+
+    def replace_embeddings(
+        self,
+        document_id: str,
+        tenant_id: str,
+        *,
+        embedding_version: str,
+        embeddings: dict[str, list[float]],
+    ) -> None:
+        with self._lock:
+            chunk_ids = {
+                chunk.chunk_id
+                for (owner, _), chunk in self._chunks.items()
+                if owner == tenant_id and chunk.document_id == document_id
+            }
+            if chunk_ids != set(embeddings):
+                raise ValueError("embeddings must cover exactly the document's current chunks")
+            for chunk_id in sorted(chunk_ids):
+                self._embeddings[(tenant_id, chunk_id)] = (
+                    embedding_version,
+                    list(embeddings[chunk_id]),
+                )
+
+    def embedding_versions(self, tenant_id: str, document_id: str | None = None) -> dict[str, int]:
+        with self._lock:
+            counts: Counter[str] = Counter()
+            for (owner, chunk_id), (version, _) in self._embeddings.items():
+                if owner != tenant_id:
+                    continue
+                if document_id is not None and (
+                    self._chunks[(owner, chunk_id)].document_id != document_id
+                ):
+                    continue
+                counts[version] += 1
+            return dict(counts)
 
     def search_semantic(
         self, query_vector: list[float], tenant_id: str, top_k: int, *, version: str

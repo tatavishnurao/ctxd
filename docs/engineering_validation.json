@@ -1,0 +1,42 @@
+{
+  "base_sha": "83352ac09c85ed62a1bd8e3d2b6985bf1c378f13",
+  "recorded_at": "2026-10-02T17:28:14.187615+00:00",
+  "python": "3.13.15",
+  "environment": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "database": "ctxd_test (explicit user authorization)",
+  "postgres_version": "17.11",
+  "pgvector_version": "0.8.6",
+  "migration_revision": "0002_phase4",
+  "uv_sync": "passed --python 3.13",
+  "ruff": "passed: uv run ruff check .",
+  "mypy": "passed: uv run mypy; 51 application source files",
+  "pytest": {
+    "tests": 154,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "warnings": [
+    "Starlette httpx TestClient deprecation",
+    "anyio BlockingPortal alias deprecation"
+  ],
+  "candidate_build": {
+    "cases": 106,
+    "retained": 34,
+    "new": 72,
+    "strata": {
+      "EASY": 25,
+      "MEDIUM": 33,
+      "HARD": 36,
+      "VERY_HARD": 12,
+      "INFEASIBLE": 0
+    },
+    "independent_reviews": 0,
+    "canonical": false,
+    "audit_complete": false
+  },
+  "committed": false,
+  "retrieval_experiments_run": false,
+  "junit_path": "/tmp/ctxd-consolidation-validation.xml",
+  "junit_sha256": "d2a04dc40057ba56facf45a92b63d0494c481152c6dcb2f490d42fa5c0ffc04b"
+}

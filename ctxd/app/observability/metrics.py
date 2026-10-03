@@ -63,6 +63,14 @@ LEXICAL_SEARCH_LATENCY_SECONDS = Histogram(
     "ctxd_lexical_search_latency_seconds",
     "Lexical index search latency in seconds.",
 )
+EMBEDDING_REFRESHES_TOTAL = Counter(
+    "ctxd_embedding_refreshes_total",
+    "Unchanged documents re-embedded because stored embeddings had another version.",
+)
+EMBEDDING_VERSION_MISMATCH_TOTAL = Counter(
+    "ctxd_embedding_version_mismatch_total",
+    "Semantic queries whose tenant had chunks embedded under a non-configured version.",
+)
 RERANKER_REQUESTS_TOTAL = Counter(
     "ctxd_reranker_requests_total",
     "Reranker requests by bounded model identifier and outcome.",

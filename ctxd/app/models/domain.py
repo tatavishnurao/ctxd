@@ -70,6 +70,9 @@ class SemanticIndexStatistics(BaseModel):
     indexed_chunks: NonNegativeInt
     embedding_version: str
     embedding_dimension: PositiveInt
+    # Chunks embedded under any other version; invisible to semantic search
+    # until their documents are re-ingested under the configured version.
+    stale_chunks: NonNegativeInt = 0
 
 
 class LexicalIndexStatistics(BaseModel):
@@ -98,10 +101,6 @@ class ContextCandidate(BaseModel):
     content: str
     token_cost: NonNegativeInt
     relevance_score: NonNegativeFloat = 0.0
-    rerank_score: NonNegativeFloat = 0.0
-    dependency_score: NonNegativeFloat = 0.0
-    redundancy_score: NonNegativeFloat = 0.0
-    recency: NonNegativeFloat = 0.0
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
@@ -110,7 +109,6 @@ class ContextPacket(BaseModel):
     candidates: list[ContextCandidate] = Field(default_factory=list)
     token_budget: PositiveInt
     context_tokens: NonNegativeInt = 0
-    compression_ratio: NonNegativeFloat = 0.0
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 

@@ -23,6 +23,9 @@ class SemanticIndex(Protocol):
         self, query_vector: list[float], tenant_id: str, top_k: int, *, version: str
     ) -> list[SemanticHit]: ...
     def semantic_statistics(self, tenant_id: str) -> SemanticIndexStatistics: ...
+    def embedding_versions(
+        self, tenant_id: str, document_id: str | None = None
+    ) -> dict[str, int]: ...
 
 
 class LexicalIndex(Protocol):

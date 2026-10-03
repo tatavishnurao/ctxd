@@ -1,3 +1,19 @@
+# Performance navigation and current scope
+
+This is a historical measurement archive, not a fresh deployment benchmark. No latency or throughput experiment was rerun for consolidation. Current code validation is in CURRENT_STATE.md and docs/engineering_validation.json.
+
+- Phase 2/3: rebuild bottleneck, incremental PostgreSQL and synthetic saturation.
+- Phase 4B: separate in-memory and PostgreSQL exact-vector environments; rejected tested HNSW.
+- Phase 5/6: TinyBERT cost and unresolved shared-host latency anomaly.
+- Phase 7: offline MiniLM CPU tails; 12k p95 roughly 117 ms hybrid vs 1022 ms reranked.
+- Phase 8: scorer-only profiling, not full-path service capacity.
+- Phase 9: approximate-token evidence coverage, not a performance/SLO gain.
+- Phase 10/10B: no canonical retrieval performance results; zero independent review.
+
+All earlier values and environments below remain unchanged. Do not pool runs across phases. WSL/shared-host noise, synthetic load, small author-labeled quality sets, reused holdout and unresolved historical latency causes limit inference. Model-scoring latency is not HTTP service latency. Fixed benchmark depth20 is a workload choice, not a universal runtime invariant. Phase 7 nDCG judgments are binary source-level, not graded evidence labels.
+
+---
+
 # Performance Methodology
 
 ## Phase 9 context-budget methodology

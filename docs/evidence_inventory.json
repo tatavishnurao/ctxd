@@ -1,0 +1,1548 @@
+{
+  "schema_version": 1,
+  "base_sha": "83352ac09c85ed62a1bd8e3d2b6985bf1c378f13",
+  "checksum_algorithm": "SHA-256 of file bytes",
+  "scope": "major reports, durable top-level benchmark/evaluation artifacts, authoring inputs and replay scripts; raw CPython source hashes are in evals/phase10b_external_sources.json; inventory excludes itself",
+  "canonical_current_benchmark_exists": false,
+  "artifacts": [
+    {
+      "path": "ARCHITECTURE.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "358bd6ec2fd9b88504f905cb90ab83d7af4375e5c86800746275c14883729f22"
+    },
+    {
+      "path": "BENCHMARKS.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "19770a1f377b980f7ad9ef1af2f041f2600a340345043faeca2baa634ed85301"
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "9ec730c929dfccbac4caf7370d76798cddaff9c6f1dbb2ae4eae410171943074"
+    },
+    {
+      "path": "EXPERIMENTS.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "747c3e56364722f96513175fe7959d47434db04357742a728ef60f75d3fd1deb"
+    },
+    {
+      "path": "PERFORMANCE.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "71ee5ab48f7c7dba3cf43cab80b1dfa4ac4ad3be1b8952c2a38e415f3751e019"
+    },
+    {
+      "path": "PHASE10_REPORT.md",
+      "phase": "10",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "69b6f587ba216081b840e1cc4386a0a98c3c46f16fd6ec872cd806ad8c76bb8d"
+    },
+    {
+      "path": "PHASE10_REVIEW_PACKET.md",
+      "phase": "10",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "698982b6b27ebed7a682267c8ab2282c8f8ec64e8a527497578dd6aa1216fa80"
+    },
+    {
+      "path": "PHASE6_REPORT.md",
+      "phase": "6",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "aca61faaf0854b11729c470e55f25a4ddeabd0afa148c7b0c61d3a7006fe894d"
+    },
+    {
+      "path": "PHASE7_REPORT.md",
+      "phase": "7",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "5733a93f19e34ce8527977bb9c102bfec954b290902168777a313b1e10386cd4"
+    },
+    {
+      "path": "PHASE8_REPORT.md",
+      "phase": "8",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "71487c5b066773a0c3a4d77f9add2f648574e06ff740a95215042459fa0614ed"
+    },
+    {
+      "path": "PHASE9_REPORT.md",
+      "phase": "9",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "652dc2683dd6d028c2e7f476c98555a8f5aec7ebaf5a6de6ca747abc5455b309"
+    },
+    {
+      "path": "README.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "878ad8af3d4f8b09ba74a59d9573dfccece5b69add69c337a1120f4ca600f37f"
+    },
+    {
+      "path": "ROADMAP.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "b99e43a2e4ecf5fc40d55c0db8b36065879e32a5a91763685ff7049b5b6b4452"
+    },
+    {
+      "path": "benchmarks/phase10_blocked_status.json",
+      "phase": "10",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "b636bc83cb48b79c361f8a2e754e3bfc909f1a63d2eec0bd91e221e5a5bc977f"
+    },
+    {
+      "path": "benchmarks/phase10_build.py",
+      "phase": "10",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "5f71ca08b699ce1a0df9d208bf379f3333aaae7a5e060f0deee6933c01332a1f"
+    },
+    {
+      "path": "benchmarks/phase10_check.py",
+      "phase": "10",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "9188c0d39896aef4d831461eedde722184ba88ffc670517c4f4a2444d8730c80"
+    },
+    {
+      "path": "benchmarks/phase10_experiment_manifest.json",
+      "phase": "10",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "d44228cb8d3b4573735626400b7ca7fb790dfbb83c01df8cce47ee4b3b3ffa75"
+    },
+    {
+      "path": "benchmarks/phase10_feasibility.json",
+      "phase": "10",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "7e1dac86be2430f967f68b6234d337a489e9283c9e9de31e8987bd1e1323de05"
+    },
+    {
+      "path": "benchmarks/phase10_finalize.py",
+      "phase": "10",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "7ae22da4114757a925453b81d7959afde37d4a3246c0811ba5fb789203569331"
+    },
+    {
+      "path": "benchmarks/phase10_freeze.py",
+      "phase": "10",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "9fc57de09e0ea3593e499d44f9d2e380e5950babd67171b0fa652d454cdb2479"
+    },
+    {
+      "path": "benchmarks/phase10_history_freeze.json",
+      "phase": "10",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "a07bccbfd44d06e2ab0cde8712610c64903285089e751732d12b89c6d2bfa56a"
+    },
+    {
+      "path": "benchmarks/phase10_protocol.json",
+      "phase": "10",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "d4a8de58ae7c588cd218f519c2a3159ec117a3de4840babd7c7ce5542c809501"
+    },
+    {
+      "path": "benchmarks/phase10_review.py",
+      "phase": "10",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "44b5a79d03ad731bc27bdd0b082ad8b5c45039a07dd3b73a961f84184fed51ce"
+    },
+    {
+      "path": "benchmarks/phase10_validation.json",
+      "phase": "10",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "bbb4e8ebe28a816394c5b1f1731de5dc5903fb2bdc488827a66e1911db236e23"
+    },
+    {
+      "path": "benchmarks/phase10b_build.py",
+      "phase": "10b",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "cfb68d226af2511640b406fbc8aed7351c574fed62a2c532fdbf57f04358dab2"
+    },
+    {
+      "path": "benchmarks/phase10b_fetch.py",
+      "phase": "10b",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "9cb45d4f0375e88b61d5836fee24d76702da63ea26df0773a8c73487ca332e9b"
+    },
+    {
+      "path": "benchmarks/phase10b_history_freeze.json",
+      "phase": "10b",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "b5bb92ba63e07eb2880673cfd89366c6d1e6f98bdf5bad1168f8d12a684a924a"
+    },
+    {
+      "path": "benchmarks/phase2_baseline.json",
+      "phase": "2",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "29f57749bc61a201856f686bbba23b5d73c4a11fd6049d698a4ba07600cd7075"
+    },
+    {
+      "path": "benchmarks/phase2_rebuild_analysis.json",
+      "phase": "2",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "c9090e6a64445d27eae259089403e4d41d176f16e50980ef4bb7133398cfed44"
+    },
+    {
+      "path": "benchmarks/phase2_rebuild_analysis.py",
+      "phase": "2",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "62d02029b3c85238e0de236bc5c4082b5e1b2649efcf82d5c5d2a0a313a10a79"
+    },
+    {
+      "path": "benchmarks/phase3_concurrent_load.json",
+      "phase": "3",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e7622e1d3a9d1cf802521c77e886e3e6f61621e7ace209d29fb719eb74c48036"
+    },
+    {
+      "path": "benchmarks/phase3_postgres_baseline.json",
+      "phase": "3",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "db43aa8ce15498d122af84777ef02045f59778359ef9b533367a86428eae8131"
+    },
+    {
+      "path": "benchmarks/phase4_inmemory_12000_results.json",
+      "phase": "4",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "68d0691eab69903bd31d3805c72745103c7efe5db7dff0b9b2e6e7273795b01c"
+    },
+    {
+      "path": "benchmarks/phase4_inmemory_1200_results.json",
+      "phase": "4",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "6133bc6be8bab0bde892869fc74c042d0ad6ed08b699170e5f82b7237729b8c2"
+    },
+    {
+      "path": "benchmarks/phase4_retrieval.py",
+      "phase": "4",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "3deafb723336916a2408da86328846345324e6a44f3c6a849d3866542018767c"
+    },
+    {
+      "path": "benchmarks/phase4b_hnsw.json",
+      "phase": "4b",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "115d3c4964ce337eace6192f1eae1ace208850f4ffb8f7dfde8dc34db932028e"
+    },
+    {
+      "path": "benchmarks/phase4b_hnsw_ef1000.json",
+      "phase": "4b",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "dab9a2b367bc0558e909b4295de93d38edd7d237febb52de0eb9ec34fc06b516"
+    },
+    {
+      "path": "benchmarks/phase4b_hnsw_ef200.json",
+      "phase": "4b",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "d57ed169a46b5e37b3a2e47997de3488ae96b317b71cba649c078e609b028036"
+    },
+    {
+      "path": "benchmarks/phase4b_hnsw_experiment.py",
+      "phase": "4b",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "101619aafed66c5c91e048aab3d9686f4f6f0cde83c15f2ed3ace03a113660bc"
+    },
+    {
+      "path": "benchmarks/phase4b_postgres_closure.py",
+      "phase": "4b",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "f2c75aa627df0edcfd7ec3cfee4c8d20e1f771a008e1e0fdce5ff536c7a8ca0e"
+    },
+    {
+      "path": "benchmarks/phase4b_postgres_exact.json",
+      "phase": "4b",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e46443eb9b5a0424dff8a33c94895cb44967b746ee2e2a3530d000a5b7d54596"
+    },
+    {
+      "path": "benchmarks/phase5_artifact_manifest.json",
+      "phase": "5",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "7f458b403956d63ba1b1871015d43d57c3b2a154e1ec169bd96a294f5ece8cb5"
+    },
+    {
+      "path": "benchmarks/phase5_candidate_depth.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "35bc7f7844c9115a5ce997723f664cec221e8a52aa996d1c3493b97a455f8bb7"
+    },
+    {
+      "path": "benchmarks/phase5_candidate_recall.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "91b1d4ad0c9d9831f3f8a7fa452a636ce1a99d7c668a298d71cc9496c64d858c"
+    },
+    {
+      "path": "benchmarks/phase5_concurrency.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "0cba7508a8bdfcf7eac7a0de10e3d97bbb167b17e3ef97fec8fe3565f764d5d4"
+    },
+    {
+      "path": "benchmarks/phase5_end_to_end_latency.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "5fd0ee12de1acd3dd5152fdd88dc5d15ebed42ce5f596b22e0eeea441049dc3f"
+    },
+    {
+      "path": "benchmarks/phase5_goodput.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "f0a20d1fd8190ddc176834e3ca0255c622caeb33e07a5bd50892a8c72647a573"
+    },
+    {
+      "path": "benchmarks/phase5_oracle_reranker.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "89d3d9cf4ef2e2b81dacfb489102daef32f48d95107b6cc0bcbf09873d7cd39e"
+    },
+    {
+      "path": "benchmarks/phase5_postgres_reranker.py",
+      "phase": "5",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "6c030cecfc2a40414aa13bf922535836b90a4c4849228d393e97f0d3505cebe9"
+    },
+    {
+      "path": "benchmarks/phase5_reranker_latency.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "5264b1b12034b1ab81cd7f26e9e5d80f5ead5be96db4081e38ff71748e461ca5"
+    },
+    {
+      "path": "benchmarks/phase5_reranker_quality.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "4915c6be4e7ad0fcb9921f778b92e786c0dac72c5b27d2d09481dd5c2d681e4f"
+    },
+    {
+      "path": "benchmarks/phase5_reranker_quality.py",
+      "phase": "5",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "392d6860e92c2b0b5bbbf0ba51e195acee7870dd0b83fc4234a095ff96e481c6"
+    },
+    {
+      "path": "benchmarks/phase5_reranking_feasibility.py",
+      "phase": "5",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e81915ff50c41f2f77bf5adeb1cc5a0b5d0787d95d5a3de07870a8c1fd2cc789"
+    },
+    {
+      "path": "benchmarks/phase5_semantic_overgeneralization.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "c0ce72154ef2c88b1ed7f42113bfd83f3c5ddc0f5d5b66e5245aae675b34ec3b"
+    },
+    {
+      "path": "benchmarks/phase5_tail_latency.json",
+      "phase": "5",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "8caf6492220072fd1b5852081590f1d3d2cdb7b47b28dfc22843cd85d8b7e07a"
+    },
+    {
+      "path": "benchmarks/phase5_tail_latency.py",
+      "phase": "5",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "99cde86b46326699555f5260a35bbd9cd260e7fb49e4b5d0444f17a64558a5e8"
+    },
+    {
+      "path": "benchmarks/phase6_audited_metrics.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "d67d3b09341ffb2bd36d2e1c2b51334a2d7bc7fa5ac55490f6a156f790ea9f7b"
+    },
+    {
+      "path": "benchmarks/phase6_audited_oracle.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "09f6a372413e40c7c6a9057f5cdca44a24e9c7f843c17fd54f63be7ed7c8b987"
+    },
+    {
+      "path": "benchmarks/phase6_concurrency.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "f8bf3f35ceac81413b0cbfa8b5bd85a87180825412c6e9f3e94032145e6b5158"
+    },
+    {
+      "path": "benchmarks/phase6_duplicate_analysis.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "98a7de2763b270df3bb412ed581d2f6ab7d6dc3103293e7cca3d6f57ef92f908"
+    },
+    {
+      "path": "benchmarks/phase6_evaluation_audit.py",
+      "phase": "6",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "295a8115651a3ce4871f4d5e9cf67d41a14513a53761f5d3e245d4fbe5b5bb20"
+    },
+    {
+      "path": "benchmarks/phase6_goodput.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "3191201cbfe1970830643a4c0446232d514e1e5c65e3e16e1e9e85e3e9dd5aba"
+    },
+    {
+      "path": "benchmarks/phase6_input_format_audit.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "a35c1048d2298638ba7ce1c743f9c2e289bb82f880d484e1c0ed03c198f74bbd"
+    },
+    {
+      "path": "benchmarks/phase6_oracle_decomposition.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "c57f1bcb464ef7dabea7236aa79b390e83d27518b872e3c90fc39c5095497004"
+    },
+    {
+      "path": "benchmarks/phase6_outlier_analysis.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "7e2b4ad191bf1c426847fbbd39d73107594bca46a7165cf2d577d04a124717aa"
+    },
+    {
+      "path": "benchmarks/phase6_query_types.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "9109a0f5be3d31ba8dc28520909e5a014502f2207c0cc0c8dac365e6c4c205fa"
+    },
+    {
+      "path": "benchmarks/phase6_reproducibility.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "04dca92f799995e185c07596199b1bbf7f2aef4c1d331c42fabdd1d54843a49a"
+    },
+    {
+      "path": "benchmarks/phase6_reproducibility.py",
+      "phase": "6",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "84f75a1aa713f143ab15d042446a928e7458d896c5f3a04d60882e2476afee4c"
+    },
+    {
+      "path": "benchmarks/phase6_reranker_forensics.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "c0c141a7110a0641a943b756954517ee2b7ad4dd69f707ddb075e92632838ab9"
+    },
+    {
+      "path": "benchmarks/phase6_rrf_analysis.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e42a67f468bda3a5b3b03b1c026c63c17c5fd2b3b3920294e5e3f1bb2ae2b6e8"
+    },
+    {
+      "path": "benchmarks/phase6_score_distribution.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "31ce0e632a0a73ef655c5e5d1d6d0ae95a9b0251c89ba7716e5416e01c367899"
+    },
+    {
+      "path": "benchmarks/phase6_truncation.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "c676586c0cd1d2097e2a7d2a4368128228cccf00c40b91412277348cc6e1fae2"
+    },
+    {
+      "path": "benchmarks/phase7_baselines.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "929eaba7b95e8d4175afdf40e871301593d74793b210456eed4e548eec49241c"
+    },
+    {
+      "path": "benchmarks/phase7_bootstrap.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "a20ee12a60c767cd700da27d4e4fb100d7b6194f2a39571b13c37401bcec3c76"
+    },
+    {
+      "path": "benchmarks/phase7_candidate_pools.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "2602177b0b3546362436ecc2b286fa3c1f3b4eba2b661745ef5ceccfcb6de821"
+    },
+    {
+      "path": "benchmarks/phase7_compare_dev.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "2e719c9f4b938303eee469164c0750891b67d96389ee36525c5f17b7d9622c5a"
+    },
+    {
+      "path": "benchmarks/phase7_concurrency.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "6bec965edd80c8ccd8bb3efb633835117c1f652c2a793736ba686edcc6bc6ea4"
+    },
+    {
+      "path": "benchmarks/phase7_dev_model_comparison.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "421576ee17b7b84f8764ca795e1a74d53105b954410407215f454c546887564e"
+    },
+    {
+      "path": "benchmarks/phase7_development_baseline.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "8a53c45ec540627ed8addfcdd4690d0953b34b0d87d0554963f4de6fbc890b2d"
+    },
+    {
+      "path": "benchmarks/phase7_exact_match_analysis.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "ca45342143d69d21111b62794de92ce066f6a1faf48201997294435a0d25da4a"
+    },
+    {
+      "path": "benchmarks/phase7_extract_dev_baseline.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "5c219e5833b97a6b911d076b9024864821fbe06720a26026e5607a4597f0bbb7"
+    },
+    {
+      "path": "benchmarks/phase7_freeze_selected_config.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "4701ca4c4051284d3b661c700044680e440c70ec07025806882c7232eb31b85b"
+    },
+    {
+      "path": "benchmarks/phase7_freeze_split.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "16bc11ba7215ebadfde39097deecd6ae715941096ebf20077ac797b1746e2320"
+    },
+    {
+      "path": "benchmarks/phase7_frontier.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "f59e392069fec296ffcec012fbd98a6091cd24c36a4b8819ab6ad020e8acdfbf"
+    },
+    {
+      "path": "benchmarks/phase7_frontier.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "79fcc845e1babfd60d3e1549b34e49f9c904f9438560c212f0632774966cf6d7"
+    },
+    {
+      "path": "benchmarks/phase7_guardrail_dev.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "4e9b21a487c6ccb9681f519c1e9c7466170cee1f854d2855fa00a85773e6faa3"
+    },
+    {
+      "path": "benchmarks/phase7_guardrails_dev.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "3d9e4105ec8076aa5ceada852919e02166917116a459845932fdd8888d493bfd"
+    },
+    {
+      "path": "benchmarks/phase7_holdout.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "5bd2c1d013cb6491106cfd0cc15479526b6b126b079ed3104fbf1456b8c7a0c1"
+    },
+    {
+      "path": "benchmarks/phase7_holdout_once.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "da47ffe15e3d1e5cf192c76ae9595fd5eece249d6124778deb3d25a110699598"
+    },
+    {
+      "path": "benchmarks/phase7_latency.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "b7e6c51f891eb3f709b174e53c2810aa856e3791dba1bf25fe79f8fa46d2b5d3"
+    },
+    {
+      "path": "benchmarks/phase7_model_survey.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "2df29d2439c1953397ab172c38d6ed24e99f79bbd8800c7c746089f8fb60cff4"
+    },
+    {
+      "path": "benchmarks/phase7_models.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "d8a5e42f425c2112a6d0b027da6c6ead9579e94343b9efd16dfe8ac6d94c6d87"
+    },
+    {
+      "path": "benchmarks/phase7_pairwise_analysis.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "b8a061e7ffa1e98bf62ea857d2f654c3129251658f7c16826d098e15d39894ea"
+    },
+    {
+      "path": "benchmarks/phase7_partition_baselines.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "6e9a22f7f24c3e609d8223ff993626b1a961ded769c69df4425d19f45b2c1091"
+    },
+    {
+      "path": "benchmarks/phase7_performance.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "184d6b266066aa4926f54bd70f1bd6b415abf8950e631b22e1a2065c2de7a19d"
+    },
+    {
+      "path": "benchmarks/phase7_relabel_dev_transitions.py",
+      "phase": "7",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "dc2afb7b6f91652f832dde8c852aff5215d8048ccbb827b8639d9b4d3f875b93"
+    },
+    {
+      "path": "benchmarks/phase7_selected_config.json",
+      "phase": "7",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "4ea96b05e294b245431e658b01b4e4b9a65f60b0d64c60de77ad2aab43ef2f9b"
+    },
+    {
+      "path": "benchmarks/phase8_audit.json",
+      "phase": "8",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "64a2fcaecc1060593203a7205c5a12342e763071cac0ad7badb3c285b1dbbf28"
+    },
+    {
+      "path": "benchmarks/phase8_audit.py",
+      "phase": "8",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "742f8eb6be487f1e51eb22727db995de77fc8e236ed7310b9acab1fc4f786e08"
+    },
+    {
+      "path": "benchmarks/phase8_experiment_manifest.json",
+      "phase": "8",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "a3062904bd4ed42e8e7ac1a130574009ebd685d80392f45fd9833d7eafd0be68"
+    },
+    {
+      "path": "benchmarks/phase8_finalize.py",
+      "phase": "8",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "c71a0a822d8557887c5ce7865bb6b2581faf63551fa2097229549d1196714d66"
+    },
+    {
+      "path": "benchmarks/phase8_freeze.py",
+      "phase": "8",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "eb6f087183039ea0120684ea378c486a1258101ac4cb3f815f134a58a177f3f0"
+    },
+    {
+      "path": "benchmarks/phase8_holdout.json",
+      "phase": "8",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "75e577d26ae922b595ba4f36c5d2aaae51434cc44917ec3c62d9226ac86a5d12"
+    },
+    {
+      "path": "benchmarks/phase8_holdout.py",
+      "phase": "8",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "f606f113ba4652f016e741f9d80f38822c8df6897094024cfbb4ed4ed4869b96"
+    },
+    {
+      "path": "benchmarks/phase8_initial_manifest.json",
+      "phase": "8",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "cfdf62592080998362f5525c2cfcc0bbd2be586a66aa75d09ca566066090d675"
+    },
+    {
+      "path": "benchmarks/phase8_profile.json",
+      "phase": "8",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "ec0cfceefec7e4c979f097e1ba294516131e946c6b2bb90e03a0895d14826ccf"
+    },
+    {
+      "path": "benchmarks/phase8_profile.py",
+      "phase": "8",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "c64f649e4de31381e4c576bf45d81a403d3be7a9401221f2fe53503e0fc5eaa5"
+    },
+    {
+      "path": "benchmarks/phase8_selected_config.json",
+      "phase": "8",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "8a789c64ed15d63de07f43015e3c022fa7f70ae3149f38e8cb11a87423050207"
+    },
+    {
+      "path": "benchmarks/phase9_analysis.py",
+      "phase": "9",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "85b4a69bff9bc5101ac09bbd976555075980c8842d67733adb07856f0ad5c5c5"
+    },
+    {
+      "path": "benchmarks/phase9_baseline.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "7c9e7dacf7d62ad1221dbea34f6367eb04d32aaea697d1d8635b0068f4fd706c"
+    },
+    {
+      "path": "benchmarks/phase9_bootstrap.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "b6e94f6b66c61f8f330fedb65b64fc52607e6e0c318a1347682dd085ae634941"
+    },
+    {
+      "path": "benchmarks/phase9_build.py",
+      "phase": "9",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e443d72465d8e7c632841265208d60576f97ad7bf33812530a39502b467e1556"
+    },
+    {
+      "path": "benchmarks/phase9_case_analysis.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "fc5cdf62ca750a53772aa7f5317b1ed8b67db5f8f74c32ad47a5999bb79c3911"
+    },
+    {
+      "path": "benchmarks/phase9_challenge.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "c0118da5824884fb1ec59c49b035942827a5657727e34925cdfa75610dd5d29b"
+    },
+    {
+      "path": "benchmarks/phase9_challenge.py",
+      "phase": "9",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "29bbd8f92c0de71ad60bc642ee980fab5bc3e54f5d00dae7a3064e5f2073df09"
+    },
+    {
+      "path": "benchmarks/phase9_development_budget_pressure.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "ebf53742f97a7fdfcab3096282b6adab1fb819174b0de54046c08319940d00c3"
+    },
+    {
+      "path": "benchmarks/phase9_development_pools.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "7c4dc2633755b8c24277fc368a6ea1f5e9b0f423c4e55970818bfce4d8c8f5a2"
+    },
+    {
+      "path": "benchmarks/phase9_development_started.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "ff9cb27e6f8d852e2ec45670abe04bcd3214c005e1540cd912534d5e821645c4"
+    },
+    {
+      "path": "benchmarks/phase9_experiment_manifest.json",
+      "phase": "9",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "390f96ac692e0bb370da15cfd86d38f8e0b8984d59c0a7f7a3974f26d80a994b"
+    },
+    {
+      "path": "benchmarks/phase9_finalize.py",
+      "phase": "9",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "8fd1831c44fee1311413ca5cb29e7a0c4436bdec4615a45e81eae8bbd83fbebd"
+    },
+    {
+      "path": "benchmarks/phase9_holdout.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "376aee8be035bdcbd8530b3ff663ab93d49a55c4e61615ddac026c7d1c92d2c0"
+    },
+    {
+      "path": "benchmarks/phase9_holdout_budget_pressure.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "f4ed69d14da4424481b8e53742e497178ec9530639dbcc7336e6b5c864ff6f07"
+    },
+    {
+      "path": "benchmarks/phase9_holdout_pools.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "9c08794624f4fbecbae616d0fbbdfd5a4ab30383b56e477dc0f8c28933cec9c1"
+    },
+    {
+      "path": "benchmarks/phase9_holdout_started.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "6b1d47490570f7a596af21264e8dab825bbb5538374fade23313b8ea664316b0"
+    },
+    {
+      "path": "benchmarks/phase9_packing_dev.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "b8c425ed35e41ee39d23a5ce2d57a728a32f05a9e4f1b4e75f40d86da30f722d"
+    },
+    {
+      "path": "benchmarks/phase9_phase8_freeze.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "a3d89a4c9aa29bacb0c7d8891cd60c91f6c091e211810c1eb92c6e15f0ad09df"
+    },
+    {
+      "path": "benchmarks/phase9_protocol.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "48127b53c87002e88dfad4197315a8b8eb77807d17e44e63c93e657418bcc555"
+    },
+    {
+      "path": "benchmarks/phase9_reranker_replay.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "4cf8898fcc31d7b6ca6c4abaa798bb6e68e1a58a3e6d1b7a227d49a1f6510052"
+    },
+    {
+      "path": "benchmarks/phase9_run.py",
+      "phase": "9",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "5e0b6dd4846dcae1d646849d670e3e7668153532be58bd085301604e1010fce2"
+    },
+    {
+      "path": "benchmarks/phase9_select.py",
+      "phase": "9",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "07661ff0881c3dcafdf461f4e93a0d047c57437f5194b0c880089fdad3e6a2a5"
+    },
+    {
+      "path": "benchmarks/phase9_selected_config.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "9391f80ac9f3d00d3de263fef2a909e81c9b9bfe62e841bb90befc25bf6a30b8"
+    },
+    {
+      "path": "benchmarks/phase9_source_proxy_gap.json",
+      "phase": "9",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "235f54189e5ea51c6cf952a18b85b4a5f260118052dbdf8f394e90185537f014"
+    },
+    {
+      "path": "benchmarks/postgres_concurrent_load.py",
+      "phase": "cross-phase",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "5f545804ed84364bccdafb35193cf26fbc991a464969d6fecf7f31c45e822898"
+    },
+    {
+      "path": "benchmarks/postgres_retrieval_baseline.py",
+      "phase": "cross-phase",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "f8c88f63e7644c475a376b13649fe6ff753e838ae129a6f0ccc13387e0277d6b"
+    },
+    {
+      "path": "benchmarks/retrieval_baseline.py",
+      "phase": "cross-phase",
+      "purpose": "offline replay/build utility",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "04b80ab269c2d26e3a49dc6acfdcf0a1a21d8417bfa910c8b8ab831a3b7b197a"
+    },
+    {
+      "path": "docs/ENGINEERING_AUDIT.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "9c6711139a75723441aec57128ca9710694e04acd43dc610574ae69aba2fc671"
+    },
+    {
+      "path": "docs/SYNAPSE_EVAL.md",
+      "phase": "cross-phase",
+      "purpose": "engineering/report documentation",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "60ecbbb8fef5ff7573d379cfcfcd40ca8b37343ffb929a2e6cc1e0f2d574fdaa"
+    },
+    {
+      "path": "docs/engineering_validation.json",
+      "phase": "cross-phase",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "current",
+      "evidence_status": "engineering documentation / not a benchmark result",
+      "canonical": false,
+      "sha256": "cda49cb303469c3ee1f207ff7f2308a0587abe6f422b3f67b00ad172cdf251e7"
+    },
+    {
+      "path": "evals/golden.schema.json",
+      "phase": "cross-phase",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "367349be189b2835126554b3b082d714e654e75c1cb9aa80aad7efa694cc5419"
+    },
+    {
+      "path": "evals/phase10_authoring.tsv",
+      "phase": "10",
+      "purpose": "draft authoring input",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "5393d7afabd83678614974215c631827c863ac1046ee2caf78c2dac7b45d6619"
+    },
+    {
+      "path": "evals/phase10_case_metadata.json",
+      "phase": "10",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "251bb7acda185e8ce253e70816ddeb653f0b688e711b0e1b49be58a2bb010035"
+    },
+    {
+      "path": "evals/phase10_evidence_cases.json",
+      "phase": "10",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "2951ead35a5dd4a7a4faa0a26d4672d6545a68160e3f0baff851a2aa6e745f1a"
+    },
+    {
+      "path": "evals/phase10_review_state.json",
+      "phase": "10",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "607f4729c76c7f25975e75522f9b6987b063d66523b0b238753b34b6bd2b421e"
+    },
+    {
+      "path": "evals/phase10_source_locators.json",
+      "phase": "10",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "186198a6403efb70660c328537c0b2dbd344e5cc98ac32c539cdb23500a3da73"
+    },
+    {
+      "path": "evals/phase10_source_manifest.json",
+      "phase": "10",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "3f7f64102f7be467cc1af044aabe99811871373c25101bf78b1b054cebfd9d63"
+    },
+    {
+      "path": "evals/phase10_split_manifest.json",
+      "phase": "10",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "13e85034070b426c227ce253da9ae2257902c8c19081469b34cf795c639e34e4"
+    },
+    {
+      "path": "evals/phase10b_authoring.tsv",
+      "phase": "10b",
+      "purpose": "draft authoring input",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "5a3b4a93f8d43a8ecd77a64e295624bff65a086c55342479922a21d488d21545"
+    },
+    {
+      "path": "evals/phase10b_authoring_02.tsv",
+      "phase": "10b",
+      "purpose": "draft authoring input",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "df1bde47b03070cf82ce533ae3d0b495d79e45dd5ff4689496f11a3fd5f78c9b"
+    },
+    {
+      "path": "evals/phase10b_authoring_03.tsv",
+      "phase": "10b",
+      "purpose": "draft authoring input",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "275805882649f656d9ba3dcefcac13e623b3725bc875291e1f4559866a1ae3a8"
+    },
+    {
+      "path": "evals/phase10b_authoring_04.tsv",
+      "phase": "10b",
+      "purpose": "draft authoring input",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "73a2d469afeca49d2ef9091faf1e8a18e2be07ad658a9a1a02f34284bd4d1fab"
+    },
+    {
+      "path": "evals/phase10b_external_sources.json",
+      "phase": "10b",
+      "purpose": "provenance/license",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "22f8e2cb1de19fa4690cc80a277828bfb328534bdafbbdb9721450a2eaa78470"
+    },
+    {
+      "path": "evals/phase10b_sources/cpython/LICENSE",
+      "phase": "10b",
+      "purpose": "provenance/license",
+      "temporal_status": "current",
+      "evidence_status": "provisional / pre-review",
+      "canonical": false,
+      "sha256": "78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb"
+    },
+    {
+      "path": "evals/phase6_annotation_audit.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "d0b8d34fd97caef2bbc06f903c386fe51a51f423d60fc455b39eac2c62c62ef6"
+    },
+    {
+      "path": "evals/phase7_split_manifest.json",
+      "phase": "7",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "7812b0b9d985d32bc88e55f221e5278374597f844994dc44582c5c6be9cb470a"
+    },
+    {
+      "path": "evals/phase9_challenge_cases.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "657669a2fc223edee16ebd1424db000d560c2e147316d2bc1af7f45817b471f1"
+    },
+    {
+      "path": "evals/phase9_evidence_cases.json",
+      "phase": "9",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "7256ecc7feef07c6cbf86607cb83722f417d83149f0c5a663918d04fab1046c4"
+    },
+    {
+      "path": "evals/phase9_split_manifest.json",
+      "phase": "9",
+      "purpose": "provenance/license",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e9bd037d5163f3ab9963953f0d28e6d298fa498098c5f1a4231f9b7ede1ea0d0"
+    },
+    {
+      "path": "evals/retrieval_corpus.json",
+      "phase": "cross-phase",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "5ac0dd1194151cdd9d956d5326fc5b0d75b9c7473fc2bfb311b7d48ffdd39282"
+    },
+    {
+      "path": "evals/retrieval_expanded.json",
+      "phase": "cross-phase",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "98e8b039641582f35093e1bda380219364384bd13ff1d98c74a5029d228db19c"
+    },
+    {
+      "path": "evals/retrieval_expanded_results.json",
+      "phase": "cross-phase",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "8bf004af8101a30afe9a37d1fa0d442bab14ea3408d6e8ca832f9cbcba0ea0a0"
+    },
+    {
+      "path": "evals/retrieval_phase2_results.json",
+      "phase": "2",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "30681d0a797df5713b7d878acab36cc5edb6f8f5bc7e55da4a87d1386464e6b0"
+    },
+    {
+      "path": "evals/retrieval_phase3_postgres_results.json",
+      "phase": "3",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "30681d0a797df5713b7d878acab36cc5edb6f8f5bc7e55da4a87d1386464e6b0"
+    },
+    {
+      "path": "evals/retrieval_results.json",
+      "phase": "cross-phase",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "30681d0a797df5713b7d878acab36cc5edb6f8f5bc7e55da4a87d1386464e6b0"
+    },
+    {
+      "path": "evals/retrieval_semantic.json",
+      "phase": "4B",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "aa657c1a7457017c62525cd7665f1723817df3c50f72cc2444644ea5eba9a5a9"
+    },
+    {
+      "path": "evals/retrieval_semantic_depth_10.json",
+      "phase": "4B",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "1f314ebe5a901d438539310e1f9350e048512769bdd10aec8ce772d8e294ef10"
+    },
+    {
+      "path": "evals/retrieval_semantic_depth_20.json",
+      "phase": "4B",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e23924f4da8099b94abcbdbc96112127dfa907fbd6b5e183eb5065a875854581"
+    },
+    {
+      "path": "evals/retrieval_semantic_depth_5.json",
+      "phase": "4B",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "be08c54799e8ee6f0d45aad89c9ebc9870ae45b2d7eb2a48c2345847c9f9b8d9"
+    },
+    {
+      "path": "evals/retrieval_semantic_depth_50.json",
+      "phase": "4B",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "1b574d759afd36eb16cd059c5969f3a5c4d5c36ab3e4453e18f8eb643a8801b2"
+    },
+    {
+      "path": "evals/retrieval_semantic_model2vec_results.json",
+      "phase": "4B",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e23924f4da8099b94abcbdbc96112127dfa907fbd6b5e183eb5065a875854581"
+    },
+    {
+      "path": "evals/retrieval_semantic_phase6_audited.json",
+      "phase": "6",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "e9486b0a339d5df1830251e1ec3eb6e81e005d35502877b6ccd1ea085192c164"
+    },
+    {
+      "path": "evals/synapse_synthetic_fixture_results.json",
+      "phase": "4B",
+      "purpose": "evaluation fixture/result or protocol; consult experiment index",
+      "temporal_status": "historical",
+      "evidence_status": "historical experiment / non-canonical",
+      "canonical": false,
+      "sha256": "585a68865f6298a4064fa07f504f6d23ea6d2215047c683961e044117e1d91e0"
+    }
+  ]
+}

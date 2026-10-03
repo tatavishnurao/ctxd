@@ -1,3 +1,4 @@
+import logging
 import time
 from pathlib import Path
 
@@ -7,6 +8,7 @@ from ctxd.app.ingestion.chunking import StructureAwareChunker
 from ctxd.app.ingestion.loaders import Metadata, TextFileLoader, document_from_content
 from ctxd.app.models.domain import Chunk, Document, DocumentSourceType
 from ctxd.app.observability.metrics import (
+    EMBEDDING_REFRESHES_TOTAL,
     INGESTED_CHUNKS_TOTAL,
     INGESTED_DOCUMENTS_TOTAL,
     LEXICAL_INDEX_UPDATE_LATENCY_SECONDS,
@@ -14,6 +16,7 @@ from ctxd.app.observability.metrics import (
 from ctxd.app.retrieval.semantic import EmbeddingModel
 from ctxd.app.storage.documents import DocumentStore
 
+logger = logging.getLogger(__name__)
 tracer = trace.get_tracer(__name__)
 
 
@@ -61,7 +64,11 @@ class IngestionService:
     def _store_document(self, document: Document) -> tuple[Document, list[Chunk], bool]:
         existing = self.store.get_document(document.document_id, document.tenant_id)
         if existing is not None and existing.content_hash == document.content_hash:
-            return existing, self.store.list_chunks(document.tenant_id, document.document_id), False
+            # Idempotency is keyed on (content, embedding version): unchanged
+            # content embedded under another version is re-embedded, never skipped.
+            chunks = self.store.list_chunks(document.tenant_id, document.document_id)
+            self._refresh_stale_embeddings(existing, chunks)
+            return existing, chunks, False
 
         with tracer.start_as_current_span("chunking") as span:
             chunks = self.chunker.chunk(document)
@@ -87,3 +94,29 @@ class IngestionService:
         INGESTED_DOCUMENTS_TOTAL.labels(document.source_type.value).inc()
         INGESTED_CHUNKS_TOTAL.labels(document.source_type.value).inc(len(chunks))
         return document, chunks, created
+
+    def _refresh_stale_embeddings(self, document: Document, chunks: list[Chunk]) -> None:
+        if self.embedding_model is None or not chunks:
+            return
+        version = self.embedding_model.version
+        counts = self.store.embedding_versions(document.tenant_id, document.document_id)
+        if counts == {version: len(chunks)}:
+            return
+        with tracer.start_as_current_span("embedding.refresh") as span:
+            vectors = self.embedding_model.embed_documents([chunk.content for chunk in chunks])
+            if len(vectors) != len(chunks):
+                raise RuntimeError("embedding provider returned an unexpected vector count")
+            self.store.replace_embeddings(
+                document.document_id,
+                document.tenant_id,
+                embedding_version=version,
+                embeddings={
+                    chunk.chunk_id: vector for chunk, vector in zip(chunks, vectors, strict=True)
+                },
+            )
+            span.set_attribute("indexing.chunk_count", len(chunks))
+        EMBEDDING_REFRESHES_TOTAL.inc()
+        logger.warning(
+            "embedding_version_refreshed",
+            extra={"previous_versions": sorted(counts), "embedding_version": version},
+        )

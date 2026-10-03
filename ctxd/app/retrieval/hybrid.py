@@ -1,8 +1,17 @@
 from concurrent.futures import ThreadPoolExecutor
+from dataclasses import dataclass
 
 from ctxd.app.models.domain import ContextCandidate
 from ctxd.app.retrieval.lexical import Retriever
-from ctxd.app.retrieval.semantic import SemanticRetriever
+from ctxd.app.retrieval.semantic import SemanticRetriever, SemanticSearchResult
+
+
+@dataclass(frozen=True)
+class HybridSearchResult:
+    candidates: list[ContextCandidate]
+    lexical_count: int
+    semantic_count: int
+    stale_chunks: int
 
 
 class HybridRetriever:
@@ -73,16 +82,30 @@ class HybridRetriever:
         ]
 
     def search(self, query: str, tenant_id: str, top_k: int) -> list[ContextCandidate]:
+        return self.search_detailed(query, tenant_id, top_k).candidates
+
+    def depth(self, top_k: int) -> int:
+        return self.candidate_depth or max(top_k, min(100, top_k * 2))
+
+    def search_detailed(self, query: str, tenant_id: str, top_k: int) -> HybridSearchResult:
         if top_k <= 0:
             raise ValueError("top_k must be positive")
-        width = self.candidate_depth or max(top_k, min(100, top_k * 2))
+        width = self.depth(top_k)
+        semantic: SemanticSearchResult
         if self.parallel:
             with ThreadPoolExecutor(max_workers=2, thread_name_prefix="ctxd-hybrid") as executor:
                 lexical_future = executor.submit(self.lexical.search, query, tenant_id, width)
-                semantic_future = executor.submit(self.semantic.search, query, tenant_id, width)
+                semantic_future = executor.submit(
+                    self.semantic.search_detailed, query, tenant_id, width
+                )
                 lexical = lexical_future.result()
                 semantic = semantic_future.result()
         else:
             lexical = self.lexical.search(query, tenant_id, width)
-            semantic = self.semantic.search(query, tenant_id, width)
-        return self.fuse(lexical, semantic, top_k)
+            semantic = self.semantic.search_detailed(query, tenant_id, width)
+        return HybridSearchResult(
+            candidates=self.fuse(lexical, semantic.candidates, top_k),
+            lexical_count=len(lexical),
+            semantic_count=len(semantic.candidates),
+            stale_chunks=semantic.stale_chunks,
+        )

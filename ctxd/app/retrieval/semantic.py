@@ -146,18 +146,47 @@ def semantic_candidate(hit: SemanticHit) -> ContextCandidate:
     )
 
 
+@dataclass(frozen=True)
+class SemanticSearchResult:
+    candidates: list[ContextCandidate]
+    # Tenant chunks embedded under another version, counted only when the
+    # configured version returned fewer than the requested candidates.
+    stale_chunks: int = 0
+
+
 class SemanticRetriever:
     def __init__(self, index: object, model: EmbeddingModel) -> None:
         self.index = cast(Any, index)
         self.model = model
 
     def search(self, query: str, tenant_id: str, top_k: int) -> list[ContextCandidate]:
+        return self.search_detailed(query, tenant_id, top_k).candidates
+
+    def search_detailed(self, query: str, tenant_id: str, top_k: int) -> SemanticSearchResult:
         if top_k <= 0:
             raise ValueError("top_k must be positive")
         hits = self.index.search_semantic(
             self.model.embed_query(query), tenant_id, top_k, version=self.model.version
         )
-        return [semantic_candidate(hit) for hit in hits]
+        candidates = [semantic_candidate(hit) for hit in hits]
+        stale = 0
+        if len(hits) < top_k:
+            # A short result can mean the corpus was embedded under another
+            # version; that must be reported, never silently treated as empty.
+            stale = self._stale_chunks(tenant_id)
+        return SemanticSearchResult(candidates, stale)
+
+    def _stale_chunks(self, tenant_id: str) -> int:
+        counts = cast(dict[str, int], self.index.embedding_versions(tenant_id))
+        return sum(count for version, count in counts.items() if version != self.model.version)
 
     def statistics(self, tenant_id: str) -> SemanticIndexStatistics:
-        return cast(SemanticIndexStatistics, self.index.semantic_statistics(tenant_id))
+        counts = cast(dict[str, int], self.index.embedding_versions(tenant_id))
+        return SemanticIndexStatistics(
+            indexed_chunks=counts.get(self.model.version, 0),
+            embedding_version=self.model.version,
+            embedding_dimension=self.model.dimension,
+            stale_chunks=sum(
+                count for version, count in counts.items() if version != self.model.version
+            ),
+        )
