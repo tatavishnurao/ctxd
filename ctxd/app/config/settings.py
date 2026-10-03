@@ -34,8 +34,9 @@ class Settings(BaseSettings):
     # indexed when it is not, so PostgreSQL + fake requires explicit opt-in.
     allow_fake_embeddings: bool = False
 
-    # None resolves to hybrid with a real embedding model and lexical otherwise.
-    default_retrieval_mode: RetrievalModeName | None = None
+    # Lexical (BM25) is the null policy. Hybrid did not beat it on top-10 quality
+    # in the BEIR evaluation (docs/BEIR_EVAL.md), so it stays opt-in per request.
+    default_retrieval_mode: RetrievalModeName = "lexical"
     request_deadline_ms: int = Field(default=10_000, gt=0)
     max_document_chars: int = Field(default=2_000_000, gt=0)
 
@@ -90,9 +91,7 @@ class Settings(BaseSettings):
 
     @property
     def resolved_retrieval_mode(self) -> RetrievalModeName:
-        if self.default_retrieval_mode is not None:
-            return self.default_retrieval_mode
-        return "hybrid" if self.embedding_provider == "model2vec" else "lexical"
+        return self.default_retrieval_mode
 
     def effective_configuration(self) -> dict[str, Any]:
         """Non-secret settings that decide which retrieval path actually runs."""

@@ -71,15 +71,27 @@ def test_effective_configuration_is_logged_as_structured_fields() -> None:
 # --- C3: server-side default retrieval mode -----------------------------------------
 
 
-def test_default_mode_resolves_hybrid_only_with_a_real_model() -> None:
+def test_default_mode_is_lexical_even_with_a_real_model() -> None:
     assert Settings().resolved_retrieval_mode == "lexical"
-    assert Settings(embedding_provider="model2vec").resolved_retrieval_mode == "hybrid"
+    assert Settings(embedding_provider="model2vec").resolved_retrieval_mode == "lexical"
     assert (
         Settings(
-            embedding_provider="model2vec", default_retrieval_mode="lexical"
+            embedding_provider="model2vec", default_retrieval_mode="hybrid"
         ).resolved_retrieval_mode
-        == "lexical"
+        == "hybrid"
     )
+
+
+def test_query_without_mode_runs_lexical_by_default() -> None:
+    store = InMemoryDocumentStore()
+    app = create_app(store)
+    app.state.services = create_runtime(store, Settings())
+    client = TestClient(app)
+    assert client.post("/v1/documents", headers=HEADERS, json=document()).status_code == 201
+    response = client.post("/v1/query", headers=HEADERS, json={"tenant_id": "t", "query": "cache"})
+    metadata = response.json()["context"]["metadata"]
+    assert metadata["requested_mode"] == "lexical"
+    assert metadata["retrieval_type"] == "lexical"
 
 
 def test_query_without_mode_uses_server_default() -> None:

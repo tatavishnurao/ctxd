@@ -46,7 +46,9 @@ Sanity anchor: published BEIR BM25 nDCG@10 is 0.665 for SciFact and 0.325 for NF
 2. **Hybrid does not improve the top of the ranking, and on SciFact it hurts it.** nDCG@10 drops by 0.059 versus BM25, with an interval excluding zero. On NFCorpus it is a tie. With this 8M static embedding model, equal-weight RRF lets a weaker semantic branch displace strong BM25 hits from the top 10.
 3. **Model2Vec potion-base-8M alone is clearly weaker than BM25** on both datasets.
 
-**Consequence for ctxd.** A ContextPacket is the top of the ranking cut to a token budget, so top-10 quality is what reaches the model. The Phase C default (hybrid whenever Model2Vec is configured) is therefore **not supported by this evidence for small packets on SciFact-like text**. It is supported when the budget is large enough that recall dominates. This is a decision to make explicitly. Changing it should be its own reviewed change, and it should not be tuned on these test sets: using BEIR `test` for selection would contaminate the only real-text measurement the project has.
+**Consequence for ctxd.** A ContextPacket is the top of the ranking cut to a token budget, so top-10 quality is what reaches the model. The Phase C default (hybrid whenever Model2Vec is configured) was **not supported by this evidence for small packets on SciFact-like text**; it is supported only when the budget is large enough that recall dominates.
+
+**Decision (v0.1):** the server default retrieval mode is lexical, whatever embedding provider is configured. BM25 is the null retrieval policy, and hybrid showed one clear top-rank harm (SciFact) and no demonstrated top-rank benefit (NFCorpus is flat, and only directionally measured). Reverting is declining to promote hybrid without evidence, not tuning: no parameter was changed, and hybrid remains a supported, tested mode for recall-oriented callers (`retrieval_mode=hybrid`, or `CTXD_DEFAULT_RETRIEVAL_MODE=hybrid`). Future changes must not be selected on these test sets: using BEIR `test` for selection would contaminate the only real-text measurement the project has.
 
 ## Ties at the cutoff
 
@@ -54,7 +56,8 @@ The rank-10 boundary is decided by chunk-ID tie-breaking in 10 of 300 hybrid que
 
 ## Limits
 
+- **Scope of the finding:** Model2Vec (static embedding) on two BM25-friendly corpora; finding is provisional, not a claim that dense retrieval is useless. A contextual embedding model, or corpora with more vocabulary mismatch, could change the result.
 - Two small datasets, both scientific or medical. This is not a general claim about all text.
 - Document-level qrels judge ranking. They do not judge evidence-span sufficiency or provenance, so the evidence-aware selection thesis is still unmeasured.
-- The NFCorpus intervals are query-level and optimistic. Only SciFact has an informative cluster structure.
+- **NFCorpus is directional only.** Its largest query cluster holds 318 of 323 queries (6 clusters in all), so the cluster bootstrap is uninformative and the reported query-level intervals understate dependence. Only SciFact has an informative cluster structure.
 - Mean per-query times (in the JSON) come from a pure-Python in-memory scan on a shared WSL2 host. They are diagnostics, not performance claims.

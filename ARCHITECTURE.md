@@ -15,7 +15,7 @@ FastAPI -> RuntimeServices (application lifespan)
            -> greedy whole-chunk selection -> ContextPacket
 ```
 
-`ctxd/app/runtime.py` constructs the storage, ingestion, retrievers and assembler. Literal defaults in `config/settings.py` and `models/domain.py` are memory storage, fake embeddings and lexical queries. Explicit PostgreSQL + Model2Vec configuration and hybrid requests enable the supported production-style path. There is no production reranker wiring.
+`ctxd/app/runtime.py` constructs the storage, ingestion, retrievers and assembler. Literal defaults in `config/settings.py` and `models/domain.py` are memory storage, fake embeddings and lexical queries. Explicit PostgreSQL + Model2Vec configuration enables the supported production-style path; the server default mode stays lexical and hybrid is requested explicitly. There is no production reranker wiring.
 
 ## Ingestion
 
@@ -39,7 +39,7 @@ Default pool min/max: 1/10; connection timeout: 5 seconds; query timeout: 5000 m
 
 `retrieval/hybrid.py` runs lexical/semantic branches with a two-worker executor and unions candidates. RRF is sum of `1/(k+rank)`, default k=60, with chunk-ID tie-breaking and component scores/ranks retained. Branch depth is explicit constructor configuration or `max(top_k, min(100, top_k * 2))`; default top_k=10 happens to yield 20. There is no public candidate-depth configuration field.
 
-`context/assembler.py` preserves returned order and selects whole candidates that fit; it skips those that do not and continues. It never silently truncates chunk content. Metadata records counts, selected tokens and budget drops. `requested_mode` is what the client asked for; `retrieval_type` names only the branches that actually returned candidates (`hybrid`, `lexical`, `semantic` or `none`), with per-branch counts in `branch_candidate_counts`. If the semantic branch returns short while the tenant has chunks embedded under another version, the packet carries `warnings: ["embedding_version_mismatch"]` and `stale_embedding_chunks`. Candidates carry only computed signals (`relevance_score` plus provenance metadata). Budgets use approximate tokens. API modes are lexical/semantic/hybrid only. A request without `retrieval_mode` uses the server default: `CTXD_DEFAULT_RETRIEVAL_MODE` if set, otherwise hybrid with Model2Vec and lexical with fake embeddings.
+`context/assembler.py` preserves returned order and selects whole candidates that fit; it skips those that do not and continues. It never silently truncates chunk content. Metadata records counts, selected tokens and budget drops. `requested_mode` is what the client asked for; `retrieval_type` names only the branches that actually returned candidates (`hybrid`, `lexical`, `semantic` or `none`), with per-branch counts in `branch_candidate_counts`. If the semantic branch returns short while the tenant has chunks embedded under another version, the packet carries `warnings: ["embedding_version_mismatch"]` and `stale_embedding_chunks`. Candidates carry only computed signals (`relevance_score` plus provenance metadata). Budgets use approximate tokens. API modes are lexical/semantic/hybrid only. A request without `retrieval_mode` uses the server default: `CTXD_DEFAULT_RETRIEVAL_MODE` if set, otherwise lexical regardless of embedding provider (see `docs/BEIR_EVAL.md`).
 
 ## API, trust and failure boundaries
 
