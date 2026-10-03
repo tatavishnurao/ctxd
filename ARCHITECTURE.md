@@ -1,156 +1,64 @@
-# ctxd Architecture
+# Implemented architecture
 
-## System shape
+Scope verified at consolidation base `83352ac`. This document describes current implementation, not an aspirational agent platform.
 
-```text
-Client
-  -> API Gateway: tenant boundary, request IDs
-  -> Document ingestion and deterministic context assembly
-  -> Future: Model Router -> LLM -> Validator -> Tool Runtime -> Streaming
-  -> Observability + Evaluation
-```
-
-## Current implemented path
+## Production-reachable / supported path
 
 ```text
-Document -> TextFileLoader / API loader -> StructureAwareChunker
-         -> persistent documents, chunks, lexical postings, and embeddings
-
-Query ----+-> BM25Retriever ------------------+
-          +-> exact pgvector SemanticRetriever +-> parallel deterministic RRF
-                                                -> token-bounded ContextAssembler
-                                                -> ContextPacket
+FastAPI -> RuntimeServices (application lifespan)
+  ingestion -> loader -> StructureAwareChunker -> DocumentStore.replace_document
+                                                documents/chunks/postings/embeddings
+  query -> ContextAssembler
+              lexical: BM25Retriever
+              semantic: SemanticRetriever -> embedding provider -> exact search
+              hybrid: both in parallel -> deterministic RRF
+           -> greedy whole-chunk selection -> ContextPacket
 ```
 
-The Phase 3 lexical path remains intact. Phase 4B added the pinned local Model2Vec embedding provider, exact cosine retrieval, and hybrid RRF. Exact retrieval remains the default; HNSW was a rejected experiment.
+`ctxd/app/runtime.py` constructs the storage, ingestion, retrievers and assembler. Literal defaults in `config/settings.py` and `models/domain.py` are memory storage, fake embeddings and lexical queries. Explicit PostgreSQL + Model2Vec configuration and hybrid requests enable the supported production-style path. There is no production reranker wiring.
 
-### Ingestion
+## Ingestion
 
-`ctxd/app/ingestion/loaders.py` accepts UTF-8 `.txt` and `.md` files and provides the validated content construction used by the API. It normalizes line endings, hashes normalized content with SHA-256, and creates a deterministic tenant-and-source-scoped document ID.
+`ingestion/loaders.py` loads UTF-8 text/Markdown, normalizes line endings and constructs tenant/source-scoped identities and SHA-256 content hashes. `ingestion/chunking.py` handles headings, paragraphs, fenced code and lists, with oversized-block splitting. Default chunk target/max/overlap: 400/600/40 approximate tokens. The regex token counter is deterministic, not an LLM tokenizer. `ingestion/service.py` embeds chunks and replaces complete document state; identical ingestion reuses state.
 
-`ctxd/app/ingestion/chunking.py` identifies Markdown headings, paragraphs, fenced code blocks, and lists. Plain text uses paragraph boundaries. Oversized blocks prefer sentence boundaries and then use a hard approximate-token window. Chunk IDs include document identity, content hash, ordinal, and chunk content.
+## Storage and consistency
 
-Token counting remains behind the `TokenCounter` protocol. The current word-and-punctuation counter is deterministic but is not a model tokenizer.
+`storage/documents.py` provides protocols and in-memory implementation; `storage/postgres.py` provides pooled transactional persistence. Tables: documents, chunks, lexical_corpus_stats, lexical_terms, lexical_postings and chunk_embeddings. Composite tenant keys/FKs prevent cross-tenant references. Replacement locks document identity and tenant corpus statistics, updates chunks/postings/statistics/embeddings atomically, and rolls back failures. MVCC readers see committed states. Startup verifies migration `0002_phase4`; requests never create tables. Multiple application instances share PostgreSQL state.
 
-### Storage abstraction and runtime
+Default pool min/max: 1/10; connection timeout: 5 seconds; query timeout: 5000 ms. Migrations are an explicit deployment step. Exact vector search has no default HNSW index.
 
-`DocumentStore` remains the ingestion/storage boundary. Its `replace_document` operation atomically replaces a document and its complete chunk/index state. `LexicalIndex` is the retrieval/introspection boundary consumed by `BM25Retriever`. Both concrete backends implement both protocols so one consistency boundary owns document data and lexical state.
+## Lexical retrieval
 
-- `InMemoryDocumentStore` uses one `RLock` and incremental dictionaries/counters.
-- `PostgresDocumentStore` uses a bounded psycopg pool and PostgreSQL transactions.
-- `RuntimeServices` is application-scoped; no document/index correctness depends on Python module globals.
-- Multiple runtimes connected to one database observe the same committed state.
+`retrieval/lexical.py`, `retrieval/index.py` and backend posting search maintain tenant-local chunk N, df, tf and average length. BM25 uses k1=1.5, b=0.75; repeated query terms retain frequency weighting. PostgreSQL scores posting matches without rebuilding the corpus at query time. Deterministic score ordering uses chunk IDs for ties.
 
-The FastAPI lifespan opens and verifies the PostgreSQL pool at startup and closes it at shutdown. PostgreSQL startup requires Alembic revision `0002_phase4`; tables are never created from request handlers.
+## Semantic retrieval
 
-### PostgreSQL schema
+`retrieval/semantic.py`: real backend is Model2Vec `minishlab/potion-base-8M@bf8b056651a2c21b8d2565580b8569da283cab23`, normalized 256-dimensional vectors and cosine search. PostgreSQL uses exact pgvector; memory uses exact scan. FakeHashEmbeddingProvider is a configured development/test fixture and the out-of-box default—not real semantic quality. Real model availability, cache and offline provisioning are deployment dependencies.
 
-The migration creates:
+## Fusion and assembly
 
-- `documents`: tenant/document key, source path/type, content/hash, JSON metadata, timestamps
-- `chunks`: tenant/chunk key, document FK, ordinal, content/hash, token and lexical lengths, line range, metadata
-- `lexical_corpus_stats`: tenant-local document count, chunk count, and total lexical length
-- `lexical_terms`: tenant/term document frequency (`df`, measured over chunks)
-- `lexical_postings`: tenant/term/chunk term frequency (`tf`)
-- `chunk_embeddings`: tenant/chunk embedding, pinned model version, and dimension
+`retrieval/hybrid.py` runs lexical/semantic branches with a two-worker executor and unions candidates. RRF is sum of `1/(k+rank)`, default k=60, with chunk-ID tie-breaking and component scores/ranks retained. Branch depth is explicit constructor configuration or `max(top_k, min(100, top_k * 2))`; default top_k=10 happens to yield 20. There is no public candidate-depth configuration field.
 
-Composite tenant keys and foreign keys prevent cross-tenant references. Chunk and posting rows cascade when a document is deleted.
+`context/assembler.py` preserves returned order and selects whole candidates that fit; it skips those that do not and continues. It never silently truncates chunk content. Metadata records counts, selected tokens, budget drops and mode. Budgets use approximate tokens. API modes are lexical/semantic/hybrid only; request default is lexical.
 
-### Why an explicit inverted index
+## API, trust and failure boundaries
 
-PostgreSQL native full-text search was considered. It offers compact built-in indexes and simpler update SQL, but its dictionaries, stemming, normalization, and `ts_rank` semantics would change the Phase 2 tokenizer and BM25 ordering. Exact tenant-local `N`, `df`, `tf`, and average length would also be less explicit.
+`api/routes.py` requires `x-tenant-id` and body consistency for ingestion/query; statistics require the header. This is namespace enforcement, not identity authentication. Deploy behind a trusted authorization boundary. `/health` reports liveness, not continuous database readiness. Storage failures map to 503; retrieval timeout maps to 504; successful empty retrieval is 200. QueryResponse's answer explicitly says inference is not implemented. ModelDecision/ToolCall/ToolResult schemas do not implement execution.
 
-The implemented inverted index costs more rows and update complexity, but preserves the existing regex tokenizer and BM25 equation, makes tenant separation auditable, and supports deterministic tie-breaking by `chunk_id`. Hybrid retrieval joins its ranking with exact semantic retrieval through deterministic RRF rather than score blending.
+## Observability
 
-### Transaction semantics
+`observability/` supplies structured logging, request/trace IDs, Prometheus metrics and OpenTelemetry spans. Metrics/spans cover database/index/retrieval/assembly work with bounded dimensions; raw text, tenant IDs and queries are not telemetry labels. OTLP export is optional. Static health, missing operational SLOs and client-only historical CPU profiles remain limitations, not readiness claims.
 
-Changed-document ingestion executes in one transaction:
+## Offline evaluation (not runtime policy)
 
-```text
-BEGIN
-  acquire document advisory lock
-  lock tenant corpus-statistics row
-  inspect/upsert document
-  collect and remove old chunk/posting contributions
-  insert new chunks and postings
-  increment/decrement tenant term frequencies
-  update tenant corpus statistics
-COMMIT
-```
+`evals/retrieval.py`: Recall/MRR/nDCG, duplicate-source gain credited once without compressing chunk ranks. `evals/phase7.py` and `analysis.py`: offline ranking analysis. `evals/context_selection.py`: experimental selectors. `evals/evidence.py`: exact tenant/source/chunk spans, AND required groups, OR alternatives, joint spans, budget metrics and clustered bootstrap. `evals/review.py`: hash-bound human review gates and exact feasibility. Mechanical validation does not prove evidence sufficiency or reviewer identity.
 
-Any error rolls back the document, chunks, postings, term frequencies, and corpus statistics together. Identical content returns without replacing rows. Concurrent updates of the same document serialize on an advisory lock. Updates for different documents in one tenant serialize only while changing shared tenant statistics.
+Phase 10 tools operate on the historical 121-case revision. Phase 10B builder produces 106 unreviewed candidate objects/diagnostics; it is not a completed canonical dataset pipeline. Synapse/MCP integration is a separate evaluator over schemas/invocation results and synthetic fixtures, not an agent tool runtime.
 
-Queries use normal PostgreSQL MVCC semantics: they observe either the complete state before replacement/deletion or the complete state after it, never an intermediate state.
+## Experimental / rejected
 
-### Incremental BM25
+`reranking/` contains an offline Reranker protocol, fake fixture, FlashRank TinyBERT adapter and wrapper with RRF fallback. Benchmarks use pinned MiniLM/BGE ONNX helpers independently. Runtime and API do not import reranking/evaluation modules. TinyBERT is rejected; MiniLM/selective reranking inconclusive and offline. Alternative packing cannot replace greedy. Tested HNSW recall loss prevents default promotion. See EXPERIMENTS.md, not these classes' existence, for decisions.
 
-Index updates calculate tokens once during ingestion. Query-time work is limited to query tokenization, indexed posting lookup, and SQL scoring of matching chunks.
+## Future only
 
-For each tenant the index maintains:
-
-- `N`: chunk count
-- `df(term)`: number of tenant chunks containing the term
-- `tf(term, chunk)`: occurrence count in that chunk
-- chunk lexical length
-- total lexical length, from which average chunk length is calculated
-
-The BM25 constants and equation remain `k1=1.5`, `b=0.75`, and:
-
-```text
-idf = ln(1 + (N - df + 0.5) / (df + 0.5))
-```
-
-Repeated query terms retain the Phase 2 query-frequency multiplier. Scores sort descending with `chunk_id` as the deterministic tie-breaker.
-
-### Tenant isolation
-
-The API treats `x-tenant-id` as authoritative and rejects mismatching request bodies. Every document/chunk/index key and every search join includes tenant ID. Corpus and term statistics are tenant-local, so another tenant cannot affect IDF.
-
-### Phase 8 evaluation boundary (experimental)
-
-`ctxd/app/evals/context_selection.py` contains offline, label-free packing/decision functions and source-coverage evaluation. It is not imported by runtime assembly. Source judgments are not chunk/span evidence judgments; source suppression can remove complementary chunks. The shared evaluation nDCG helper now credits each judged source once, without compressing chunk positions.
-
-Runtime hybrid candidate depth is derived from request `top_k` when unset: `max(top_k, min(100, top_k * 2))`. The default API `top_k=10` yields depth20, but depth20 is not a universal runtime invariant. No runtime depth behavior was changed in Phase 8.
-
-### Phase 9 evidence boundary (experimental)
-
-`ctxd/app/evals/evidence.py` is an offline schema and metric layer, not runtime policy wiring. Evidence groups are conjunctive across required groups; an alternative is sufficient only when all of its exact, tenant-scoped chunk spans are selected. Chunk IDs/text are regenerated with production chunking to validate locators. Pending human-review cases are excluded from scored answerability rather than assigned invented labels. Standard binary chunk IR metrics remain separate from project-specific evidence coverage and token-efficiency metrics.
-
-Phase 9 keeps query paraphrases and each source/template family within a single partition, and bootstraps complete template clusters. Its current corpus is synthetic, not independently human-judged deployment evidence. Text equality is not automatically evidence equivalence: identical statements at distinct resources may both be required. Neither the selected offline packing policy nor reranking is integrated into production.
-
-### Context assembly
-
-`ContextAssembler` selects lexical, semantic, or hybrid retrieval according to `RetrievalMode`, preserves retrieval order, and selects whole candidates that fit the token budget. Candidates that do not fit are dropped, not truncated. Packet metadata records retrieved/selected counts, token counts, budget drops, and retrieval type.
-
-### Observability and failures
-
-Bounded metrics cover database operation latency, index update latency, lexical search latency, ingestion, retrieval results, selected tokens, and budget drops. Span names include `database.document_upsert`, `database.chunk_replace`, `lexical.index_update`, `lexical.search`, and `context_assembly`. Raw documents, terms, queries, IDs, paths, and tenants are not metric labels or span attributes.
-
-Database unavailability, malformed persisted metadata, failed transactions, and retrieval timeouts raise explicit errors. The API distinguishes timeouts (`504`) and unavailable retrieval (`503`) from a successful empty candidate list (`200`).
-
-### Evaluation
-
-The original 22-case corpus remains unchanged and produces the Phase 2 scores through both backends. The current semantic corpus contains 80 documents and 150 cases covering exact terms, morphology variants, ambiguous/shared terms, near-duplicate content, multiple relevant documents, long chunks, rare terms, tenant isolation, semantic paraphrases, and distractor-heavy retrieval. Phase 6 preserves that source fixture and maintains a separate audited copy with per-case annotation provenance.
-
-## Historical Phase 3 boundary
-
-Semantic/vector retrieval and reranking were outside Phase 3. Semantic and hybrid retrieval were subsequently implemented in Phase 4B. Production reranking, dependency expansion, LLM inference, model routing, tools, SSE, frontend work, and distributed job infrastructure remain deferred.
-
-## Phase 4B additions
-
-- `FakeHashEmbeddingProvider` remains a fixture for deterministic tests only.
-- `RealEmbeddingProvider` is the single real semantic backend: local Model2Vec `minishlab/potion-base-8M`, 256 dimensions, normalized vectors, cosine distance, batched document embedding and query embedding.
-- Hybrid retrieval continues to use reciprocal-rank fusion: `RRF(d) = sum(1 / (k + rank_i(d)))`, configurable `k`, deterministic chunk-id tie-breaking, and union semantics that preserve lexical-only and semantic-only candidates. Component ranks, raw scores, and fused score are retained in metadata.
-- The Synapse/MCP evaluator is isolated in `ctxd/app/integrations/synapse/` and consumes generic MCP schemas plus invocation results. It does not couple ctxd to Synapse internals.
-
-## Phase 5 reranking decision
-
-The optional `ctxd/app/reranking/` experiment keeps reranking outside `HybridRetriever`: a fixed RRF candidate set is passed to a local ONNX cross-encoder and failures fall back to RRF order. The experiment preserves candidate identity and provenance and adds bounded telemetry. It is not wired into runtime or public retrieval modes. Measured TinyBERT quality regressed versus RRF, so reranking is rejected for now.
-
-## Phase 6 hardening boundary
-
-Phase 6 freezes all ten Phase 5 JSON artifacts by manifest and checksum test. Evaluation analysis is separate from retrieval behavior: the source corpus is untouched, the audited corpus uses binary judgments with explicit status/notes, and duplicate similarity is never converted into relevance automatically. TinyBERT forensic and performance scripts remain offline experiments. They do not alter candidate generation, RRF, context assembly, runtime configuration, retrieval modes, or API schemas.
-
-## Phase 7 holdout decision boundary
-
-Phase 7 freezes a 103/47 development/holdout split and reports one holdout evaluation of a checksummed MiniLM-L6 configuration with a label-free exact-token protection. The result improves holdout nDCG@5, while MRR and Recall@1 confidence intervals cross zero; CPU cost is substantial. This is an offline research result only. It does not change `HybridRetriever`, candidate generation, RRF, `ContextAssembler`, `RetrievalMode`, runtime wiring, or public API behavior. Reranking remains unexposed.
+Authentication hardening, readiness/capacity/recovery work and reviewed ground truth are roadmap items. LLM inference, model routing, agent/tool execution, sandboxing, distributed jobs and streaming/frontend are not implemented. Redis URL is a dormant setting, not a cache subsystem.

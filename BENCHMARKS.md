@@ -1,3 +1,30 @@
+# Benchmark catalog and eligibility
+
+**Current Phase 10/10B: PRE-REVIEW / NON-CANONICAL / BLOCKED.** The historical 121-case dataset/review packet is distinct from the 106-case Phase 10B candidate build. Zero independent human reviews. No final Phase 10B split, packet batches or completed annotation/leakage audit exists; do not execute canonical holdout scoring.
+
+## Which work is current?
+
+`uv run python benchmarks/phase10b_build.py` constructs draft corpus objects and prints feasibility; it does not run retrieval or persist a finished reviewed revision. Current output: 25 EASY, 33 MEDIUM, 36 HARD, 12 VERY_HARD, 0 INFEASIBLE. Strict construction and deterministic cost calculations do not establish semantic sufficiency/provenance. `phase10_review.py` and `phase10_check.py` apply to the older revision; eligibility remains blocked. Canonical current results: **none**.
+
+## Historical benchmark classes
+
+- Phase 1 fixture/Synapse results: synthetic scaffolding, not real tool runtime outcomes.
+- Phase 2 memory lexical baseline: synthetic scale and 22-case retrieval fixture; no PostgreSQL/model requirement.
+- Phase 3 PostgreSQL lexical scripts: synthetic load; database/migrations required; destructively reset tables.
+- Phase 4B exact/vector scripts and semantic corpus: PostgreSQL for persistent runs; pinned real Model2Vec artifacts required; memory comparisons are separate. HNSW scripts mutate indexes in a dedicated database.
+- Phase 5/6 reranker and reproducibility scripts: PostgreSQL for full-path runs plus TinyBERT/FlashRank model artifacts; rejected/offline, original and audited labels differ.
+- Phase 7/8: pinned MiniLM/BGE ONNX artifacts and frozen candidate pools; performance scripts require PostgreSQL; holdout studies are historical (Phase 8 reused holdout), not current canonical ground truth.
+- Phase 9: fresh but synthetic evidence fixture; PostgreSQL baselines plus optional offline model replay. Provenance challenge is separate post-freeze evidence, not a fresh deployment benchmark.
+- Phase 10: authentic pinned repository sources with agent-authored labels; Phase 10B adds pinned CPython documentation. Both remain unreviewed/non-canonical. Candidate construction does not need a database or reranker artifacts.
+
+## Execution safety
+
+Many historical scripts truncate data, create/drop indexes, download model artifacts or use exclusive artifact writes. Read each script/protocol before replay; use a dedicated database. Never rerun sealed one-shot holdout scripts merely to explore. Use `CTXD_TEST_DATABASE_URL` on a dedicated migrated database for integration tests; absent variable causes 11 skips. Configured mypy checks application packages only.
+
+Historical results below are preserved as measurements under their original protocol—not certified production quality or current canonical scores. Navigate EXPERIMENTS.md for decisions, PERFORMANCE.md for environments and docs/evidence_inventory.json for paths/checksums. TinyBERT rejected; MiniLM/selective inconclusive; greedy and exact retrieval retained.
+
+---
+
 # Benchmarks
 
 ## Phase 9 evidence-grounded evaluation (synthetic; no promotion)
