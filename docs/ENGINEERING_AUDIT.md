@@ -13,7 +13,7 @@ Initial base `83352ac` on main; `git status --short` and `git diff --stat` empty
 - **KEEP — separate integration evaluator:** `ctxd/app/integrations/synapse/` and docs/SYNAPSE_EVAL.md. Synthetic tool-invocation schema/result evaluation; no sandbox or tool runtime.
 - **ARCHIVE LATER:** immutable old phase benchmark scripts/artifacts can move only with an explicit manifest/link/test migration. Scripts use sibling imports and hard-coded phase paths; moving files blindly would break replay. Leave in place now.
 - **UNCERTAIN — forward-looking schemas:** ModelDecision, ToolCall, ToolResult in domain.py are placeholders; QueryResponse still references them. Removing them may change API schemas. They do not prove implementation.
-- **UNCERTAIN — dormant configuration:** `Settings.redis_url` has no runtime consumer found. It does not represent implemented Redis infrastructure; removal requires compatibility review.
+- **REMOVED — dormant configuration:** `Settings.redis_url` had no runtime consumer and was removed with the unused Compose Redis service (Phase C). Settings ignore unknown `CTXD_` variables, so an old `CTXD_REDIS_URL` is harmless.
 - **KEEP — unfinished candidate helpers:** `phase10b_fetch.py` pins sources; `phase10b_build.py` only constructs/prints drafts; exclusive-write `save()` currently has no caller. Do not advertise a completed export/review workflow.
 - **SAFE TO REMOVE (generated only):** ignored `__pycache__` and temporary `/tmp/phase10b_catalogs` diagnostic catalogs, if not needed locally. They are not durable benchmark evidence and are not removed here.
 

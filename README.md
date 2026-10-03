@@ -17,7 +17,7 @@ Query -> BM25 + exact semantic search -> parallel deterministic RRF
                               greedy ContextAssembler -> ContextPacket
 ```
 
-Defaults are **memory + fake fixture embeddings + lexical queries**. The supported production-style path is explicit **PostgreSQL + pinned real Model2Vec + exact pgvector + hybrid queries**. Candidate depth depends on request/configuration, not a universal 20. Tenant headers require a trusted authentication boundary.
+Out-of-box defaults are **memory + fake fixture embeddings + lexical queries**, for tests and local hacking only. `docker compose up` runs the evaluated path instead: **PostgreSQL + pinned Model2Vec + exact pgvector, with hybrid as the server default mode**. The server refuses to start with PostgreSQL + fake embeddings unless `CTXD_ALLOW_FAKE_EMBEDDINGS=true`, and logs an `effective_configuration` line at startup. Candidate depth depends on request/configuration, not a universal 20. Tenant headers require a trusted authentication boundary.
 
 ## Quickstart
 
@@ -38,6 +38,13 @@ curl localhost:8000/v1/query -H 'content-type: application/json' \
 ### Persistent, real-embedding path
 
 ```bash
+docker compose up -d --wait        # postgres, migrations, app on 127.0.0.1:8000
+curl localhost:8000/ready          # storage + embedding model probe
+```
+
+Or run the app outside Docker:
+
+```bash
 docker compose up -d postgres
 CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd uv run alembic upgrade head
 CTXD_STORAGE_BACKEND=postgres CTXD_EMBEDDING_PROVIDER=model2vec \
@@ -45,7 +52,7 @@ CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd \
   uv run uvicorn ctxd.app.main:app --host 0.0.0.0 --port 8000
 ```
 
-Request `"retrieval_mode":"hybrid"` explicitly. Real embeddings require pinned model artifacts (first use may download them); configure `CTXD_EMBEDDING_CACHE_DIR` / `CTXD_EMBEDDING_OFFLINE` for deployment. Docker Compose's database startup is not authentication or deployment hardening.
+With Model2Vec configured, queries without `retrieval_mode` run hybrid (`CTXD_DEFAULT_RETRIEVAL_MODE` overrides). Real embeddings require pinned model artifacts (first use may download them); configure `CTXD_EMBEDDING_CACHE_DIR` / `CTXD_EMBEDDING_OFFLINE` for deployment. Docker Compose's database startup is not authentication or deployment hardening.
 
 ### Validation
 
@@ -73,7 +80,8 @@ Without the test database variable, the PostgreSQL integration tests skip; witho
 
 ## API surface
 
-- `GET /health`: liveness (not database readiness).
+- `GET /health`: static liveness.
+- `GET /ready`: readiness; probes storage and the embedding model, 503 if either fails.
 - `POST /v1/documents`: ingestion.
 - `POST /v1/query`: retrieval and context assembly.
 - `GET /v1/index/statistics`, `/v1/index/semantic-statistics`: tenant statistics.

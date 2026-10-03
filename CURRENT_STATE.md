@@ -15,9 +15,9 @@ A context-retrieval and assembly system intended for AI-agent workloads. It retu
 - Greedy whole-chunk budget assembly; oversized candidates are dropped, not truncated.
 - FastAPI ingestion/query/statistics/metrics endpoints; bounded metrics, tracing and explicit storage/timeout errors.
 
-**Actual out-of-box defaults:** memory storage, fake hash embeddings, lexical query mode. Fake embeddings are fixtures, not meaningful semantic retrieval. Production-style deployment must explicitly select PostgreSQL, `CTXD_EMBEDDING_PROVIDER=model2vec`, and hybrid query mode. Hybrid branch depth is explicit constructor configuration or `max(top_k, min(100, top_k * 2))`; it is not universally 20.
+**Actual out-of-box defaults:** memory storage, fake hash embeddings, lexical query mode. `docker compose up` instead runs PostgreSQL + Model2Vec with hybrid as the server default, and PostgreSQL + fake embeddings is refused unless explicitly allowed. Fake embeddings are fixtures, not meaningful semantic retrieval. Production-style deployment must explicitly select PostgreSQL, `CTXD_EMBEDDING_PROVIDER=model2vec`, and hybrid query mode. Hybrid branch depth is explicit constructor configuration or `max(top_k, min(100, top_k * 2))`; it is not universally 20.
 
-Tenant header/body matching and tenant-scoped SQL enforce namespaces. The header is client supplied: authentication/authorization must be supplied by a trusted deployment boundary. `/health` is a static liveness response, not an ongoing database readiness probe.
+Tenant header/body matching and tenant-scoped SQL enforce namespaces. The header is client supplied: authentication/authorization must be supplied by a trusted deployment boundary. `/health` is static liveness; `/ready` probes storage and the embedding model.
 
 ## Experimental and rejected
 
