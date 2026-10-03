@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/ctxd-logo.svg" alt="ctxd — Context Runtime" width="620" />
+</p>
+
 <div align="center">
 
 # ctxd
@@ -13,10 +17,6 @@ Retrieval, evidence selection, provenance, and token-budgeted assembly — befor
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-pgvector-336791.svg?logo=postgresql&logoColor=white)
 
 </div>
-
-<p align="center">
-  <img src="docs/assets/ctxd-context-runtime.svg" alt="ctxd context runtime architecture: information space flows through retrieval, deterministic fusion, token-budgeted selection, and into an auditable ContextPacket" width="100%" />
-</p>
 
 ---
 
