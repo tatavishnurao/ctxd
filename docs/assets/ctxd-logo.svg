@@ -1,60 +1,29 @@
 <svg width="1100" height="300" viewBox="0 0 1100 300" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="panelBack" x1="95" y1="62" x2="220" y2="228" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#163A78"/>
-      <stop offset="1" stop-color="#071A39"/>
-    </linearGradient>
-    <linearGradient id="panelMid" x1="130" y1="56" x2="255" y2="232" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3A91FF"/>
-      <stop offset="1" stop-color="#1557D8"/>
-    </linearGradient>
-    <linearGradient id="panelFront" x1="180" y1="78" x2="295" y2="225" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#D9E8FF"/>
-    </linearGradient>
-    <linearGradient id="dBlue" x1="700" y1="75" x2="840" y2="205" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#25B6FF"/>
-      <stop offset="1" stop-color="#1262F3"/>
-    </linearGradient>
-    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.12"/>
-    </filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="1100" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#050914"/><stop offset="1" stop-color="#0A1020"/></linearGradient>
+    <linearGradient id="b1" x1="82" y1="55" x2="226" y2="238" gradientUnits="userSpaceOnUse"><stop stop-color="#142D8A"/><stop offset="1" stop-color="#07143B"/></linearGradient>
+    <linearGradient id="b2" x1="129" y1="50" x2="270" y2="242" gradientUnits="userSpaceOnUse"><stop stop-color="#21C5FF"/><stop offset="0.42" stop-color="#1477FF"/><stop offset="1" stop-color="#1554D8"/></linearGradient>
+    <linearGradient id="b3" x1="188" y1="73" x2="314" y2="225" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#DCE9FF"/></linearGradient>
+    <linearGradient id="d" x1="755" y1="67" x2="900" y2="209" gradientUnits="userSpaceOnUse"><stop stop-color="#19E5F1"/><stop offset="0.45" stop-color="#13B7FF"/><stop offset="1" stop-color="#115CF2"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="13" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#168BFF" flood-opacity="0.5"/></filter>
   </defs>
-
-  <rect x="1" y="1" width="1098" height="298" rx="30" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
-
-  <g filter="url(#shadow)">
-    <rect x="90" y="77" width="118" height="146" rx="24" transform="rotate(-24 90 77)" fill="url(#panelBack)"/>
-    <rect x="137" y="69" width="118" height="162" rx="24" transform="rotate(-8 137 69)" fill="url(#panelMid)"/>
-    <rect x="186" y="83" width="118" height="146" rx="24" transform="rotate(8 186 83)" fill="url(#panelFront)" stroke="#BFD6F7"/>
+  <rect x="1" y="1" width="1098" height="298" rx="30" fill="url(#bg)" stroke="#16243D" stroke-width="2"/>
+  <g filter="url(#soft)">
+    <rect x="78" y="77" width="130" height="158" rx="28" transform="rotate(-21 78 77)" fill="url(#b1)" stroke="#3159D4" stroke-width="2"/>
+    <rect x="130" y="63" width="132" height="171" rx="28" transform="rotate(-8 130 63)" fill="url(#b2)" stroke="#59C7FF" stroke-width="2"/>
+    <rect x="191" y="83" width="126" height="151" rx="27" transform="rotate(8 191 83)" fill="url(#b3)" stroke="#E8F2FF" stroke-width="2"/>
   </g>
-
-  <g stroke="#EAF3FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M109 145H137C153 145 161 137 161 120V103"/>
-    <path d="M109 180H146C166 180 176 169 176 149V126"/>
-    <path d="M141 214H158C182 214 194 199 194 174V159"/>
-    <path d="M161 103H194"/>
-    <path d="M176 126H206"/>
-    <path d="M194 159H219"/>
+  <g stroke="#EAF8FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path d="M102 146H132C151 146 162 137 162 116V103H198"/>
+    <path d="M102 183H146C168 183 178 171 178 149V128H211"/>
+    <path d="M138 218H157C183 218 196 202 196 176V159H223"/>
   </g>
-
-  <g fill="#F8FAFC" stroke="#7DB8FF" stroke-width="5">
-    <circle cx="109" cy="145" r="10"/>
-    <circle cx="109" cy="180" r="10"/>
-    <circle cx="141" cy="214" r="10"/>
-    <circle cx="194" cy="103" r="10"/>
-    <circle cx="206" cy="126" r="10"/>
-    <circle cx="219" cy="159" r="10"/>
+  <g fill="#071426" stroke="#EAF8FF" stroke-width="5" filter="url(#glow)">
+    <circle cx="102" cy="146" r="10"/><circle cx="102" cy="183" r="10"/><circle cx="138" cy="218" r="10"/><circle cx="198" cy="103" r="10"/><circle cx="211" cy="128" r="10"/><circle cx="223" cy="159" r="10"/>
   </g>
-
-  <g stroke="#8BB7F7" stroke-width="13" stroke-linecap="round">
-    <path d="M221 122L266 98"/>
-    <path d="M223 158L268 134"/>
-    <path d="M225 194L262 174"/>
-  </g>
-
-  <text x="340" y="177" fill="#0B1830" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="128" font-weight="780" letter-spacing="-8">ctx</text>
-  <text x="700" y="177" fill="url(#dBlue)" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="128" font-weight="780" letter-spacing="-8">d</text>
-
-  <text x="343" y="235" fill="#31425D" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="500" letter-spacing="8">CONTEXT RUNTIME</text>
+  <g stroke="#75A8F7" stroke-width="13" stroke-linecap="round"><path d="M230 121L279 97"/><path d="M232 158L281 134"/><path d="M234 196L274 176"/></g>
+  <text x="345" y="180" fill="#FFFFFF" font-family="Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="136" font-weight="800" letter-spacing="-9">ctx</text>
+  <text x="735" y="180" fill="url(#d)" font-family="Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="136" font-weight="800" letter-spacing="-8" filter="url(#soft)">d</text>
+  <text x="350" y="240" fill="#C8D8F1" font-family="Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="30" font-weight="500" letter-spacing="10">CONTEXT RUNTIME</text>
 </svg>
