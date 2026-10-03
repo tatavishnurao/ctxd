@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/ctxd-logo.svg" alt="ctxd — Context Runtime" width="620" />
+</p>
+
 <div align="center">
 
 # ctxd
