@@ -2,7 +2,7 @@
 
 A retrieval-engineering prototype that turns documents into token-bounded ContextPackets for AI-agent workloads. **Maturity: pre-alpha research checkpoint.** Read these two limits before anything else:
 
-- **Test coverage is uneven.** The lexical (BM25) path, PostgreSQL storage and ingestion have unit and integration tests. The semantic / hybrid / RRF path and real Model2Vec embeddings are only partly covered (embedding-version handling is tested; RRF, hybrid API and Model2Vec tests are pending).
+- **Tests prove behavior, not quality.** Every retrieval mode (lexical, semantic, hybrid) is exercised through the API on memory and PostgreSQL + pgvector, RRF math/ties/depth have unit tests, and CI runs a pinned Model2Vec smoke test. None of this measures retrieval quality on real text.
 - **Quality numbers are not evidence about real text.** 100 of the 150 cases behind the historical hybrid/reranker metrics (`evals/retrieval_semantic.json`) are synthetic marker queries such as `codename_0` against filler-padded documents; only 50 are natural-language paraphrases. The realistic Phase 10/10B benchmark has agent-authored labels and zero independent reviews. No retrieval-quality claim on realistic, independently judged data exists yet.
 
 Implemented: deterministic ingestion, tenant-scoped storage, BM25, semantic retrieval, parallel deterministic RRF and token-bounded whole-chunk ContextPackets.
@@ -57,7 +57,7 @@ CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test uv run alembic
 CTXD_TEST_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test uv run pytest
 ```
 
-Without the test database variable, 11 integration tests skip. Current consolidation: 154 passed, zero skipped. Configured mypy covers application code, not all historical scripts.
+Without the test database variable, the PostgreSQL integration tests skip; without `CTXD_RUN_MODEL2VEC=1`, the real-model smoke test skips. Current consolidation: 154 passed, zero skipped. Configured mypy covers application code, not all historical scripts.
 
 ## Read the project in 30 minutes
 
