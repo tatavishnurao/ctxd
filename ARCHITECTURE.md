@@ -19,7 +19,7 @@ FastAPI -> RuntimeServices (application lifespan)
 
 ## Ingestion
 
-`ingestion/loaders.py` loads UTF-8 text/Markdown, normalizes line endings and constructs tenant/source-scoped identities and SHA-256 content hashes. `ingestion/chunking.py` handles headings, paragraphs, fenced code and lists, with oversized-block splitting. Default chunk target/max/overlap: 400/600/40 approximate tokens. The regex token counter is deterministic, not an LLM tokenizer. `ingestion/service.py` embeds chunks and replaces complete document state; identical ingestion reuses state.
+`ingestion/loaders.py` loads UTF-8 text/Markdown, normalizes line endings and constructs tenant/source-scoped identities and SHA-256 content hashes. `ingestion/chunking.py` handles headings, paragraphs, fenced code and lists, with oversized-block splitting. Default chunk target/max/overlap: 400/600/40 approximate tokens. The regex token counter is deterministic, not an LLM tokenizer. `ingestion/service.py` embeds chunks and replaces complete document state; identical ingestion reuses state. Idempotency is keyed on content *and* embedding version: unchanged content stored under another embedding version is re-embedded in place.
 
 ## Storage and consistency
 
@@ -39,7 +39,7 @@ Default pool min/max: 1/10; connection timeout: 5 seconds; query timeout: 5000 m
 
 `retrieval/hybrid.py` runs lexical/semantic branches with a two-worker executor and unions candidates. RRF is sum of `1/(k+rank)`, default k=60, with chunk-ID tie-breaking and component scores/ranks retained. Branch depth is explicit constructor configuration or `max(top_k, min(100, top_k * 2))`; default top_k=10 happens to yield 20. There is no public candidate-depth configuration field.
 
-`context/assembler.py` preserves returned order and selects whole candidates that fit; it skips those that do not and continues. It never silently truncates chunk content. Metadata records counts, selected tokens, budget drops and mode. Budgets use approximate tokens. API modes are lexical/semantic/hybrid only; request default is lexical.
+`context/assembler.py` preserves returned order and selects whole candidates that fit; it skips those that do not and continues. It never silently truncates chunk content. Metadata records counts, selected tokens and budget drops. `requested_mode` is what the client asked for; `retrieval_type` names only the branches that actually returned candidates (`hybrid`, `lexical`, `semantic` or `none`), with per-branch counts in `branch_candidate_counts`. If the semantic branch returns short while the tenant has chunks embedded under another version, the packet carries `warnings: ["embedding_version_mismatch"]` and `stale_embedding_chunks`. Candidates carry only computed signals (`relevance_score` plus provenance metadata). Budgets use approximate tokens. API modes are lexical/semantic/hybrid only; request default is lexical.
 
 ## API, trust and failure boundaries
 

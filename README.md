@@ -1,6 +1,9 @@
 # ctxd — context retrieval and assembly
 
-A context-runtime / retrieval-engineering prototype for AI-agent workloads. **Maturity: research checkpoint**, with a tested retrieval core; not a complete agent runtime or production-certified service.
+A retrieval-engineering prototype that turns documents into token-bounded ContextPackets for AI-agent workloads. **Maturity: pre-alpha research checkpoint.** Read these two limits before anything else:
+
+- **Test coverage is uneven.** The lexical (BM25) path, PostgreSQL storage and ingestion have unit and integration tests. The semantic / hybrid / RRF path and real Model2Vec embeddings are only partly covered (embedding-version handling is tested; RRF, hybrid API and Model2Vec tests are pending).
+- **Quality numbers are not evidence about real text.** 100 of the 150 cases behind the historical hybrid/reranker metrics (`evals/retrieval_semantic.json`) are synthetic marker queries such as `codename_0` against filler-padded documents; only 50 are natural-language paraphrases. The realistic Phase 10/10B benchmark has agent-authored labels and zero independent reviews. No retrieval-quality claim on realistic, independently judged data exists yet.
 
 Implemented: deterministic ingestion, tenant-scoped storage, BM25, semantic retrieval, parallel deterministic RRF and token-bounded whole-chunk ContextPackets.
 
