@@ -3,6 +3,7 @@ from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from starlette.middleware.cors import CORSMiddleware
 
 from ctxd.app.api.auth import build_verifier
 from ctxd.app.api.middleware import RequestContextMiddleware
@@ -35,6 +36,13 @@ def create_app(store: CorpusBackend | None = None, settings: Settings | None = N
     app.state.settings = settings
     app.state.verifier = build_verifier(settings)
     app.add_middleware(RequestContextMiddleware)
+    if settings.cors_allow_origins:
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=settings.cors_allow_origins,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
     app.include_router(router)
     configure_tracing(app, settings)
     return app

@@ -54,6 +54,10 @@ class Settings(BaseSettings):
     otel_enabled: bool = True
     otel_exporter_otlp_endpoint: str | None = None
 
+    # Browser origins allowed to call the API (CORS). Empty disables CORS. Intended
+    # for the local inspector dashboard (tools/dashboard); "*" is development-only.
+    cors_allow_origins: list[str] = Field(default_factory=list)
+
     @model_validator(mode="after")
     def _require_authentication_outside_development(self) -> "Settings":
         if self.auth_mode == "none" and self.environment != "development":
@@ -87,6 +91,11 @@ class Settings(BaseSettings):
             )
         if self.request_deadline_ms <= self.database_query_timeout_ms:
             raise ValueError("request_deadline_ms must exceed database_query_timeout_ms")
+        if "*" in self.cors_allow_origins and self.environment != "development":
+            raise ValueError(
+                "CTXD_CORS_ALLOW_ORIGINS=['*'] is development-only; list explicit "
+                "origins outside development"
+            )
         return self
 
     @property
@@ -108,6 +117,7 @@ class Settings(BaseSettings):
             "auth_mode": self.auth_mode,
             "operator_endpoints_protected": self.auth_mode == "none"
             or self.auth_operator_token is not None,
+            "cors_enabled": bool(self.cors_allow_origins),
         }
 
 
