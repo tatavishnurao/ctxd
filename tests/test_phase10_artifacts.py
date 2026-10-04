@@ -20,6 +20,11 @@ def corpus() -> EvidenceCorpus:
     return EvidenceCorpus.model_validate(read("evals/phase10_evidence_cases.json"))
 
 
+def frozen_packet() -> str:
+    evidence, assignments, state = load(ROOT / "evals/phase10_review_state.json")
+    return render(evidence, assignments, state)
+
+
 def test_source_provenance_matches_verbatim_pinned_documents() -> None:
     evidence = corpus()
     sources = {s["source"]: s for s in read("evals/phase10_source_manifest.json")}
@@ -104,7 +109,8 @@ def test_eligibility_is_blocked_before_database_or_holdout_access() -> None:
 
 
 def test_packet_covers_each_case_and_hash_without_inventing_approval() -> None:
-    packet = (ROOT / "PHASE10_REVIEW_PACKET.md").read_text()
+    # PHASE10_REVIEW_PACKET.md is local-only (gitignored); check the rendered packet.
+    packet = frozen_packet()
     state = ReviewState.model_validate(read("evals/phase10_review_state.json"))
     assert state.dataset_sha256 in packet
     assert "NOT INDEPENDENTLY REVIEWED" in packet
@@ -131,10 +137,7 @@ def test_builder_reproduces_snapshot_without_requiring_git_history(monkeypatch) 
     assert rebuilt["taxonomy"] == read("evals/phase10_case_metadata.json")
     assert rebuilt["source_locators"] == read("evals/phase10_source_locators.json")
     state = ReviewState.model_validate(rebuilt["reviews"])
-    assert (
-        render(evidence, rebuilt["assignments"], state)
-        == (ROOT / "PHASE10_REVIEW_PACKET.md").read_text()
-    )
+    assert render(evidence, rebuilt["assignments"], state) == frozen_packet()
 
 
 def test_versioned_revision_cannot_reuse_old_review_hashes(tmp_path) -> None:

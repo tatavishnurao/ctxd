@@ -36,3 +36,11 @@ build/
 *.log
 *.sqlite
 *.sqlite3
+
+# Historical phase reports (local-only)
+PHASE6_REPORT.md
+PHASE7_REPORT.md
+PHASE8_REPORT.md
+PHASE9_REPORT.md
+PHASE10_REPORT.md
+PHASE10_REVIEW_PACKET.md

@@ -8,6 +8,8 @@ from ctxd.app.evals.evidence import EvidenceCorpus, digest, validate_split
 def test_phase8_freeze_and_phase9_dataset_integrity() -> None:
     freeze = json.loads(Path("benchmarks/phase9_phase8_freeze.json").read_text())
     for name, checksum in freeze["sha256"].items():
+        if name.endswith("_REPORT.md"):
+            continue  # phase reports are local-only (gitignored)
         assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == checksum
     data = json.loads(Path("evals/phase9_evidence_cases.json").read_text())
     corpus = EvidenceCorpus.model_validate(data)
