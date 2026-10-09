@@ -96,8 +96,7 @@ def run_size(
         statistics = store.lexical_statistics(tenant_id)
         retriever = BM25Retriever(store)
         queries = [
-            f"marker_{index % document_count} category_{index % 20}"
-            for index in range(samples)
+            f"marker_{index % document_count} category_{index % 20}" for index in range(samples)
         ]
         for query in queries[:warmup]:
             retriever.search(query, tenant_id, 10)

@@ -67,9 +67,7 @@ def legacy_rebuilding_search(
             if frequency == 0:
                 continue
             df = document_frequency[term]
-            inverse_document_frequency = math.log(
-                1 + (corpus_size - df + 0.5) / (df + 0.5)
-            )
+            inverse_document_frequency = math.log(1 + (corpus_size - df + 0.5) / (df + 0.5))
             score += (
                 inverse_document_frequency
                 * (frequency * 2.5 / (frequency + 1.5 * length_normalization))

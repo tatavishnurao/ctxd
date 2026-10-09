@@ -1,4 +1,5 @@
 """Acquire explicitly pinned official documentation; no scraping or retrieval scoring."""
+
 from __future__ import annotations
 
 import hashlib
@@ -39,14 +40,22 @@ def acquire(item: tuple[str, str]) -> dict[str, object]:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("xb") as stream:
         stream.write(content)
-    return {"source_id": name, "family": f"python-{family}",
+    return {
+        "source_id": name,
+        "family": f"python-{family}",
         "source_path": f"cpython/{REVISION}/{upstream}",
-        "snapshot": str(path.relative_to(ROOT)), "url": url,
-        "revision": REVISION, "version": "CPython 3.13.0", "source_type": "official_documentation",
-        "sha256": hashlib.sha256(content).hexdigest(), "bytes": len(content),
+        "snapshot": str(path.relative_to(ROOT)),
+        "url": url,
+        "revision": REVISION,
+        "version": "CPython 3.13.0",
+        "source_type": "official_documentation",
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "bytes": len(content),
         "license": "PSF License Version 2; source LICENSE retained alongside snapshots",
         "permission_basis": "Official publicly distributed Python documentation under PSF license",
-        "retrieved_at": datetime.now(UTC).isoformat(), "transformations": "none"}
+        "retrieved_at": datetime.now(UTC).isoformat(),
+        "transformations": "none",
+    }
 
 
 def main() -> None:
@@ -62,9 +71,16 @@ def main() -> None:
     license_path = ROOT / "evals/phase10b_sources/cpython/LICENSE"
     with license_path.open("xb") as stream:
         stream.write(license_bytes)
-    value = {"tag": "v3.13.0", "commit": REVISION, "sources": sources,
-        "license": {"url": url, "snapshot": str(license_path.relative_to(ROOT)),
-                    "sha256": hashlib.sha256(license_bytes).hexdigest()}}
+    value = {
+        "tag": "v3.13.0",
+        "commit": REVISION,
+        "sources": sources,
+        "license": {
+            "url": url,
+            "snapshot": str(license_path.relative_to(ROOT)),
+            "sha256": hashlib.sha256(license_bytes).hexdigest(),
+        },
+    }
     with target.open("x") as stream:
         json.dump(value, stream, indent=2)
         stream.write("\n")

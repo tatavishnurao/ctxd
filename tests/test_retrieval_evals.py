@@ -45,9 +45,7 @@ def test_expanded_retrieval_corpus_exposes_morphology_limitations() -> None:
     assert result.mrr == pytest.approx(0.8)
     assert result.ndcg_at_k == pytest.approx(0.8)
     morphology = [
-        metrics
-        for case_id, metrics in result.per_case.items()
-        if case_id.startswith("morphology-")
+        metrics for case_id, metrics in result.per_case.items() if case_id.startswith("morphology-")
     ]
     assert len(morphology) == 20
     assert all(metrics["recall_at_k"] == 0.0 for metrics in morphology)

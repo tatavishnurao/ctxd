@@ -10,18 +10,42 @@ It renders immediately from a baked-in sample run, so it works with no backend
 
 ## Run it against a local stack
 
-1. **Enable CORS** so a browser page may call the API. Set the origin you will
-   serve the dashboard from:
+1. **Bring up the API.** With Docker, CORS for `http://localhost:8080` and
+   `http://127.0.0.1:8080` is already enabled in `docker-compose.yml`:
+
+   ```bash
+   docker compose up --build
+   ```
+
+   Without Docker (bare uvicorn), enable CORS yourself for the origin you will
+   serve the dashboard from. A shell `export` reaches uvicorn but never a
+   container, which is why compose declares it explicitly:
 
    ```bash
    export CTXD_CORS_ALLOW_ORIGINS='["http://localhost:8080"]'
+   uv run uvicorn ctxd.app.main:app
    ```
 
-   (`["*"]` is accepted only when `CTXD_ENVIRONMENT=development`.) Then bring up
-   the stack as usual (`docker compose up --build`, or `uv run uvicorn
-   ctxd.app.main:app`).
+   (`["*"]` is accepted only when `CTXD_ENVIRONMENT=development`.)
 
-2. **Serve the dashboard** from that origin and open it:
+   Either command keeps the terminal busy; run the rest in a second one. The
+   first boot downloads the Model2Vec model, so wait until
+   `curl localhost:8000/ready` returns `{"status":"ready",...}`.
+
+2. **Ingest some documents** for the tenant you will query. The dashboard's
+   *Tenant* field defaults to `demo`; a tenant with no documents returns an
+   empty ranking (`retrieved 0`), not an error:
+
+   ```bash
+   curl -s localhost:8000/v1/documents -H 'content-type: application/json' -H 'x-tenant-id: demo' \
+     -d '{"tenant_id":"demo","source_path":"component-7.md","source_type":"markdown",
+          "content":"# Component 7\n\nUnder failure, component 7 stops accepting documents and drains in-flight work to the dead-letter queue."}'
+   ```
+
+   (Data loaded by the main README quick start lives under tenant `acme`; set
+   *Tenant* to `acme` to query it instead.)
+
+3. **Serve the dashboard** from that origin and open it:
 
    ```bash
    cd tools/dashboard
@@ -29,7 +53,7 @@ It renders immediately from a baked-in sample run, so it works with no backend
    # open http://localhost:8080/
    ```
 
-3. Set *API base* to your server (default `http://localhost:8000`), type a
+4. Set *API base* to your server (default `http://localhost:8000`), type a
    query, pick a mode, and hit **Run**. Drag the budget slider to watch chunks
    move between KEPT and DROPPED.
 

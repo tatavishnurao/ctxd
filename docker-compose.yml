@@ -7,6 +7,10 @@ x-ctxd-env: &ctxd-env
   CTXD_EMBEDDING_PROVIDER: model2vec
   CTXD_EMBEDDING_CACHE_DIR: /models
   CTXD_OTEL_ENABLED: "false"
+  # Lets tools/dashboard (served on :8080) call the API from a browser. A host-shell
+  # `export` does not reach containers, so it must be declared here; override via env.
+  # The localhost default is for local development only; override or remove it for any deployment.
+  CTXD_CORS_ALLOW_ORIGINS: ${CTXD_CORS_ALLOW_ORIGINS:-["http://localhost:8080","http://127.0.0.1:8080"]}
 
 services:
   app:
