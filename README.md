@@ -85,6 +85,8 @@ The response is a `ContextPacket`: the selected candidates with provenance, the 
 
 > In development the tenant is trusted from `x-tenant-id`. Outside development, real authentication is required.
 
+To watch a query move through retrieval and the budget cut in a browser, see the [context packet inspector](tools/dashboard/README.md).
+
 ## Configuration
 
 Environment variables, `CTXD_` prefix (or a `.env` file), validated at startup.
