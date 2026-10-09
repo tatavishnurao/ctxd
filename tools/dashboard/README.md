@@ -10,16 +10,23 @@ It renders immediately from a baked-in sample run, so it works with no backend
 
 ## Run it against a local stack
 
-1. **Enable CORS** so a browser page may call the API. Set the origin you will
-   serve the dashboard from:
+1. **Bring up the API.** With Docker, CORS for `http://localhost:8080` and
+   `http://127.0.0.1:8080` is already enabled in `docker-compose.yml`:
+
+   ```bash
+   docker compose up --build
+   ```
+
+   Without Docker (bare uvicorn), enable CORS yourself for the origin you will
+   serve the dashboard from. A shell `export` reaches uvicorn but never a
+   container, which is why compose declares it explicitly:
 
    ```bash
    export CTXD_CORS_ALLOW_ORIGINS='["http://localhost:8080"]'
+   uv run uvicorn ctxd.app.main:app
    ```
 
-   (`["*"]` is accepted only when `CTXD_ENVIRONMENT=development`.) Then bring up
-   the stack as usual (`docker compose up --build`, or `uv run uvicorn
-   ctxd.app.main:app`).
+   (`["*"]` is accepted only when `CTXD_ENVIRONMENT=development`.)
 
 2. **Serve the dashboard** from that origin and open it:
 
