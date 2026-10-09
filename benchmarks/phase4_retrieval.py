@@ -63,10 +63,12 @@ def build_index(
 def measure(searcher: Searcher, queries: list[str], concurrency: int) -> dict[str, float | int]:
     latencies: list[float] = []
     errors = 0
+
     def one(query: str) -> float:
         start = time.perf_counter()
         searcher.search(query, "eval", 10)
         return time.perf_counter() - start
+
     with ThreadPoolExecutor(max_workers=concurrency) as executor:
         futures = [executor.submit(one, query) for query in queries]
         for future in as_completed(futures):

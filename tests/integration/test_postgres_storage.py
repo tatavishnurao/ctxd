@@ -295,10 +295,7 @@ def test_delete_query_race_has_before_or_after_semantics() -> None:
         def query_many() -> list[int]:
             barrier.wait()
             retriever = BM25Retriever(store)
-            return [
-                len(retriever.search("deletion marker", "tenant-a", 5))
-                for _ in range(20)
-            ]
+            return [len(retriever.search("deletion marker", "tenant-a", 5)) for _ in range(20)]
 
         def delete() -> bool:
             barrier.wait()
