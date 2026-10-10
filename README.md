@@ -81,6 +81,8 @@ curl -s localhost:8000/v1/query -H 'content-type: application/json' -H 'x-tenant
   -d '{"tenant_id":"acme","query":"how does the cache free memory?","max_context_tokens":2000}'
 ```
 
+The first boot builds the image and downloads the model (about 1.5 minutes measured); run the curls in a second terminal once `curl localhost:8000/ready` returns 200.
+
 The response is a `ContextPacket`: the selected candidates with provenance, the tokens used against the budget, and a `retrieval_type` naming what actually ran.
 
 > In development the tenant is trusted from `x-tenant-id`. Outside development, real authentication is required.

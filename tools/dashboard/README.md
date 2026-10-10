@@ -68,9 +68,27 @@ It renders immediately from a baked-in sample run, so it works with no backend
    `what should I do when the database connection pool is exhausted?`. The
    *source* column shows each chunk's `source_path`, which for the demo data is
    the file name of one of the committed files in `demo-docs/`.
+   With that query the top-ranked chunk is larger than the default 300-token
+   budget, so it shows as DROPPED until you drag the slider above its size:
+   whole chunks are never truncated, and the panel says so.
 
 Open the file directly (`file://`) and the browser blocks the cross-origin
 fetch — always serve it over HTTP from the allowed origin.
+
+## Before a showcase
+
+Start the stack once ahead of time so the image is built and the Model2Vec
+model is cached, and stop it with `docker compose down` (not `down -v`, which
+deletes the model cache and database volumes). Measured on a WSL2 laptop on
+2026-10-10, `docker compose up --build` to `/ready` returning 200:
+
+| Start | Time | What it includes |
+|---|---|---|
+| Cold (empty volumes, base images already pulled) | ~97 s | image build ~73 s, Postgres + migrations ~8 s, app start with model download ~15 s |
+| Warm restart (volumes kept) | ~14 s | cached build, cached model |
+
+A build with no Docker layer cache took ~62 s for the app image alone; pulling
+the base images for the first time is extra and was not measured.
 
 ## Notes
 
