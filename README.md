@@ -148,4 +148,4 @@ Without those variables the Postgres and Model2Vec tests skip. CI runs the full 
 
 ## License
 
-Not yet licensed — add a `LICENSE` file before publishing.
+MIT — see [LICENSE](LICENSE).
