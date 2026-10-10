@@ -58,7 +58,7 @@ The default mode is **lexical**: on the one real-text evaluation ctxd has, hybri
                 ContextPacket   ┄┄►  agent / model  (out of scope)
 ```
 
-Invariants held everywhere: determinism, provenance integrity, truth-in-labeling, schema-enforced tenant isolation, bounded failure.
+Design invariants: determinism, provenance integrity, truth-in-labeling, schema-enforced tenant isolation, bounded failure. One known gap: the request deadline bounds the response, not hybrid's background work ([#9](https://github.com/tatavishnurao/ctxd/issues/9)).
 
 ## Quick start
 
@@ -100,7 +100,7 @@ Environment variables, `CTXD_` prefix (or a `.env` file), validated at startup.
 | `CTXD_DEFAULT_RETRIEVAL_MODE` | `lexical` | `lexical` · `semantic` · `hybrid`. |
 | `CTXD_AUTH_MODE` | `none` | `none` (dev only) · `api_key` · `jwt`. |
 
-Auth adds `CTXD_AUTH_API_KEYS` / `CTXD_AUTH_JWT_SECRET` and an operator token for `/metrics`. Without Docker: `uv sync`, point `CTXD_DATABASE_URL` at a pgvector Postgres, `uv run alembic upgrade head`, then `uv run uvicorn ctxd.app.main:app`.
+Auth adds `CTXD_AUTH_API_KEYS` / `CTXD_AUTH_JWT_SECRET` and an operator token for `/metrics`. Without Docker: `uv sync`, set `CTXD_STORAGE_BACKEND=postgres`, `CTXD_EMBEDDING_PROVIDER=model2vec` and `CTXD_DATABASE_URL` (a pgvector Postgres), run `uv run alembic upgrade head`, then `uv run uvicorn ctxd.app.main:app`. Setting only the URL leaves the in-memory store and fake embeddings in place.
 
 ## API
 
@@ -114,12 +114,12 @@ Auth adds `CTXD_AUTH_API_KEYS` / `CTXD_AUTH_JWT_SECRET` and an operator token fo
 
 ## Evaluation
 
-Run through the shipped code on public BEIR datasets, nothing tuned. BM25 reproduces the published baseline, so the harness is sound. Full protocol and intervals: [docs/BEIR_EVAL.md](docs/BEIR_EVAL.md).
+Run through the shipped code on public BEIR datasets, nothing tuned. BM25 lands within about 0.02 of the published baseline on both datasets, so the harness is sound. Full protocol and intervals: [docs/BEIR_EVAL.md](docs/BEIR_EVAL.md).
 
 | Dataset | nDCG@10 (lexical) | nDCG@10 (hybrid) | Δ recall@100 (hybrid − lexical) |
 |---|---|---|---|
 | SciFact | **0.662** _(published 0.665)_ | 0.603 | +0.069 |
-| NFCorpus | 0.309 | 0.308 | +0.033 |
+| NFCorpus | 0.309 _(published 0.325)_ | 0.308 | +0.033 |
 
 A `ContextPacket` is the top of the ranking cut to a budget, so nDCG@10 is what matters — and hybrid didn't help there, so lexical is the default. Caveat: one static embedding model on two BM25-friendly corpora; provisional, not a claim that dense retrieval is weak.
 
@@ -139,7 +139,7 @@ A `ContextPacket` is the top of the ranking cut to a budget, so nDCG@10 is what 
 
 ```bash
 uv sync --all-groups
-uv run ruff check . && uv run mypy
+uv run ruff check . && uv run ruff format --check . && uv run mypy
 
 # Full suite: needs a migrated pgvector test database (tests TRUNCATE it) and the real model.
 export CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test
@@ -150,7 +150,7 @@ uv run pytest
 uv run pytest -m "not postgres"   # fast subset, no database
 ```
 
-Without those variables the Postgres and Model2Vec tests skip. CI runs the full suite against `pgvector/pgvector:pg17` with the real model, migrates down and back up, and gates on ruff and mypy.
+Without those variables the Postgres and Model2Vec tests skip. CI runs the full suite against `pgvector/pgvector:pg17` with the real model, migrates down and back up, and gates on `ruff check`, `ruff format --check` and mypy.
 
 ## Roadmap
 
