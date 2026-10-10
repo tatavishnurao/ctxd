@@ -33,13 +33,13 @@ A fresh 24-case, 12-family corpus supplies exact chunk/span locators, alternate 
 
 Frozen exact-text deduplication had the same holdout full answerability as greedy: 0/0/0/0/0.25 across those budgets. Required-evidence recall was also identical: 0/0.29167/0.29167/0.375/0.41667. At 4096 tokens, the candidate spent **39.25 more tokens per query**, with paired template-bootstrap 95% interval [0.25, 78.25]; only four holdout template clusters exist, so uncertainty remains poorly resolved. Zero observed evidence delta is not proof of deployment equivalence.
 
-A separate post-freeze, fixed-order challenge required identical statements from two distinct resource documents. Greedy preserved both; deduplication lost one requirement (answerability 1→0). Decision: **P3 / R2**, no production change. Full definitions, development results, per-case evidence and limitations: `PHASE9_REPORT.md`, `benchmarks/phase9_*.json`.
+A separate post-freeze, fixed-order challenge required identical statements from two distinct resource documents. Greedy preserved both; deduplication lost one requirement (answerability 1→0). Decision: **P3 / R2**, no production change. Full definitions, development results, per-case evidence and limitations: the Phase 9 report (historical, no longer tracked), `benchmarks/phase9_*.json`.
 
 ## Phase 8 status (experimental; no production promotion)
 
 The frozen selective policy reranked 5/47 reused-holdout queries, with 2 fixes and 2 regressions. Its ΔMRR was +0.01099 (95% interval −0.03936 to +0.06277); ΔnDCG@5 +0.01461 (−0.02942 to +0.06104). Neither supports promotion. Phase 7 nDCG used binary source judgments, not graded chunk evidence.
 
-Development packing compares greedy and three alternatives at budgets 256/512/1024/2048/4096. Source suppression saves about 9.4% mean tokens in the N20/budget2048 proxy at equal source recall, but may discard complementary evidence; it is not recommended for production. No packing holdout or combined-path trial was run. See `PHASE8_REPORT.md` and `benchmarks/phase8_audit.json` for scope and all metrics. Historical entries below remain unchanged.
+Development packing compares greedy and three alternatives at budgets 256/512/1024/2048/4096. Source suppression saves about 9.4% mean tokens in the N20/budget2048 proxy at equal source recall, but may discard complementary evidence; it is not recommended for production. No packing holdout or combined-path trial was run. See the Phase 8 report (historical, no longer tracked) and `benchmarks/phase8_audit.json` for scope and all metrics. Historical entries below remain unchanged.
 
 Measured on the working tree based on commit `806d670` with Python 3.13.15, Linux 6.6.87.2 WSL2 x86_64, and PostgreSQL 17.11. Sequential runs used 10 warmups and 100 measured queries. See `PERFORMANCE.md` for methodology and limitations.
 
@@ -161,7 +161,7 @@ The strict PostgreSQL protocol uses five independent runs, 20 warmups plus 100 m
 - 12,000 chunks: `24.28/26.88/27.74` versus `39.44/49.51/51.17 ms`
 - 50,004 chunks: `57.00/64.91/70.73` versus `85.03/96.02/100.34 ms`
 
-The earlier clustered 1.2k cross-component spikes did not recur under this protocol, but this does not prove an environmental cause. **CAUSE REMAINS UNRESOLVED.** Reranking remains rejected and unexposed. Full findings and decision gates are in `PHASE6_REPORT.md`; machine-readable evidence uses the `phase6_` prefix.
+The earlier clustered 1.2k cross-component spikes did not recur under this protocol, but this does not prove an environmental cause. **CAUSE REMAINS UNRESOLVED.** Reranking remains rejected and unexposed. Full findings and decision gates are in the Phase 6 report (historical, no longer tracked); machine-readable evidence uses the `phase6_` prefix.
 
 ## Phase 7 frozen holdout reranker evaluation
 
@@ -171,4 +171,4 @@ On holdout, hybrid versus frozen selected config MRR was `0.85162/0.89914`, nDCG
 
 The selected scorer's standalone N20 p50/p95/p99 was `142/1,857/2,179 ms`. At 12k chunks end-to-end hybrid versus selected p95 was `117/1,022 ms`; at 50k it was `80/247 ms`. At concurrency 16, selected QPS was `10.64` at 12k and `9.53` at 50k, with p95 `1,665/1,770 ms` and zero errors. These are shared-host WSL2 CPU results; the model did not improve latency/throughput.
 
-Decision: **B — interesting but inconclusive; keep reranking offline and unexposed.** See `PHASE7_REPORT.md`, `benchmarks/phase7_frontier.json`, `phase7_holdout.json`, `phase7_bootstrap.json`, `phase7_latency.json`, and `phase7_concurrency.json`. These are not production performance claims.
+Decision: **B — interesting but inconclusive; keep reranking offline and unexposed.** See the Phase 7 report (historical, no longer tracked), `benchmarks/phase7_frontier.json`, `phase7_holdout.json`, `phase7_bootstrap.json`, `phase7_latency.json`, and `phase7_concurrency.json`. These are not production performance claims.

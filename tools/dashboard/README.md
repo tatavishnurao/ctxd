@@ -43,8 +43,10 @@ It renders immediately from a baked-in sample run, so it works with no backend
    tools/dashboard/seed_demo.sh
    ```
 
-   It ingests the two committed sample files in `tools/dashboard/demo-docs/`
-   (`checkout-incident-runbook.md`, `engineering-handbook.md`), then runs one
+   It ingests every committed sample file in `tools/dashboard/demo-docs/` (six
+   short fictional documents on different topics: an incident runbook, an
+   engineering handbook, onboarding, security policy, release process and
+   travel and expenses; 12 chunks in total), then runs one
    query per mode and prints `retrieval_type`, candidate counts and
    `selected_tokens` against the budget. It is safe to re-run: unchanged
    documents are replaced with identical state. Set `CTXD_URL` if the API is not
@@ -68,9 +70,10 @@ It renders immediately from a baked-in sample run, so it works with no backend
    `what should I do when the database connection pool is exhausted?`. The
    *source* column shows each chunk's `source_path`, which for the demo data is
    the file name of one of the committed files in `demo-docs/`.
-   With that query the top-ranked chunk is larger than the default 300-token
-   budget, so it shows as DROPPED until you drag the slider above its size:
-   whole chunks are never truncated, and the panel says so.
+   At the default 1000-token budget the top-ranked chunk is KEPT. Drag the
+   slider below its size and it shows as DROPPED while a smaller, lower-ranked
+   chunk may be kept instead: whole chunks are never truncated, and the panel
+   says so.
 
 Open the file directly (`file://`) and the browser blocks the cross-origin
 fetch — always serve it over HTTP from the allowed origin.
