@@ -22,5 +22,6 @@ Historical measurements below are scoped experiments, not deployment certificati
 - Phase 8 reused holdout; do not treat it as fresh independent confirmation.
 - Phase 9 is synthetic and author verified, not independently reviewed deployment ground truth.
 - Historical Phase 4–7 numbers differ with label audits and evaluation fixes; do not silently relabel earlier measurements as corrected metrics.
+- **Synapse/MCP numbers are fixture values, not measurements.** `tests/integrations/test_synapse_eval.py` and `evals/synapse_synthetic_fixture_results.json` score a fake server (`fake-synapse-mcp-v1`) over 50 generated invocations. Failures are injected at fixed case indices and latencies come from a formula, so the rates (e.g. tool selection 0.96, task success 0.84) and p50/p95/p99 latencies are set by construction. They check that the evaluator counts correctly; they say nothing about any real MCP server. See docs/SYNAPSE_EVAL.md.
 - No Phase 10 canonical score exists. Phase 10B has no completed final revision/split/review batch artifacts.
 - Environment and measurement definitions are in PERFORMANCE.md; file-level inventory is `docs/evidence_inventory.json`.
