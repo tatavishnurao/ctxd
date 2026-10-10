@@ -1,10 +1,10 @@
 # Current engineering state
 
-Consolidation base: `83352ac`. Maturity: **research checkpoint with a tested retrieval prototype**, not a production-certified agent runtime. Start with this file, README and ARCHITECTURE; then EXPERIMENTS and ROADMAP (approximately 30 minutes).
+Checked against `main` at `59099df` on 2026-10-10. Maturity: **research checkpoint with a tested retrieval prototype**, not a production-certified agent runtime. Start with this file, README and ARCHITECTURE; then EXPERIMENTS and ROADMAP (approximately 30 minutes).
 
 ## What ctxd is
 
-A context-retrieval and assembly system intended for AI-agent workloads. It returns a ContextPacket, not generated answers. No agent loop, LLM inference, model router, tool sandbox, SSE or frontend is implemented.
+A context-retrieval and assembly system intended for AI-agent workloads. It returns a ContextPacket, not generated answers. No agent loop, LLM inference, model router, tool sandbox or SSE is implemented; the only frontend is the local inspector dashboard in `tools/dashboard/`.
 
 ## Implemented and retained
 
@@ -33,10 +33,15 @@ Phase 10 historical dataset: 121 drafts. Phase 10B candidate build: 106 drafts (
 
 `benchmarks/phase10b_build.py` regenerates validated corpus objects and measures feasibility, but only prints candidate diagnostics: it does not persist a finished revision, complete a semantic annotation audit, or create a Phase 10B review packet/split. Successful exact-span construction does not certify necessary/sufficient evidence or contextual provenance. Phase 10 review tooling/packet applies to the older 121-case revision, not automatically to these 106 cases. No Phase 10B review batches, completed leakage audit, or final fresh split exist. Do not score a holdout.
 
-## New validation (this consolidation)
+## Validation
 
-Python 3.13 environment synchronized. Ruff passed. Configured mypy passed (51 application source files; not every benchmark/test script). Migrations on user-authorized `ctxd_test` succeeded at `0002_phase4`; PostgreSQL 17.11, pgvector 0.8.6. Full pytest: **154 passed, zero failures/errors/skips**, two dependency deprecation warnings. Candidate builder separately succeeded with the counts above. This is code/integration validation, not completed benchmark-review validation. See docs/engineering_validation.json.
+As of `main` at `59099df` (2026-10-10):
+
+- **CI** (PostgreSQL 17 + pgvector, real Model2Vec, migrations down and back up): `ruff check`, `ruff format --check`, configured mypy, and pytest **241 passed, 0 skipped**, 2 dependency deprecation warnings.
+- **Local, no database or model configured:** pytest **221 passed, 20 skipped**. The 20 skips are the 18 PostgreSQL tests and 2 Model2Vec smoke tests, which need `CTXD_TEST_DATABASE_URL` and `CTXD_RUN_MODEL2VEC=1`. Configured mypy covers 52 application source files, not every benchmark/test script.
+
+This is code/integration validation, not completed benchmark-review validation. `docs/engineering_validation.json` is the earlier record taken at `83352ac` (2026-10-02: 154 passed, PostgreSQL 17.11, pgvector 0.8.6); the Phase 10B candidate counts above come from that pass and were not re-run since.
 
 ## Unresolved / out of scope
 
-Historical shared-host latency anomaly and reranker tails remain causally unresolved. Approximate tokens, synthetic workloads and small evaluation sets constrain claims. Deployment authentication, capacity/SLO evidence and operational recovery deserve engineering work. No algorithm tuning, new reranker, packing promotion, canonical scoring or runtime expansion is part of this checkpoint. Git checkpoint suggestions are in ROADMAP.md; no commit or push is authorized for this pass.
+Historical shared-host latency anomaly and reranker tails remain causally unresolved. Approximate tokens, synthetic workloads and small evaluation sets constrain claims. API-key/JWT authentication exists, but deployment hardening, capacity/SLO evidence and operational recovery deserve engineering work. No algorithm tuning, new reranker, packing promotion, canonical scoring or runtime expansion is part of this checkpoint.

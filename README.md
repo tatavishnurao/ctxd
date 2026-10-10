@@ -58,7 +58,7 @@ The default mode is **lexical**: on the one real-text evaluation ctxd has, hybri
                 ContextPacket   ┄┄►  agent / model  (out of scope)
 ```
 
-Invariants held everywhere: determinism, provenance integrity, truth-in-labeling, schema-enforced tenant isolation, bounded failure.
+Design invariants: determinism, provenance integrity, truth-in-labeling, schema-enforced tenant isolation, bounded failure. One known gap: the request deadline bounds the response, not hybrid's background work ([#9](https://github.com/tatavishnurao/ctxd/issues/9)).
 
 ## Quick start
 
@@ -81,6 +81,8 @@ curl -s localhost:8000/v1/query -H 'content-type: application/json' -H 'x-tenant
   -d '{"tenant_id":"acme","query":"how does the cache free memory?","max_context_tokens":2000}'
 ```
 
+The first boot builds the image and downloads the model (about 1.5 minutes measured); run the curls in a second terminal once `curl localhost:8000/ready` returns 200.
+
 The response is a `ContextPacket`: the selected candidates with provenance, the tokens used against the budget, and a `retrieval_type` naming what actually ran.
 
 > In development the tenant is trusted from `x-tenant-id`. Outside development, real authentication is required.
@@ -100,7 +102,7 @@ Environment variables, `CTXD_` prefix (or a `.env` file), validated at startup.
 | `CTXD_DEFAULT_RETRIEVAL_MODE` | `lexical` | `lexical` · `semantic` · `hybrid`. |
 | `CTXD_AUTH_MODE` | `none` | `none` (dev only) · `api_key` · `jwt`. |
 
-Auth adds `CTXD_AUTH_API_KEYS` / `CTXD_AUTH_JWT_SECRET` and an operator token for `/metrics`. Without Docker: `uv sync`, point `CTXD_DATABASE_URL` at a pgvector Postgres, `uv run alembic upgrade head`, then `uv run uvicorn ctxd.app.main:app`.
+Auth adds `CTXD_AUTH_API_KEYS` / `CTXD_AUTH_JWT_SECRET` and an operator token for `/metrics`. Without Docker: `uv sync`, set `CTXD_STORAGE_BACKEND=postgres`, `CTXD_EMBEDDING_PROVIDER=model2vec` and `CTXD_DATABASE_URL` (a pgvector Postgres), run `uv run alembic upgrade head`, then `uv run uvicorn ctxd.app.main:app`. Setting only the URL leaves the in-memory store and fake embeddings in place.
 
 ## API
 
@@ -114,20 +116,32 @@ Auth adds `CTXD_AUTH_API_KEYS` / `CTXD_AUTH_JWT_SECRET` and an operator token fo
 
 ## Evaluation
 
-Run through the shipped code on public BEIR datasets, nothing tuned. BM25 reproduces the published baseline, so the harness is sound. Full protocol and intervals: [docs/BEIR_EVAL.md](docs/BEIR_EVAL.md).
+Run through the shipped code on public BEIR datasets, nothing tuned. BM25 lands within about 0.02 of the published baseline on both datasets, so the harness is sound. Full protocol and intervals: [docs/BEIR_EVAL.md](docs/BEIR_EVAL.md).
 
 | Dataset | nDCG@10 (lexical) | nDCG@10 (hybrid) | Δ recall@100 (hybrid − lexical) |
 |---|---|---|---|
 | SciFact | **0.662** _(published 0.665)_ | 0.603 | +0.069 |
-| NFCorpus | 0.309 | 0.308 | +0.033 |
+| NFCorpus | 0.309 _(published 0.325)_ | 0.308 | +0.033 |
 
 A `ContextPacket` is the top of the ranking cut to a budget, so nDCG@10 is what matters — and hybrid didn't help there, so lexical is the default. Caveat: one static embedding model on two BM25-friendly corpora; provisional, not a claim that dense retrieval is weak.
+
+## Limitations
+
+- **Approximate token counts.** Budgets use a regex counter (`\w+|[^\w\s]`), not a model tokenizer, so a packet's real token count for a given LLM will differ.
+- **Text and Markdown only.** `source_type` is `text` or `markdown`; there is no PDF, HTML or code-aware ingestion.
+- **Content is copied, not federated.** Ingested text is stored in PostgreSQL (or memory); ctxd does not query sources in place or track upstream changes.
+- **Tenant-level isolation only.** There are no per-document or per-user permissions inside a tenant.
+- **No reranker.** Reranking was evaluated offline and is not wired into the request path.
+- **Lexical is the default for a reason.** On nDCG@10, hybrid trails lexical on SciFact (−0.059) and ties on NFCorpus (see [Evaluation](#evaluation)).
+- **No answer generation.** `/v1/query` returns the `ContextPacket` with a placeholder `answer`: `"Inference is not implemented yet."`
+- **Exact vector search.** pgvector search is exact (no HNSW/IVF index), so semantic query cost grows with the corpus.
+- **Bare `uvicorn` uses fake embeddings.** Without `CTXD_EMBEDDING_PROVIDER=model2vec` the server uses a hash-based fixture embedder, so semantic and hybrid results are not meaningful; use the Docker stack to judge their quality.
 
 ## Development
 
 ```bash
 uv sync --all-groups
-uv run ruff check . && uv run mypy
+uv run ruff check . && uv run ruff format --check . && uv run mypy
 
 # Full suite: needs a migrated pgvector test database (tests TRUNCATE it) and the real model.
 export CTXD_DATABASE_URL=postgresql://ctxd:ctxd@localhost:5432/ctxd_test
@@ -138,7 +152,7 @@ uv run pytest
 uv run pytest -m "not postgres"   # fast subset, no database
 ```
 
-Without those variables the Postgres and Model2Vec tests skip. CI runs the full suite against `pgvector/pgvector:pg17` with the real model, migrates down and back up, and gates on ruff and mypy.
+Without those variables the Postgres and Model2Vec tests skip. CI runs the full suite against `pgvector/pgvector:pg17` with the real model, migrates down and back up, and gates on `ruff check`, `ruff format --check` and mypy.
 
 ## Roadmap
 
@@ -148,4 +162,4 @@ Without those variables the Postgres and Model2Vec tests skip. CI runs the full 
 
 ## License
 
-Not yet licensed — add a `LICENSE` file before publishing.
+MIT — see [LICENSE](LICENSE).

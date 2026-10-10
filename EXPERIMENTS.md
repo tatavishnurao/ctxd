@@ -1,6 +1,6 @@
 # Experiment and decision index
 
-Historical measurements below are scoped experiments, not deployment certification. Reports and raw artifacts are retained. No new experiment was run in consolidation; candidate construction and tests are validation only.
+Historical measurements below are scoped experiments, not deployment certification. Raw JSON artifacts are in the repository. The narrative `PHASE*_REPORT.md` and `PHASE10_REVIEW_PACKET.md` files named below are kept locally and are not tracked in git (since #16), so a fresh clone does not contain them. No new experiment was run in consolidation; candidate construction and tests are validation only.
 
 | Phase | Question | Main implementation | Key evidence | Decision | Report / artifact location |
 |---|---|---|---|---|---|
@@ -14,7 +14,7 @@ Historical measurements below are scoped experiments, not deployment certificati
 | 8 | Selective rerank / packing promotion? | Offline policies; duplicate-source nDCG fix | 5/47 reranked, 2 fixes/2 regressions; delta MRR .01099 CI [-.03936,.06277]; 9.4% proxy token saving lacks evidence guarantee | Keep reranking offline and greedy packing | PHASE8_REPORT.md; `benchmarks/phase8_audit.json`, `phase8_profile.json`, `phase8_holdout.json` |
 | 9 | Evidence-level budget evaluation stronger? | Exact spans, AND/OR groups, provenance, bootstrap | 13 source-proxy false-answerability cells; identical-text dedup loses independently required provenance, answerability 1→0 | Keep evaluator; synthetic data insufficient for promotion | PHASE9_REPORT.md; `benchmarks/phase9_source_proxy_gap.json`, `phase9_challenge.json`, `phase9_experiment_manifest.json` |
 | 10 / 10B | Build realistic reviewable benchmark? | Pinned sources, review gates, exact feasibility, candidate authoring | Original 121 drafts; current build 106 (25E/33M/36H/12VH/0I); zero independent reviews | PRE-REVIEW, NON-CANONICAL, BLOCKED; audit/tooling unfinished | PHASE10_REPORT.md, PHASE10_REVIEW_PACKET.md; `benchmarks/phase10_*.json`, `phase10b_build.py`; `evals/phase10b_authoring*.tsv`, `phase10b_external_sources.json` |
-| E1 (v0.1) | Does hybrid beat lexical on real, human-judged text? | `benchmarks/beir_eval.py`: production path, no tuning, SciFact + NFCorpus | SciFact hybrid−lexical nDCG@10 −0.059 [−0.094,−0.026], Recall@100 +0.069 [+0.036,+0.108]; NFCorpus nDCG@10 −0.001 [−0.015,+0.012], Recall@100 +0.033 [+0.019,+0.048] | Hybrid is a recall/candidate-generation win, not a top-10 win; the default-mode choice needs revisiting | docs/BEIR_EVAL.md; `benchmarks/results/beir_eval.json` |
+| E1 (v0.1) | Does hybrid beat lexical on real, human-judged text? | `benchmarks/beir_eval.py`: production path, no tuning, SciFact + NFCorpus | SciFact hybrid−lexical nDCG@10 −0.059 [−0.094,−0.026], Recall@100 +0.069 [+0.036,+0.108]; NFCorpus nDCG@10 −0.001 [−0.015,+0.012], Recall@100 +0.033 [+0.019,+0.048] | Hybrid is a recall/candidate-generation win, not a top-10 win; v0.1 made lexical the server default, hybrid stays opt-in | docs/BEIR_EVAL.md; `benchmarks/results/beir_eval.json` |
 
 ## Interpretation guardrails
 
@@ -22,5 +22,6 @@ Historical measurements below are scoped experiments, not deployment certificati
 - Phase 8 reused holdout; do not treat it as fresh independent confirmation.
 - Phase 9 is synthetic and author verified, not independently reviewed deployment ground truth.
 - Historical Phase 4–7 numbers differ with label audits and evaluation fixes; do not silently relabel earlier measurements as corrected metrics.
+- **Synapse/MCP numbers are fixture values, not measurements.** `tests/integrations/test_synapse_eval.py` and `evals/synapse_synthetic_fixture_results.json` score a fake server (`fake-synapse-mcp-v1`) over 50 generated invocations. Failures are injected at fixed case indices and latencies come from a formula, so the rates (e.g. tool selection 0.96, task success 0.84) and p50/p95/p99 latencies are set by construction. They check that the evaluator counts correctly; they say nothing about any real MCP server. See docs/SYNAPSE_EVAL.md.
 - No Phase 10 canonical score exists. Phase 10B has no completed final revision/split/review batch artifacts.
 - Environment and measurement definitions are in PERFORMANCE.md; file-level inventory is `docs/evidence_inventory.json`.

@@ -1,5 +1,7 @@
 # Engineering consolidation audit
 
+> **Historical snapshot** of the consolidation audit at `83352ac` (2026-10-02), kept as a record and not updated since. Superseded since then: risk 2 (outside development the tenant now comes from a verified API key or JWT; header-only tenancy is development-only), the mypy count (52 application files today), and the test results (see CURRENT_STATE.md for current counts).
+
 ## Repository boundary
 
 Initial base `83352ac` on main; `git status --short` and `git diff --stat` empty. The inspected last 30 commits contain the Phase 10 foundation, incomplete Phase 10B candidate work and lint repair. No dirty/untracked accumulated code existed at the start. Consolidation edits documentation only; no algorithms, API behavior, historical reports, candidate labels or review state were changed. No commits/pushes.
