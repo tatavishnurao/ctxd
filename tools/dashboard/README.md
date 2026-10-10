@@ -28,6 +28,10 @@ It renders immediately from a baked-in sample run, so it works with no backend
 
    (`["*"]` is accepted only when `CTXD_ENVIRONMENT=development`.)
 
+   Bare uvicorn uses the in-memory store and a fake hash embedder, so semantic
+   and hybrid scores there are not meaningful; judge their quality on the Docker
+   stack, which runs the real Model2Vec model.
+
    Either command keeps the terminal busy; run the rest in a second one. The
    first boot downloads the Model2Vec model, so wait until
    `curl localhost:8000/ready` returns `{"status":"ready",...}`.

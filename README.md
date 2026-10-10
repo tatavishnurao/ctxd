@@ -123,6 +123,18 @@ Run through the shipped code on public BEIR datasets, nothing tuned. BM25 reprod
 
 A `ContextPacket` is the top of the ranking cut to a budget, so nDCG@10 is what matters — and hybrid didn't help there, so lexical is the default. Caveat: one static embedding model on two BM25-friendly corpora; provisional, not a claim that dense retrieval is weak.
 
+## Limitations
+
+- **Approximate token counts.** Budgets use a regex counter (`\w+|[^\w\s]`), not a model tokenizer, so a packet's real token count for a given LLM will differ.
+- **Text and Markdown only.** `source_type` is `text` or `markdown`; there is no PDF, HTML or code-aware ingestion.
+- **Content is copied, not federated.** Ingested text is stored in PostgreSQL (or memory); ctxd does not query sources in place or track upstream changes.
+- **Tenant-level isolation only.** There are no per-document or per-user permissions inside a tenant.
+- **No reranker.** Reranking was evaluated offline and is not wired into the request path.
+- **Lexical is the default for a reason.** On nDCG@10, hybrid trails lexical on SciFact (−0.059) and ties on NFCorpus (see [Evaluation](#evaluation)).
+- **No answer generation.** `/v1/query` returns the `ContextPacket` with a placeholder `answer`: `"Inference is not implemented yet."`
+- **Exact vector search.** pgvector search is exact (no HNSW/IVF index), so semantic query cost grows with the corpus.
+- **Bare `uvicorn` uses fake embeddings.** Without `CTXD_EMBEDDING_PROVIDER=model2vec` the server uses a hash-based fixture embedder, so semantic and hybrid results are not meaningful; use the Docker stack to judge their quality.
+
 ## Development
 
 ```bash
