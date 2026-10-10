@@ -36,18 +36,23 @@ It renders immediately from a baked-in sample run, so it works with no backend
    first boot downloads the Model2Vec model, so wait until
    `curl localhost:8000/ready` returns `{"status":"ready",...}`.
 
-2. **Ingest some documents** for the tenant you will query. The dashboard's
-   *Tenant* field defaults to `demo`; a tenant with no documents returns an
-   empty ranking (`retrieved 0`), not an error:
+2. **Load the demo documents** into tenant `demo` (the dashboard's default
+   *Tenant*). From the repository root:
 
    ```bash
-   curl -s localhost:8000/v1/documents -H 'content-type: application/json' -H 'x-tenant-id: demo' \
-     -d '{"tenant_id":"demo","source_path":"component-7.md","source_type":"markdown",
-          "content":"# Component 7\n\nUnder failure, component 7 stops accepting documents and drains in-flight work to the dead-letter queue."}'
+   tools/dashboard/seed_demo.sh
    ```
 
-   (Data loaded by the main README quick start lives under tenant `acme`; set
-   *Tenant* to `acme` to query it instead.)
+   It ingests the two committed sample files in `tools/dashboard/demo-docs/`
+   (`checkout-incident-runbook.md`, `engineering-handbook.md`), then runs one
+   query per mode and prints `retrieval_type`, candidate counts and
+   `selected_tokens` against the budget. It is safe to re-run: unchanged
+   documents are replaced with identical state. Set `CTXD_URL` if the API is not
+   on `http://localhost:8000`.
+
+   A tenant with no documents returns an empty ranking (`retrieved 0`), not an
+   error. Data loaded by the main README quick start lives under tenant `acme`;
+   set *Tenant* to `acme` to query it instead.
 
 3. **Serve the dashboard** from that origin and open it:
 
@@ -59,13 +64,17 @@ It renders immediately from a baked-in sample run, so it works with no backend
 
 4. Set *API base* to your server (default `http://localhost:8000`), type a
    query, pick a mode, and hit **Run**. Drag the budget slider to watch chunks
-   move between KEPT and DROPPED.
+   move between KEPT and DROPPED. With the demo documents, try
+   `what should I do when the database connection pool is exhausted?`. The
+   *source* column shows each chunk's `source_path`, which for the demo data is
+   the file name of one of the committed files in `demo-docs/`.
 
 Open the file directly (`file://`) and the browser blocks the cross-origin
 fetch — always serve it over HTTP from the allowed origin.
 
 ## Notes
 
-- CORS is off unless `CTXD_CORS_ALLOW_ORIGINS` is set, so this changes nothing
-  in a default or production deployment.
+- CORS is off unless `CTXD_CORS_ALLOW_ORIGINS` is set. `docker-compose.yml`
+  sets it to the two localhost dashboard origins for local development; override
+  or remove it for any deployment.
 - KaTeX loads from a CDN; with no network the formulae fall back to plain text.
