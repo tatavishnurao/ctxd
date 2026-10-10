@@ -1,6 +1,6 @@
 # Implemented architecture
 
-Scope verified at consolidation base `83352ac`. This document describes current implementation, not an aspirational agent platform.
+Checked against `main` at `59099df` on 2026-10-10. This document describes current implementation, not an aspirational agent platform.
 
 ## Production-reachable / supported path
 
