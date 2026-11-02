@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- `warnings: ["top_candidate_dropped"]` when the token budget drops the top-ranked candidate, including when the packet ends up empty. Previously only `dropped_due_to_budget` recorded this, so a packet could lose its best evidence with no warning.
+
 ## 0.1.0
 
 First versioned release. It contains breaking API changes relative to the pre-release `main`.

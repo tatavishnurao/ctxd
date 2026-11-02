@@ -1,4 +1,5 @@
 from types import SimpleNamespace
+from typing import Any
 
 from ctxd.app.main import create_app
 from ctxd.app.models.domain import RetrievalMode
@@ -174,3 +175,54 @@ def test_metrics_endpoint_contains_phase_two_metrics() -> None:
         "ctxd_lexical_search_latency_seconds",
     ):
         assert metric in response.text
+
+
+def test_query_warns_when_budget_drops_the_top_ranked_candidate() -> None:
+    client = TestClient(create_app())
+    headers = {"x-tenant-id": "tenant-a"}
+    documents = {
+        "large.md": "# Pool\n\n" + "connection pool exhausted replicas " * 40,
+        "small.md": "# Note\n\nThe connection pool has a timeout.",
+    }
+    for source_path, content in documents.items():
+        response = client.post(
+            "/v1/documents",
+            headers=headers,
+            json={
+                "tenant_id": "tenant-a",
+                "source_path": source_path,
+                "source_type": "markdown",
+                "content": content,
+            },
+        )
+        assert response.status_code == 201
+
+    def query(budget: int) -> dict[str, Any]:
+        response = client.post(
+            "/v1/query",
+            headers=headers,
+            json={
+                "query": "connection pool exhausted",
+                "tenant_id": "tenant-a",
+                "max_context_tokens": budget,
+            },
+        )
+        assert response.status_code == 200
+        context: dict[str, Any] = response.json()["context"]
+        return context
+
+    roomy = query(10_000)
+    assert "warnings" not in roomy["metadata"]
+    top = roomy["candidates"][0]
+    assert top["metadata"]["source_path"] == "large.md"
+
+    # The lower-ranked chunk still fits, so the packet is non-empty but lost its best evidence.
+    squeezed = query(top["token_cost"] - 1)
+    assert squeezed["candidates"]
+    assert top["source_id"] not in [c["source_id"] for c in squeezed["candidates"]]
+    assert squeezed["metadata"]["warnings"] == ["top_candidate_dropped"]
+
+    # Nothing fits at all: an empty packet must carry the same warning.
+    empty = query(1)
+    assert empty["candidates"] == []
+    assert empty["metadata"]["warnings"] == ["top_candidate_dropped"]

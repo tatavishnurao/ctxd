@@ -73,6 +73,10 @@ class ContextAssembler:
                 selected.append(candidate)
                 selected_tokens += candidate.token_cost
 
+            # A warning, not just a count: the best-ranked evidence did not reach the model.
+            if candidates and (not selected or selected[0] is not candidates[0]):
+                retrieval.setdefault("warnings", []).append("top_candidate_dropped")
+
             candidate_tokens = sum(candidate.token_cost for candidate in candidates)
             span.set_attribute("context.selected_tokens", selected_tokens)
             span.set_attribute("context.selected_count", len(selected))
