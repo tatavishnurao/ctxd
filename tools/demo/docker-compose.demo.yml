@@ -1,0 +1,10 @@
+# Layer on top of docker-compose.yml. Turns on real API-key auth so the demo proves
+# tenant isolation against credentials, not against a trusted header.
+# The keys below are public demo values for localhost only.
+services:
+  app:
+    environment:
+      CTXD_ENVIRONMENT: demo
+      CTXD_AUTH_MODE: api_key
+      CTXD_AUTH_API_KEYS: '{"demo-key-acme-0123456789abcdef0123":"acme","demo-key-globex-0123456789abcdef012":"globex"}'
+      CTXD_AUTH_OPERATOR_TOKEN: demo-operator-0123456789abcdef01234
