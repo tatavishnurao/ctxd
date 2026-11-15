@@ -20,6 +20,34 @@ Retrieval, evidence selection, provenance, and token-budgeted assembly — befor
 
 ---
 
+<!-- Demo: drop the openscreen recording here (GIF or MP4, 20–30 s). -->
+
+## See it
+
+One on-call question, two token budgets, two tenants. [`examples/demo/demo.sh`](examples/demo/demo.sh) against a running ctxd (`docker compose up`, or bare `uv run uvicorn ctxd.app.main:app`, since the default lexical mode does not use embeddings):
+
+```text
+▸ acme asks "why did checkout p99 spike?" with a 2000-token budget
+  ✓ postmortem-2026-09.md:1-13  99 tok  bm25 2.61
+  ✓ checkout-latency.md:1-13  109 tok  bm25 1.6
+  ✓ postgres-pool.md:1-7  60 tok  bm25 0.44
+  ✓ cart-cache.md:1-7  76 tok  bm25 0.38
+  ✓ deploys.md:1-3  42 tok  bm25 0.11
+  tokens 386 / 2000 budget · 5 of 5 chunks kept · lexical
+
+▸ same question, 110-token budget
+  ✓ postmortem-2026-09.md:1-13  99 tok  bm25 2.61
+  tokens 99 / 110 budget · 1 of 5 chunks kept · 4 dropped whole, none truncated · lexical
+
+▸ same question as tenant billing
+  ✓ other-tenant.md:1-3  24 tok  bm25 0.29
+  tokens 24 / 2000 budget · 1 of 1 chunks kept · lexical
+```
+
+Every chunk carries its source and line range, the budget is never exceeded and never met by cutting a chunk, and tenant `billing` never sees `acme`'s runbooks. The corpus is a synthetic set of runbooks in [`examples/demo/corpus/`](examples/demo/corpus/).
+
+---
+
 ## What is ctxd?
 
 An agent can reach millions of pieces of information; the model it calls can only receive a small slice. **ctxd decides the slice** — what to retrieve, what to keep, what to drop, how to spend a token budget — and returns a single, auditable `ContextPacket`.
