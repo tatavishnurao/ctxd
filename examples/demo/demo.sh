@@ -14,18 +14,23 @@ QUESTION="why did checkout p99 spike?"
 
 bold=$'\e[1m'; dim=$'\e[2m'; green=$'\e[32m'; red=$'\e[31m'; reset=$'\e[0m'
 
+die() { printf '%serror:%s %s\n' "$red" "$reset" "$1" >&2; exit 1; }
+command -v jq >/dev/null || die "jq not found (sudo apt install jq)"
+curl -sf "$URL/ready" >/dev/null || die "no ctxd at $URL; start it with: uv run uvicorn ctxd.app.main:app"
+
 step() { printf '\n%s▸ %s%s\n' "$bold" "$1" "$reset"; }
 
 ingest() { # tenant file
   jq -n --arg t "$1" --arg p "$(basename "$2")" --rawfile c "$2" \
     '{tenant_id:$t, source_path:$p, source_type:"markdown", content:$c}' |
-    curl -sf "$URL/v1/documents" -H 'content-type: application/json' -H "x-tenant-id: $1" -d @- >/dev/null
+    curl -s --fail-with-body "$URL/v1/documents" -H 'content-type: application/json' -H "x-tenant-id: $1" -d @- >/dev/null ||
+    die "ingest of $(basename "$2") failed"
 }
 
 query() { # tenant budget
   jq -n --arg t "$1" --arg q "$QUESTION" --argjson b "$2" \
     '{tenant_id:$t, query:$q, max_context_tokens:$b}' |
-    curl -sf "$URL/v1/query" -H 'content-type: application/json' -H "x-tenant-id: $1" -d @- |
+    curl -s --fail-with-body "$URL/v1/query" -H 'content-type: application/json' -H "x-tenant-id: $1" -d @- |
     jq -r --arg green "$green" --arg red "$red" --arg dim "$dim" --arg reset "$reset" '
       .context as $p
       | ($p.candidates[] | "  \($green)✓\($reset) \(.metadata.source_path):\(.metadata.start_line)-\(.metadata.end_line)  \(.token_cost) tok  \($dim)bm25 \(.relevance_score * 100 | round / 100)\($reset)"),
